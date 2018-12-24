@@ -1,13 +1,16 @@
 Package: bbbq
-Title: What the Package Does (One Line, Title Case)
+Title: The Bilderbeek Bianchi and Bogaart Question
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "First",
            family = "Last",
            role = c("aut", "cre"),
            email = "first.last@example.com")
-Description: What the package does (one paragraph).
-License: What license it uses
+Description: 
+  What the package does (one paragraph).
+  What the package does (one paragraph).
+  What the package does (one paragraph)
+License: GPL-3 | file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
