@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 UP000001584_83332.fasta.gz
+tmhmm_result\.pdf
+tmhmm_result\.html
