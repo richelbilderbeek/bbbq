@@ -4,4 +4,6 @@
 .Ruserdata
 UP000001584_83332.fasta.gz
 tmhmm_result\.pdf
-tmhmm_result\.html
+tmhmm_result\.htmlnet_mhc2_pan.html
+net_mhc2_pan.html
+tmhmm_result.html

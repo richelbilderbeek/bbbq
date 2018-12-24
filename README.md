@@ -23,5 +23,5 @@ Done by [the TMHMM server](http://www.cbs.dtu.dk/services/TMHMM).
 
 ```
 wget -O tmhmm_result.html http://www.cbs.dtu.dk//cgi-bin/webface2.fcgi?jobid=5C20C1FC00000E32D41A9103
-cat tmhmm_result.html | egrep "^[a-z]" > tmhmm_result.txt
+cat tmhmm_result.html | egrep "^[a-z]{2}\|" > tmhmm_result.txt
 ```
