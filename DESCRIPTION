@@ -2,14 +2,14 @@ Package: bbbq
 Title: The Bilderbeek Bianchi and Bogaart Question
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Richel",
+           family = "Bilderbeek",
            role = c("aut", "cre"),
-           email = "first.last@example.com")
+           email = "richel@richelbilderbeek.nl")
 Description: 
   What the package does (one paragraph).
   What the package does (one paragraph).
-  What the package does (one paragraph)
+  What the package does (one paragraph).
 License: GPL-3 | file LICENSE
 Encoding: UTF-8
 LazyData: true
