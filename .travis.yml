@@ -1,0 +1,34 @@
+language: r
+cache: packages
+
+os: 
+  - osx
+
+r_packages:
+  - devtools
+  - ggplot2
+  - hunspell
+  - xml2
+
+r_github_packages:
+  - jimhester/covr
+  - jimhester/lintr
+  - MangoTheCat/goodpractice
+
+before_script:
+  - wget ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/QfO/Bacteria/UP000001584_83332.fasta.gz
+  - gunzip UP000001584_83332.fasta.gz
+
+script:
+  - ls
+  - #travis_wait 30 R CMD build .
+  - #travis_wait 40 R CMD check *tar.gz
+
+after_success:
+  - ls
+  - #if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then Rscript -e 'lintr::lint_package()'; fi
+  - #if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then Rscript -e 'covr::codecov()'; fi
+
+
+after_failure:
+  - ls
