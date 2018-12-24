@@ -7,10 +7,10 @@ The Bilderbeek Bianchi and Bogaart Question.
  * [epitope-prediction](https://github.com/jtextor/epitope-prediction)
  * [NetMHCIIpan](www.cbs.dtu.dk/services/NetMHCIIpan) website
 
-## Proteome
+## Genomes
 
- * [Overview](ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/QfO/README)
-
+Takes from the 
+[overview of reference genomes](ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/QfO/README):
 
 Genome|URL
 ---|---
