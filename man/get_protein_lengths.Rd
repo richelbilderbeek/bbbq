@@ -8,6 +8,9 @@ amino acids.}
 get_protein_lengths(fasta_filename = system.file("extdata",
   "short.fasta", package = "bbbq"))
 }
+\arguments{
+\item{fasta_filename}{name of a FASTA file}
+}
 \value{
 a data frame with each protein's name and the number'
   of amino acids it consists of

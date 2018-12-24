@@ -7,7 +7,12 @@ into a more convenient data structure to work with: a named
 list of strings.}
 \usage{
 prepare_data(fasta_filename = system.file("extdata", "short.fasta",
-  package = "bbbq"))
+  package = "bbbq"), proteome_filename = tempfile("proteome.Rdata"))
+}
+\arguments{
+\item{fasta_filename}{name of a FASTA file}
+
+\item{proteome_filename}{name of the file the proteome will be stored at}
 }
 \description{
 Converts the human proteome, as downloaded from UniProt,
