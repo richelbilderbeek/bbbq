@@ -24,11 +24,14 @@ script:
   - travis_wait 50 R CMD build .
   - travis_wait 50 R CMD check *tar.gz
 
+after_script:
+  - qmake
+  - make
+
 after_success:
   - ls
-  - #if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then Rscript -e 'lintr::lint_package()'; fi
-  - #if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then Rscript -e 'covr::codecov()'; fi
-
+  - Rscript -e 'lintr::lint_package()'
+  - Rscript -e 'covr::codecov()'
 
 after_failure:
   - ls
