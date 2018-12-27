@@ -21,9 +21,8 @@ before_script:
   - # rm UP000001584_83332.fasta.gz
 
 script:
-  - ls
-  - #travis_wait 30 R CMD build .
-  - #travis_wait 40 R CMD check *tar.gz
+  - travis_wait 50 R CMD build .
+  - travis_wait 50 R CMD check *tar.gz
 
 after_success:
   - ls
