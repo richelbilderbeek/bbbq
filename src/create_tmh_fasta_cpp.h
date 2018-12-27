@@ -3,11 +3,11 @@
 
 #include <string>
 
-//' Calculate the auto correlation time
-//' from \url{https://github.com/beast-dev/beast-mcmc/blob/800817772033c13061f026226e41128d21fd14f3/src/dr/inference/trace/TraceCorrelation.java#L159} # nolint
-//' @param sample sample
-//' @param sample_interval sample interval
-//' @return the auto correlation time
+//' Creates a FASTA fike with only the TMHs
+//' @param proteome_filename name of the file the proteome will be stored at
+//' @param tmhs_filename file that contains the TMHs as created by TMHMM
+//' @param tmh_fasta_filename name of the FASTA file containing only the TMHs
+//' @return nothing
 //' @author Richel J.C. Bilderbeek
 // [[Rcpp::export]]
 void create_tmh_fasta_cpp(

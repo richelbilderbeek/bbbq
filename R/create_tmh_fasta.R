@@ -9,8 +9,11 @@ create_tmh_fasta <- function(
   tmhs_filename,
   tmh_fasta_filename
 ) {
-  text <- paste0(seq(1, 16), '\n', collapse = "")
-  writeLines(text, tmh_fasta_filename)
+  create_tmh_fasta_cpp(
+    proteome_filename = proteome_filename,
+    tmhs_filename = tmhs_filename,
+    tmh_fasta_filename = tmh_fasta_filename
+  )
 }
 
 

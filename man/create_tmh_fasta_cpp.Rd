@@ -2,22 +2,22 @@
 % Please edit documentation in R/RcppExports.R
 \name{create_tmh_fasta_cpp}
 \alias{create_tmh_fasta_cpp}
-\title{Calculate the auto correlation time
-from \url{https://github.com/beast-dev/beast-mcmc/blob/800817772033c13061f026226e41128d21fd14f3/src/dr/inference/trace/TraceCorrelation.java#L159} # nolint}
+\title{Creates a FASTA fike with only the TMHs}
 \usage{
 create_tmh_fasta_cpp(proteome_filename, tmhs_filename, tmh_fasta_filename)
 }
 \arguments{
-\item{sample}{sample}
+\item{proteome_filename}{name of the file the proteome will be stored at}
 
-\item{sample_interval}{sample interval}
+\item{tmhs_filename}{file that contains the TMHs as created by TMHMM}
+
+\item{tmh_fasta_filename}{name of the FASTA file containing only the TMHs}
 }
 \value{
-the auto correlation time
+nothing
 }
 \description{
-Calculate the auto correlation time
-from \url{https://github.com/beast-dev/beast-mcmc/blob/800817772033c13061f026226e41128d21fd14f3/src/dr/inference/trace/TraceCorrelation.java#L159} # nolint
+Creates a FASTA fike with only the TMHs
 }
 \author{
 Richel J.C. Bilderbeek
