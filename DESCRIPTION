@@ -16,9 +16,9 @@ LazyData: true
 RoxygenNote: 6.1.1
 Imports:
     seqinr,
-    testit,
     Rcpp
 Suggests: 
-  testthat
+    testit,
+    testthat
 LinkingTo: 
     Rcpp
