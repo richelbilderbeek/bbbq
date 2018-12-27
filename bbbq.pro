@@ -5,11 +5,17 @@
 ################################################################################
 
 # Entry point for this project
-SOURCES += cpp/main.cpp \
+SOURCES += \
+    cpp/main_test.cpp \
+    cpp/test_create_tmh_fasta_cpp.cpp
     src/create_tmh_fasta_cpp.cpp
 
 HEADERS += \
     src/create_tmh_fasta_cpp.h
+
+INCLUDEPATH += \
+    cpp \
+    src
 
 ################################################################################
 # Compiling, linking and tools
@@ -56,6 +62,13 @@ CONFIG(debug, debug|release) {
     LIBS += -lubsan
   }
 }
+
+################################################################################
+# Boost
+################################################################################
+
+# Boost.Test
+LIBS += -lboost_unit_test_framework
 
 ################################################################################
 # Qt5
