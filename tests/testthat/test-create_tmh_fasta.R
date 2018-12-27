@@ -13,5 +13,5 @@ test_that("use", {
     tmh_fasta_filename = tmh_fasta
   )
   lines <- readLines(tmh_fasta)
-  expect_equal(length(lines), 17)
+  expect_equal(length(lines), 16)
 })
