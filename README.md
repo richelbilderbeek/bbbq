@@ -1,5 +1,10 @@
 # bbbq
 
+Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)|[![Codecov logo](pics/Codecov.png)](https://www.codecov.io)
+---|---|---
+`master`|[![Build Status](https://travis-ci.org/richelbilderbeek/bbbq.svg?branch=master)](https://travis-ci.org/richelbilderbeek/bbbq) | [![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/bbbq?branch=master)
+`develop`|[![Build Status](https://travis-ci.org/richelbilderbeek/bbbq.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/bbbq) | [![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/bbbq?branch=develop)
+
 The Bilderbeek Bianchi and Bogaart Question.
 
 ### Links
