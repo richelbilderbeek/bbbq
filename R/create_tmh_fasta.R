@@ -12,3 +12,5 @@ create_tmh_fasta <- function(
   text <- paste0(seq(1, 16), '\n', collapse = "")
   writeLines(text, tmh_fasta_filename)
 }
+
+
