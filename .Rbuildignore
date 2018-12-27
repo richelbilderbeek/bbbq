@@ -4,7 +4,10 @@
 ^short\.fasta$
 ^\.travis\.yml$
 ^doc$
+^cpp$
 ^net_mhc2_pan\.html$
 ^net_mhc2_pan_short\.html$
 ^tmhmm_result\.html$
 ^tmhmm_result\.pdf$
+^bbbq\.pro$
+^bbbq\.pro\.user$
