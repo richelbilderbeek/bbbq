@@ -5,12 +5,18 @@
 \title{This function does nothing. It is intended to inherit is parameters'
 documentation.}
 \usage{
-default_params_doc(fasta_filename, proteome_filename, verbose)
+default_params_doc(fasta_filename, proteome_filename, tmh_fasta_filename,
+  tmhs_filename, verbose)
 }
 \arguments{
 \item{fasta_filename}{name of a FASTA file}
 
 \item{proteome_filename}{name of the file the proteome will be stored at}
+
+\item{tmh_fasta_filename}{name of the FASTA file containing only the
+TMHs}
+
+\item{tmhs_filename}{file that contains the TMHs as created by TMHMM}
 
 \item{verbose}{set to TRUE for more output}
 }
