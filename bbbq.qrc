@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/bbbq">
+        <file alias="tmhmm.txt">inst/extdata/tmhmm_tmh_tr_I6WYT7_I6WYT7_MYCTU.txt</file>
+        <file alias="proteome.fasta">inst/extdata/UP000001584_83332_tr_I6WYT7_I6WYT7_MYCTU.fasta</file>
+    </qresource>
+</RCC>
