@@ -29,4 +29,17 @@ test_that("full use", {
     lines <- readLines(tmh_prot_filename)
     expect_equal(length(lines), 16)
   }
+
+  if (1 == 2) {
+    df_all <- read.csv(file = "~/bbbq/tbc_netmhc2pan_bindings.csv")
+    # Strong binders
+    df <- df_all[df_all$Rank <= 5.0, ]
+    # All we need
+    df_sub <-df[, c("Pos", "Peptide", "ID", "Rank")]
+    utils::write.csv(
+      x = df_sub,
+      file = "~/bbbq/tbc_netmhc2pan_bindings_strong.csv",
+      row.names = FALSE
+    )
+  }
 })

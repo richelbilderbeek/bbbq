@@ -9,10 +9,14 @@ The Bilderbeek Bianchi and Bogaart Question.
 
 It relies on:
 
- * [tmhprot](https://github.com/richelbilderbeek/tmhprot): from a proteome,
-   creates a proteome of only the TMHs
+ * [tmhprot](https://github.com/richelbilderbeek/tmhprot): 
+   from a proteome and a TMHMM file,
+   creates a proteome with the sequences of only the TMHs
  * [netmhc2pan](https://github.com/richelbilderbeek/netmhc2pan): install, 
    call and parse the output of 'NetMHC2pan'
+ * [epitopeome](https://github.com/richelbilderbeek/epitopeome): 
+   from a TMHMM and NetMHC2pan file,
+   create an 'epitopeome'
 
 ## Data
 
@@ -75,6 +79,23 @@ richel@oldskool:~$ cat UP000001584_83332.fasta | egrep -v "^>" | wc --chars
 richel@oldskool:~$ cat tmh_prot.fasta | egrep -v "^>" | wc --chars
 78507
 ```
+
+ * 8. Select the strong MHC2 binders
+
+```{r}
+df_all <- read.csv(file = "~/bbbq/tbc_netmhc2pan_bindings.csv")
+# Strong binders
+df <- df_all[df_all$Rank <= 5.0, ]
+# All we need
+df_sub <-df[, c("Pos", "Peptide", "ID", "Rank")]
+utils::write.csv(
+  x = df_sub,
+  file = "~/bbbq/tbc_netmhc2pan_bindings_strong.csv",
+  row.names = FALSE
+)
+``` 
+
+ * 9. Create the epitopeome
 
 ### Links
 
