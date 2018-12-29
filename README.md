@@ -113,6 +113,27 @@ create_epitopeome_file_cpp(
 
  * 10. Stats
 
+```
+richel@oldskool:~/bbbq$ cat tbc_epitiopeome.fasta | egrep -v "^>" | egrep -o "o" | wc --chars
+1882706
+richel@oldskool:~/bbbq$ cat tbc_epitiopeome.fasta | egrep -v "^>" | egrep -o "O" | wc --chars
+453788
+richel@oldskool:~/bbbq$ cat tbc_epitiopeome.fasta | egrep -v "^>" | egrep -o "i" | wc --chars
+138308
+richel@oldskool:~/bbbq$ cat tbc_epitiopeome.fasta | egrep -v "^>" | egrep -o "I" | wc --chars
+38224
+richel@oldskool:~/bbbq$ cat tbc_epitiopeome.fasta | egrep -v "^>" | egrep -o "t" | wc --chars
+76648
+richel@oldskool:~/bbbq$ cat tbc_epitiopeome.fasta | egrep -v "^>" | egrep -o "T" | wc --chars
+73628
+```
+
+Location|AAs non-binder|AA binder|Total AAs|Percentage bound
+--------|-------|------|-------|---
+Inside  | 138308| 38224| 176532|21
+Outside |1882706|453788|2336494|19
+TMH     |  76648| 73628| 150276|48
+
 ### Links
 
  * [epitope-prediction](https://github.com/jtextor/epitope-prediction)
