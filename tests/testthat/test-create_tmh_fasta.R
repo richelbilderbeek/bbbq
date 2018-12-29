@@ -16,3 +16,17 @@ test_that("use", {
   lines <- readLines(tmh_prot_filename)
   expect_equal(length(lines), 16)
 })
+
+test_that("full use", {
+
+  if (1 == 2) {
+    tmh_prot_filename <- "/home/richel/tmh_prot.fasta"
+    tmhprot::create_tmh_prot_file(
+      proteome_filename = "/home/richel/UP000001584_83332.fasta",
+      tmhs_filename = "/home/richel/tbc_tmhmm.txt",
+      tmh_prot_filename = tmh_prot_filename
+    )
+    lines <- readLines(tmh_prot_filename)
+    expect_equal(length(lines), 16)
+  }
+})
