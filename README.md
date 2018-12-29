@@ -95,7 +95,23 @@ utils::write.csv(
 )
 ``` 
 
- * 9. Create the epitopeome
+ * 9. Create the epitopeome, `tbc_epitiopeome.fasta`
+
+```c++
+const std::string tmh_filename = "/home/richel/bbbq/tbc_tmhmm.txt";
+assert(QFile::exists(tmh_filename.c_str()));
+const std::string netmhc2pan_filename = "/home/richel/bbbq/tbc_netmhc2pan_bindings_strong.csv";
+assert(QFile::exists(netmhc2pan_filename.c_str()));
+const std::string result_filename = "/home/richel/tbc_epitiopeome.fasta";
+
+create_epitopeome_file_cpp(
+  tmh_filename,
+  netmhc2pan_filename,
+  result_filename
+);
+```
+
+ * 10. Stats
 
 ### Links
 
