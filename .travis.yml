@@ -1,7 +1,7 @@
 language: r
 cache: packages
 
-os: 
+os:
   - osx
 
 r_packages:
@@ -13,6 +13,9 @@ r_packages:
 r_github_packages:
   - jimhester/covr
   - jimhester/lintr
+  - richelbilderbeek/epitopeome
+  - richelbilderbeek/netmhc2pan
+  - richelbilderbeek/tmhmm
   - MangoTheCat/goodpractice
 
 before_script:
