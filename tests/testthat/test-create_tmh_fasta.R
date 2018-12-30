@@ -1,7 +1,6 @@
 context("test-create_tmh_fasta")
 
 test_that("use", {
-
   #tmh_prot_filename <- tempfile(fileext = ".fasta")
   tmh_prot_filename <- "/home/richel/tmh_prot.fasta"
   tmhprot::create_tmh_prot_file(
@@ -18,17 +17,6 @@ test_that("use", {
 })
 
 test_that("full use", {
-
-  if (1 == 2) {
-    tmh_prot_filename <- "/home/richel/tmh_prot.fasta"
-    tmhprot::create_tmh_prot_file(
-      proteome_filename = "/home/richel/UP000001584_83332.fasta",
-      tmhs_filename = "/home/richel/tbc_tmhmm.txt",
-      tmh_prot_filename = tmh_prot_filename
-    )
-    lines <- readLines(tmh_prot_filename)
-    expect_equal(length(lines), 16)
-  }
 
   if (1 == 2) {
     df_all <- read.csv(file = "~/bbbq/tbc_netmhc2pan_bindings.csv")

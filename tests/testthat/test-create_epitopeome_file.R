@@ -3,6 +3,7 @@ context("test-create_epitopeome_file")
 test_that("use", {
 
   if (1 == 2) {
+
     tmhs_filename <- "~/bbbq/tbc_tmhmm.txt"
     netmhc2pan_filename <- "~/bbbq/tbc_netmhc2pan_bindings_strong.csv"
     testit::assert(file.exists(tmhs_filename))
