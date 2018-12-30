@@ -19,13 +19,27 @@ r_github_packages:
   - MangoTheCat/goodpractice
 
 before_script:
-  - # wget ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/QfO/Bacteria/UP000001584_83332.fasta.gz
-  - # gunzip UP000001584_83332.fasta.gz
-  - # rm UP000001584_83332.fasta.gz
-
-script:
-  - travis_wait 50 R CMD build .
-  - travis_wait 50 R CMD check *tar.gz
+  # C++14
+  # - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  # - sudo apt-get update -qq
+  # C++14
+  # - sudo apt-get install -qq g++-6
+  # - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
+  # Boost
+  # - sudo apt-get install libboost-all-dev
+  # Qt5
+  # - sudo apt-get install -qq libqt5webkit5-dev qtdeclarative5-dev libqt5svg5*
+  # - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+  # Install TMHMM
+  - Rscript -e "tmhmm::install_tmhmm(tmhmm::get_tmhmm_url())"
+  # Install NetMHC2pan
+  - Rscript -e "netmhc2pan::install_netmhc2pan(netmhc2pan::get_netmhc2pan_url())"
+  # Build and run
+  # - qmake
+  # - make
+  # - ./epitopeome
+  # proselint
+  - sudo pip install proselint
 
 after_script:
   - qmake
