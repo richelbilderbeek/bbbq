@@ -21,5 +21,5 @@ get_bbbq_path <- function(filename) {
 #' @return path to the proteome file in \code{inst/extdata}
 #' @author Richel J.C. Bilderbeek
 get_proteome_path <- function() {
-  get_bbbq_path("UP000001584_83332.fasta")
+  get_bbbq_path("UP000001584_83332.fasta") # nolint bbbq function
 }
