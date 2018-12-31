@@ -5,7 +5,3 @@
 #' @docType package
 #' @name bbbq
 NULL
-
-#' @useDynLib bbbq, .registration = TRUE
-#' @importFrom Rcpp sourceCpp
-NULL
