@@ -20,5 +20,3 @@ Imports:
 Suggests: 
     testit,
     testthat
-LinkingTo: 
-    Rcpp
