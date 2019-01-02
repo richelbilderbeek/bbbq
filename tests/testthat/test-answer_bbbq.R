@@ -10,6 +10,8 @@ test_that("answer_bbbq", {
   tmhmm_filename <- tempfile(".txt")
   netmhc2pan_filename <- tempfile(".csv")
   epitopeome_filename <- tempfile(".fasta")
+
+  testit::assert(all(alleles %in% netmhc2pan::get_netmhc2pan_alleles()))
   df <- answer_bbbq(
     fasta_filename = fasta_filename,
     alleles = alleles,
