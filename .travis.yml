@@ -17,6 +17,9 @@ r_github_packages:
   - richelbilderbeek/tmhmm
   - MangoTheCat/goodpractice
 
+before_install:
+  - sudo apt install libgit2-dev 
+
 before_script:
   - sudo apt install libgit2-dev 
   # C++14
