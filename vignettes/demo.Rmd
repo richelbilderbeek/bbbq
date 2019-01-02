@@ -1,0 +1,67 @@
+---
+title: "Demo"
+author: "Richel J.C. Bilderbeek"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Demo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+TMHMM:
+
+```{r}
+tmhmm::check_tmhmm_installation()
+```
+
+NetMHC2pan:
+
+```{r}
+netmhc2pan::check_netmhc2pan_installation()
+```
+
+Proteome to work on:
+
+```{r}
+fasta_filename <- system.file("extdata", "short.fasta", package = "bbbq")
+head(readLines(fasta_filename, warn = FALSE))
+```
+
+Select MHC2 alleles to use:
+
+```{r}
+alleles <- "DRB1_0101"
+testit::assert(all(alleles %in% netmhc2pan::get_netmhc2pan_alleles()))
+```
+
+Select a binding strength. For example, a value of `5.0` will select
+those epitopes that are in the top 5 percent.
+
+```{r}
+binding_strength_threshold <- 5.0
+```
+
+```{r}
+df <- bbbq::answer_bbbq(
+  fasta_filename = fasta_filename,
+  alleles = alleles,
+  binding_strength_threshold = binding_strength_threshold
+)
+knitr::kable(df)
+```
+
+Legend:
+
+Location|Binder|Non-binder
+---|---|---
+outside|O|o
+membrane|M|m
+inside|I|i

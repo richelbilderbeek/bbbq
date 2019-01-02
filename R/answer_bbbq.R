@@ -1,5 +1,8 @@
 #' Answer the BBBQ
 #' @inheritParams default_params_doc
+#' @return a data frame with counts of the epitopa
+#' @author Richel J.C. Bilderbeek
+#' @export
 answer_bbbq <- function(
   fasta_filename,
   alleles = "DRB1_0101",

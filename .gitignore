@@ -1,3 +1,4 @@
+inst/doc
 .Rproj.user
 .Rhistory
 .RData
@@ -12,3 +13,6 @@ doc/bianchi_textor_bogaart_2017_data_sheet_1.pdf
 doc/bianchi_textor_bogaart_2017_rcode/
 net_mhc2_pan_short.html
 *.pro.user
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
