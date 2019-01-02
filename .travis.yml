@@ -1,5 +1,7 @@
-language: r
+language: R
 cache: packages
+dist: trusty
+sudo: false
 
 r_packages:
   - devtools
