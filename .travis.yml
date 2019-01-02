@@ -11,6 +11,7 @@ r_packages:
 r_binary_packages:
     - libgit2
     - magick
+    - libmagick++-dev
 
 r_github_packages:
   - jimhester/covr
