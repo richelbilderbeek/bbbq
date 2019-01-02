@@ -8,11 +8,6 @@ r_packages:
   - hunspell
   - xml2
 
-r_binary_packages:
-    - libgit2
-    - magick
-    - libmagick++-dev
-
 r_github_packages:
   - jimhester/covr
   - jimhester/lintr
@@ -21,12 +16,15 @@ r_github_packages:
   - richelbilderbeek/tmhmm
   - MangoTheCat/goodpractice
 
-#before_install:
+before_install:
+  - sudo add-apt-repository -y ppa:opencpu/imagemagick
+  - sudo apt-get update
+  - sudo apt-get install -y libmagick++-dev
   # C++14
   #- sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   #- sudo apt-get update -qq
   # libgit2-dev
-  #- sudo apt-get install libgit2-dev
+  - sudo apt-get install libgit2-dev
 
 before_script:
   # C++14
