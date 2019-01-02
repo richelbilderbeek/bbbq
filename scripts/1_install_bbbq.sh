@@ -12,7 +12,7 @@ module load GCCcore/4.9.3
 module load XZ/5.2.2-foss-2016a
 #module load R/3.3.1-foss-2016a
 module load R
-Rscript -e 'devtools::install_github("richelbilderbeek/nethmc2pan")'
+Rscript -e 'devtools::install_github("richelbilderbeek/netmhc2pan")'
 Rscript -e 'devtools::install_github("richelbilderbeek/tmhmm")'
 Rscript -e 'devtools::install_github("richelbilderbeek/epitopeome")'
 Rscript -e 'devtools::install_github("richelbilderbeek/bbbq")'
