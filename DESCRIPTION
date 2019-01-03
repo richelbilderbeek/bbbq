@@ -1,15 +1,16 @@
 Package: bbbq
 Title: The Bilderbeek Bianchi and Bogaart Question
-Version: 0.0.0.9000
+Version: 1.0
 Authors@R: 
     person(given = "Richel",
            family = "Bilderbeek",
            role = c("aut", "cre"),
            email = "richel@richelbilderbeek.nl")
-Description: 
-    What the package does (one paragraph).
-    What the package does (one paragraph).
-    What the package does (one paragraph).
+Description:
+    The Bilderbeek Bianchi and Bogaart Question
+    is a very important question.
+    This package answers this question.
+    These answers are not published yet.
 License: GPL-3 | file LICENSE
 Encoding: UTF-8
 LazyData: true
