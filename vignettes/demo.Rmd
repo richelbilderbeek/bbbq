@@ -16,29 +16,94 @@ knitr::opts_chunk$set(
 )
 ```
 
-TMHMM:
+## Install
+
+The `bbbq` package depends on the `tmhmm` package, which needs
+to be installed first:
+
+```{r}
+devtools::install_github("richelbilderbeek/tmhmm")
+```
+
+The `tmhmm` package relies on TMHMM that needs to be installed:
+
+```{r}
+tmhmm::install_tmhmm("http://www.cbs.dtu.dk/download/D3198788-0F1D-11E9-883C-84B3B9CD16B5/")
+```
+
+The URL can be obtained by requesting a download link at 
+the [TMHMM](http://www.cbs.dtu.dk/services/TMHMM) website 
+at [http://www.cbs.dtu.dk/services/TMHMM](http://www.cbs.dtu.dk/services/TMHMM).
+As this URL expires after four hours, `tmhmm` cannot do this for you.
+
+The installation of NetMHC2pan is checked, with the goal of giving
+a helpful error message:
 
 ```{r}
 tmhmm::check_tmhmm_installation()
 ```
 
-NetMHC2pan:
+Additionall, The `bbbq` package depends on the `netmhc2pan` package, which needs
+to be installed as well:
+
+```{r}
+devtools::install_github("richelbilderbeek/netmhc2pan")
+```
+
+The `netmhc2pan` package relies on NetMHCIIpan that needs to be installed:
+
+```{r}
+netmhc2pan::install_netmhc2pan("http://www.cbs.dtu.dk/download/33A6B0AC-0F2E-11E9-B4D1-8ABCB9CD16B5/")
+```
+
+The URL can be obtained by requesting a download link at
+the [NetMHCIIpan](www.cbs.dtu.dk/services/NetMHCIIpan) website 
+at [www.cbs.dtu.dk/services/NetMHCIIpan]www.cbs.dtu.dk/services/NetMHCIIpan).
+As this URL expires after four hours, `netmhc2pan` cannot do this for you.
+
+The installation of NetMHC2pan is checked, with the goal of giving
+a helpful error message:
 
 ```{r}
 netmhc2pan::check_netmhc2pan_installation()
 ```
 
-Proteome to work on:
+Another dependency is the `epitopiome` package.
+Installing the `epitopeome` package:
+
+```{r}
+devtools::install_github("richelbilderbeek/epitopeome")
+```
+
+```{r}
+devtools::install_github("richelbilderbeek/bbbq")
+```
+
+## Usage
+
+From a protein sequence, `bbbq` estimates where amino acids of transmembrane proteins 
+are located (inside, outside, in the membrane) and which bind to an MHC2
+allele with a certain strength.
+
+We need a FASTA file with at least one protein sequence in it to work on:
 
 ```{r}
 fasta_filename <- system.file("extdata", "short.fasta", package = "bbbq")
-head(readLines(fasta_filename, warn = FALSE))
 ```
 
-Select MHC2 alleles to use:
+This is how such a FASTA file looks like:
 
 ```{r}
-alleles <- "DRB1_0101"
+cat(head(readLines(fasta_filename, warn = FALSE)), sep = "\n")
+```
+
+Different MHC2 alleles bind differently to protein epitopes. 
+By default, `bbbq` uses only the default MHC2 allele used by NetMCHIIpan.
+In this demo, we'll use the first two MHC2 alleles from the complete
+NetMHCIIpan set of more than 5000 alleles:
+
+```{r}
+alleles <- netmhc2pan::get_netmhc2pan_alleles()[1:2]
 testit::assert(all(alleles %in% netmhc2pan::get_netmhc2pan_alleles()))
 ```
 
@@ -49,19 +114,76 @@ those epitopes that are in the top 5 percent.
 binding_strength_threshold <- 5.0
 ```
 
+Here, the BBBQ is answered:
+
 ```{r}
 df <- bbbq::answer_bbbq(
   fasta_filename = fasta_filename,
   alleles = alleles,
   binding_strength_threshold = binding_strength_threshold
 )
+```
+
+Resulting in:
+
+```{r}
 knitr::kable(df)
 ```
 
 Legend:
 
-Location|Binder|Non-binder
+Location|Strong binder|Weak binder
 ---|---|---
 outside|O|o
 membrane|M|m
 inside|I|i
+
+## Appendix
+
+This appendix shows the intermediate files created by `bbbq`.
+
+These are:
+
+ * `tmhmm_filename`: the TMHMM results file, containing the location of the
+   amino acids (inside, outside, in membrane)
+ * `netmhc2pan_filename`: the NetMHC2pan results file, containing the
+   binding of all MHC2 alleles to all protein epitopes
+ * `epitopeome_filename`: the `epitopeome` results file, containing the
+   combinated informationb
+
+```{r}
+tmhmm_filename = tempfile(".txt")
+netmhc2pan_filename = tempfile(".csv")
+epitopeome_filename = tempfile(".fasta")
+```
+
+Answering the BBBQ again (and ignorening its result):
+
+```{r}
+bbbq::answer_bbbq(
+  fasta_filename = fasta_filename,
+  alleles = alleles,
+  binding_strength_threshold = binding_strength_threshold,
+  tmhmm_filename = tmhmm_filename,
+  netmhc2pan_filename = netmhc2pan_filename,
+  epitopeome_filename = epitopeome_filename
+)
+```
+
+The TMHMM results file:
+
+```{r}
+cat(readLines(tmhmm_filename), sep = "\n")
+```
+
+The NetMHCIIpan results table:
+
+```{r}
+knitr::kable(read.csv(netmhc2pan_filename))
+```
+
+The `epitopeome` results file:
+
+```{r}
+cat(readLines(epitopeome_filename), sep = "\n")
+```
