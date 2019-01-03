@@ -16,6 +16,9 @@ r_github_packages:
 
 before_install:
   - sudo apt-get install libgit2-dev
+  - apt-cache search libgit
+  - apt-cache search git2
+  - apt-cache search git3
 
 before_script:
   # C++14
