@@ -1,31 +1,25 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
 language: R
+sudo: false
 cache: packages
 dist: trusty
 
 r_packages:
   - devtools
-  - git2r
 
 r_github_packages:
   - jimhester/covr
   - jimhester/lintr
-  - richelbilderbeek/epitopeome
   - richelbilderbeek/netmhc2pan
   - richelbilderbeek/tmhmm
   - MangoTheCat/goodpractice
+  - ropensci/spelling
 
-before_install:
-  - sudo add-apt-repository -y ppa:opencpu/imagemagick
-  - sudo apt-get update
-  - sudo apt-get install -y libmagick++-dev
-  - sudo apt-get install -y libgit2-dev
-  - sudo apt-get install -y r-cran-git2r
-  - apt-cache search libgit
+before_script:
   # C++14
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   - sudo apt-get update -qq
-
-before_script:
   # C++14
   - sudo apt-get install -qq g++-6
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
@@ -34,23 +28,29 @@ before_script:
   # Qt5
   - sudo apt-get install -qq libqt5webkit5-dev qtdeclarative5-dev libqt5svg5*
   - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
-  # Install TMHMM
-  - Rscript -e "tmhmm::install_tmhmm(tmhmm::get_tmhmm_url())"
-  # Install NetMHC2pan
+  # Install and test TMHMM
+  - Rscript -e "tmhmm::install_tmhmm()"
+  - echo -e ">sp|L0T550|RIP2_MYCTU_158_180\nAVLWAGVAFLAFLQLTALVLNLL" > example.fasta
+  - |
+    ~/.local/share/tmhmm-2.0c/bin/decodeanhmm.Linux_x86_64 \
+    ~/.local/share/tmhmm-2.0c/lib/TMHMM2.0.model \
+    example.fasta \
+    -f ~/.local/share/tmhmm-2.0c/lib/TMHMM2.0.options || true
+  - rm example.fasta
+  # Install and test NetMHC2pan
   - sudo apt install tcsh
-  - Rscript -e "netmhc2pan::install_netmhc2pan(netmhc2pan::get_netmhc2pan_url())"
+  - Rscript -e "netmhc2pan::install_netmhc2pan()"
+  - echo -e ">sp|L0T550|RIP2_MYCTU_158_180\nAVLWAGVAFLAFLQLTALVLNLL" > example.fasta
+  - ~/.local/share/netMHCIIpan-3.2/netMHCIIpan -f example.fasta
+  - rm example.fasta
   # proselint
   - sudo pip install proselint
 
-after_script:
-  - qmake
-  - make
-
 after_success:
-  - ls
   - Rscript -e 'lintr::lint_package()'
   - Rscript -e 'covr::codecov()'
+  - Rscript -e 'goodpractice::gp()'
 
 after_failure:
-  - ls
-  - apt-cache search libgit2
+  - pwd
+  - find . | egrep "fasta"
