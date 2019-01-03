@@ -4,6 +4,7 @@
 ^short\.fasta$
 ^\.travis\.yml$
 ^doc$
+^pics$
 ^cpp$
 ^scripts$
 ^net_mhc2_pan\.html$
