@@ -4,6 +4,7 @@ dist: trusty
 
 r_packages:
   - devtools
+  - git2r
 
 r_github_packages:
   - jimhester/covr
