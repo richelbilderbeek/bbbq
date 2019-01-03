@@ -19,7 +19,8 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install -y libmagick++-dev
   - sudo apt-get install -y libgit2-dev
-  - apt-cache search libgit2
+  - sudo apt-get install -y r-cran-git2r
+  - apt-cache search libgit
   # C++14
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   - sudo apt-get update -qq
