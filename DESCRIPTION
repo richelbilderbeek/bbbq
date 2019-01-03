@@ -19,7 +19,8 @@ Imports:
     netmhc2pan,
     stringr,  
     tmhmm
-Suggests: 
+Suggests:
+    devtools,
     testit,
     testthat,
     knitr,
