@@ -18,143 +18,9 @@ It relies on:
    from a TMHMM and NetMHC2pan file,
    create an 'epitopeome'
 
-## Data
-
-[Data files](http://richelbilderbeek.nl/bbbq.zip):
-
- * 1. `UP000001584_83332.fasta`: TBC proteome, 
-   from [here](ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/QfO/Bacteria/UP000001584_83332.fasta.gz) ([overview of reference genomes](ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/QfO/README))
-
-```
-wget ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/QfO/Bacteria/UP000001584_83332.fasta.gz
-gunzip UP000001584_83332.fasta.gz
-```
-
- * 2. `tbc_netmhc2pan_bindings.csv`: TBC proteome's presented MHC2 epitopes,
-   from NetMHC2pan
-
-```
-write.csv(
-  x = run_netmhc2pan("~/UP000001584_83332.fasta"), 
-  file = "~/tbc_netmhc2pan_bindings.csv"
-)
-```
-
- * 3. `tbc_tmhmm.html`: TBC proteome's TMHs, 
-   from TMHSS
-
-Done by [the TMHMM server](http://www.cbs.dtu.dk/services/TMHMM), then:
-
-```
-wget -O tbc_tmhmm.html http://www.cbs.dtu.dk//cgi-bin/webface2.fcgi?jobid=5C27132C0000126487F0E5A6
-```
-
- * 4. `tbc_tmhmm.txt`: TBC proteome's TMHs, 
-   from TMHSS
-
-```
-cat tbc_tmhmm.html | egrep "^[a-z]{2}\|" > tbc_tmhmm.txt
-```
-
- * 5. Sequences of the TMHs in the TBC proteome
-
-```
-tmhprot::create_tmh_prot_file(
-  proteome_filename = "/home/richel/UP000001584_83332.fasta",
-  tmhs_filename = "/home/richel/tbc_tmhmm.txt",
-  tmh_prot_filename = "/home/richel/tbc_tmh_prot.fasta"
-)
-```
-
- * 6. Count the number of AAs in the proteome:
- 
-```
-richel@oldskool:~$ cat UP000001584_83332.fasta | egrep -v "^>" | wc --chars
-1355826
-```
-
- * 7. Count the number of AAs in the TMH part of the proteome:
-
-```
-richel@oldskool:~$ cat tmh_prot.fasta | egrep -v "^>" | wc --chars
-78507
-```
-
- * 8. Select the strong MHC2 binders
-
-```{r}
-df_all <- read.csv(file = "~/bbbq/tbc_netmhc2pan_bindings.csv")
-# Strong binders
-df <- df_all[df_all$Rank <= 5.0, ]
-# All we need
-df_sub <-df[, c("Pos", "Peptide", "ID", "Rank")]
-utils::write.csv(
-  x = df_sub,
-  file = "~/bbbq/tbc_netmhc2pan_bindings_strong.csv",
-  row.names = FALSE
-)
-``` 
-
- * 9. Create the epitopeome, `tbc_epitiopeome.fasta`
-
-```c++
-const std::string tmh_filename = "/home/richel/bbbq/tbc_tmhmm.txt";
-assert(QFile::exists(tmh_filename.c_str()));
-const std::string netmhc2pan_filename = "/home/richel/bbbq/tbc_netmhc2pan_bindings_strong.csv";
-assert(QFile::exists(netmhc2pan_filename.c_str()));
-const std::string result_filename = "/home/richel/tbc_epitiopeome.fasta";
-
-create_epitopeome_file_cpp(
-  tmh_filename,
-  netmhc2pan_filename,
-  result_filename
-);
-```
-
- * 10. Stats
-
-```
-richel@oldskool:~/bbbq$ cat tbc_epitiopeome.fasta | egrep -v "^>" | egrep -o "o" | wc --chars
-1882706
-richel@oldskool:~/bbbq$ cat tbc_epitiopeome.fasta | egrep -v "^>" | egrep -o "O" | wc --chars
-453788
-richel@oldskool:~/bbbq$ cat tbc_epitiopeome.fasta | egrep -v "^>" | egrep -o "i" | wc --chars
-138308
-richel@oldskool:~/bbbq$ cat tbc_epitiopeome.fasta | egrep -v "^>" | egrep -o "I" | wc --chars
-38224
-richel@oldskool:~/bbbq$ cat tbc_epitiopeome.fasta | egrep -v "^>" | egrep -o "t" | wc --chars
-76648
-richel@oldskool:~/bbbq$ cat tbc_epitiopeome.fasta | egrep -v "^>" | egrep -o "T" | wc --chars
-73628
-```
-
-Location|AAs non-binder|AA binder|Total AAs|Percentage bound
---------|-------|------|-------|---
-Inside  | 138308| 38224| 176532|21
-Outside |1882706|453788|2336494|19
-TMH     |  76648| 73628| 150276|48
-
-### Links
-
- * [epitope-prediction](https://github.com/jtextor/epitope-prediction)
- * [NetMHCIIpan](www.cbs.dtu.dk/services/NetMHCIIpan) website
-
-
-
-
-
-
-
-`epitopeome` depends on:
-
- * [netmhc2pan](https://github.com/richelbilderbeek/netmhc2pan): 
-   obtain MHC2 epitopes for a proteome
- * [tmhmm](https://github.com/richelbilderbeek/tmhmm):
-   obtain the topology of a transmembrane protein
-
 ## Install
 
-The `epitopeome` package depends on the `tmhmm` package, which needs
+The `bbbq` package depends on the `tmhmm` package, which needs
 to be installed first:
 
 ```{r}
@@ -179,7 +45,7 @@ a helpful error message:
 tmhmm::check_tmhmm_installation()
 ```
 
-Additionall, The `epitopeome` package depends on the `netmhc2pan` package, which needs
+Additionall, The `bbbq` package depends on the `netmhc2pan` package, which needs
 to be installed as well:
 
 ```{r}
@@ -204,39 +70,93 @@ a helpful error message:
 netmhc2pan::check_netmhc2pan_installation()
 ```
 
+Another dependency is the `epitopiome` package.
 Installing the `epitopeome` package:
 
 ```{r}
 devtools::install_github("richelbilderbeek/epitopeome")
 ```
 
+```{r}
+devtools::install_github("richelbilderbeek/bbbq")
+```
+
 ## Usage
 
-We need a FASTA file to work on:
+From a protein sequence, `bbbq` estimates where amino acids of transmembrane proteins 
+are located (inside, outside, in the membrane) and which bind to an MHC2
+allele with a certain strength.
+
+We need a FASTA file with at least one protein sequence in it to work on:
 
 ```{r}
-fasta_filename <- system.file("extdata", "tmhmm.fasta", package = "tmhmm")
+fasta_filename <- system.file("extdata", "short.fasta", package = "bbbq")
 ```
 
-The FASTA file should contain the protein sequences of one or more
-genes. Reading the file ...
+This is how (the top of) such a FASTA file looks like:
 
 ```{r}
-cat(readLines(fasta_filename), sep = "\n")
+cat(head(readLines(fasta_filename, warn = FALSE)), sep = "\n")
 ```
 
-results in:
+```
+>sp|A0A089QKZ7|Y155A_MYCTU Uncharacterized protein Rv1155A OS=Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv) OX=83332 GN=Rv1155A PE=1 SV=1
+MGESKSPQESSSEGETKRKFREALDRKMAQSSSGSDHKDGGGKQSRAHGPVASRREFRRK
+SG
+>sp|A0A089QRB9|MSL3_MYCTU Mycolipanoate synthase OS=Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv) OX=83332 GN=msl3 PE=1 SV=2
+MRTATATSVAVIGMACRLPGGIDSPQRLWEALLRGDDLVGEIPADRWDANVYYDPEPGVP
+>sp|E2FZM4|SOCA_MYCTU Uncharacterized protein SocA OS=Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv) OX=83332 GN=socA PE=2 SV=1
+```
 
+Different MHC2 alleles bind differently to protein epitopes. 
+By default, `bbbq` uses only the default MHC2 allele used by NetMCHIIpan.
+In this demo, we'll use the first two MHC2 alleles from the complete
+NetMHCIIpan set of more than 5000 alleles:
+
+```{r}
+alleles <- netmhc2pan::get_netmhc2pan_alleles()[1:2]
+testit::assert(all(alleles %in% netmhc2pan::get_netmhc2pan_alleles()))
 ```
->5H2A_CRIGR you can have comments after the ID
-MEILCEDNTSLSSIPNSLMQVDGDSGLYRNDFNSRDANSSDASNWTIDGENRTNLSFEGYLPPTCLSILHL
-QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLMSLAIADMLLGFLVMPVSMLTILYGYRWP
-LPSKLCAVWIYLDVLFSTASIMHLCAISLDRYVAIQNPIHHSRFNSRTKAFLKIIAVWTISVGVSMPIPVF
-GLQDDSKVFKQGSCLLADDNFVLIGSFVAFFIPLTIMVITYFLTIKSLQKEATLCVSDLSTRAKLASFSFL
-PQSSLSSEKLFQRSIHREPGSYTGRRTMQSISNEQKACKVLGIVFFLFVVMWCPFFITNIMAVICKESCNE
-HVIGALLNVFVWIGYLSSAVNPLVYTLFNKTYRSAFSRYIQCQYKENRKPLQLILVNTIPALAYKSSQLQA
-GQNKDSKEDAEPTDNDCSMVTLGKQQSEETCTDNINTVNEKVSCV
+
+Select a binding strength. For example, a value of `5.0` will select
+those epitopes that are in the top 5 percent.
+
+```{r}
+binding_strength_threshold <- 5.0
 ```
+
+Here, the BBBQ is answered:
+
+```{r}
+df <- bbbq::answer_bbbq(
+  fasta_filename = fasta_filename,
+  alleles = alleles,
+  binding_strength_threshold = binding_strength_threshold
+)
+```
+
+Resulting in:
+
+```{r}
+knitr::kable(df)
+```
+
+|epitopium |   n|
+|:---------|---:|
+|i         | 276|
+|m         |  27|
+|o         | 774|
+|I         |  69|
+|M         |  19|
+|O         | 148|
+
+Legend:
+
+Location|Strong binder|Weak binder
+---|---|---
+outside|O|o
+membrane|M|m
+inside|I|i
 
 ## Dependencies
 
@@ -265,3 +185,8 @@ MacOS|N|N|N
 OSF1|Y|N|N
 SunOS|Y|N|N
 Windows|N|N|N
+
+### Links
+
+ * [NetMHCIIpan](www.cbs.dtu.dk/services/NetMHCIIpan) website
+ * [TMHMM](www.cbs.dtu.dk/services/TMHMM)
