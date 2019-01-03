@@ -9,9 +9,9 @@ The Bilderbeek Bianchi and Bogaart Question.
 
 It relies on:
 
- * [tmhprot](https://github.com/richelbilderbeek/tmhprot): 
-   from a proteome and a TMHMM file,
-   creates a proteome with the sequences of only the TMHs
+ * [tmhmm](https://github.com/richelbilderbeek/tmhmm): estimates
+   the amino acids locations (inside, outside, membrane) 
+   in a transmembrane protein 
  * [netmhc2pan](https://github.com/richelbilderbeek/netmhc2pan): install, 
    call and parse the output of 'NetMHC2pan'
  * [epitopeome](https://github.com/richelbilderbeek/epitopeome): 
