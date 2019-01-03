@@ -28,7 +28,7 @@ before_install:
   - apt-cache search libgit
   - apt-cache search git2
   - apt-cache search git3
-  - sudo apt-get install libgit2-dev libgit2-dbg r-cran-git2r
+  - sudo apt-get install -y libgit2-dev libgit2-dbg r-cran-git2r
 
 before_script:
   # C++14
