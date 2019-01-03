@@ -5,7 +5,6 @@ dist: trusty
 
 r_packages:
   - devtools
-  - git2r
 
 r_github_packages:
   - jimhester/covr
@@ -14,6 +13,9 @@ r_github_packages:
   - richelbilderbeek/netmhc2pan
   - richelbilderbeek/tmhmm
   - MangoTheCat/goodpractice
+
+before_install:
+  - sudo apt-get install libgit2-dev
 
 before_script:
   # C++14
