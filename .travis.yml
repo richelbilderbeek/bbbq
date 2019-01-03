@@ -5,7 +5,6 @@ dist: trusty
 
 r_binary_packages:
   - libgit2
-  - ncdf4
   - magick
 
 r_packages:
