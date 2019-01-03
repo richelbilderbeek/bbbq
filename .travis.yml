@@ -1,8 +1,5 @@
-# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-
 language: R
 sudo: false
-cache: packages
 dist: trusty
 
 r_packages:
@@ -15,7 +12,6 @@ r_github_packages:
   - richelbilderbeek/netmhc2pan
   - richelbilderbeek/tmhmm
   - MangoTheCat/goodpractice
-  - ropensci/spelling
 
 before_script:
   # C++14
