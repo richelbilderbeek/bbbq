@@ -20,6 +20,7 @@ before_install:
   - sudo add-apt-repository -y ppa:opencpu/imagemagick
   - sudo apt-get update
   - sudo apt-get install -y libmagick++-dev
+  - sudo apt-get install -y libgit2-dev
   # C++14
   #- sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   #- sudo apt-get update -qq
@@ -52,3 +53,4 @@ after_success:
 
 after_failure:
   - ls
+  - apt-cache search libgit2
