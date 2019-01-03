@@ -186,6 +186,18 @@ OSF1|Y|N|N
 SunOS|Y|N|N
 Windows|N|N|N
 
+### How big is `bbbq`?
+
+```
+cat $(find . | egrep "/(epitopeome|tmhmm|netmhc2pan|bbbq)/" | egrep -v "/\.git" | egrep "\.R$" | egrep -v "\.Rcheck") | wc
+```
+
+resulted in:
+
+ * 1565 lines
+ * 5087 words
+ * 49735 characters
+
 ### Links
 
  * [NetMHCIIpan](www.cbs.dtu.dk/services/NetMHCIIpan) website
