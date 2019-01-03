@@ -15,7 +15,7 @@ r_github_packages:
   - MangoTheCat/goodpractice
 
 before_install:
-  - sudo apt-get install libgit2-dev libgit2-dbg
+  - sudo apt-get install libgit2-dev libgit2-dbg r-cran-git2r
   - apt-cache search libgit
   - apt-cache search git2
   - apt-cache search git3
