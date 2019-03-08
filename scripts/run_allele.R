@@ -1,14 +1,16 @@
 library(bbbq)
 
 args <- commandArgs(trailingOnly = TRUE)
-testit::assert(length(args) == 1)
+testit::assert(length(args) == 2)
 testit::assert(args[1] >= 1)
 testit::assert(args[1] <= 3)
+fasta_filename <- system.file("extdata", args[2], package = "bbbq")
+testit::assert(nchar(fasta_filename) > 0)
 
 # Setup
 allele_no <- args[1]
 #fasta_filename <- system.file("extdata", "UP000001584_83332.fasta", package = "bbbq")
-fasta_filename <- system.file("extdata", "UP000001584_83332_tr_I6WYT7_I6WYT7_MYCTU.fasta", package = "bbbq")
+#fasta_filename <- system.file("extdata", "UP000001584_83332_tr_I6WYT7_I6WYT7_MYCTU.fasta", package = "bbbq")
 binding_strength_threshold <- 5.0
 root_folder <- path.expand("~/GitHubs/bbbq/scripts")
 
