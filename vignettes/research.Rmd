@@ -1,0 +1,93 @@
+---
+title: "Research"
+author: "Richel J.C. Bilderbeek"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Demo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Setup
+
+```{r}
+library(bbbq)
+```
+
+## Usage
+
+Find the three alleles:
+
+ * `DRB4*0101` 
+ * `DPB1*0402`
+ * `DQA1*0501/DQB1*0301`
+
+```{r}
+all_alleles <- netmhc2pan::get_netmhc2pan_alleles()
+alleles <- c("DRB4_0101", "HLA-DPA10103-DPB10402", "HLA-DQA10501-DQB10301")
+testit::assert(all(alleles %in% all_alleles))
+```
+
+
+
+From a protein sequence, `bbbq` estimates where amino acids of transmembrane proteins 
+are located (inside, outside, in the membrane) and which bind to an MHC2
+allele with a certain strength.
+
+We need a FASTA file with at least one protein sequence in it to work on,
+in this case, a tuberculosis reference genome, from [EMBL-EBI](https://www.ebi.ac.uk/reference_proteomes):
+
+```{r}
+#fasta_filename <- system.file("extdata", "UP000001584_83332.fasta", package = "bbbq")
+fasta_filename <- system.file("extdata", "UP000001584_83332_tr_I6WYT7_I6WYT7_MYCTU.fasta", package = "bbbq")
+```
+
+
+Select a binding strength. For example, a value of `5.0` will select
+those epitopes that are in the top 5 percent.
+
+```{r}
+binding_strength_threshold <- 5.0
+```
+
+Here, the BBBQ is answered:
+
+```{r}
+df <- data.frame(allele = rep(alleles, each = 6), epitopium = NA, n = NA) 
+for (i in seq_along(alleles)) {
+  df_new <- bbbq::answer_bbbq(
+    fasta_filename = fasta_filename,
+    alleles = alleles[i],
+    binding_strength_threshold = binding_strength_threshold
+  )
+  df[(1 + ((i - 1) * 6)):(1 + ((i - 0)* 6) - 1), 2:3] <- df_new
+}
+knitr::kable(df)
+```
+
+
+
+Legend:
+
+Location|Strong binder|Weak binder
+---|---|---
+outside|O|o
+membrane|M|m
+inside|I|i
+
+## Appendix
+
+The second allele, `DPB1*0402`, has multiple variants. I just picked the first one.
+
+```{r}
+all_alleles[which(!is.na(stringr::str_extract(all_alleles, "DPB10402")))]
+```
+
