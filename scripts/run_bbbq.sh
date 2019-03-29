@@ -6,8 +6,8 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
 #SBATCH --mem=1G
-#SBATCH --job-name=answer_bbbq
-#SBATCH --output=answer_bbbq.log
+#SBATCH --job-name=run_bbq-%j
+#SBATCH --output=run_bbq-%j.log
 module load GCCcore/4.9.3
 module load XZ/5.2.2-foss-2016a
 module load R
