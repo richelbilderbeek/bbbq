@@ -21,8 +21,8 @@
 #SBATCH --output=install_bbbq.log
 module load GCCcore/4.9.3 
 module load XZ/5.2.2-foss-2016a
-module load R
 module load Perl
+module load R
 
 branch=$1
 if [ "$#" -ne 1 ]; then
