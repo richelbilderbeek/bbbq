@@ -1,24 +1,24 @@
 #!/bin/bash
-# Script to install bbbq and its dependencies
+# Script to install epitopeome and its dependencies
 # on the Peregrine computer cluster
 #
 # Usage:
 #
 # * To install master:
 #
-# sbatch 1_install_bbbq.sh
+# sbatch 1_install_epitopeome.sh
 #
 # * To install a branch, e.g. develop:
 #
-# sbatch 1_install_bbbq.sh develop
+# sbatch 1_install_epitopeome.sh develop
 #
 #SBATCH --time=1:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
 #SBATCH --mem=1G
-#SBATCH --job-name=install_bbbq
-#SBATCH --output=install_bbbq.log
+#SBATCH --job-name=install_epitopeome
+#SBATCH --output=install_epitopeome.log
 module load GCCcore/4.9.3 
 module load XZ/5.2.2-foss-2016a
 module load R
@@ -87,8 +87,8 @@ Rscript -e 'epitopeome::create_epitopeome(system.file("extdata", "proteome.fasta
 # BBBQ
 ################################################################################
 
-echo "Installing bbbq GitHub"
+echo "Installing BBBQ GitHub"
 Rscript -e "devtools::install_github(\"richelbilderbeek/bbbq\", ref = \"$branch\")" 
 
-echo "bbbq run:"
-Rscript -e 'bbbq::answer_bbbq(system.file("extdata", "short.fasta", package = "bbbq"))'
+echo "epitopeome run:"
+Rscript -e 'epitopeome::create_epitopeome(system.file("extdata", "proteome.fasta", package = "epitopeome"))'

@@ -2,6 +2,16 @@
 #' @inheritParams default_params_doc
 #' @return a data frame with counts of the epitopa
 #' @author Richel J.C. Bilderbeek
+#' @examples
+#'   library(testthat)
+#'
+#'   fasta_filename <- system.file("extdata", "short.fasta", package = "bbbq")
+#'   df <- answer_bbbq(fasta_filename)
+#'
+#'   expect_true("epitopium" %in% names(df))
+#'   expect_true("n" %in% names(df))
+#'   expect_equal(df$epitopium, c("i", "m", "o", "I", "M", "O"))
+#'   expect_equal(df$n, c(295, 31, 830, 50, 15, 92))
 #' @export
 answer_bbbq <- function(
   fasta_filename,
