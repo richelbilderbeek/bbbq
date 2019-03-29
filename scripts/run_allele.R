@@ -2,32 +2,22 @@ library(bbbq)
 library(netmhc2pan)
 
 args <- commandArgs(trailingOnly = TRUE)
-if (1 == 2) {
-  args <- c("1", "UP000001584_83332_6.fasta")
-}
-testit::assert(length(args) == 2)
-testit::assert(args[1] >= 1)
-testit::assert(args[1] <= 3)
-fasta_filename <- system.file("extdata", args[2], package = "bbbq")
-testit::assert(nchar(fasta_filename) > 0)
+
+testit::assert(length(args) == 1)
+fasta_filename <- system.file("extdata", "UP000001584_83332_0.fasta", package = "bbbq")
+print("SIMPLIED PROTEOME!")
 
 # Setup
-allele_no <- as.numeric(args[1])
+allele <- args[1]
 binding_strength_threshold <- 5.0
 root_folder <- path.expand("~/GitHubs/bbbq/scripts")
 
-all_alleles <- netmhc2pan::get_netmhc2pan_alleles()
-alleles <- c("DRB4_0101", "HLA-DPA10103-DPB10402", "HLA-DQA10501-DQB10301")
-testit::assert(all(alleles %in% all_alleles))
-allele <- alleles[allele_no]
-
-tmhmm_filename <- file.path(root_folder, paste0("allele_", allele_no, ".txt"))
-netmhc2pan_filename <- file.path(root_folder, paste0("allele_", allele_no, ".csv"))
-epitopeome_filename <- file.path(root_folder, paste0("allele_", allele_no, ".fasta"))
-result_filename <- file.path(root_folder, paste0("allele_", allele_no, "_result.csv"))
+tmhmm_filename <- file.path(root_folder, paste0(allele, ".txt"))
+netmhc2pan_filename <- file.path(root_folder, paste0(allele, ".csv"))
+epitopeome_filename <- file.path(root_folder, paste0(allele, ".fasta"))
+result_filename <- file.path(root_folder, paste0(allele, "_result.csv"))
 
 # Output
-print(paste("allele_no:", allele_no))
 print(paste("allele:", allele))
 print(paste("fasta_filename:", fasta_filename))
 print(paste("binding_strength_threshold:", binding_strength_threshold))
@@ -39,7 +29,7 @@ print(paste("result_filename:", result_filename))
 # Run
 df <- bbbq::answer_bbbq(
     fasta_filename = fasta_filename,
-    alleles = alleles[allele_no],
+    alleles = allele,
     binding_strength_threshold = binding_strength_threshold,
     tmhmm_filename = tmhmm_filename,
     netmhc2pan_filename = netmhc2pan_filename,
