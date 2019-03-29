@@ -4,8 +4,7 @@ library(netmhc2pan)
 args <- commandArgs(trailingOnly = TRUE)
 
 testit::assert(length(args) == 1)
-fasta_filename <- system.file("extdata", "UP000001584_83332_0.fasta", package = "bbbq")
-print("SIMPLIED PROTEOME!")
+fasta_filename <- system.file("extdata", "UP000001584_83332.fasta", package = "bbbq")
 
 # Setup
 allele <- args[1]
