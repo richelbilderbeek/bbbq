@@ -1,7 +1,7 @@
 #!/bin/bash
 # Script to answer the BBBQ
 # on the Peregrine computer cluster
-#SBATCH --time=100:00:00
+#SBATCH --time=10:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --ntasks=1
