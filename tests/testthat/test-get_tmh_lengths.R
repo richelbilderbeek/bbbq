@@ -6,7 +6,7 @@ test_that("use", {
   testit::assert(netmhc2pan::is_netmhc2pan_installed())
 
   fasta_filename <- system.file(
-    "extdata", "proteome.fasta", package = "epitopeome"
+    "extdata", "UP000001584_83332_6.fasta", package = "bbbq"
   )
   tmhmm_filename <- tempfile(fileext = "txt")
   netmhc2pan_filename <- tempfile(fileext = ".csv")
