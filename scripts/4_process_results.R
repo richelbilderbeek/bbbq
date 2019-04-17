@@ -1,18 +1,17 @@
-# Create figure 1
+# Create figure 2
 setwd("~/GitHubs/bbbq/scripts")
 
-filenames <- list.files(pattern = "_result\\.csv$")
-alleles <- gsub("_result\\.csv$","", filenames)
-alleles <- gsub("_","*", alleles)
+filenames <- list.files(pattern = ".*\\.fasta$")
+filenames <- filenames[1]
 
-# Check sum of amino acids
-n_amino_acids_1 <- sum(utils::read.csv(filenames[1])$n)
-n_amino_acids_2 <- sum(utils::read.csv(filenames[2])$n)
-n_amino_acids_3 <- sum(utils::read.csv(filenames[3])$n)
-testit::assert(n_amino_acids_1 == n_amino_acids_2)
-testit::assert(n_amino_acids_2 == n_amino_acids_3)
-
-
+for (filename in filenames) {
+  allele <- gsub("\\.fasta$","", filename)
+  epitopeome <- readLines(con = filename)
+  epitopeome <- epitopeome[20:30]
+  dist_bind_map <- epitopeome::calc_binding_freqs(epitopeome)
+  dist_bind_map
+}
+HIERO
 # Create table for in article
 df <- data.frame(
   allele = alleles,
