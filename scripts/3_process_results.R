@@ -60,6 +60,10 @@ df$perc_bound_tmh <- 100.0 * f_bound_tmh
 library(ggplot2)
 library(latex2exp)
 
+# Subdivide in facets
+n_facets <- 3
+df$facet <- as.factor(rep(1:n_facets, each = 1 + nrow(df) / n_facets)[1:nrow(df)])
+
 ggplot(df, aes(x = allele, y = perc_bound_tmh)) +
   geom_col(color = "black", fill = "white") +
   labs(
@@ -75,7 +79,9 @@ ggplot(df, aes(x = allele, y = perc_bound_tmh)) +
   ylab(TeX("$\\frac{M}{I + M + O}$ (%)")) +
   xlab("MHC-II allele") +
   geom_hline(yintercept = 100.0 * f_tmh, linetype = "dashed") +
-  theme(axis.text.x = element_text(size = 4, angle = 45, hjust = 1)) +
+  theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1)) +
   theme(plot.caption = element_text(hjust = 0)) +
-  theme(plot.title = element_text(hjust = 0.5)) + ggsave("figure_1.png")
+  theme(plot.title = element_text(hjust = 0.5)) +
+  facet_wrap(. ~ facet, scales = "free_x", drop = TRUE, nrow = n_facets) +
+  ggsave("figure_1.png", width = 29.7, height = 21.0, units = "cm")
 
