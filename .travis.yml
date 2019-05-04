@@ -1,7 +1,6 @@
 language: R
 sudo: true
 cache: packages
-dist: trusty
 
 r_packages:
   - devtools
