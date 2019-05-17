@@ -11,6 +11,7 @@ r_github_packages:
   - richelbilderbeek/netmhc2pan@develop
   - richelbilderbeek/tmhmm@develop
   - richelbilderbeek/epitopeome
+  - richelbilderbeek/beastier
 
 before_install:
   - sudo add-apt-repository -y ppa:opencpu/imagemagick
