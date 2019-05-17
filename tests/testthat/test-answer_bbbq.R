@@ -1,6 +1,6 @@
-context("test-answer_bbbq")
+context("test-answer_bbbq_1")
 
-test_that("answer_bbbq", {
+test_that("answer_bbbq_1", {
   testit::assert(tmhmm::is_tmhmm_installed())
   testit::assert(netmhc2pan::is_tcsh_installed())
     testit::assert(netmhc2pan::is_netmhc2pan_installed())
@@ -13,7 +13,7 @@ test_that("answer_bbbq", {
   epitopeome_filename <- tempfile(".fasta")
 
   testit::assert(all(alleles %in% netmhc2pan::get_netmhc2pan_alleles()))
-  df <- answer_bbbq(
+  df <- answer_bbbq_1(
     fasta_filename = fasta_filename,
     alleles = alleles,
     binding_strength_threshold = binding_strength_threshold,

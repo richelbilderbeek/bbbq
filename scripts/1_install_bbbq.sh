@@ -19,7 +19,7 @@
 #SBATCH --mem=1G
 #SBATCH --job-name=install_bbbq
 #SBATCH --output=install_bbbq.log
-module load GCCcore/4.9.3 
+module load GCCcore/4.9.3
 module load XZ/5.2.2-foss-2016a
 module load Perl
 module load R
@@ -34,13 +34,13 @@ fi
 # netmhc2pan
 ################################################################################
 echo "Installing netmhc2pan GitHub"
-Rscript -e "devtools::install_github(\"richelbilderbeek/netmhc2pan\", ref = \"$branch\")" 
+Rscript -e "devtools::install_github(\"richelbilderbeek/netmhc2pan\", ref = \"$branch\")"
 
 echo "Installing NetMHC2pan"
 Rscript -e 'netmhc2pan::install_netmhc2pan()'
 
 echo "NetMHC2pan binary installed:"
-Rscript -e 'netmhc2pan::is_netmhc2pan_bin_installed()' 
+Rscript -e 'netmhc2pan::is_netmhc2pan_bin_installed()'
 
 echo "NetMHC2pan data installed:"
 Rscript -e 'netmhc2pan::is_netmhc2pan_data_installed()'
@@ -59,13 +59,13 @@ Rscript -e 'netmhc2pan::run_netmhc2pan(fasta_filename = system.file("extdata", "
 ################################################################################
 
 echo "Installing TMHMM GitHub"
-Rscript -e "devtools::install_github(\"richelbilderbeek/tmhmm\", ref = \"$branch\")" 
+Rscript -e "devtools::install_github(\"richelbilderbeek/tmhmm\", ref = \"$branch\")"
 
 echo "Installing TMHMM"
 Rscript -e 'tmhmm::install_tmhmm()'
 
 echo "TMHMM binary installed:"
-Rscript -e 'tmhmm::is_tmhmm_bin_installed()' 
+Rscript -e 'tmhmm::is_tmhmm_bin_installed()'
 
 echo "TMHMM set up:"
 Rscript -e 'tmhmm::is_tmhmm_set_up()'
@@ -78,7 +78,7 @@ Rscript -e 'tmhmm::run_tmhmm(system.file("extdata", "tmhmm.fasta", package = "tm
 ################################################################################
 
 echo "Installing epitopeome GitHub"
-Rscript -e "devtools::install_github(\"richelbilderbeek/epitopeome\", ref = \"$branch\")" 
+Rscript -e "devtools::install_github(\"richelbilderbeek/epitopeome\", ref = \"$branch\")"
 
 echo "epitopeome run:"
 Rscript -e 'epitopeome::create_epitopeome(system.file("extdata", "proteome.fasta", package = "epitopeome"))'
@@ -88,7 +88,7 @@ Rscript -e 'epitopeome::create_epitopeome(system.file("extdata", "proteome.fasta
 ################################################################################
 
 echo "Installing bbbq GitHub"
-Rscript -e "devtools::install_github(\"richelbilderbeek/bbbq\", ref = \"$branch\")" 
+Rscript -e "devtools::install_github(\"richelbilderbeek/bbbq\", ref = \"$branch\")"
 
 echo "bbbq run:"
-Rscript -e 'bbbq::answer_bbbq(system.file("extdata", "short.fasta", package = "bbbq"))'
+Rscript -e 'bbbq::answer_bbbq_1(system.file("extdata", "short.fasta", package = "bbbq"))'

@@ -128,7 +128,7 @@ binding_strength_threshold <- 5.0
 Here, the BBBQ is answered:
 
 ```{r}
-df <- bbbq::answer_bbbq(
+df <- bbbq::answer_bbbq_1(
   fasta_filename = fasta_filename,
   alleles = alleles,
   binding_strength_threshold = binding_strength_threshold

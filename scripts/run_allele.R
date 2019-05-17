@@ -26,7 +26,7 @@ print(paste("epitopeome_filename:", epitopeome_filename))
 print(paste("result_filename:", result_filename))
 
 # Run
-df <- bbbq::answer_bbbq(
+df <- bbbq::answer_bbbq_1(
     fasta_filename = fasta_filename,
     alleles = allele,
     binding_strength_threshold = binding_strength_threshold,

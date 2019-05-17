@@ -63,7 +63,7 @@ Here, the BBBQ is answered:
 ```{r}
 df <- data.frame(allele = rep(alleles, each = 6), epitopium = NA, n = NA) 
 for (i in seq_along(alleles)) {
-  df_new <- bbbq::answer_bbbq(
+  df_new <- bbbq::answer_bbbq_1(
     fasta_filename = fasta_filename,
     alleles = alleles[i],
     binding_strength_threshold = binding_strength_threshold
