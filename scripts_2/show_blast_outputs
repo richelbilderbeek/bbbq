@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for i in $(seq 10 18)
+do
+  echo "***********************************************************************"
+  echo $i
+  echo "***********************************************************************"
+  blastp -query mycobacterium_short.faa -db mycobacterium_short.faa -outfmt $i
+done

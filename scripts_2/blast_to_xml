@@ -1,0 +1,3 @@
+#!/bin/bash
+
+blastp -query mycobacterium_short.faa -db mycobacterium_short.faa -out short_vs_short.xml -outfmt 5
