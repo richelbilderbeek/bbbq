@@ -7,6 +7,8 @@
 ^pics$
 ^cpp$
 ^scripts$
+^scripts_1$
+^scripts_2$
 ^net_mhc2_pan\.html$
 ^net_mhc2_pan_short\.html$
 ^tmhmm_result\.html$
