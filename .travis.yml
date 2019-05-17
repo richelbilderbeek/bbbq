@@ -24,7 +24,7 @@ before_install:
   - sudo apt-get install -qq libboost-all-dev
   # Fortran
   - sudo apt-get install -qq libssl-dev
-  - sudo apt-get install -qq libgfortran-7-dev
+  #- sudo apt-get install -qq libgfortran-7-dev
 
 before_script:
   # Qt5
