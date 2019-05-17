@@ -21,6 +21,7 @@ Imports:
     stringr,  
     tmhmm
 Suggests:
+    beastier,
     devtools,
     testit,
     testthat,
