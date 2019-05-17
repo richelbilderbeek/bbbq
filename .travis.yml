@@ -1,4 +1,5 @@
 language: R
+dist: xenial
 sudo: true
 cache: packages
 
