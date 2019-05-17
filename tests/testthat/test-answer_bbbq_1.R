@@ -1,6 +1,9 @@
 context("test-answer_bbbq_1")
 
 test_that("answer_bbbq_1", {
+
+  if (!beastier::is_on_travis()) return()
+
   testit::assert(tmhmm::is_tmhmm_installed())
   testit::assert(netmhc2pan::is_tcsh_installed())
     testit::assert(netmhc2pan::is_netmhc2pan_installed())

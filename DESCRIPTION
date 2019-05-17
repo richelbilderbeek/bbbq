@@ -24,7 +24,7 @@ Suggests:
     beastier,
     devtools,
     testit,
-    testthat,
+    testthat (>= 2.1.0),
     knitr,
     rmarkdown
 VignetteBuilder: knitr
