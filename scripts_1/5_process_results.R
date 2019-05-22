@@ -5,7 +5,7 @@ df <- read.csv(file = "table_1.csv", stringsAsFactors = FALSE)
 head(df)
 df$allele_full <- df$allele
 
-df$allele <- gsub(pattern = "HLA-DPA[0-9]{5}-", replacement = "", x = df$allele_full)
+df$allele <- gsub(pattern = "HLA-DPA[0-9]{5}-", replacement = "HLA-DPA.....-", x = df$allele_full)
 df$allele <- as.factor(df$allele)
 
 # Number of amino acids
@@ -29,7 +29,7 @@ ggplot(df, aes(x = allele, y = perc_bound_tmh)) +
   #geom_point(color = "black", fill = "white") +
   #geom_errorbar(stat = 'summary', width = .2) +
   #geom_errorbar() +
-  stat_summary(fun.data = mean_se, geom = "errorbar") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
   labs(
     title = "The location of the peptides binding to MHC2 alleles",
     caption = TeX(
