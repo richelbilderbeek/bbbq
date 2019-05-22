@@ -16,3 +16,4 @@ net_mhc2_pan_short.html
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
+scripts/
