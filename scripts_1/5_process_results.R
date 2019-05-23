@@ -5,7 +5,7 @@ df <- read.csv(file = "table_1.csv", stringsAsFactors = FALSE)
 head(df)
 df$allele_full <- df$allele
 
-df$allele <- gsub(pattern = "HLA-DPA[0-9]{5}-", replacement = "HLA-DPA.....-", x = df$allele_full)
+df$allele <- gsub(pattern = "HLA-DPA[0-9]{5}-", replacement = "HLA-DPAx-", x = df$allele_full)
 df$allele <- as.factor(df$allele)
 
 # Number of amino acids
