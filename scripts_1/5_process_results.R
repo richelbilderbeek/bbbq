@@ -43,7 +43,6 @@ ggplot(df, aes(x = allele, y = perc_bound_tmh)) +
   ylab(TeX("$\\frac{M}{I + M + O}$ (%)")) +
   xlab("MHC-II allele") +
   geom_hline(yintercept = 100.0 * f_tmh, linetype = "dashed") +
-
   theme(axis.text.x = element_text(size = 8, angle = 45, hjust = 1)) +
   theme(plot.caption = element_text(hjust = 0)) +
   theme(plot.title = element_text(hjust = 0.5)) +

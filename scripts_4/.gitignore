@@ -1,0 +1,5 @@
+*.csv
+*.fasta
+*.txt
+*.log
+Rplots.pdf
