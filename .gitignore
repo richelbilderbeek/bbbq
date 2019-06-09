@@ -17,3 +17,4 @@ net_mhc2_pan_short.html
 vignettes/*.html
 vignettes/*.pdf
 scripts/
+build-xml_to_csv-Desktop-Debug/
