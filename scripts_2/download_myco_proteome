@@ -3,4 +3,13 @@
 # Downloads the mycobacterium proteome and 
 # saves it as mycobacterium.faa
 #
+# Usage:
+#
+#   ./download_myco_proteome
+#
+# Notes:
+#
+# 'esearch' is in the 'ncbi-entrez-direct' Debian package
+#
+#
 esearch -db assembly -query '("Mycobacterium"[Organism] OR mycobacterium[All Fields]) AND (latest[filter] AND "complete genome"[filter] AND all[filter] NOT anomalous[filter])' | elink -target nuccore -name assembly_nuccore_refseq | elink -target protein | efetch -db protein -format fasta > mycobacterium.faa 
