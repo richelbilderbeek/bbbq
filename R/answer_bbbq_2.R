@@ -1,6 +1,9 @@
 #' Answer the second BBBQ
 #' @export
 answer_bbbq_2 <- function() {
+
+  return()
+
   #xml_filename <- system.file("extdata", "short_vs_short.xml", package = "bbbq")
   xml_filename <- "~/GitHubs/bbbq/scripts_2/short_vs_all.xml"
   testit::assert(file.exists(xml_filename))

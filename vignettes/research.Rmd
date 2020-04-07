@@ -78,10 +78,10 @@ knitr::kable(df)
 Legend:
 
 Location|Strong binder|Weak binder
----|---|---
-outside|O|o
-membrane|M|m
-inside|I|i
+--------|-------------|-----------
+outside |O            |o
+membrane|M            |m
+inside  |I            |i
 
 ## Appendix
 
