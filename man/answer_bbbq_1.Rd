@@ -4,10 +4,14 @@
 \alias{answer_bbbq_1}
 \title{Answer the BBBQ}
 \usage{
-answer_bbbq_1(fasta_filename, alleles = "DRB1_0101",
-  binding_strength_threshold = 5, tmhmm_filename = tempfile(".txt"),
+answer_bbbq_1(
+  fasta_filename,
+  alleles = "DRB1_0101",
+  binding_strength_threshold = 5,
+  tmhmm_filename = tempfile(".txt"),
   netmhc2pan_filename = tempfile(".csv"),
-  epitopeome_filename = tempfile(".fasta"))
+  epitopeome_filename = tempfile(".fasta")
+)
 }
 \arguments{
 \item{fasta_filename}{name of a FASTA file}

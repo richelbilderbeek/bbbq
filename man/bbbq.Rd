@@ -3,7 +3,6 @@
 \docType{package}
 \name{bbbq}
 \alias{bbbq}
-\alias{bbbq-package}
 \title{bbbq: The Bilderbeek Bianchi and Bogaart Question}
 \description{
 'bbbq' answers The Bilderbeek Bianchi and Bogaart Question

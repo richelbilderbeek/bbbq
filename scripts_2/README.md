@@ -1,5 +1,13 @@
 # `scripts_2`
 
+## :warning: `xml_to_csv` is broken
+```
+richel@sonic:~/GitHubs/bbbq/scripts_2$ readlink xml_to_csv
+../build-xml_to_csv-Desktop-Debug/xml_to_csv
+```
+
+## Back to normal :+1:
+
 Answers the second question of the BBBQ: what is the mutation rate in the TMH 
 parts of membrane proteins?
 
