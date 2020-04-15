@@ -1,0 +1,49 @@
+---
+title: "MHC-II haplotypes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{mhc2_haplotypes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(testthat)
+library(bbbq)
+library(netmhc2pan)
+```
+
+
+Greenbaum et al. [1], published the following list of MHC-II haplotype occurances:
+
+```{r}
+knitr::kable(head(bbbq::get_mhc2_haplotype_occurance()))
+```
+
+NetMHC2pan has these haplotypes:
+
+```{r}
+head(netmhc2pan::get_netmhc2pan_alleles())
+```
+
+Here we find out which NetMHC2pan haplotypes we will be using.
+
+```{r}
+df <- bbbq::get_mhc2_haplotype_occurance()
+df$name <- df$haplotype
+```
+
+
+## References
+
+ * [1] Greenbaum, J., Sidney, J., Chung, J., Brander, C., Peters, B. 
+   & Sette, A. (2011) Functional classification of class ii human leukocyte 
+  antigen (HLA) molecules reveals seven different supertypes and a surprising 
+  degree of repertoire sharing across supertypes. Immunogenetics, 63, 325–335.
