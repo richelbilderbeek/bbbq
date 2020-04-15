@@ -10,6 +10,7 @@ default_params_doc(
   binding_strength_threshold,
   epitopeome_filename,
   fasta_filename,
+  haplotypes,
   netmhc2pan_filename,
   proteome_filename,
   tmhmm_filename,
@@ -31,6 +32,8 @@ and will be put in the \code{/tmp} folder,
 which is cleaned by the operating system}
 
 \item{fasta_filename}{name of a FASTA file}
+
+\item{haplotypes}{a list of MHC-I or MHC-II haplotypes}
 
 \item{netmhc2pan_filename}{name of the file to store the
 NetMHC2pan output.

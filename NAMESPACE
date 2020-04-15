@@ -2,4 +2,6 @@
 
 export(answer_bbbq_1)
 export(answer_bbbq_2)
+export(calc_overlaps)
+export(get_mhc1_haplotypes)
 export(get_tmh_lengths)

@@ -60,7 +60,7 @@ binding_strength_threshold <- 5.0
 
 Here, the BBBQ is answered:
 
-```{r}
+```
 df <- data.frame(allele = rep(alleles, each = 6), epitopium = NA, n = NA) 
 for (i in seq_along(alleles)) {
   df_new <- bbbq::answer_bbbq_1(
@@ -87,7 +87,7 @@ inside  |I            |i
 
 The second allele, `DPB1*0402`, has multiple variants. I just picked the first one.
 
-```{r}
+```
 all_alleles[which(!is.na(stringr::str_extract(all_alleles, "DPB10402")))]
 ```
 

@@ -7,10 +7,10 @@
 ^pics$
 ^cpp$
 ^scripts$
-^scripts_1/$
-^scripts_2/$
-^scripts_3/$
-^scripts_4/$
+^scripts_1$
+^scripts_2$
+^scripts_3$
+^scripts_4$
 ^LICENSE$
 ^net_mhc2_pan\.html$
 ^net_mhc2_pan_short\.html$
@@ -19,3 +19,5 @@
 ^bbbq\.pro$
 ^bbbq\.pro\.user$
 ^bbbq\.qrc$
+^install.Rmd$
+
