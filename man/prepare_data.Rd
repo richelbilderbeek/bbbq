@@ -6,15 +6,16 @@
 into a more convenient data structure to work with: a named
 list of strings.}
 \usage{
-prepare_data()
+prepare_data(fasta_filename)
+}
+\arguments{
+\item{fasta_filename}{proteome as FASTA file,
+for example `proteome/UP000005640_9606.fasta.gz`:}
 }
 \description{
 Also creates a few other files that are helpful for the analysis.
 }
 \details{
-Input files:
-* `proteome/UP000005640_9606.fasta.gz`: proteome as FASTA file
-
 Output files:
 
  * `work/protein-lengths.txt`: length of all proteins in proteome

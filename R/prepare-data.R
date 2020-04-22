@@ -4,8 +4,6 @@
 #'
 #' Also creates a few other files that are helpful for the analysis.
 #'
-#' Input files:
-#' * `proteome/UP000005640_9606.fasta.gz`: proteome as FASTA file
 #'
 #' Output files:
 #'
@@ -18,9 +16,15 @@
 #'   ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/
 #'     QfO/Eukaryota/UP000005640_9606.fasta.gz
 #'
+#' @param fasta_filename proteome as FASTA file,
+#'   for example `proteome/UP000005640_9606.fasta.gz`:
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
-prepare_data <- function() {
-  x <- seqinr::read.fasta("proteome/UP000005640_9606.fasta.gz",
+#' @export
+prepare_data <- function(
+  fasta_filename
+) {
+  testthat::expect_true(file.exists(fasta_filename))
+  x <- seqinr::read.fasta(fasta_filename,
   	forceDNAtolower = FALSE, as.string = TRUE )
   x <- lapply( x, function(x) x[1] )
   names( x ) <- sapply( strsplit( names(x), "\\|" ), function(x) x[2] )
