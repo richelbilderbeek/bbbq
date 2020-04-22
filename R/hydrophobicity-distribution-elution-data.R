@@ -3,7 +3,6 @@
 hydrophobicity_distribution_elution_data <- function() {
 
   load("data/kyte.doolittle.scale.Rdata")
-  source("tools.R")
 
   tmh.eluted <- utils::read.table("data/TMH-Bcell-elution.txt",as.is=TRUE)$V1
   nontmh.eluted <- utils::read.table("data/non-TMH-Bcell-elution.txt",as.is=TRUE)$V1

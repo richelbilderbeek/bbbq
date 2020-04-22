@@ -6,7 +6,13 @@
 and have a very similar hydrophobicity distribution as the set of 9mers
 that do overlap with transmembrane helices.}
 \usage{
-hydrophobe_controls()
+hydrophobe_controls(tmh_9mers_as_data_filename)
+}
+\arguments{
+\item{tmh_9mers_as_data_filename}{filename to store
+per TMH protein, the indices at which it is TMH,
+in R data format.
+for example `work/tmh.9mers.Rdata`}
 }
 \description{
 Generates a set of 9mers that do not overlap with transmembrane helices

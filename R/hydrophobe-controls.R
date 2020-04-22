@@ -1,11 +1,15 @@
 #' Generates a set of 9mers that do not overlap with transmembrane helices
 #' and have a very similar hydrophobicity distribution as the set of 9mers
 #' that do overlap with transmembrane helices.
+#' @param tmh_9mers_as_data_filename filename to store
+#'   per TMH protein, the indices at which it is TMH,
+#'   in R data format.
+#'   for example `work/tmh.9mers.Rdata`
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
-hydrophobe_controls <- function() {
+hydrophobe_controls <- function(tmh_9mers_as_data_filename) {
 
   load("work/proteome.9mer.hydrophobicity.Rdata")
-  load("work/tmh.9mers.Rdata")
+  load(tmh_9mers_as_data_filename) # Used to be load("work/tmh.9mers.Rdata")
 
   is.tmh <- bbbq::nlapply( proteome.9mer.hydrophobicity, function(n,x){
   	r <- rep(0,length(x))

@@ -7,6 +7,12 @@ helices for all HLA supertypes.}
 \usage{
 calculate_overlap()
 }
+\arguments{
+\item{tmh_9mers_as_data_filename}{filename to store
+per TMH protein, the indices at which it is TMH,
+in R data format.
+for example `work/tmh.9mers.Rdata`}
+}
 \description{
 Determines the overlap of predicted HLA binders with transmembrane
 helices for all HLA supertypes.
