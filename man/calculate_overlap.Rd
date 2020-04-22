@@ -5,7 +5,7 @@
 \title{Determines the overlap of predicted HLA binders with transmembrane
 helices for all HLA supertypes.}
 \usage{
-calculate_overlap()
+calculate_overlap(tmh_9mers_as_data_filename)
 }
 \arguments{
 \item{tmh_9mers_as_data_filename}{filename to store

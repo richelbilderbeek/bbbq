@@ -5,7 +5,7 @@
 #'   in R data format.
 #'   for example `work/tmh.9mers.Rdata`
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
-calculate_overlap <- function() {
+calculate_overlap <- function(tmh_9mers_as_data_filename) {
   load(tmh_9mers_as_data_filename) # Used to be load("work/tmh.9mers.Rdata")
   pldf <- utils::read.table( "work/protein-lengths.txt", row.names=1 )
   pl <- pldf[,1]
