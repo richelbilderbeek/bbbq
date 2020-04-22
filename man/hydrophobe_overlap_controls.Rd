@@ -6,7 +6,12 @@
 'control population' consisting of 9mers that do not overlap with
 transmembrane helices.}
 \usage{
-hydrophobe_overlap_controls()
+hydrophobe_overlap_controls(protein_lengths_filename)
+}
+\arguments{
+\item{protein_lengths_filename}{filename to store the
+length of all proteins in proteome,
+for example `work/protein-lengths.txt`}
 }
 \description{
 Performs the same analysis as "calculate-overlap.R", but now for the

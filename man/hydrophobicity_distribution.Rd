@@ -6,13 +6,20 @@
 in the human proteome as well as all peptides overlapping
 with transmembrane helices.}
 \usage{
-hydrophobicity_distribution(tmh_9mers_as_data_filename)
+hydrophobicity_distribution(
+  tmh_9mers_as_data_filename,
+  kyte_doolittle_scale_as_data_filename
+)
 }
 \arguments{
 \item{tmh_9mers_as_data_filename}{filename to store
 per TMH protein, the indices at which it is TMH,
 in R data format.
 for example `work/tmh.9mers.Rdata`}
+
+\item{kyte_doolittle_scale_as_data_filename}{filename that stores the Kyte-Doolittle scale of
+hydrophobicity,
+for example `data/kyte.doolittle.scale.Rdata`}
 }
 \description{
 Determines the hydrophobicity distribution of all peptides

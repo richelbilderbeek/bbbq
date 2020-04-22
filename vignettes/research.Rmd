@@ -30,7 +30,7 @@ Find the three alleles:
  * `DPB1*0402`
  * `DQA1*0501/DQB1*0301`
 
-```{r}
+```
 all_alleles <- netmhc2pan::get_netmhc2pan_alleles()
 alleles <- c("DRB4_0101", "HLA-DPA10103-DPB10402", "HLA-DQA10501-DQB10301")
 testit::assert(all(alleles %in% all_alleles))

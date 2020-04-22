@@ -1,10 +1,21 @@
 #' Determines the overlap of predicted HLA binders with transmembrane
 #' helices for all HLA supertypes.
+#'
+#' Input:
+#'   * tmh_9mers_as_data_filename
+#'   * protein_lengths_filename
+#'
+#' Output:
+#'   * tmh_overlapping_binders_as_data_filename
 #' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
-calculate_overlap <- function(tmh_9mers_as_data_filename) {
+calculate_overlap <- function(
+  tmh_9mers_as_data_filename,
+  protein_lengths_filename,
+  tmh_overlapping_binders_as_data_filename
+) {
   load(tmh_9mers_as_data_filename) # Used to be load("work/tmh.9mers.Rdata")
-  pldf <- utils::read.table( "work/protein-lengths.txt", row.names=1 )
+  pldf <- utils::read.table(protein_lengths_filename, row.names=1 )
   pl <- pldf[,1]
   names(pl) <- rownames(pldf)
 
@@ -78,7 +89,7 @@ calculate_overlap <- function(tmh_9mers_as_data_filename) {
 
   grDevices::dev.off()
 
-  save( r, file="work/tmh-overlapping-binders.Rdata" )
+  save(r, file = tmh_overlapping_binders_as_data_filename)
 
   for( h in hlas ){
     if (pbin <= 1.0) {

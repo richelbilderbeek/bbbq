@@ -1,15 +1,16 @@
 #' Performs the same analysis as "calculate-overlap.R", but now for the
 #' 'control population' consisting of 9mers that do not overlap with
 #' transmembrane helices.
+#' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
-hydrophobe_overlap_controls <- function() {
+hydrophobe_overlap_controls <- function(protein_lengths_filename) {
 
   load("work/hydrophobe-control-peptides.Rdata" )
 
   d2 <- utils::unstack(hydrophobe.control.peptides,
   	`9mer` ~ protein)
 
-  pldf <- utils::read.table("work/protein-lengths.txt", row.names=1 )
+  pldf <- utils::read.table(protein_lengths_filename, row.names=1 )
   pl <- pldf[,1]
   names(pl) <- rownames(pldf)
 

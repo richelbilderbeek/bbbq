@@ -1,8 +1,11 @@
-# Orginal code by Johannes Textor
-# Adapted by Richel J.C. Bilderbeek
-hydrophobicity_distribution_elution_data <- function() {
+#' Something.
+#' @inheritParams default_params_doc
+#' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
+hydrophobicity_distribution_elution_data <- function(
+  kyte_doolittle_scale_as_data_filename
+) {
 
-  load("data/kyte.doolittle.scale.Rdata")
+  load(kyte_doolittle_scale_as_data_filename) # Used to be 'load("data/kyte.doolittle.scale.Rdata")'
 
   tmh.eluted <- utils::read.table("data/TMH-Bcell-elution.txt",as.is=TRUE)$V1
   nontmh.eluted <- utils::read.table("data/non-TMH-Bcell-elution.txt",as.is=TRUE)$V1

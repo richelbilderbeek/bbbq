@@ -4,10 +4,27 @@
 \alias{correlate_to_hydrophobicity}
 \title{Correlate to hydrophobicity}
 \usage{
-correlate_to_hydrophobicity()
+correlate_to_hydrophobicity(
+  tmh_overlapping_binders_as_data_filename,
+  kyte_doolittle_scale_as_data_filename
+)
+}
+\arguments{
+\item{tmh_overlapping_binders_as_data_filename}{filename to store
+per TMH overlapping binders
+in R data format.
+for example `work/tmh-overlapping-binders.Rdata`}
+
+\item{kyte_doolittle_scale_as_data_filename}{filename that stores the Kyte-Doolittle scale of
+hydrophobicity,
+for example `data/kyte.doolittle.scale.Rdata`}
 }
 \description{
-Correlate to hydrophobicity
+Input: kyte_doolittle_scale_as_data_filename
+  and tmh_overlapping_binders_as_data_filename
+}
+\details{
+Output: figure_1_d_filename
 }
 \author{
 Richel J.C. Bilderbeek, adapted from Johannes Textor

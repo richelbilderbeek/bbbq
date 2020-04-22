@@ -3,10 +3,13 @@
 #' with transmembrane helices.
 #' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
-hydrophobicity_distribution <- function(tmh_9mers_as_data_filename) {
+hydrophobicity_distribution <- function(
+  tmh_9mers_as_data_filename,
+  kyte_doolittle_scale_as_data_filename
+) {
 
   load("work/proteome.Rdata")
-  load("data/kyte.doolittle.scale.Rdata")
+  load(kyte_doolittle_scale_as_data_filename) # Used to be 'load("data/kyte.doolittle.scale.Rdata")'
 
   proteome.hydrophobicity <- lapply( proteome, function(x) kyte.doolittle.scale[bbbq::explode(x)] )
   proteome.9mer.hydrophobicity <- lapply( proteome.hydrophobicity,

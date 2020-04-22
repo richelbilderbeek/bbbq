@@ -5,17 +5,35 @@
 \title{Determines the overlap of predicted HLA binders with transmembrane
 helices for all HLA supertypes.}
 \usage{
-calculate_overlap(tmh_9mers_as_data_filename)
+calculate_overlap(
+  tmh_9mers_as_data_filename,
+  protein_lengths_filename,
+  tmh_overlapping_binders_as_data_filename
+)
 }
 \arguments{
 \item{tmh_9mers_as_data_filename}{filename to store
 per TMH protein, the indices at which it is TMH,
 in R data format.
 for example `work/tmh.9mers.Rdata`}
+
+\item{protein_lengths_filename}{filename to store the
+length of all proteins in proteome,
+for example `work/protein-lengths.txt`}
+
+\item{tmh_overlapping_binders_as_data_filename}{filename to store
+per TMH overlapping binders
+in R data format.
+for example `work/tmh-overlapping-binders.Rdata`}
 }
 \description{
-Determines the overlap of predicted HLA binders with transmembrane
-helices for all HLA supertypes.
+Input:
+  * tmh_9mers_as_data_filename
+  * protein_lengths_filename
+}
+\details{
+Output:
+  * tmh_overlapping_binders_as_data_filename
 }
 \author{
 Richel J.C. Bilderbeek, adapted from Johannes Textor

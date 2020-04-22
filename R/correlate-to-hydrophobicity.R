@@ -1,8 +1,17 @@
 #' Correlate to hydrophobicity
+#'
+#' Input: kyte_doolittle_scale_as_data_filename
+#'   and tmh_overlapping_binders_as_data_filename
+#'
+#' Output: figure_1_d_filename
+#' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
-correlate_to_hydrophobicity <- function() {
-  load("work/tmh-overlapping-binders.Rdata")
-  load("data/kyte.doolittle.scale.Rdata")
+correlate_to_hydrophobicity <- function(
+  tmh_overlapping_binders_as_data_filename,
+  kyte_doolittle_scale_as_data_filename
+) {
+  load(tmh_overlapping_binders_as_data_filename) # Used to be 'load("work/tmh-overlapping-binders.Rdata")'
+  load(kyte_doolittle_scale_as_data_filename) # Used to be 'load("data/kyte.doolittle.scale.Rdata")'
 
   M <- EpitopePrediction::smmMatrix( "HLA-A02:01" )$M
 

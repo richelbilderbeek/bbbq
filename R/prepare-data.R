@@ -16,12 +16,6 @@
 #' @inheritParams default_params_doc
 #' @param fasta_filename proteome as FASTA file,
 #'   for example `proteome/UP000005640_9606.fasta.gz`:
-#' @param trans_membrane_analysis_filename Filename for
-#'   uhhh, something, for example
-#'   `tmh-predictions/trans-membrane-analysis-shortened.txt`
-#' @param protein_lengths_filename filename to store the
-#'   length of all proteins in proteome,
-#'   for example `work/protein-lengths.txt`
 #' @param proteome_as_data_filename filename to store the
 #'   proteome in R data format,
 #'   for example `work/proteome.Rdata`
