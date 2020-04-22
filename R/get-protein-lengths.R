@@ -1,7 +1,7 @@
 #' Determines the lengths of all proteins in the human proteome.
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 get_protein_lengths <- function() {
-  x <- read.fasta("proteome/UP000005640_9606.fasta.gz",
+  x <- seqinr::read.fasta("proteome/UP000005640_9606.fasta.gz",
   				forceDNAtolower=FALSE, as.string=TRUE )
 
   for( i in seq_along(x) ){

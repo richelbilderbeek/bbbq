@@ -11,7 +11,9 @@ hydrophobicity_distribution <- function() {
   proteome.hydrophobicity <- lapply( proteome, function(x) kyte.doolittle.scale[bbbq::explode(x)] )
   proteome.9mer.hydrophobicity <- lapply( proteome.hydrophobicity,
   	function(x)
-  		if( length(x)>=9 ) tail( filter( x, rep(1/9,9), sides=1 ), -8 )
+  		if (length(x) >= 9) {
+  		  utils::tail(stats::filter( x, rep(1/9,9), sides = 1 ), -8 )
+  		}
   		else c() )
   save( proteome.9mer.hydrophobicity, file="work/proteome.9mer.hydrophobicity.Rdata" )
 
@@ -22,17 +24,21 @@ hydrophobicity_distribution <- function() {
   grDevices::pdf("plots/figure-1-b.pdf", width=4, height=4, useDingbats=FALSE)
   graphics::par(bty="n", mar=c(4,4,.2,.2))
 
-  plot( density( unlist(proteome.9mer.hydrophobicity, use.names=FALSE), na.rm=TRUE ),
+  graphics::plot(stats::density( unlist(proteome.9mer.hydrophobicity, use.names=FALSE), na.rm=TRUE ),
   	xlab="Mean hydrophobicity index in 9-mer",
   	ylab="Probability density", xlim=c(-5,5),
   	main="" )
 
-  lines( density( unlist( tmh.9mer.hydrophobicity, use.names=FALSE), na.rm=TRUE ),
-  	col=2 )
+  graphics::lines(
+    stats::density(
+      unlist(tmh.9mer.hydrophobicity, use.names=FALSE), na.rm=TRUE
+    ),
+  	col=2
+  )
 
 
-  legend( "topleft", c("all 9-mers"),text.col=c("black"), bty="n" )
-  legend( "topright", c("predicted\nTMH\n9-mers"), text.col=c("red"), bty="n" )
+  graphics::legend( "topleft", c("all 9-mers"),text.col=c("black"), bty="n" )
+  graphics::legend( "topright", c("predicted\nTMH\n9-mers"), text.col=c("red"), bty="n" )
 
   grDevices::dev.off()
 

@@ -14,7 +14,7 @@ hydrophobe_controls <- function() {
 
   indices.9mers <- lapply( proteome.9mer.hydrophobicity, seq_along )
 
-  d <- cbind( stack( proteome.9mer.hydrophobicity ),
+  d <- cbind(utils::stack(proteome.9mer.hydrophobicity),
   	unlist( indices.9mers, use.names=FALSE ),
   	unlist( is.tmh, use.names=FALSE ) )
 
@@ -22,11 +22,11 @@ hydrophobe_controls <- function() {
   d <- d[,c(2,3,1,4)]
   colnames(d) <- c("protein","9mer", "hy", "tmh")
 
-  grp <- quantile( d[d$tmh==1, "hy"], probs=seq(0,1,length.out=101), na.rm=TRUE )
+  grp <- stats::quantile( d[d$tmh==1, "hy"], probs=seq(0,1,length.out=101), na.rm=TRUE )
   grp[1] <- grp[1]*0.99
   grp[2] <- grp[2]*1.01
 
-  d2 <- d[d$tmh==0 & d$hy >= grp[1] & d$hy <= tail(grp,1),]
+  d2 <- d[d$tmh==0 & d$hy >= grp[1] & d$hy <= utils::tail(grp,1),]
   d2$hyg <- cut( d2$hy, breaks=grp )
 
   n.per.group <- sum(d$tmh)/10/100
@@ -40,18 +40,22 @@ hydrophobe_controls <- function() {
   grDevices::pdf("plots/figure-4-a.pdf",useDingbats=FALSE, width=4,height=4 )
   graphics::par( bty="n", mar=c(4,4,.2,.2) )
 
-  plot( density( d$hy, na.rm=TRUE ) ,
+  graphics::plot(stats::density( d$hy, na.rm=TRUE ) ,
   	xlab="Mean hydrophobicity index in 9-mer",
   	ylab="Probability density", xlim=c(-5,5),
   	main="" )
 
-  lines( density( d[d$tmh==1,"hy"], na.rm=TRUE ), col=2 )
-  lines( density( hydrophobe.control.peptides$hy, na.rm=TRUE ), col=3 )
+  graphics::lines(
+    stats::density( d[d$tmh==1,"hy"], na.rm=TRUE ), col=2
+  )
+  graphics::lines(
+    stats::density( hydrophobe.control.peptides$hy, na.rm=TRUE ), col=3
+  )
 
 
-  legend( "topleft", c("all 9-mers"),text.col=c("black"), bty="n" )
-  legend( "topright", c("predicted\nTMH\n9-mers"), text.col=c("red"), bty="n" )
-  legend( "topright", c("\n\n\nmatched\nnon-TMH\n9-mers"), text.col=c("green"), bty="n" )
+  graphics::legend( "topleft", c("all 9-mers"),text.col=c("black"), bty="n" )
+  graphics::legend( "topright", c("predicted\nTMH\n9-mers"), text.col=c("red"), bty="n" )
+  graphics::legend( "topright", c("\n\n\nmatched\nnon-TMH\n9-mers"), text.col=c("green"), bty="n" )
 
   grDevices::dev.off()
 }

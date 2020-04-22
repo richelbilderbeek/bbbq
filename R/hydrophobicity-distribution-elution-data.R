@@ -18,14 +18,18 @@ hydrophobicity_distribution_elution_data <- function() {
   tmh.eluted <- sapply(tmh.eluted,hy)
   nontmh.eluted <- sapply(nontmh.eluted,hy)
 
-  plot( density(nontmh.eluted),
-  	xlab="Mean hydrophobicity index in peptide",
-  	ylab="Probability density",
-  	main="" )
-  lines( density(tmh.eluted), col=2 )
+  graphics::plot(
+    stats::density(nontmh.eluted),
+  	xlab = "Mean hydrophobicity index in peptide",
+  	ylab = "Probability density",
+  	main = "" )
+  graphics::lines(
+    stats::density(tmh.eluted),
+    col = 2
+  )
 
-  legend( "topleft", c("all peptides"),text.col=c("black"), bty="n" )
-  legend( "topright", c("TMH peptides"), text.col=c("red"), bty="n" )
+  graphics::legend( "topleft", c("all peptides"),text.col=c("black"), bty="n" )
+  graphics::legend( "topright", c("TMH peptides"), text.col=c("red"), bty="n" )
 
   grDevices::dev.off()
 

@@ -12,9 +12,9 @@ calculate_overlap <- function() {
   ninemers.total[ninemers.total < 0] <- 0
 
   perc.binders <- function( mhc = "A01-01" ){
-  	d <- fread(paste0("binding-predictions/HLA-",mhc,".txt"), data.table=FALSE)[,c(1,3)]
+  	d <- data.table::fread(paste0("binding-predictions/HLA-",mhc,".txt"), data.table=FALSE)[,c(1,3)]
   	colnames(d) <- c("protein", "start")
-  	d <- unstack( d, start ~ protein )
+  	d <- utils::unstack( d, start ~ protein )
   	binders.in.tmhs <- sapply( names(d),
   		function(p) length( intersect( d[[p]], tmh.9mers[[p]] ) ) )
   	c( sum( binders.in.tmhs ), sum( sapply( d, length ) ) )

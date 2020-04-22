@@ -20,7 +20,7 @@
 #'
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 prepare_data <- function() {
-  x <- read.fasta("proteome/UP000005640_9606.fasta.gz",
+  x <- seqinr::read.fasta("proteome/UP000005640_9606.fasta.gz",
   	forceDNAtolower = FALSE, as.string = TRUE )
   x <- lapply( x, function(x) x[1] )
   names( x ) <- sapply( strsplit( names(x), "\\|" ), function(x) x[2] )
@@ -31,7 +31,7 @@ prepare_data <- function() {
           cat(names(x)[i]," ",nchar(x[[i]]),"\n",sep="")
   }
   sink()
-  expect_true(file.exists("work/protein-lengths.txt"))
+  testthat::expect_true(file.exists("work/protein-lengths.txt"))
 
   proteome <- x
   save(proteome,file = "work/proteome.Rdata")
@@ -47,14 +47,14 @@ prepare_data <- function() {
 
   # generate a list containing the starting position of all 9mers overlapping
   # with predicted transmembrane helices
-  expect_true(file.exists("tmh-predictions/trans-membrane-analysis-shortened.txt"))
+  testthat::expect_true(file.exists("tmh-predictions/trans-membrane-analysis-shortened.txt"))
   x <- utils::read.table("tmh-predictions/trans-membrane-analysis-shortened.txt")
   #             V1      V2   V3   V4
   # 1   A0A075B6K6  inside    1    1
   # 2   A0A075B6K6 TMhelix    2   24
   # 3   A0A075B6K6 outside   25  122
   # 4   A0A075B734  inside    1   40
-  expect_true(all(x$V2 %in% c("inside", "TMhelix", "outside")))
+  testthat::expect_true(all(x$V2 %in% c("inside", "TMhelix", "outside")))
 
   # Select only the TMH
   x <- x[x$V2 == "TMhelix", c(1,3,4)]
@@ -95,7 +95,7 @@ prepare_data <- function() {
       #message("Cannot find protein named '", protein_name, "'")
       next
     }
-    expect_true(!is.null(x[[protein_name]]))
+    testthat::expect_true(!is.null(x[[protein_name]]))
     indices <- x[[protein_name]]
     protein_sequence <- proteome[[protein_name]]
     protein_sequence_length <- nchar(protein_sequence)
@@ -122,7 +122,7 @@ prepare_data <- function() {
     "Saved to 'work/tmh.9mers.Rdata' as a ",
     class(tmh.9mers), ":"
   )
-  print(head(tmh.9mers, n = 3))
+  print(utils::head(tmh.9mers, n = 3))
 
   # Results in
   # $A0A075B6K6

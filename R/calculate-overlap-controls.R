@@ -6,7 +6,7 @@ hydrophobe_overlap_controls <- function() {
 
   load("work/hydrophobe-control-peptides.Rdata" )
 
-  d2 <- unstack(hydrophobe.control.peptides,
+  d2 <- utils::unstack(hydrophobe.control.peptides,
   	`9mer` ~ protein)
 
   pldf <- utils::read.table("work/protein-lengths.txt", row.names=1 )
@@ -19,9 +19,9 @@ hydrophobe_overlap_controls <- function() {
 
   perc.binders <- function( mhc = "A01-01" ){
   	print( mhc )
-  	d <- fread(paste0("binding-predictions/HLA-",mhc,".txt"), data.table=FALSE)[,c(1,3)]
+  	d <- data.table::fread(paste0("binding-predictions/HLA-",mhc,".txt"), data.table=FALSE)[,c(1,3)]
   	colnames(d) <- c("protein", "start")
-  	d <- unstack( d, start ~ protein )
+  	d <- utils::unstack( d, start ~ protein )
   	binders.in.tmhs <- sapply( names(d) , function(i) length( intersect( d[[i]], d2[[i]] ) ) )
   	c( sum( binders.in.tmhs ), sum( sapply( d, length ) ) )
   }
