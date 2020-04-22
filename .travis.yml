@@ -1,6 +1,5 @@
 language: R
 dist: bionic
-sudo: true
 cache: packages
 
 r_packages:
@@ -18,34 +17,29 @@ before_install:
   - sudo add-apt-repository -y ppa:opencpu/imagemagick
   - sudo apt-get update
   - sudo apt-get install -qq libmagick++-dev
-  # C++14
-  #- sudo apt-get install -qq libgit2-dev libgit2-dbg r-cran-git2r
   # Boost
   - sudo apt-get install -qq libboost-all-dev
-  # Fortran
+  # SSL
   - sudo apt-get install -qq libssl-dev
-  #- sudo apt-get install -qq libgfortran-7-dev
 
 before_script:
   # Qt5
   - sudo apt-get install -qq qt5-qmake qt5-default
-  # Install and test TMHMM
-  - Rscript -e "tmhmm::install_tmhmm()"
-  - echo -e ">sp|L0T550|RIP2_MYCTU_158_180\nAVLWAGVAFLAFLQLTALVLNLL" > example.fasta
-  - |
-    ~/.local/share/tmhmm-2.0c/bin/decodeanhmm.Linux_x86_64 \
-    ~/.local/share/tmhmm-2.0c/lib/TMHMM2.0.model \
-    example.fasta \
-    -f ~/.local/share/tmhmm-2.0c/lib/TMHMM2.0.options || true
-  - rm example.fasta
-  # Install and test NetMHC2pan
-  - sudo apt install tcsh
-  - Rscript -e "netmhc2pan::install_netmhc2pan()"
-  - echo -e ">sp|L0T550|RIP2_MYCTU_158_180\nAVLWAGVAFLAFLQLTALVLNLL" > example.fasta
-  - ~/.local/share/netMHCIIpan-3.2/netMHCIIpan -f example.fasta
-  - rm example.fasta
-  # proselint
-  - sudo pip install proselint
+  ## Install and test TMHMM
+  #- Rscript -e "tmhmm::install_tmhmm()"
+  #- echo -e ">sp|L0T550|RIP2_MYCTU_158_180\nAVLWAGVAFLAFLQLTALVLNLL" > example.fasta
+  #- |
+  #  ~/.local/share/tmhmm-2.0c/bin/decodeanhmm.Linux_x86_64 \
+  #  ~/.local/share/tmhmm-2.0c/lib/TMHMM2.0.model \
+  #  example.fasta \
+  #  -f ~/.local/share/tmhmm-2.0c/lib/TMHMM2.0.options || true
+  #- rm example.fasta
+  ## Install and test NetMHC2pan
+  #- sudo apt install tcsh
+  #- Rscript -e "netmhc2pan::install_netmhc2pan()"
+  #- echo -e ">sp|L0T550|RIP2_MYCTU_158_180\nAVLWAGVAFLAFLQLTALVLNLL" > example.fasta
+  #- ~/.local/share/netMHCIIpan-3.2/netMHCIIpan -f example.fasta
+  #- rm example.fasta
 
 after_success:
   - Rscript -e 'lintr::lint_package()'
