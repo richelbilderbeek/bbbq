@@ -6,8 +6,16 @@
 \usage{
 explode(s)
 }
+\arguments{
+\item{s}{one string}
+}
 \description{
 Explodes a string into a character vector
+}
+\examples{
+library(testthat)
+x <- explode("ABC")
+expect_equal(x, c("A", "B", "C"))
 }
 \author{
 Johannes Textor, Richel J.C. Bilderbeek

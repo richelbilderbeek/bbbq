@@ -8,6 +8,11 @@ with arguments n and x.}
 \usage{
 nlapply(l, f)
 }
+\arguments{
+\item{l}{list}
+
+\item{f}{function}
+}
 \description{
 Version of lapply that also passes along the
 name of each list element. f must be a function
