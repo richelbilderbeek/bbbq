@@ -1,4 +1,5 @@
 #' Convert a Greenbaum et al. name to a NetMHC2pan name
+#' @param name an allele name as used by Greenbaum et al.
 #' @export
 to_netmhc2pan_name <- function(name) {
 

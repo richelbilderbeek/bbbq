@@ -13,6 +13,7 @@ default_params_doc(
   haplotypes,
   netmhc2pan_filename,
   proteome_filename,
+  tmh_9mers_as_data_filename,
   tmhmm_filename,
   verbose
 )
@@ -42,6 +43,11 @@ and will be put in the \code{/tmp} folder,
 which is cleaned by the operating system}
 
 \item{proteome_filename}{name of the file the proteome will be stored at}
+
+\item{tmh_9mers_as_data_filename}{filename to store
+per TMH protein, the indices at which it is TMH,
+in R data format.
+for example `work/tmh.9mers.Rdata`}
 
 \item{tmhmm_filename}{name of the file to store the
 TMHMM output.

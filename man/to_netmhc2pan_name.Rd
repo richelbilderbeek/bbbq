@@ -6,6 +6,9 @@
 \usage{
 to_netmhc2pan_name(name)
 }
+\arguments{
+\item{name}{an allele name as used by Greenbaum et al.}
+}
 \description{
 Convert a Greenbaum et al. name to a NetMHC2pan name
 }

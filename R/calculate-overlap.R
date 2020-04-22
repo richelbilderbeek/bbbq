@@ -1,9 +1,6 @@
 #' Determines the overlap of predicted HLA binders with transmembrane
 #' helices for all HLA supertypes.
-#' @param tmh_9mers_as_data_filename filename to store
-#'   per TMH protein, the indices at which it is TMH,
-#'   in R data format.
-#'   for example `work/tmh.9mers.Rdata`
+#' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 calculate_overlap <- function(tmh_9mers_as_data_filename) {
   load(tmh_9mers_as_data_filename) # Used to be load("work/tmh.9mers.Rdata")

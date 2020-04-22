@@ -13,6 +13,7 @@
 #'
 #'   https://github.com/richelbilderbeek/bianchi_et_al_2017/raw/master/proteome_2017/UP000005640_9606.fasta.gz
 #'
+#' @inheritParams default_params_doc
 #' @param fasta_filename proteome as FASTA file,
 #'   for example `proteome/UP000005640_9606.fasta.gz`:
 #' @param trans_membrane_analysis_filename Filename for
@@ -24,10 +25,6 @@
 #' @param proteome_as_data_filename filename to store the
 #'   proteome in R data format,
 #'   for example `work/proteome.Rdata`
-#' @param tmh_9mers_as_data_filename filename to store
-#'   per TMH protein, the indices at which it is TMH,
-#'   in R data format.
-#'   for example `work/tmh.9mers.Rdata`
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 #' @export
 prepare_data <- function(

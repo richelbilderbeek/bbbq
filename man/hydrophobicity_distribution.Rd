@@ -6,7 +6,7 @@
 in the human proteome as well as all peptides overlapping
 with transmembrane helices.}
 \usage{
-hydrophobicity_distribution()
+hydrophobicity_distribution(tmh_9mers_as_data_filename)
 }
 \arguments{
 \item{tmh_9mers_as_data_filename}{filename to store
