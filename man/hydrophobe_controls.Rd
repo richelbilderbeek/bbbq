@@ -4,20 +4,29 @@
 \alias{hydrophobe_controls}
 \title{Generates a set of 9mers that do not overlap with transmembrane helices
 and have a very similar hydrophobicity distribution as the set of 9mers
-that do overlap with transmembrane helices.}
+that do overlap with transmembrane helices.
+Input:
+  * proteome_9mer_hydrophobicity_as_data_filename
+  * tmh_9mers_as_data_filename}
 \usage{
-hydrophobe_controls(tmh_9mers_as_data_filename)
+hydrophobe_controls(
+  proteome_9mer_hydrophobicity_as_data_filename,
+  tmh_9mers_as_data_filename
+)
 }
 \arguments{
+\item{proteome_9mer_hydrophobicity_as_data_filename}{filename to store the
+proteome 9-mer hydrophobicities in R data format,
+for example `work/proteome.9mer.hydrophobicity.Rdata`}
+
 \item{tmh_9mers_as_data_filename}{filename to store
 per TMH protein, the indices at which it is TMH,
 in R data format.
 for example `work/tmh.9mers.Rdata`}
 }
 \description{
-Generates a set of 9mers that do not overlap with transmembrane helices
-and have a very similar hydrophobicity distribution as the set of 9mers
-that do overlap with transmembrane helices.
+Output:
+  * hydrophobe_control_peptides_as_data_filename
 }
 \author{
 Richel J.C. Bilderbeek, adapted from Johannes Textor

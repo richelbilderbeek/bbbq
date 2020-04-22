@@ -12,6 +12,10 @@
 #'   which is cleaned by the operating system
 #' @param fasta_filename name of a FASTA file
 #' @param haplotypes a list of MHC-I or MHC-II haplotypes
+#' @param hydrophobe_control_peptides_as_data_filename
+#'   filename that stores hydrophobe control peptides
+#'   as R data,
+#'   for example `work/hydrophobe-control-peptides.Rdata`
 #' @param kyte_doolittle_scale_as_data_filename
 #'   filename that stores the Kyte-Doolittle scale of
 #'   hydrophobicity,
@@ -27,6 +31,10 @@
 #' @param proteome_as_data_filename filename to store the
 #'   proteome in R data format,
 #'   for example `work/proteome.Rdata`
+#' @param proteome_9mer_hydrophobicity_as_data_filename
+#'   filename to store the
+#'   proteome 9-mer hydrophobicities in R data format,
+#'   for example `work/proteome.9mer.hydrophobicity.Rdata`
 #' @param proteome_filename name of the file the proteome will be stored at
 #' @param tmh_9mers_as_data_filename filename to store
 #'   per TMH protein, the indices at which it is TMH,
@@ -55,10 +63,12 @@ default_params_doc <- function(
   epitopeome_filename,
   fasta_filename,
   haplotypes,
+  hydrophobe_control_peptides_as_data_filename,
   kyte_doolittle_scale_as_data_filename,
   netmhc2pan_filename,
   protein_lengths_filename,
   proteome_filename,
+  proteome_9mer_hydrophobicity_as_data_filename,
   tmh_9mers_as_data_filename,
   tmh_overlapping_binders_as_data_filename,
   tmhmm_filename,

@@ -9,7 +9,8 @@ with transmembrane helices.}
 hydrophobicity_distribution(
   proteome_as_data_filename,
   tmh_9mers_as_data_filename,
-  kyte_doolittle_scale_as_data_filename
+  kyte_doolittle_scale_as_data_filename,
+  proteome_9mer_hydrophobicity_as_data_filename
 )
 }
 \arguments{
@@ -25,12 +26,20 @@ for example `work/tmh.9mers.Rdata`}
 \item{kyte_doolittle_scale_as_data_filename}{filename that stores the Kyte-Doolittle scale of
 hydrophobicity,
 for example `data/kyte.doolittle.scale.Rdata`}
+
+\item{proteome_9mer_hydrophobicity_as_data_filename}{filename to store the
+proteome 9-mer hydrophobicities in R data format,
+for example `work/proteome.9mer.hydrophobicity.Rdata`}
 }
 \description{
 Inputs:
   * proteome_as_data_filename
   * tmh_9mers_as_data_filename
   * kyte_doolittle_scale_as_data_filename
+}
+\details{
+Output:
+  * proteome_9mer_hydrophobicity_as_data_filename
 }
 \author{
 Richel J.C. Bilderbeek, adapted from Johannes Textor

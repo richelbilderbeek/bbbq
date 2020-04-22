@@ -7,12 +7,16 @@
 #'   * tmh_9mers_as_data_filename
 #'   * kyte_doolittle_scale_as_data_filename
 #'
+#' Output:
+#'   * proteome_9mer_hydrophobicity_as_data_filename
+#'
 #' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 hydrophobicity_distribution <- function(
   proteome_as_data_filename,
   tmh_9mers_as_data_filename,
-  kyte_doolittle_scale_as_data_filename
+  kyte_doolittle_scale_as_data_filename,
+  proteome_9mer_hydrophobicity_as_data_filename
 ) {
   load(proteome_as_data_filename) # Used to be 'load("work/proteome.Rdata")'
   load(kyte_doolittle_scale_as_data_filename) # Used to be 'load("data/kyte.doolittle.scale.Rdata")'
@@ -24,7 +28,10 @@ hydrophobicity_distribution <- function(
   		  utils::tail(stats::filter( x, rep(1/9,9), sides = 1 ), -8 )
   		}
   		else c() )
-  save( proteome.9mer.hydrophobicity, file="work/proteome.9mer.hydrophobicity.Rdata" )
+  save(
+    proteome.9mer.hydrophobicity,
+    file = proteome_9mer_hydrophobicity_as_data_filename
+  )
 
   load(tmh_9mers_as_data_filename) # Used to be load("work/tmh.9mers.Rdata")
   tmh.9mer.hydrophobicity <- bbbq::nlapply( tmh.9mers, function(n, x)
