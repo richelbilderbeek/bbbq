@@ -39,7 +39,7 @@ By default, `bbbq` uses only the default MHC2 allele used by NetMCHIIpan.
 In this demo, we'll use the first two MHC2 alleles from the complete
 NetMHCIIpan set of more than 5000 alleles:
 
-```{r}
+```
 alleles <- netmhc2pan::get_netmhc2pan_alleles()[1:2]
 testit::assert(all(alleles %in% netmhc2pan::get_netmhc2pan_alleles()))
 ```

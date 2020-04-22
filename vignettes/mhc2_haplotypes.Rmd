@@ -29,13 +29,13 @@ knitr::kable(head(bbbq::get_mhc2_haplotype_occurance()))
 
 NetMHC2pan has these haplotypes:
 
-```{r}
+```
 head(netmhc2pan::get_netmhc2pan_alleles())
 ```
 
 Here we find out which NetMHC2pan haplotypes we will be using.
 
-```{r}
+```
 df <- bbbq::get_mhc2_haplotype_occurance()
 df$name <- df$haplotype
 ```

@@ -3,7 +3,9 @@
 #' that do overlap with transmembrane helices.
 #' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
-hydrophobe_controls <- function(tmh_9mers_as_data_filename) {
+hydrophobe_controls <- function(
+  tmh_9mers_as_data_filename
+) {
 
   load("work/proteome.9mer.hydrophobicity.Rdata")
   load(tmh_9mers_as_data_filename) # Used to be load("work/tmh.9mers.Rdata")
