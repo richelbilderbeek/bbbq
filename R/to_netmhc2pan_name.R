@@ -2,6 +2,7 @@
 #' @param name an allele name as used by Greenbaum et al.
 #' @export
 to_netmhc2pan_name <- function(name) {
+  testthat::expect_true(netmhc2pan::is_netmhc2pan_installed())
 
   testthat::expect_true(
     name %in% as.character(bbbq::get_mhc2_haplotype_occurance()$haplotype)

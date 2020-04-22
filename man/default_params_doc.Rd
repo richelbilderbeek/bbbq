@@ -18,6 +18,7 @@ default_params_doc(
   proteome_filename,
   proteome_9mer_hydrophobicity_as_data_filename,
   tmh_9mers_as_data_filename,
+  tmh_eluted_filename,
   tmh_overlapping_binders_as_data_filename,
   tmhmm_filename,
   trans_membrane_analysis_filename,
@@ -71,6 +72,9 @@ per TMH protein, the indices at which it is TMH,
 in R data format.
 for example `work/tmh.9mers.Rdata`}
 
+\item{tmh_eluted_filename}{Filename for the TMHs found on B-cells,
+for example, `data/TMH-Bcell-elution.txt`}
+
 \item{tmh_overlapping_binders_as_data_filename}{filename to store
 per TMH overlapping binders
 in R data format.
@@ -87,6 +91,9 @@ uhhh, something, for example
 `tmh-predictions/trans-membrane-analysis-shortened.txt`}
 
 \item{verbose}{set to TRUE for more output}
+
+\item{non_tmh_eluted_filename}{Filename for the non-TMHs found on B-cells,
+for example `data/non-TMH-Bcell-elution.txt`}
 
 \item{proteome_as_data_filename}{filename to store the
 proteome in R data format,

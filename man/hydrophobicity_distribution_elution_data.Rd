@@ -4,15 +4,28 @@
 \alias{hydrophobicity_distribution_elution_data}
 \title{Something.}
 \usage{
-hydrophobicity_distribution_elution_data(kyte_doolittle_scale_as_data_filename)
+hydrophobicity_distribution_elution_data(
+  kyte_doolittle_scale_as_data_filename,
+  tmh_eluted_filename,
+  non_tmh_eluted_filename
+)
 }
 \arguments{
 \item{kyte_doolittle_scale_as_data_filename}{filename that stores the Kyte-Doolittle scale of
 hydrophobicity,
 for example `data/kyte.doolittle.scale.Rdata`}
+
+\item{tmh_eluted_filename}{Filename for the TMHs found on B-cells,
+for example, `data/TMH-Bcell-elution.txt`}
+
+\item{non_tmh_eluted_filename}{Filename for the non-TMHs found on B-cells,
+for example `data/non-TMH-Bcell-elution.txt`}
 }
 \description{
-Something.
+Inputs:
+ * kyte_doolittle_scale_as_data_filename
+ * tmh_eluted_filename
+ * non_tmh_eluted_filename
 }
 \author{
 Richel J.C. Bilderbeek, adapted from Johannes Textor

@@ -1,15 +1,21 @@
 #' Something.
+#'
+#' Inputs:
+#'  * kyte_doolittle_scale_as_data_filename
+#'  * tmh_eluted_filename
+#'  * non_tmh_eluted_filename
+#'
 #' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 hydrophobicity_distribution_elution_data <- function(
-  kyte_doolittle_scale_as_data_filename
+  kyte_doolittle_scale_as_data_filename,
+  tmh_eluted_filename,
+  non_tmh_eluted_filename
 ) {
 
   load(kyte_doolittle_scale_as_data_filename) # Used to be 'load("data/kyte.doolittle.scale.Rdata")'
-
-  tmh.eluted <- utils::read.table("data/TMH-Bcell-elution.txt",as.is=TRUE)$V1
-  nontmh.eluted <- utils::read.table("data/non-TMH-Bcell-elution.txt",as.is=TRUE)$V1
-
+  tmh.eluted <- utils::read.table(tmh_eluted_filename, as.is = TRUE)$V1
+  nontmh.eluted <- utils::read.table(non_tmh_eluted_filename,as.is=TRUE)$V1
 
   grDevices::pdf("plots/figure-3-a.pdf", width=4, height=4, useDingbats=FALSE)
   graphics::par(bty="n", mar=c(4,4,.2,.2))

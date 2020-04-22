@@ -1,4 +1,5 @@
 test_that("use", {
+  if (!netmhc2pan::is_netmhc2pan_installed()) return()
   expect_equal(to_netmhc2pan_name("DRB1*0101"), "DRB1_0101")
   expect_equal(to_netmhc2pan_name("DRB1*0101"), "DRB1_0101")
   expect_equal(to_netmhc2pan_name("DRB1*0301"), "DRB1_0301")
