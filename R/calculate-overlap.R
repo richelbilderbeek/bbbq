@@ -9,6 +9,7 @@
 #'   * tmh_overlapping_binders_as_data_filename
 #' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
+#' @export
 calculate_overlap <- function(
   tmh_9mers_as_data_filename,
   protein_lengths_filename,
@@ -32,13 +33,14 @@ calculate_overlap <- function(
   	c( sum( binders.in.tmhs ), sum( sapply( d, length ) ) )
   }
 
-
+  # Original
   hlas <-  c(
   	"A01-01","A02-01",
   	"A03-01","A24-02","A26-01",
   	"B07-02","B08-01","B15-01","B18-01",
   	"B27-05","B39-01","B40-02","B58-01"
   	)
+  testthat::expect_equal(hlas, get_hlas())
 
   r <- sapply( hlas,
   	perc.binders )

@@ -3,10 +3,12 @@ context("test-answer_bbbq_1")
 test_that("answer_bbbq_1", {
 
   if (!beastier::is_on_travis()) return()
+  if (!tmhmm::is_tmhmm_installed()) return()
+  if (!netmhc2pan::is_netmhc2pan_installed()) return()
 
   testit::assert(tmhmm::is_tmhmm_installed())
   testit::assert(netmhc2pan::is_tcsh_installed())
-    testit::assert(netmhc2pan::is_netmhc2pan_installed())
+  testit::assert()
 
   fasta_filename <- system.file("extdata", "short.fasta", package = "bbbq")
   alleles <- "DRB1_0101"

@@ -72,6 +72,7 @@ default_params_doc <- function(
   hydrophobe_control_peptides_as_data_filename,
   kyte_doolittle_scale_as_data_filename,
   netmhc2pan_filename,
+  non_tmh_eluted_filename,
   protein_lengths_filename,
   proteome_filename,
   proteome_as_data_filename,
