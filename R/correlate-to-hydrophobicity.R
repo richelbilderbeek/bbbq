@@ -1,8 +1,6 @@
 #' Correlate to hydrophobicity
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 correlate_to_hydrophobicity <- function() {
-  library( EpitopePrediction )
-
   load("work/tmh-overlapping-binders.Rdata")
   load("data/kyte.doolittle.scale.Rdata")
 
@@ -25,10 +23,10 @@ correlate_to_hydrophobicity <- function() {
   	sum(sweep( M, 1, kyte.doolittle.scale[rownames(M)], "*" )) / 9
   }
 
-  pdf("plots/figure-1-d.pdf", width=4, height=4,
+  grDevices::pdf("plots/figure-1-d.pdf", width=4, height=4,
   	useDingbats=FALSE)
 
-  par( bty="n", mar=c(4,4,.2,.2) )
+  graphics::par( bty="n", mar=c(4,4,.2,.2) )
 
   x <- 100* r[1,] / r[2,]
   y <- sapply( colnames(r), hyPref )+0.3963411
@@ -40,7 +38,7 @@ correlate_to_hydrophobicity <- function() {
 
   # In a test run, all x values are zeroes
   if (!all(x == 0.0) ) {
-    abline( lm(y~x), col="gray")
+    graphics::abline( lm(y~x), col="gray")
   }
 
   points( x, y, pch=19, cex=0.8 )
@@ -53,5 +51,5 @@ correlate_to_hydrophobicity <- function() {
     legend( "topleft", legend=bquote( r == .(signif(cor(x,y),2)) ), bty='n' )
   }
 
-  dev.off()
+  grDevices::dev.off()
 }

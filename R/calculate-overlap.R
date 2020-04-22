@@ -2,11 +2,8 @@
 #' helices for all HLA supertypes.
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 calculate_overlap <- function() {
-
-  library(testthat)
-
   load("work/tmh.9mers.Rdata")
-  pldf <- read.table( "work/protein-lengths.txt", row.names=1 )
+  pldf <- utils::read.table( "work/protein-lengths.txt", row.names=1 )
   pl <- pldf[,1]
   names(pl) <- rownames(pldf)
 
@@ -15,7 +12,6 @@ calculate_overlap <- function() {
   ninemers.total[ninemers.total < 0] <- 0
 
   perc.binders <- function( mhc = "A01-01" ){
-  	library(data.table)
   	d <- fread(paste0("binding-predictions/HLA-",mhc,".txt"), data.table=FALSE)[,c(1,3)]
   	colnames(d) <- c("protein", "start")
   	d <- unstack( d, start ~ protein )
@@ -35,14 +31,14 @@ calculate_overlap <- function() {
   r <- sapply( hlas,
   	perc.binders )
 
-  pdf("plots/figure-1-a.pdf",width=4,height=4,useDingbats=FALSE)
+  grDevices::pdf("plots/figure-1-a.pdf",width=4,height=4,useDingbats=FALSE)
 
-  par( mar=c(6,5,.2,.2) )
+  graphics::par( mar=c(6,5,.2,.2) )
 
-  barplot( 100* r[1,] / r[2,], xlab="",
+  graphics::barplot( 100* r[1,] / r[2,], xlab="",
   	ylab="% epitopes overlapping\nwith transmembrane helix", border=NA, las=2 )
 
-  mtext( "HLA haplotype", 1, line=4.5 )
+  graphics::mtext( "HLA haplotype", 1, line=4.5 )
 
   pbin <- sum( ninemers.in.tmhs) / sum(ninemers.total)
 
@@ -67,7 +63,7 @@ calculate_overlap <- function() {
   if (sum(ninemers.total) >= sum(ninemers.in.tmhs)) {
     #expect_gte(sum(ninemers.total), sum(ninemers.in.tmhs))
     ci <- (
-      binom.test(
+      stats::binom.test(
         x = round(0.02*sum(ninemers.in.tmhs)),
         n = round(0.02*sum(ninemers.total)),
         p = pbin,
@@ -76,20 +72,20 @@ calculate_overlap <- function() {
     )$conf
   }
 
-  abline( h=100*ci[1], col=2 )
-  abline( h=100*ci[2], col=2 )
+  graphics::abline( h=100*ci[1], col=2 )
+  graphics::abline( h=100*ci[2], col=2 )
 
-  dev.off()
+  grDevices::dev.off()
 
   save( r, file="work/tmh-overlapping-binders.Rdata" )
 
   for( h in hlas ){
     if (pbin <= 1.0) {
       # Will work for full run
-  	  cat( h, "\t", binom.test( r[1,h], r[2,h], p = pbin )$p.value," \n" )
+  	  cat( h, "\t", stats::binom.test( r[1,h], r[2,h], p = pbin )$p.value," \n" )
     } else {
       # Because pbin >= 1.0 in test run, use any valid p value, say 0.5
-  	  cat( h, "\t", binom.test( r[1,h], r[2,h], p = 0.5 )$p.value," \n" )
+  	  cat( h, "\t", stats::binom.test( r[1,h], r[2,h], p = 0.5 )$p.value," \n" )
     }
   }
 }

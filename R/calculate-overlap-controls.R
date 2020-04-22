@@ -6,12 +6,10 @@ hydrophobe_overlap_controls <- function() {
 
   load("work/hydrophobe-control-peptides.Rdata" )
 
-  library( data.table )
-
   d2 <- unstack(hydrophobe.control.peptides,
   	`9mer` ~ protein)
 
-  pldf <- read.table( "work/protein-lengths.txt", row.names=1 )
+  pldf <- utils::read.table("work/protein-lengths.txt", row.names=1 )
   pl <- pldf[,1]
   names(pl) <- rownames(pldf)
 
@@ -35,28 +33,28 @@ hydrophobe_overlap_controls <- function() {
   r <- sapply( hlas,
   	perc.binders )
 
-  pdf("plots/figure-4-b.pdf",
+  grDevices::pdf("plots/figure-4-b.pdf",
   	width=4,height=4,useDingbats=FALSE)
 
-  par( mar=c(6,5,.2,.2) )
+  graphics::par( mar=c(6,5,.2,.2) )
 
 
-  barplot( 1000 * r[1,] / r[2,], xlab="",
+  graphics::barplot( 1000 * r[1,] / r[2,], xlab="",
   	ylab="% epitopes overlapping\nwith transmembrane helix", border=NA, las=2 )
 
-  mtext( "HLA haplotype", 1, line=4.5 )
+  graphics::mtext( "HLA haplotype", 1, line=4.5 )
 
   pbin <- sum( ninemers.in.tmhs) / sum(ninemers.total)
 
-  ci <- ( binom.test( round(0.02*sum(ninemers.in.tmhs)), round(0.02*sum(ninemers.total)), p=pbin,
+  ci <- (stats::binom.test( round(0.02*sum(ninemers.in.tmhs)), round(0.02*sum(ninemers.total)), p=pbin,
   	conf.level=0.999  ) )$conf
 
-  abline( h=1000*ci[1], col=2 )
-  abline( h=1000*ci[2], col=2 )
+  graphics::abline( h=1000*ci[1], col=2 )
+  graphics::abline( h=1000*ci[2], col=2 )
 
-  dev.off()
+  grDevices::dev.off()
 
   for( h in hlas ){
-  	cat( h, "\t", binom.test( r[1,h], r[2,h], p=pbin )$p.value," \n" )
+  	cat( h, "\t", stats::binom.test( r[1,h], r[2,h], p=pbin )$p.value," \n" )
   }
 }

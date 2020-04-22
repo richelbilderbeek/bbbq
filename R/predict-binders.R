@@ -1,11 +1,6 @@
 #' Predict binders
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 predict_binders <- function() {
-  library( seqinr )
-
-  # devtools::install_github("jtextor/epitope-prediction")
-  library( EpitopePrediction )
-
   argv <- commandArgs( trailingOnly = TRUE )
   mhc <- argv[1]
 

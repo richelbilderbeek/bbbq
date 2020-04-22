@@ -7,9 +7,7 @@ hydrophobe_controls <- function() {
   load("work/proteome.9mer.hydrophobicity.Rdata")
   load("work/tmh.9mers.Rdata")
 
-  source("tools.R")
-
-  is.tmh <- nlapply( proteome.9mer.hydrophobicity, function(n,x){
+  is.tmh <- bbbq::nlapply( proteome.9mer.hydrophobicity, function(n,x){
   	r <- rep(0,length(x))
   	r[tmh.9mers[[n]]] <- 1
   	r  } )
@@ -39,8 +37,8 @@ hydrophobe_controls <- function() {
 
   save( hydrophobe.control.peptides, file="work/hydrophobe-control-peptides.Rdata" )
 
-  pdf("plots/figure-4-a.pdf",useDingbats=FALSE, width=4,height=4 )
-  par( bty="n", mar=c(4,4,.2,.2) )
+  grDevices::pdf("plots/figure-4-a.pdf",useDingbats=FALSE, width=4,height=4 )
+  graphics::par( bty="n", mar=c(4,4,.2,.2) )
 
   plot( density( d$hy, na.rm=TRUE ) ,
   	xlab="Mean hydrophobicity index in 9-mer",
@@ -55,5 +53,5 @@ hydrophobe_controls <- function() {
   legend( "topright", c("predicted\nTMH\n9-mers"), text.col=c("red"), bty="n" )
   legend( "topright", c("\n\n\nmatched\nnon-TMH\n9-mers"), text.col=c("green"), bty="n" )
 
-  dev.off()
+  grDevices::dev.off()
 }

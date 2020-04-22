@@ -20,10 +20,6 @@
 #'
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 prepare_data <- function() {
-  library(data.table)
-  library(testthat)
-  library(seqinr)
-
   x <- read.fasta("proteome/UP000005640_9606.fasta.gz",
   	forceDNAtolower = FALSE, as.string = TRUE )
   x <- lapply( x, function(x) x[1] )
@@ -52,7 +48,7 @@ prepare_data <- function() {
   # generate a list containing the starting position of all 9mers overlapping
   # with predicted transmembrane helices
   expect_true(file.exists("tmh-predictions/trans-membrane-analysis-shortened.txt"))
-  x <- read.table("tmh-predictions/trans-membrane-analysis-shortened.txt")
+  x <- utils::read.table("tmh-predictions/trans-membrane-analysis-shortened.txt")
   #             V1      V2   V3   V4
   # 1   A0A075B6K6  inside    1    1
   # 2   A0A075B6K6 TMhelix    2   24
