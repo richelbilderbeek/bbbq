@@ -77,6 +77,10 @@ uhhh, something, for example
 `tmh-predictions/trans-membrane-analysis-shortened.txt`}
 
 \item{verbose}{set to TRUE for more output}
+
+\item{proteome_as_data_filename}{filename to store the
+proteome in R data format,
+for example `work/proteome.Rdata`}
 }
 \description{
 This function does nothing. It is intended to inherit is parameters'

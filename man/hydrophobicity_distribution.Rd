@@ -7,11 +7,16 @@ in the human proteome as well as all peptides overlapping
 with transmembrane helices.}
 \usage{
 hydrophobicity_distribution(
+  proteome_as_data_filename,
   tmh_9mers_as_data_filename,
   kyte_doolittle_scale_as_data_filename
 )
 }
 \arguments{
+\item{proteome_as_data_filename}{filename to store the
+proteome in R data format,
+for example `work/proteome.Rdata`}
+
 \item{tmh_9mers_as_data_filename}{filename to store
 per TMH protein, the indices at which it is TMH,
 in R data format.
@@ -22,9 +27,10 @@ hydrophobicity,
 for example `data/kyte.doolittle.scale.Rdata`}
 }
 \description{
-Determines the hydrophobicity distribution of all peptides
-in the human proteome as well as all peptides overlapping
-with transmembrane helices.
+Inputs:
+  * proteome_as_data_filename
+  * tmh_9mers_as_data_filename
+  * kyte_doolittle_scale_as_data_filename
 }
 \author{
 Richel J.C. Bilderbeek, adapted from Johannes Textor

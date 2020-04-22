@@ -24,6 +24,9 @@
 #' @param protein_lengths_filename filename to store the
 #'   length of all proteins in proteome,
 #'   for example `work/protein-lengths.txt`
+#' @param proteome_as_data_filename filename to store the
+#'   proteome in R data format,
+#'   for example `work/proteome.Rdata`
 #' @param proteome_filename name of the file the proteome will be stored at
 #' @param tmh_9mers_as_data_filename filename to store
 #'   per TMH protein, the indices at which it is TMH,

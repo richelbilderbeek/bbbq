@@ -1,14 +1,20 @@
 #' Determines the hydrophobicity distribution of all peptides
 #' in the human proteome as well as all peptides overlapping
 #' with transmembrane helices.
+#'
+#' Inputs:
+#'   * proteome_as_data_filename
+#'   * tmh_9mers_as_data_filename
+#'   * kyte_doolittle_scale_as_data_filename
+#'
 #' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 hydrophobicity_distribution <- function(
+  proteome_as_data_filename,
   tmh_9mers_as_data_filename,
   kyte_doolittle_scale_as_data_filename
 ) {
-
-  load("work/proteome.Rdata")
+  load(proteome_as_data_filename) # Used to be 'load("work/proteome.Rdata")'
   load(kyte_doolittle_scale_as_data_filename) # Used to be 'load("data/kyte.doolittle.scale.Rdata")'
 
   proteome.hydrophobicity <- lapply( proteome, function(x) kyte.doolittle.scale[bbbq::explode(x)] )

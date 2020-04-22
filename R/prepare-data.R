@@ -16,9 +16,6 @@
 #' @inheritParams default_params_doc
 #' @param fasta_filename proteome as FASTA file,
 #'   for example `proteome/UP000005640_9606.fasta.gz`:
-#' @param proteome_as_data_filename filename to store the
-#'   proteome in R data format,
-#'   for example `work/proteome.Rdata`
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 #' @export
 prepare_data <- function(
