@@ -4,41 +4,57 @@
 #'
 #' Also creates a few other files that are helpful for the analysis.
 #'
-#'
-#' Output files:
-#'
-#'  * `work/protein-lengths.txt`: length of all proteins in proteome
-#'  * `work/proteome.Rdata`: proteome as an R list
-#'  * `work/tmh.9mers.Rdata`: per TMH protein, the indices at which it is TMH
-#'
 #' Proteome is downloaded from:
 #'
 #'   ftp://ftp.ebi.ac.uk/pub/databases/reference_proteomes/
 #'     QfO/Eukaryota/UP000005640_9606.fasta.gz
 #'
+#' Proteome used in Bianchi et al., 2017 used:
+#'
+#'   https://github.com/richelbilderbeek/bianchi_et_al_2017/raw/master/proteome_2017/UP000005640_9606.fasta.gz
+#'
 #' @param fasta_filename proteome as FASTA file,
 #'   for example `proteome/UP000005640_9606.fasta.gz`:
+#' @param trans_membrane_analysis_filename Filename for
+#'   uhhh, something, for example
+#'   `tmh-predictions/trans-membrane-analysis-shortened.txt`
+#' @param protein_lengths_filename filename to store the
+#'   length of all proteins in proteome,
+#'   for example `work/protein-lengths.txt`
+#' @param proteome_as_data_filename filename to store the
+#'   proteome in R data format,
+#'   for example `work/proteome.Rdata`
+#' @param tmh_9mers_as_data_filename filename to store
+#'   per TMH protein, the indices at which it is TMH,
+#'   in R data format.
+#'   for example `work/tmh.9mers.Rdata`
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 #' @export
 prepare_data <- function(
-  fasta_filename
+  fasta_filename,
+  trans_membrane_analysis_filename,
+  protein_lengths_filename,
+  proteome_as_data_filename,
+  tmh_9mers_as_data_filename
 ) {
   testthat::expect_true(file.exists(fasta_filename))
+  testthat::expect_true(file.exists(trans_membrane_analysis_filename))
+
   x <- seqinr::read.fasta(fasta_filename,
   	forceDNAtolower = FALSE, as.string = TRUE )
   x <- lapply( x, function(x) x[1] )
   names( x ) <- sapply( strsplit( names(x), "\\|" ), function(x) x[2] )
 
   # Save protein lengths to file
-  sink("work/protein-lengths.txt")
+  sink(protein_lengths_filename)
   for( i in seq_along(x) ){
           cat(names(x)[i]," ",nchar(x[[i]]),"\n",sep="")
   }
   sink()
-  testthat::expect_true(file.exists("work/protein-lengths.txt"))
+  testthat::expect_true(file.exists(protein_lengths_filename))
 
   proteome <- x
-  save(proteome,file = "work/proteome.Rdata")
+  save(proteome,file = proteome_as_data_filename)
   # $A0A024R1R8
   # [1] "MSSHEGGKKKALKQPKKQAKEMDEEEKAFKQKQKEEQKKLEVLKAKVVGKGPLATGGIKKSGKK"
   #
@@ -51,8 +67,9 @@ prepare_data <- function(
 
   # generate a list containing the starting position of all 9mers overlapping
   # with predicted transmembrane helices
-  testthat::expect_true(file.exists("tmh-predictions/trans-membrane-analysis-shortened.txt"))
-  x <- utils::read.table("tmh-predictions/trans-membrane-analysis-shortened.txt")
+
+  testthat::expect_true(file.exists(trans_membrane_analysis_filename))
+  x <- utils::read.table(trans_membrane_analysis_filename)
   #             V1      V2   V3   V4
   # 1   A0A075B6K6  inside    1    1
   # 2   A0A075B6K6 TMhelix    2   24
@@ -96,7 +113,6 @@ prepare_data <- function(
 
   for (protein_name in names(x)) {
     if (is.null(proteome[[protein_name]])) {
-      #message("Cannot find protein named '", protein_name, "'")
       next
     }
     testthat::expect_true(!is.null(x[[protein_name]]))
@@ -108,27 +124,16 @@ prepare_data <- function(
   	  1:(protein_sequence_length - 8)
   	)
   }
-  # OLDSKOOL
-  # For each protein name...
-  #for( i in names(x) ){
-  #	x[[i]] <- intersect( x[[i]], 1:(nchar(proteome[[i]])-8) ) # Bug in this line
-  #}
-
   for( i in names(proteome) ){
   	if( is.null(x[[i]]) ){
   		x[[i]] <- integer(0)
   	}
   }
-
   tmh.9mers <- x
-  save(tmh.9mers, file = "work/tmh.9mers.Rdata")
-  message(
-    "Saved to 'work/tmh.9mers.Rdata' as a ",
-    class(tmh.9mers), ":"
-  )
-  print(utils::head(tmh.9mers, n = 3))
+  save(tmh.9mers, file = tmh_9mers_as_data_filename)
 
-  # Results in
+  # Head:
+  #
   # $A0A075B6K6
   #  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
   #
