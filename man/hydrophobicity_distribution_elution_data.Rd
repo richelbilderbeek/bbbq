@@ -5,21 +5,24 @@
 \title{Something.}
 \usage{
 hydrophobicity_distribution_elution_data(
-  kyte_doolittle_scale_as_data_filename,
   tmh_eluted_filename,
-  non_tmh_eluted_filename
+  non_tmh_eluted_filename,
+  figure_3_a_filename,
+  figure_3_b_filename
 )
 }
 \arguments{
-\item{kyte_doolittle_scale_as_data_filename}{filename that stores the Kyte-Doolittle scale of
-hydrophobicity,
-for example `data/kyte.doolittle.scale.Rdata`}
-
 \item{tmh_eluted_filename}{Filename for the TMHs found on B-cells,
 for example, `data/TMH-Bcell-elution.txt`}
 
 \item{non_tmh_eluted_filename}{Filename for the non-TMHs found on B-cells,
 for example `data/non-TMH-Bcell-elution.txt`}
+
+\item{figure_3_a_filename}{name of the PDF for figure 4a,
+for example `plots/figure-3-a.pdf`}
+
+\item{figure_3_b_filename}{name of the PDF for figure 4b,
+for example `plots/figure-3-b.pdf`}
 }
 \description{
 Inputs:
