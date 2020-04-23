@@ -30,17 +30,30 @@ hydrophobicity_distribution_elution_data <- function(
     stats::density(tmh_hydrophobicities),
     col = 2
   )
-  graphics::legend( "topleft", c("all peptides"),text.col=c("black"), bty="n" )
-  graphics::legend( "topright", c("TMH peptides"), text.col=c("red"), bty="n" )
+  # This legend used to say 'all peptides' but this is not completely
+  # correct, as the non-TMHs are absent from this set
+  #
+  # OTOH, when plotting the line for both non-TMH and TMH peptides,
+  # this does completely overlap
+  graphics::legend(
+    "topleft", c("non-TMH peptides"), text.col = c("black"), bty = "n"
+  )
+  graphics::legend(
+    "topright", c("TMH peptides"), text.col = c("red"), bty = "n"
+  )
   grDevices::dev.off()
 
-  grDevices::pdf(figure_3_b_filename, width=4, height=4, useDingbats=FALSE)
-  graphics::par(bty = "n", mar=c(4,4,.2,.2))
+  grDevices::pdf(
+    figure_3_b_filename, width = 4, height = 4, useDingbats = FALSE
+  )
+  graphics::par(bty = "n", mar = c(4,4,.2,.2))
   d <- cbind(c(tmh_hydrophobicities, non_tmh_hydrophobicities), 0 )
   d[1:length(tmh_hydrophobicities),2] <- 1
   d[,1] <- cut(d[,1],10)
   graphics::barplot( 100*by( d[,2], d[,1], mean ),
-  	xlab="Decile of mean hydrophobicity index", ylab = "Percentage eluted TMH peptides",
-  	ylim=c(0,45), border=NA )
+  	xlab = "Decile of mean hydrophobicity index",
+    ylab = "Percentage eluted TMH peptides",
+  	ylim = c(0,45), border = NA
+  )
   grDevices::dev.off()
 }
