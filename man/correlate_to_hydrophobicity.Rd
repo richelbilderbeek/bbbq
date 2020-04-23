@@ -6,7 +6,7 @@
 \usage{
 correlate_to_hydrophobicity(
   tmh_overlapping_binders_as_data_filename,
-  kyte_doolittle_scale_as_data_filename
+  figure_1_d_filename
 )
 }
 \arguments{
@@ -15,9 +15,8 @@ per TMH overlapping binders
 in R data format.
 for example `work/tmh-overlapping-binders.Rdata`}
 
-\item{kyte_doolittle_scale_as_data_filename}{filename that stores the Kyte-Doolittle scale of
-hydrophobicity,
-for example `data/kyte.doolittle.scale.Rdata`}
+\item{figure_1_d_filename}{name of the PDF file to store figure 1d,
+for example `plots/figure-1-d.pdf`}
 }
 \description{
 Input: kyte_doolittle_scale_as_data_filename

@@ -5,40 +5,29 @@
 #'
 #' Output: figure_1_d_filename
 #' @inheritParams default_params_doc
+#' @param figure_1_d_filename
+#'   name of the PDF file to store figure 1d,
+#'   for example `plots/figure-1-d.pdf`
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
+#' @export
 correlate_to_hydrophobicity <- function(
   tmh_overlapping_binders_as_data_filename,
-  kyte_doolittle_scale_as_data_filename
+  figure_1_d_filename
 ) {
+  testthat::expect_true(file.exists(tmh_overlapping_binders_as_data_filename))
+
+  # loads 'r'
   load(tmh_overlapping_binders_as_data_filename) # Used to be 'load("work/tmh-overlapping-binders.Rdata")'
-  load(kyte_doolittle_scale_as_data_filename) # Used to be 'load("data/kyte.doolittle.scale.Rdata")'
 
   M <- EpitopePrediction::smmMatrix( "HLA-A02:01" )$M
 
-  hyPref <- function( mhc="A02-01" ){
-  	mhc <- paste0("HLA-",gsub("-",":",mhc))
-
-  	M <- 10^(-EpitopePrediction::smmMatrix(mhc)$M)
-
-  	M <- scale(M, center = FALSE, scale = colSums(M))
-
-  	colEntropies <- apply(M, 2, function(x) {
-          	x <- x * log(x)
-          	x[is.nan(x)] <- 0
-        		log(20) + sum(x)
-      	})
-      	M <- scale(M, center = FALSE, scale = 1/colEntropies)
-
-  	sum(sweep( M, 1, kyte.doolittle.scale[rownames(M)], "*" )) / 9
-  }
-
-  grDevices::pdf("plots/figure-1-d.pdf", width=4, height=4,
+  grDevices::pdf(figure_1_d_filename, width=4, height=4,
   	useDingbats=FALSE)
 
   graphics::par( bty="n", mar=c(4,4,.2,.2) )
 
-  x <- 100* r[1,] / r[2,]
-  y <- sapply( colnames(r), hyPref )+0.3963411
+  x <- 100.0 * r[1,] / r[2,]
+  y <- sapply(colnames(r), bbbq::hyPref) + 0.3963411
 
   graphics::plot( NA,
   	xlab="Percentage of TMH epitopes",
