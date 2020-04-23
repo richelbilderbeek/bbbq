@@ -2,22 +2,14 @@
 % Please edit documentation in R/hydrophobicity-distribution-elution-data.R
 \name{hydrophobicity_distribution_elution_data}
 \alias{hydrophobicity_distribution_elution_data}
-\title{Something.}
+\title{Creates figures 4a and 4b}
 \usage{
 hydrophobicity_distribution_elution_data(
-  tmh_eluted_filename,
-  non_tmh_eluted_filename,
   figure_3_a_filename,
   figure_3_b_filename
 )
 }
 \arguments{
-\item{tmh_eluted_filename}{Filename for the TMHs found on B-cells,
-for example, `data/TMH-Bcell-elution.txt`}
-
-\item{non_tmh_eluted_filename}{Filename for the non-TMHs found on B-cells,
-for example `data/non-TMH-Bcell-elution.txt`}
-
 \item{figure_3_a_filename}{name of the PDF for figure 4a,
 for example `plots/figure-3-a.pdf`}
 
@@ -25,10 +17,8 @@ for example `plots/figure-3-a.pdf`}
 for example `plots/figure-3-b.pdf`}
 }
 \description{
-Inputs:
- * kyte_doolittle_scale_as_data_filename
- * tmh_eluted_filename
- * non_tmh_eluted_filename
+Note that in the original version, these were called
+3a and 3b in the code.
 }
 \author{
 Richel J.C. Bilderbeek, adapted from Johannes Textor

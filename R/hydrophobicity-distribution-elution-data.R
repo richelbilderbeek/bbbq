@@ -1,11 +1,7 @@
-#' Something.
+#' Creates figures 4a and 4b
 #'
-#' Inputs:
-#'  * kyte_doolittle_scale_as_data_filename
-#'  * tmh_eluted_filename
-#'  * non_tmh_eluted_filename
-#'
-#' @inheritParams default_params_doc
+#' Note that in the original version, these were called
+#' 3a and 3b in the code.
 #' @param figure_3_a_filename
 #'   name of the PDF for figure 4a,
 #'   for example `plots/figure-3-a.pdf`
@@ -14,16 +10,11 @@
 #'   for example `plots/figure-3-b.pdf`
 #' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
 hydrophobicity_distribution_elution_data <- function(
-  tmh_eluted_filename,
-  non_tmh_eluted_filename,
   figure_3_a_filename,
   figure_3_b_filename
 ) {
-  testthat::expect_true(file.exists(tmh_eluted_filename))
-  testthat::expect_true(file.exists(non_tmh_eluted_filename))
-
-  tmh_polypeptides <- utils::read.table(tmh_eluted_filename, as.is = TRUE)$V1
-  non_tmh_polypeptides <- utils::read.table(non_tmh_eluted_filename,as.is = TRUE)$V1
+  tmh_polypeptides <- bbbq::get_tmh_polypeptides_from_elution()
+  non_tmh_polypeptides <- bbbq::get_non_tmh_polypeptides_from_elution()
 
   tmh_hydrophobicities <- Peptides::hydrophobicity(tmh_polypeptides)
   non_tmh_hydrophobicities <- Peptides::hydrophobicity(non_tmh_polypeptides)

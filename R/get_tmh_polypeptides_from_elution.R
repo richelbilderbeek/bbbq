@@ -1,4 +1,5 @@
 #' Get the TMH polypeptides from elution study
+#' @export
 get_tmh_polypeptides_from_elution <- function() {
   c(
     "HPRIASGLGL",
