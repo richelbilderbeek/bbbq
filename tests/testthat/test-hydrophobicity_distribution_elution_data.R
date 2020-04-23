@@ -16,4 +16,5 @@ test_that("use", {
   )
   expect_true(file.exists(figure_3_a_filename))
   expect_true(file.exists(figure_3_b_filename))
+
 })

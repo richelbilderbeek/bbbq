@@ -26,7 +26,7 @@ hydrophobicity_distribution_elution_data <- function(
 
   load(kyte_doolittle_scale_as_data_filename) # Used to be 'load("data/kyte.doolittle.scale.Rdata")'
   tmh_polypeptides <- utils::read.table(tmh_eluted_filename, as.is = TRUE)$V1
-  nontmh.eluted <- utils::read.table(non_tmh_eluted_filename,as.is=TRUE)$V1
+  non_tmh_polypeptides <- utils::read.table(non_tmh_eluted_filename,as.is=TRUE)$V1
 
   grDevices::pdf(figure_3_a_filename, width=4, height=4, useDingbats=FALSE)
   graphics::par(bty="n", mar=c(4,4,.2,.2))
@@ -34,16 +34,17 @@ hydrophobicity_distribution_elution_data <- function(
   hy <- function(x) mean(kyte.doolittle.scale[bbbq::explode(x)])
 
   tmh_hydrophobicities <- Peptides::hydrophobicity(tmh_polypeptides)
-  tmh.eluted <- sapply(tmh_polypeptides, hy)
-  testthat::expect_equal(tmh_hydrophobicities, as.numeric(tmh.eluted))
+  #OLD: tmh.eluted <- sapply(tmh_polypeptides, hy)
+  #OLD: testthat::expect_equal(tmh_hydrophobicities, as.numeric(tmh.eluted))
   # > head(tmh.eluted)
   # HPRIASGLGL AAIVAYGLYK  ILPLIISKY  APQSFRAEL  APQSFRAEL  GQHVATQHF
   # 0.3000000  1.1000000  1.5000000 -0.4111111 -0.4111111 -0.6333333
 
-  nontmh.eluted <- sapply(nontmh.eluted,hy)
+  # nontmh.eluted <- sapply(nontmh.eluted,hy)
+  non_tmh_hydrophobicities <- Peptides::hydrophobicity(non_tmh_polypeptides)
 
   graphics::plot(
-    stats::density(nontmh.eluted),
+    stats::density(non_tmh_hydrophobicities),
   	xlab = "Mean hydrophobicity index in peptide",
   	ylab = "Probability density",
   	main = "" )
@@ -61,8 +62,8 @@ hydrophobicity_distribution_elution_data <- function(
   grDevices::pdf(figure_3_b_filename, width=4, height=4, useDingbats=FALSE)
   graphics::par(bty="n", mar=c(4,4,.2,.2))
 
-  d <- cbind( c(tmh.eluted,nontmh.eluted), 0 )
-  d[1:length(tmh.eluted),2] <- 1
+  d <- cbind( c(tmh_hydrophobicities,non_tmh_hydrophobicities), 0 )
+  d[1:length(tmh_hydrophobicities),2] <- 1
 
   d[,1] <- cut(d[,1],10)
   graphics::barplot( 100*by( d[,2], d[,1], mean ),
