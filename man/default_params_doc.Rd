@@ -16,6 +16,8 @@ default_params_doc(
   netmhc2pan_filename,
   non_tmh_eluted_filename,
   protein_lengths_filename,
+  protein_sequence,
+  protein_sequences,
   proteome_filename,
   proteome_as_data_filename,
   proteome_9mer_hydrophobicity_as_data_filename,
@@ -65,6 +67,10 @@ for example `data/non-TMH-Bcell-elution.txt`}
 \item{protein_lengths_filename}{filename to store the
 length of all proteins in proteome,
 for example `work/protein-lengths.txt`}
+
+\item{protein_sequence}{a protein sequence}
+
+\item{protein_sequences}{one or more protein sequences}
 
 \item{proteome_filename}{name of the file the proteome will be stored at}
 

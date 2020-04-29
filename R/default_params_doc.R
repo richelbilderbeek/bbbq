@@ -31,6 +31,8 @@
 #' @param protein_lengths_filename filename to store the
 #'   length of all proteins in proteome,
 #'   for example `work/protein-lengths.txt`
+#' @param protein_sequence a protein sequence
+#' @param protein_sequences one or more protein sequences
 #' @param proteome_as_data_filename filename to store the
 #'   proteome in R data format,
 #'   for example `work/proteome.Rdata`
@@ -74,6 +76,8 @@ default_params_doc <- function(
   netmhc2pan_filename,
   non_tmh_eluted_filename,
   protein_lengths_filename,
+  protein_sequence,
+  protein_sequences,
   proteome_filename,
   proteome_as_data_filename,
   proteome_9mer_hydrophobicity_as_data_filename,
