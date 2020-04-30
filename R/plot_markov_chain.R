@@ -138,8 +138,6 @@ plot_markov_chain_tikz <- function(
 ) {
   testthat::expect_equal(2, ncol(transition_matrix))
   testthat::expect_equal(2, nrow(transition_matrix))
-  testthat::expect_equal(1.0, sum(transition_matrix[1, ]))
-  testthat::expect_equal(1.0, sum(transition_matrix[2, ]))
   tex_text <- c(
     "\\documentclass[border=10pt]{standalone}",
     "\\usepackage{tkz-graph}",
@@ -171,6 +169,13 @@ plot_markov_chain_tikz <- function(
   pdf_filename <- paste0(basename(tex_filename), ".pdf")
   testthat::expect_true(file.exists(pdf_filename))
 
+  aux_filename <- paste0(basename(tex_filename), ".aux")
+  testthat::expect_true(file.exists(aux_filename))
+  log_filename <- paste0(basename(tex_filename), ".log")
+  testthat::expect_true(file.exists(log_filename))
+  file.remove(aux_filename)
+  file.remove(log_filename)
+
   png_filename_0 <- tempfile()
   cmd <- paste0("pdftoppm ", pdf_filename, " ", png_filename_0, " -png")
   system(cmd)
@@ -186,5 +191,10 @@ plot_markov_chain_tikz <- function(
   file.copy(from = png_filename_1, to = png_filename)
   file.remove(pdf_filename)
 
-  grid::grid.raster(png::readPNG(png_filename))
+  # Trim
+  png <- magick::image_read(png_filename)
+  magick::image_trim(png)
+
+  # Show
+  magick::image_draw(png)
 }
