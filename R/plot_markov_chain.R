@@ -94,7 +94,7 @@ plot_markov_chain_igraph <- function(
   transition_matrix = matrix(c(0.9, 0.1, 0.5, 0.5), nrow = 2, byrow = TRUE),
   png_filename = tempfile()
 ) {
-  markov_chain <- new(
+  markov_chain <- methods::new(
     "markovchain",
     states = c("Detected","Undetected"),
     transitionMatrix = transition_matrix

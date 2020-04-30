@@ -20,9 +20,15 @@ Imports:
     epitopeome,
     EpitopePrediction,
     ggplot2,
+    igraph,
+    magick,
+    markovchain,
     netmhc2pan,
+    Peptides,
+    png,
     seqinr,
     stringr,  
+    tibble,
     tmhmm
 Suggests:
     beastier,

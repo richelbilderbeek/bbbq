@@ -4,5 +4,5 @@
 #' @export
 get_transition_rate <- function(a, b) {
   m <- bbbq::get_aa_transition_matrix()
-  as.numeric(na.omit(c(m[a,b], m[b,a])))
+  as.numeric(stats::na.omit(c(m[a,b], m[b,a])))
 }

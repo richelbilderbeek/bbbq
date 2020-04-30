@@ -116,7 +116,7 @@ cat(readLines(tmhmm_filename), sep = "\n")
 The NetMHCIIpan results table:
 
 ```
-knitr::kable(read.csv(netmhc2pan_filename))
+knitr::kable(utils::read.csv(netmhc2pan_filename))
 ```
 
 The `epitopeome` results file:

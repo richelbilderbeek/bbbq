@@ -1,4 +1,7 @@
-all:
+all: inst/extdata/genetic_code.csv inst/extdata/flu_transitions.csv inst/extdata/flu_abundances.csv
+
+inst/extdata/genetic_code.csv:
+	Rscript scripts/recreate_genetic_code.R 
 
 inst/extdata/flu_transitions.csv: inst/extdata/Flu_All_it2.txt_PAML.txt
 	Rscript scripts/recreate_flu.R 
