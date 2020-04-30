@@ -6,9 +6,20 @@
 \usage{
 convert_triplet_to_amino_acid(triplet)
 }
+\arguments{
+\item{triplet}{a DNA triplet}
+}
 \description{
 Convert a (DNA) triplet to the corresponding amino acid
 }
 \note{
 need to convert T to U for RNA triplets
+}
+\examples{
+library(testthat)
+
+expect_equal(convert_triplet_to_amino_acid("GCT"), "A")
+expect_equal(convert_triplet_to_amino_acid("GCC"), "A")
+expect_equal(convert_triplet_to_amino_acid("GCA"), "A")
+expect_equal(convert_triplet_to_amino_acid("GCG"), "A")
 }

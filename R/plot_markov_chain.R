@@ -1,4 +1,5 @@
 #' Show a Markov chain'
+#' @inheritParams default_params_doc
 #' @param transition_matrix a transition matrix.
 #'   The first row denotes the transition rates from D.
 #'   All rows must sum up to one.
@@ -8,6 +9,9 @@
 #'     \item \code{[2,1]} denotes \code{U -> D}
 #'     \item \code{[2,2]} denotes \code{U -> U}
 #'  }
+#' @param tool name of the tool used to create the Markov
+#'   chain.
+#'   Can be \code{tikz}, \code{dot} or \code{igraph}
 #' @export
 plot_markov_chain <- function(
   transition_matrix = matrix(c(0.8, 0.2, 0.1, 0.9), nrow = 2, byrow = TRUE),
@@ -42,16 +46,7 @@ plot_markov_chain <- function(
 
 
 #' Show a Markov chain using DOT
-#'
-#' @param transition_matrix a transition matrix.
-#'   The first row denotes the transition rates from D.
-#'   All rows must sum up to one.
-#'   \itemize{
-#'     \item \code{[1,1]} denotes \code{D -> D}
-#'     \item \code{[1,2]} denotes \code{D -> U}
-#'     \item \code{[2,1]} denotes \code{U -> D}
-#'     \item \code{[2,2]} denotes \code{U -> U}
-#'  }
+#' @inheritParams plot_markov_chain
 #' @export
 plot_markov_chain_dot <- function(
   transition_matrix = matrix(c(0.5, 0.5, 0.5, 0.5), nrow = 2),
@@ -79,16 +74,7 @@ plot_markov_chain_dot <- function(
 
 
 #' Show a Markov chain using TikZ
-#'
-#' @param transition_matrix a transition matrix.
-#'   The first row denotes the transition rates from D.
-#'   All rows must sum up to one.
-#'   \itemize{
-#'     \item \code{[1,1]} denotes \code{D -> D}
-#'     \item \code{[1,2]} denotes \code{D -> U}
-#'     \item \code{[2,1]} denotes \code{U -> D}
-#'     \item \code{[2,2]} denotes \code{U -> U}
-#'  }
+#' @inheritParams plot_markov_chain
 #' @export
 plot_markov_chain_igraph <- function(
   transition_matrix = matrix(c(0.9, 0.1, 0.5, 0.5), nrow = 2, byrow = TRUE),
@@ -121,16 +107,7 @@ plot_markov_chain_igraph <- function(
 
 
 #' Show a Markov chain using TikZ
-#'
-#' @param transition_matrix a transition matrix.
-#'   The first row denotes the transition rates from D.
-#'   All rows must sum up to one.
-#'   \itemize{
-#'     \item \code{[1,1]} denotes \code{D -> D}
-#'     \item \code{[1,2]} denotes \code{D -> U}
-#'     \item \code{[2,1]} denotes \code{U -> D}
-#'     \item \code{[2,2]} denotes \code{U -> U}
-#'  }
+#' @inheritParams plot_markov_chain
 #' @export
 plot_markov_chain_tikz <- function(
   transition_matrix = matrix(c(0.8, 0.2, 0.1, 0.9), nrow = 2, byrow = TRUE),

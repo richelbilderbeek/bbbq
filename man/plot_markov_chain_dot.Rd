@@ -19,6 +19,8 @@ plot_markov_chain_dot(
    \item \code{[2,1]} denotes \code{U -> D}
    \item \code{[2,2]} denotes \code{U -> U}
 }}
+
+\item{png_filename}{name of a PNG file}
 }
 \description{
 Show a Markov chain using DOT

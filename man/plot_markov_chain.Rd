@@ -20,6 +20,12 @@ plot_markov_chain(
    \item \code{[2,1]} denotes \code{U -> D}
    \item \code{[2,2]} denotes \code{U -> U}
 }}
+
+\item{png_filename}{name of a PNG file}
+
+\item{tool}{name of the tool used to create the Markov
+chain.
+Can be \code{tikz}, \code{dot} or \code{igraph}}
 }
 \description{
 Show a Markov chain'

@@ -15,6 +15,7 @@ default_params_doc(
   kyte_doolittle_scale_as_data_filename,
   netmhc2pan_filename,
   non_tmh_eluted_filename,
+  png_filename,
   protein_lengths_filename,
   protein_sequence,
   protein_sequences,
@@ -26,6 +27,7 @@ default_params_doc(
   tmh_overlapping_binders_as_data_filename,
   tmhmm_filename,
   trans_membrane_analysis_filename,
+  triplet,
   verbose
 )
 }
@@ -63,6 +65,8 @@ which is cleaned by the operating system}
 
 \item{non_tmh_eluted_filename}{Filename for the non-TMHs found on B-cells,
 for example `data/non-TMH-Bcell-elution.txt`}
+
+\item{png_filename}{name of a PNG file}
 
 \item{protein_lengths_filename}{filename to store the
 length of all proteins in proteome,
@@ -104,6 +108,8 @@ which is cleaned by the operating system}
 \item{trans_membrane_analysis_filename}{Filename for
 uhhh, something, for example
 `tmh-predictions/trans-membrane-analysis-shortened.txt`}
+
+\item{triplet}{a DNA triplet}
 
 \item{verbose}{set to TRUE for more output}
 }

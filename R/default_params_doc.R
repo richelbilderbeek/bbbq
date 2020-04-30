@@ -28,6 +28,7 @@
 #' @param non_tmh_eluted_filename
 #'   Filename for the non-TMHs found on B-cells,
 #'   for example `data/non-TMH-Bcell-elution.txt`
+#' @param png_filename name of a PNG file
 #' @param protein_lengths_filename filename to store the
 #'   length of all proteins in proteome,
 #'   for example `work/protein-lengths.txt`
@@ -60,6 +61,7 @@
 #' @param trans_membrane_analysis_filename Filename for
 #'   uhhh, something, for example
 #'   `tmh-predictions/trans-membrane-analysis-shortened.txt`
+#' @param triplet a DNA triplet
 #' @param verbose set to TRUE for more output
 #' @author Richel J.C. Bilderbeek
 #' @note This is an internal function, so it should be marked with
@@ -75,6 +77,7 @@ default_params_doc <- function(
   kyte_doolittle_scale_as_data_filename,
   netmhc2pan_filename,
   non_tmh_eluted_filename,
+  png_filename,
   protein_lengths_filename,
   protein_sequence,
   protein_sequences,
@@ -86,6 +89,7 @@ default_params_doc <- function(
   tmh_overlapping_binders_as_data_filename,
   tmhmm_filename,
   trans_membrane_analysis_filename,
+  triplet,
   verbose
 ) {
   # Nothing
