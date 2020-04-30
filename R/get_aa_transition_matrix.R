@@ -6,6 +6,7 @@
 #' File downloaded from \code{ftp://ftp.sanger.ac.uk/pub/1000genomes/lsq/FLU/Flu_All_it2.txt_PAML.txt}
 #' @export
 get_aa_transition_matrix <- function() {
+  # TODO: the AAs at rows and columns may be incorrect
   df <- data.frame(
     utils::read.csv(
       system.file("extdata", "flu_transitions.csv", package = "bbbq"),

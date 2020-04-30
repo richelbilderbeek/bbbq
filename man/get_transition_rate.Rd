@@ -4,12 +4,12 @@
 \alias{get_transition_rate}
 \title{Get the AA transition rate from the FLU transition rate matrix}
 \usage{
-get_transition_rate(a, b)
+get_transition_rate(seq_lhs, seq_rhs)
 }
 \arguments{
-\item{a}{amino acid to transition from}
+\item{seq_lhs}{amino acid to transition from}
 
-\item{b}{amino acid to transition to}
+\item{seq_rhs}{amino acid to transition to}
 }
 \description{
 Get the AA transition rate from the FLU transition rate matrix
