@@ -20,4 +20,5 @@
 ^bbbq\.pro\.user$
 ^bbbq\.qrc$
 ^install.Rmd$
+^Makefile$
 
