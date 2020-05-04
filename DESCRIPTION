@@ -23,6 +23,7 @@ Imports:
     igraph,
     magick,
     markovchain,
+    methods,
     netmhc2pan,
     Peptides,
     png,

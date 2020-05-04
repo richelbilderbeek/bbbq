@@ -13,4 +13,4 @@ test_that("use", {
   f <- "MVVITAMLSFLIAFAYMFSI"
   n <- "MVVITAMLSFLIAFAYGFSI"
   expect_true(get_transition_rate(f, n) > 0.0)
-}}
+})

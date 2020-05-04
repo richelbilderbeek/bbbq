@@ -28,8 +28,8 @@ plot_markov_chain <- function(
       png_filename = png_filename
     )
   }
-  else if (tool == "igraph") {
-    plot_markov_chain_igraph(
+  else if (tool == "markovchain") {
+    plot_markov_chain_markovchain(
       transition_matrix = transition_matrix,
       png_filename = png_filename
     )
@@ -70,13 +70,10 @@ plot_markov_chain_dot <- function(
   grid::grid.raster(png::readPNG(png_filename))
 }
 
-
-
-
-#' Show a Markov chain using TikZ
+#' Show a Markov chain using the \code{markovchain} package
 #' @inheritParams plot_markov_chain
 #' @export
-plot_markov_chain_igraph <- function(
+plot_markov_chain_markovchain <- function(
   transition_matrix = matrix(c(0.9, 0.1, 0.5, 0.5), nrow = 2, byrow = TRUE),
   png_filename = tempfile()
 ) {
@@ -85,23 +82,8 @@ plot_markov_chain_igraph <- function(
     states = c("Detected","Undetected"),
     transitionMatrix = transition_matrix
   )
-
-  markov_chain_as_net <- markovchain:::.getNet(markov_chain)
   grDevices::png(png_filename)
-  igraph::plot.igraph(
-    markov_chain_as_net,
-    vertex.color = "white",
-    vertex.frame.color = "Black",
-    vertex.label.color = "Black",
-    vertex.size = 70,
-    edge.label = round(igraph::E(markov_chain_as_net)$weight / 100, 2),
-    edge.color = "Black",
-    edge.label.color = "Black",
-    edge.arrow.size = 0.1,
-    arrow.mode = 2,
-    edge.curved = 0.5 * pi,
-    layout = igraph::layout_on_grid
-  )
+  markovchain::plot(markov_chain)
   grDevices::dev.off()
 }
 
