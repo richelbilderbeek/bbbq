@@ -17,7 +17,6 @@ LazyData: true
 RoxygenNote: 7.1.0
 Imports:
     data.table,
-    epitopeome,
     EpitopePrediction,
     ggplot2,
     igraph,
