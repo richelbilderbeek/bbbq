@@ -1,5 +1,5 @@
 #' Predict binders
-#' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
+#' @author Richèl J.C. Bilderbeek, adapted from Johannes Textor
 predict_binders <- function() {
   argv <- commandArgs( trailingOnly = TRUE )
   mhc <- argv[1]

@@ -6,7 +6,7 @@
 #'  * hydrophobe_control_peptides_as_data_filename
 #'
 #' @inheritParams default_params_doc
-#' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
+#' @author Richèl J.C. Bilderbeek, adapted from Johannes Textor
 hydrophobe_overlap_controls <- function(
   hydrophobe_control_peptides_as_data_filename,
   protein_lengths_filename

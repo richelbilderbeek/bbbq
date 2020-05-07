@@ -1,7 +1,7 @@
 #' Does something
 #' @param mhc simplified MHC name, for example, `A02-01`
 #'   to use `HLA-A02:01`
-#' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
+#' @author Richèl J.C. Bilderbeek, adapted from Johannes Textor
 #' @export
 hyPref <- function(mhc) {
 

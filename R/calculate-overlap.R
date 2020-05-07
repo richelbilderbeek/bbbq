@@ -8,7 +8,7 @@
 #' Output:
 #'   * tmh_overlapping_binders_as_data_filename
 #' @inheritParams default_params_doc
-#' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
+#' @author Richèl J.C. Bilderbeek, adapted from Johannes Textor
 #' @export
 calculate_overlap <- function(
   tmh_9mers_as_data_filename,

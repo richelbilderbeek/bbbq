@@ -8,7 +8,7 @@
 #' @param figure_3_b_filename
 #'   name of the PDF for figure 4b,
 #'   for example `plots/figure-3-b.pdf`
-#' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
+#' @author Richèl J.C. Bilderbeek, adapted from Johannes Textor
 hydrophobicity_distribution_elution_data <- function(
   figure_3_a_filename,
   figure_3_b_filename

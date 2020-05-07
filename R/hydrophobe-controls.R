@@ -8,7 +8,7 @@
 #' Output:
 #'   * hydrophobe_control_peptides_as_data_filename
 #' @inheritParams default_params_doc
-#' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
+#' @author Richèl J.C. Bilderbeek, adapted from Johannes Textor
 hydrophobe_controls <- function(
   proteome_9mer_hydrophobicity_as_data_filename,
   tmh_9mers_as_data_filename

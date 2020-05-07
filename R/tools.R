@@ -1,6 +1,6 @@
 #' Explodes a string into a character vector
 #' @param s one string
-#' @author Johannes Textor, Richel J.C. Bilderbeek
+#' @author Johannes Textor, Richèl J.C. Bilderbeek
 #' @examples
 #' library(testthat)
 #' x <- explode("ABC")
@@ -15,7 +15,7 @@ explode <- function(s) {
 #' with arguments n and x.
 #' @param l list
 #' @param f function
-#' @author Johannes Textor, Richel J.C. Bilderbeek
+#' @author Johannes Textor, Richèl J.C. Bilderbeek
 #' @export
 nlapply <- function(l, f) {
   mapply(f, n = names(l), x = l)

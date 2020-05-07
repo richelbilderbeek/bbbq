@@ -3,7 +3,7 @@
 #' @return a numeric vector of TMH lengths. As a protein can contain
 #'   zero or multiple TMHs, this lengths is probably different than
 #'   the number of proteins
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_tmh_lengths <- function(epitopeome)
 {

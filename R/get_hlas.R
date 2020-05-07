@@ -1,6 +1,6 @@
 #' Get the MHC-I HLAs
 #' Copied from 'calculate_overlap'
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_hlas <- function() {
   c(

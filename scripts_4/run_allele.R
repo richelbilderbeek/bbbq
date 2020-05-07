@@ -1,6 +1,6 @@
 #' Run an allele.
 #' Can be removed I think.
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 run_allele <- function() {
   args <- commandArgs(trailingOnly = TRUE)
 

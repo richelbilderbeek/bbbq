@@ -8,7 +8,7 @@
 #' @param figure_1_d_filename
 #'   name of the PDF file to store figure 1d,
 #'   for example `plots/figure-1-d.pdf`
-#' @author Richel J.C. Bilderbeek, adapted from Johannes Textor
+#' @author Richèl J.C. Bilderbeek, adapted from Johannes Textor
 #' @export
 correlate_to_hydrophobicity <- function(
   tmh_overlapping_binders_as_data_filename,

@@ -1,7 +1,7 @@
 #' Answer the BBBQ
 #' @inheritParams default_params_doc
 #' @return a data frame with counts of the epitopa
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 answer_bbbq_1 <- function(
   fasta_filename,
