@@ -28,12 +28,6 @@ plot_markov_chain <- function(
       png_filename = png_filename
     )
   }
-  else if (tool == "markovchain") {
-    plot_markov_chain_markovchain(
-      transition_matrix = transition_matrix,
-      png_filename = png_filename
-    )
-  }
   else if (tool == "tikz") {
     plot_markov_chain_tikz(
       transition_matrix = transition_matrix,
@@ -68,23 +62,6 @@ plot_markov_chain_dot <- function(
   cmd <- paste0("dot -Tpng ", dot_filename, " > ", png_filename)
   system(cmd)
   grid::grid.raster(png::readPNG(png_filename))
-}
-
-#' Show a Markov chain using the \code{markovchain} package
-#' @inheritParams plot_markov_chain
-#' @export
-plot_markov_chain_markovchain <- function(
-  transition_matrix = matrix(c(0.9, 0.1, 0.5, 0.5), nrow = 2, byrow = TRUE),
-  png_filename = tempfile()
-) {
-  markov_chain <- methods::new(
-    "markovchain",
-    states = c("Detected","Undetected"),
-    transitionMatrix = transition_matrix
-  )
-  grDevices::png(png_filename)
-  markovchain::plot(markov_chain)
-  grDevices::dev.off()
 }
 
 

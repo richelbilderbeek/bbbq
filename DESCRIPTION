@@ -21,15 +21,14 @@ Imports:
     ggplot2,
     igraph,
     magick,
-    markovchain,
     methods,
     netmhc2pan,
     Peptides,
     png,
+    pureseqtmr,
     seqinr,
     stringr,  
-    tibble,
-    tmhmm
+    tibble
 Suggests:
     beastier,
     devtools,
