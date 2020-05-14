@@ -7,7 +7,7 @@ answer_bbbq_1 <- function(
   fasta_filename,
   alleles = "DRB1_0101",
   binding_strength_threshold = 5.0,
-  tmhmm_filename = tempfile(".txt"),
+  pureseqtmr_filename = tempfile(".txt"),
   netmhc2pan_filename = tempfile(".csv"),
   epitopeome_filename = tempfile(".fasta")
 ) {
@@ -21,7 +21,7 @@ answer_bbbq_1 <- function(
   #   fasta_filename = fasta_filename,
   #   alleles = alleles,
   #   binding_strength_threshold = binding_strength_threshold,
-  #   tmhmm_filename = tmhmm_filename,
+  #   pureseqtmr_filename = pureseqtmr_filename,
   #   netmhc2pan_filename = netmhc2pan_filename,
   #   epitopeome_filename = epitopeome_filename
   # )

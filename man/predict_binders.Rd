@@ -10,5 +10,5 @@ predict_binders()
 Predict binders
 }
 \author{
-Richel J.C. Bilderbeek, adapted from Johannes Textor
+Richèl J.C. Bilderbeek, adapted from Johannes Textor
 }

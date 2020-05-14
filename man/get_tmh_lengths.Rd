@@ -18,5 +18,5 @@ a numeric vector of TMH lengths. As a protein can contain
 Get the lengths of the TMHs
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

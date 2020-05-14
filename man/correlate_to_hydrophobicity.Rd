@@ -26,5 +26,5 @@ Input: kyte_doolittle_scale_as_data_filename
 Output: figure_1_d_filename
 }
 \author{
-Richel J.C. Bilderbeek, adapted from Johannes Textor
+Richèl J.C. Bilderbeek, adapted from Johannes Textor
 }

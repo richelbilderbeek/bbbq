@@ -21,5 +21,5 @@ Note that in the original version, these were called
 3a and 3b in the code.
 }
 \author{
-Richel J.C. Bilderbeek, adapted from Johannes Textor
+Richèl J.C. Bilderbeek, adapted from Johannes Textor
 }

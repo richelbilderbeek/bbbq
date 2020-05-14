@@ -12,7 +12,7 @@ run_allele <- function() {
   binding_strength_threshold <- 5.0
   root_folder <- path.expand("~/GitHubs/bbbq/scripts")
 
-  tmhmm_filename <- file.path(root_folder, paste0(allele, ".txt"))
+  pureseqtmr_filename <- file.path(root_folder, paste0(allele, ".txt"))
   netmhc2pan_filename <- file.path(root_folder, paste0(allele, ".csv"))
   epitopeome_filename <- file.path(root_folder, paste0(allele, ".fasta"))
   result_filename <- file.path(root_folder, paste0(allele, "_result.csv"))
@@ -21,7 +21,7 @@ run_allele <- function() {
   print(paste("allele:", allele))
   print(paste("fasta_filename:", fasta_filename))
   print(paste("binding_strength_threshold:", binding_strength_threshold))
-  print(paste("tmhmm_filename:", tmhmm_filename))
+  print(paste("pureseqtmr_filename:", pureseqtmr_filename))
   print(paste("netmhc2pan_filename:", netmhc2pan_filename))
   print(paste("epitopeome_filename:", epitopeome_filename))
   print(paste("result_filename:", result_filename))
@@ -31,7 +31,7 @@ run_allele <- function() {
       fasta_filename = fasta_filename,
       alleles = allele,
       binding_strength_threshold = binding_strength_threshold,
-      tmhmm_filename = tmhmm_filename,
+      pureseqtmr_filename = pureseqtmr_filename,
       netmhc2pan_filename = netmhc2pan_filename,
       epitopeome_filename = epitopeome_filename
   )

@@ -34,7 +34,7 @@ plot_markov_chain <- function(
       png_filename = png_filename
     )
   } else {
-    stop("Invalid tool, use 'dot', 'igraph' or 'tikz'")
+    stop("Invalid tool, use 'dot' or 'tikz'")
   }
 }
 

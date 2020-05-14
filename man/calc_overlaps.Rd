@@ -21,5 +21,5 @@ Per haplotype, calculate the fraction of MHC epitopes
 that overlap with a TMH.
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

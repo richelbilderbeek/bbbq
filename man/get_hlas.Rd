@@ -12,5 +12,5 @@ Get the MHC-I HLAs
 Copied from 'calculate_overlap'
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

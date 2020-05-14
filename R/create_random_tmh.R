@@ -8,7 +8,7 @@ create_random_tmh <- function(
   create_random_polypeptide_fun = bbbq::create_random_hydrophobic_polypeptide
 ) {
   seq <- create_random_polypeptide_fun(n_aas)
-  while (!tmhmm::is_tmh(seq)) {
+  while (!pureseqtmr::is_tmh(seq)) {
     seq <- create_random_polypeptide_fun(n_aas)
   }
   seq

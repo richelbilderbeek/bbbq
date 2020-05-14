@@ -25,5 +25,5 @@ Inputs:
  * hydrophobe_control_peptides_as_data_filename
 }
 \author{
-Richel J.C. Bilderbeek, adapted from Johannes Textor
+Richèl J.C. Bilderbeek, adapted from Johannes Textor
 }

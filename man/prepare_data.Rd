@@ -49,5 +49,5 @@ Proteome used in Bianchi et al., 2017 used:
   https://github.com/richelbilderbeek/bianchi_et_al_2017/raw/master/proteome_2017/UP000005640_9606.fasta.gz
 }
 \author{
-Richel J.C. Bilderbeek, adapted from Johannes Textor
+Richèl J.C. Bilderbeek, adapted from Johannes Textor
 }

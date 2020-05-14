@@ -18,5 +18,5 @@ x <- explode("ABC")
 expect_equal(x, c("A", "B", "C"))
 }
 \author{
-Johannes Textor, Richel J.C. Bilderbeek
+Johannes Textor, Richèl J.C. Bilderbeek
 }

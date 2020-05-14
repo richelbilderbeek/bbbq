@@ -14,5 +14,5 @@ to use `HLA-A02:01`}
 Does something
 }
 \author{
-Richel J.C. Bilderbeek, adapted from Johannes Textor
+Richèl J.C. Bilderbeek, adapted from Johannes Textor
 }

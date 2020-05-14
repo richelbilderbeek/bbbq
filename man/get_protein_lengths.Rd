@@ -10,5 +10,5 @@ get_protein_lengths()
 Determines the lengths of all proteins in the human proteome.
 }
 \author{
-Richel J.C. Bilderbeek, adapted from Johannes Textor
+Richèl J.C. Bilderbeek, adapted from Johannes Textor
 }

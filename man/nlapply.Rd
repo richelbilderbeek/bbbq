@@ -19,5 +19,5 @@ name of each list element. f must be a function
 with arguments n and x.
 }
 \author{
-Johannes Textor, Richel J.C. Bilderbeek
+Johannes Textor, Richèl J.C. Bilderbeek
 }
