@@ -9,7 +9,7 @@ r_github_packages:
   - jimhester/covr
   - jimhester/lintr
   - richelbilderbeek/netmhc2pan
-  - richelbilderbeek/tmhmm
+  - richelbilderbeek/pureseqtmr
   - richelbilderbeek/epitopeome
   - richelbilderbeek/beastier
   - jtextor/epitope-prediction
