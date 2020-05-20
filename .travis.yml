@@ -14,9 +14,6 @@ r_github_packages:
   - jtextor/epitope-prediction
 
 before_install:
-  - sudo add-apt-repository -y ppa:opencpu/imagemagick
-  - sudo apt-get update
-  - sudo apt-get install -qq libmagick++-dev
   # Boost
   - sudo apt-get install -qq libboost-all-dev
   # SSL

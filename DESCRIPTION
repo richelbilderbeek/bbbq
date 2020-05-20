@@ -19,8 +19,6 @@ Imports:
     data.table,
     EpitopePrediction,
     ggplot2,
-    igraph,
-    magick,
     methods,
     netmhc2pan,
     Peptides,
