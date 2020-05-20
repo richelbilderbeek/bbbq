@@ -3,14 +3,14 @@
 #' @export
 is_detected_by_mhc_1 <- function(
   protein_sequence,
-  mhc_1_haplotype = "HLA-A-02:01"
+  mhc_1_haplotype = "HLA-A-02-01"
 ) {
   is_detected <- FALSE
   tryCatch(
     {
       EpitopePrediction::binders(
         x = protein_sequence,
-        mhc = mhc_1_haplotype
+        mhc = to_epitope_prediction_name(mhc_1_haplotype)
       )
       is_detected <- TRUE
     },

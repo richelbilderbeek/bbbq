@@ -13,6 +13,7 @@ default_params_doc(
   haplotypes,
   hydrophobe_control_peptides_as_data_filename,
   kyte_doolittle_scale_as_data_filename,
+  mhc_1_haplotype,
   n_aas,
   netmhc2pan_filename,
   non_tmh_eluted_filename,
@@ -57,6 +58,9 @@ for example `work/hydrophobe-control-peptides.Rdata`}
 \item{kyte_doolittle_scale_as_data_filename}{filename that stores the Kyte-Doolittle scale of
 hydrophobicity,
 for example `data/kyte.doolittle.scale.Rdata`}
+
+\item{mhc_1_haplotype}{HMC-I haplotope.
+Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 
 \item{n_aas}{number of amino acids}
 
