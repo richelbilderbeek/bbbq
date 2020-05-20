@@ -4,7 +4,7 @@
 \alias{is_detected_by_mhc_1}
 \title{Determine if MHC-I has at least one binder to the polypeptide}
 \usage{
-is_detected_by_mhc_1(protein_sequence)
+is_detected_by_mhc_1(protein_sequence, mhc_1_haplotype = "HLA-A-02:01")
 }
 \arguments{
 \item{protein_sequence}{a protein sequence}
