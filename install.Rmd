@@ -49,15 +49,3 @@ a helpful error message:
 ```{r}
 netmhc2pan::check_netmhc2pan_installation()
 ```
-
-Another dependency is the `epitopiome` package.
-Installing the `epitopeome` package:
-
-```
-remotes::install_github("richelbilderbeek/epitopeome")
-```
-
-```
-remotes::install_github("richelbilderbeek/bbbq")
-```
-

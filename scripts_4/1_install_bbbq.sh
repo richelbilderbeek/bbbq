@@ -55,33 +55,14 @@ echo "NetMHC2pan run:"
 Rscript -e 'netmhc2pan::run_netmhc2pan(fasta_filename = system.file("extdata", "example.fasta", package = "netmhc2pan"))'
 
 ################################################################################
-# tmhmm
+# pureseqtmr
 ################################################################################
 
-echo "Installing TMHMM GitHub"
-Rscript -e "devtools::install_github(\"richelbilderbeek/tmhmm\", ref = \"$branch\")"
+echo "Installing pureseqtmr GitHub"
+Rscript -e "devtools::install_github(\"richelbilderbeek/pureseqtmr\", ref = \"$branch\")"
 
-echo "Installing TMHMM"
-Rscript -e 'tmhmm::install_tmhmm()'
-
-echo "TMHMM binary installed:"
-Rscript -e 'tmhmm::is_tmhmm_bin_installed()'
-
-echo "TMHMM set up:"
-Rscript -e 'tmhmm::is_tmhmm_set_up()'
-
-echo "TMHMM run:"
-Rscript -e 'tmhmm::run_tmhmm(system.file("extdata", "tmhmm.fasta", package = "tmhmm"))'
-
-################################################################################
-# epitopeome
-################################################################################
-
-echo "Installing epitopeome GitHub"
-Rscript -e "devtools::install_github(\"richelbilderbeek/epitopeome\", ref = \"$branch\")"
-
-echo "epitopeome run:"
-Rscript -e 'epitopeome::create_epitopeome(system.file("extdata", "proteome.fasta", package = "epitopeome"))'
+echo "Installing PureseqTM"
+Rscript -e 'pureseqtmr::install_pureseqtm()'
 
 ################################################################################
 # BBBQ

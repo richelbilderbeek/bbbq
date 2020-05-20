@@ -4,10 +4,11 @@
 \alias{get_tmh_lengths}
 \title{Get the lengths of the TMHs}
 \usage{
-get_tmh_lengths(epitopeome)
+get_tmh_lengths(topology)
 }
 \arguments{
-\item{epitopeome}{an epitopeome}
+\item{topology}{a topology,
+as created by \link[pureseqtmr]{predict_proteome_topology}}
 }
 \value{
 a numeric vector of TMH lengths. As a protein can contain

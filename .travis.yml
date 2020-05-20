@@ -10,7 +10,6 @@ r_github_packages:
   - jimhester/lintr
   - richelbilderbeek/netmhc2pan
   - richelbilderbeek/pureseqtmr
-  - richelbilderbeek/epitopeome
   - richelbilderbeek/beastier
   - jtextor/epitope-prediction
 

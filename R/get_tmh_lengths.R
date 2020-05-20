@@ -1,13 +1,14 @@
 #' Get the lengths of the TMHs
-#' @param epitopeome an epitopeome
+#' @param topology a topology,
+#'   as created by \link[pureseqtmr]{predict_proteome_topology}
 #' @return a numeric vector of TMH lengths. As a protein can contain
 #'   zero or multiple TMHs, this lengths is probably different than
 #'   the number of proteins
 #' @author Richèl J.C. Bilderbeek
 #' @export
-get_tmh_lengths <- function(epitopeome)
+get_tmh_lengths <- function(topology)
 {
-  even_indices <- 1 + seq(1, length(epitopeome), by = 2)
-  tmhs <- stringr::str_match_all(string = epitopeome[even_indices], pattern = "[Mm]+")
+  pureseqtmr::check_topology(topology)
+  tmhs <- stringr::str_match_all(string = topology$topology, pattern = "[1]+")
   stringr::str_length(unlist(tmhs))
 }
