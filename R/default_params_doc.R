@@ -18,8 +18,10 @@
 #'   filename that stores the Kyte-Doolittle scale of
 #'   hydrophobicity,
 #'   for example `data/kyte.doolittle.scale.Rdata`
+#' @param max_hydrophobicity the maximal hydrophobicity
 #' @param mhc_1_haplotype HMC-I haplotope.
 #'   Use \link{get_mhc1_haplotypes} to get a list of all haplotypes
+#' @param min_hydrophobicity the minimal hydrophobicity
 #' @param n_aas number of amino acids
 #' @param non_tmh_eluted_filename
 #'   Filename for the non-TMHs found on B-cells,
@@ -72,7 +74,9 @@ default_params_doc <- function(
   haplotypes,
   hydrophobe_control_peptides_as_data_filename,
   kyte_doolittle_scale_as_data_filename,
+  max_hydrophobicity,
   mhc_1_haplotype,
+  min_hydrophobicity,
   n_aas,
   non_tmh_eluted_filename,
   png_filename,
