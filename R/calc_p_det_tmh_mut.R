@@ -2,13 +2,20 @@
 #' mutant is detected
 #' @inheritParams default_params_doc
 #' @export
-calc_p_det_tmh_mut <- function(protein_sequence) {
+calc_p_det_tmh_mut <- function(
+  protein_sequence,
+  mhc_1_haplotype = "HLA-A-02-01"
+) {
+  testthat::expect_true(pureseqtmr::is_tmh(protein_sequence))
 
   adj_seqs <- get_adjacent_sequences(protein_sequence)
 
   adj_tmhs <- adj_seqs[pureseqtmr::are_tmhs(adj_seqs)]
 
-  are_det <- bbbq::are_detected(adj_tmhs)
+  are_det <- bbbq::are_detected(
+    protein_sequences = adj_tmhs,
+    mhc_1_haplotype = mhc_1_haplotype
+  )
 
   transition_rates <- bbbq::get_transition_rates(
     protein_sequence = protein_sequence,

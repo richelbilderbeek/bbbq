@@ -1,6 +1,6 @@
 test_that("use", {
-  skip("Not now")
-  protein_sequence <- "ITIVCFIVLGVIFCIGVIFI"
+  if (!pureseqtmr::is_on_travis()) return()
+  protein_sequence <- "EKNWSALLTAVVIILTIAGNILV"
   expect_true(pureseqtmr::is_tmh(protein_sequence))
   p <- calc_p_det_tmh_mut(protein_sequence)
   expect_true(p >= 0.0)

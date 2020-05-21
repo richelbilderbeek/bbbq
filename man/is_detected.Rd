@@ -4,10 +4,13 @@
 \alias{is_detected}
 \title{Determine if MHC-I or MHC-II has at least one binder to the polypeptide}
 \usage{
-is_detected(protein_sequence)
+is_detected(protein_sequence, mhc_1_haplotype = "HLA-A-02-01")
 }
 \arguments{
 \item{protein_sequence}{a protein sequence}
+
+\item{mhc_1_haplotype}{HMC-I haplotope.
+Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 }
 \description{
 Determine if MHC-I or MHC-II has at least one binder to the polypeptide

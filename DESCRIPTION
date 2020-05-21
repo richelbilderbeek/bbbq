@@ -20,7 +20,6 @@ Imports:
     EpitopePrediction,
     ggplot2,
     methods,
-    netmhc2pan,
     Peptides,
     png,
     pureseqtmr,

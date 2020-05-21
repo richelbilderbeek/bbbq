@@ -5,10 +5,13 @@
 \title{Calculate the chance that a TMH one-mutation
 mutant is detected}
 \usage{
-calc_p_det_tmh_mut(protein_sequence)
+calc_p_det_tmh_mut(protein_sequence, mhc_1_haplotype = "HLA-A-02-01")
 }
 \arguments{
 \item{protein_sequence}{a protein sequence}
+
+\item{mhc_1_haplotype}{HMC-I haplotope.
+Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 }
 \description{
 Calculate the chance that a TMH one-mutation

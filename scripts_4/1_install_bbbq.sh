@@ -31,33 +31,8 @@ fi
 
 
 ################################################################################
-# netmhc2pan
-################################################################################
-echo "Installing netmhc2pan GitHub"
-Rscript -e "devtools::install_github(\"richelbilderbeek/netmhc2pan\", ref = \"$branch\")"
-
-echo "Installing NetMHC2pan"
-Rscript -e 'netmhc2pan::install_netmhc2pan()'
-
-echo "NetMHC2pan binary installed:"
-Rscript -e 'netmhc2pan::is_netmhc2pan_bin_installed()'
-
-echo "NetMHC2pan data installed:"
-Rscript -e 'netmhc2pan::is_netmhc2pan_data_installed()'
-
-echo "NetMHC2pan set up:"
-Rscript -e 'netmhc2pan::is_netmhc2pan_set_up()'
-
-echo "TCSH installed:"
-Rscript -e 'netmhc2pan::is_tcsh_installed()'
-
-echo "NetMHC2pan run:"
-Rscript -e 'netmhc2pan::run_netmhc2pan(fasta_filename = system.file("extdata", "example.fasta", package = "netmhc2pan"))'
-
-################################################################################
 # pureseqtmr
 ################################################################################
-
 echo "Installing pureseqtmr GitHub"
 Rscript -e "devtools::install_github(\"richelbilderbeek/pureseqtmr\", ref = \"$branch\")"
 
@@ -73,3 +48,4 @@ Rscript -e "devtools::install_github(\"richelbilderbeek/bbbq\", ref = \"$branch\
 
 echo "bbbq run:"
 Rscript -e 'bbbq::answer_bbbq_1(system.file("extdata", "short.fasta", package = "bbbq"))'
+

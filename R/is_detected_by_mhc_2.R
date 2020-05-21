@@ -5,7 +5,8 @@ is_detected_by_mhc_2 <- function(protein_sequence = "VVIIRTIAGRILVIMARSLE") {
   fasta_text <- c(">protein_name", protein_sequence)
   fasta_filename <- tempfile()
   writeLines(text = fasta_text, con = fasta_filename)
-  results <- netmhc2pan::run_netmhc2pan(fasta_filename = fasta_filename)
-  sum(results$Rank < 5.0) > 0
+  #results <- mhcnuggetsr::run_mhcnuggets(fasta_filename = fasta_filename) # nolint
+  warning("STUB")
+  FALSE
 }
 

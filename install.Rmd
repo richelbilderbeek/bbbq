@@ -1,51 +1,42 @@
 ## Install
 
-The `bbbq` package depends on the `tmhmm` package, which needs
-to be installed first:
+### TMH prediction: `pureseqtmr`
+
+To install the  `pureseqtmr` package:
 
 ```
-remotes::install_github("richelbilderbeek/tmhmm")
+remotes::install_github("richelbilderbeek/pureseqtmr")
 ```
 
-The `tmhmm` package relies on TMHMM that needs to be installed:
+The `pureseqtmr` package relies on PureseqTM, 
+which needs to be installed like this:
 
 ```
-tmhmm::install_tmhmm("http://www.cbs.dtu.dk/download/D3198788-0F1D-11E9-883C-84B3B9CD16B5/")
+pureseqtmr::install_pureseqtm()
 ```
 
-The URL can be obtained by requesting a download link at 
-the [TMHMM](http://www.cbs.dtu.dk/services/TMHMM) website 
-at [http://www.cbs.dtu.dk/services/TMHMM](http://www.cbs.dtu.dk/services/TMHMM).
-As this URL expires after four hours, `tmhmm` cannot do this for you.
+### MHC-I epitope prediction: `EpitopePrediction`
 
-The installation of NetMHC2pan is checked, with the goal of giving
-a helpful error message:
-
-```{r}
-tmhmm::check_tmhmm_installation()
-```
-
-Additionall, The `bbbq` package depends on the `netmhc2pan` package, which needs
-to be installed as well:
+To install the  `EpitopePrediction` package:
 
 ```
-remotes::install_github("richelbilderbeek/netmhc2pan")
+remotes::install_github("jtextor/EpitopePrediction")
 ```
 
-The `netmhc2pan` package relies on NetMHCIIpan that needs to be installed:
+
+### MHC-II epitope prediction: `mhcnuggetsr`
+
+To install the  `mhcnuggetsr` package:
 
 ```
-netmhc2pan::install_netmhc2pan("http://www.cbs.dtu.dk/download/33A6B0AC-0F2E-11E9-B4D1-8ABCB9CD16B5/")
+remotes::install_github("richelbilderbeek/mhcnuggetsr")
 ```
 
-The URL can be obtained by requesting a download link at
-the [NetMHCIIpan](www.cbs.dtu.dk/services/NetMHCIIpan) website 
-at [www.cbs.dtu.dk/services/NetMHCIIpan]www.cbs.dtu.dk/services/NetMHCIIpan).
-As this URL expires after four hours, `netmhc2pan` cannot do this for you.
+The `mhcnuggetsr` package relies on 'MHCnuggets', 
+which needs to be installed like this:
 
-The installation of NetMHC2pan is checked, with the goal of giving
-a helpful error message:
-
-```{r}
-netmhc2pan::check_netmhc2pan_installation()
 ```
+mhcnuggetsr::install_mhcnuggets()
+```
+
+
