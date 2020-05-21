@@ -1,5 +1,7 @@
 test_that("use", {
   if (!pureseqtmr::is_on_travis()) return()
+  if (!pureseqtmr::is_pureseqtm_installed()) return()
+
   protein_sequence <- "EKNWSALLTAVVIILTIAGNILV"
   expect_true(pureseqtmr::is_tmh(protein_sequence))
   p <- calc_p_det_tmh_mut(protein_sequence)
