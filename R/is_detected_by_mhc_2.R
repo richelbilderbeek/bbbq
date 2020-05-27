@@ -4,14 +4,11 @@
 is_detected_by_mhc_2 <- function(
   protein_sequence = "VVIIRTIAGRILVIMARSLE",
   mhc_2_haplotype = "HLA-DRB104:05",
-  ic50_threshold = 500
+  ic50_threshold = get_mhc2_ic50_threshold()
 ) {
-  fasta_text <- c(protein_sequence)
-  fasta_filename <- tempfile()
-  writeLines(text = fasta_text, con = fasta_filename)
-  results <- mhcnuggetsr::epitope_predict(
+  results <- mhcnuggetsr::predict_ic50(
     mhc_class = "II",
-    peptides_path = fasta_filename,
+    peptides = protein_sequence,
     mhc = mhc_2_haplotype
   )
   results$ic50 < ic50_threshold

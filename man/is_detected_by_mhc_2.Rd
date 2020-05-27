@@ -7,7 +7,7 @@
 is_detected_by_mhc_2(
   protein_sequence = "VVIIRTIAGRILVIMARSLE",
   mhc_2_haplotype = "HLA-DRB104:05",
-  ic50_threshold = 500
+  ic50_threshold = get_mhc2_ic50_threshold()
 )
 }
 \arguments{
