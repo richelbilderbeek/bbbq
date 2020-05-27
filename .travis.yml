@@ -8,8 +8,8 @@ r_packages:
 r_github_packages:
   - jimhester/covr
   - jimhester/lintr
+  - richelbilderbeek/mhcnuggetsr
   - richelbilderbeek/pureseqtmr
-  - richelbilderbeek/beastier
   - jtextor/epitope-prediction
 
 before_install:
