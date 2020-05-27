@@ -4,13 +4,21 @@
 \alias{is_detected_by_mhc_1}
 \title{Determine if MHC-I has at least one binder to the polypeptide}
 \usage{
-is_detected_by_mhc_1(protein_sequence, mhc_1_haplotype = "HLA-A-02-01")
+is_detected_by_mhc_1(
+  protein_sequence,
+  mhc_1_haplotype = "HLA-A-02-01",
+  ic50_threshold = 500
+)
 }
 \arguments{
 \item{protein_sequence}{a protein sequence}
 
 \item{mhc_1_haplotype}{HMC-I haplotope.
 Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
+
+\item{ic50_threshold}{peptides with a predicted IC50 value (in nM)
+lower than this will be considered binders.
+A threshold of 500 (nM) is common.}
 }
 \description{
 Determine if MHC-I has at least one binder to the polypeptide

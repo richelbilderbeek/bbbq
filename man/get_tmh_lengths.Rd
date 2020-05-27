@@ -8,7 +8,7 @@ get_tmh_lengths(topology)
 }
 \arguments{
 \item{topology}{a topology,
-as created by \link[pureseqtmr]{predict_proteome_topology}}
+as created by \link[pureseqtmr]{predict_topology}}
 }
 \value{
 a numeric vector of TMH lengths. As a protein can contain

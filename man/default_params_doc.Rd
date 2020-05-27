@@ -11,6 +11,7 @@ default_params_doc(
   fasta_filename,
   haplotypes,
   hydrophobe_control_peptides_as_data_filename,
+  ic50_threshold,
   kyte_doolittle_scale_as_data_filename,
   max_hydrophobicity,
   mhc_1_haplotype,
@@ -52,6 +53,10 @@ which is cleaned by the operating system}
 \item{hydrophobe_control_peptides_as_data_filename}{filename that stores hydrophobe control peptides
 as R data,
 for example `work/hydrophobe-control-peptides.Rdata`}
+
+\item{ic50_threshold}{peptides with a predicted IC50 value (in nM)
+lower than this will be considered binders.
+A threshold of 500 (nM) is common.}
 
 \item{kyte_doolittle_scale_as_data_filename}{filename that stores the Kyte-Doolittle scale of
 hydrophobicity,
@@ -109,7 +114,7 @@ and will be put in the \code{/tmp} folder,
 which is cleaned by the operating system}
 
 \item{topology}{a topology,
-as created by \link[pureseqtmr]{predict_proteome_topology}}
+as created by \link[pureseqtmr]{predict_topology}}
 
 \item{trans_membrane_analysis_filename}{Filename for
 uhhh, something, for example

@@ -1,6 +1,5 @@
 #' Get the lengths of the TMHs
-#' @param topology a topology,
-#'   as created by \link[pureseqtmr]{predict_proteome_topology}
+#' @inheritParams default_params_doc
 #' @return a numeric vector of TMH lengths. As a protein can contain
 #'   zero or multiple TMHs, this lengths is probably different than
 #'   the number of proteins

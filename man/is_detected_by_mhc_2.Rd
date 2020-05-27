@@ -4,10 +4,18 @@
 \alias{is_detected_by_mhc_2}
 \title{Determine if the  protein sequence has one MHC-II binder}
 \usage{
-is_detected_by_mhc_2(protein_sequence = "VVIIRTIAGRILVIMARSLE")
+is_detected_by_mhc_2(
+  protein_sequence = "VVIIRTIAGRILVIMARSLE",
+  mhc_2_haplotype = "HLA-DRB104:05",
+  ic50_threshold = 500
+)
 }
 \arguments{
 \item{protein_sequence}{a protein sequence}
+
+\item{ic50_threshold}{peptides with a predicted IC50 value (in nM)
+lower than this will be considered binders.
+A threshold of 500 (nM) is common.}
 }
 \description{
 Determine if the  protein sequence has one MHC-II binder
