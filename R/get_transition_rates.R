@@ -1,6 +1,7 @@
 #' Get the transition rates from the one focal protein sequence
 #' to the one or more target protein sequences
 #' @inheritParams default_params_doc
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_transition_rates <- function(
   protein_sequence,

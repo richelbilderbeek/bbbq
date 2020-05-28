@@ -1,18 +1,19 @@
-#' Creates a random polypeptide of a certain hydrophobicity
+#' Creates a random peptide of a certain hydrophobicity
 #' @inheritParams default_params_doc
 #' @param n_attempts number of attempts before the algorithm will \link{stop}
 #' @examples
 #' library(testthat)
 #'
-#' polypeptide <- create_random_polypeptide_with_hydrophobicity(
+#' peptide <- create_random_peptide_with_hydrophobicity(
 #'   n_aas = 2,
 #'   min_hydrophobicity = 1.0,
 #'   max_hydrophobicity = 1.5
 #' )
-#' expect_true(Peptides::hydrophobicity(polypeptide) >= 1.0)
-#' expect_true(Peptides::hydrophobicity(polypeptide) <= 1.5)
+#' expect_true(Peptides::hydrophobicity(peptide) >= 1.0)
+#' expect_true(Peptides::hydrophobicity(peptide) <= 1.5)
+#' @author Richèl J.C. Bilderbeek
 #' @export
-create_random_polypeptide_with_hydrophobicity <- function(
+create_random_peptide_with_hydrophobicity <- function(
   n_aas,
   min_hydrophobicity,
   max_hydrophobicity,
@@ -35,5 +36,5 @@ create_random_polypeptide_with_hydrophobicity <- function(
       return(candidate)
     }
   }
-  stop("Too many attempts to generate polypeptide")
+  stop("Too many attempts to generate peptide")
 }

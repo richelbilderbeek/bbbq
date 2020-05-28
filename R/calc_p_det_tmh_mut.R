@@ -1,6 +1,7 @@
 #' Calculate the chance that a TMH one-mutation
 #' mutant is detected
 #' @inheritParams default_params_doc
+#' @author Richèl J.C. Bilderbeek
 #' @export
 calc_p_det_tmh_mut <- function(
   protein_sequence,

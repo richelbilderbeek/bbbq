@@ -24,11 +24,15 @@
 #' @param max_hydrophobicity the maximal hydrophobicity
 #' @param mhc_1_haplotype HMC-I haplotope.
 #'   Use \link{get_mhc1_haplotypes} to get a list of all haplotypes
+#' @param mhc_2_haplotype HMC-II haplotope.
+#'   Use \link{get_mhc2_haplotypes} to get a list of all haplotypes
 #' @param min_hydrophobicity the minimal hydrophobicity
 #' @param n_aas number of amino acids
+#' @param n_peptides number of peptides
 #' @param non_tmh_eluted_filename
 #'   Filename for the non-TMHs found on B-cells,
 #'   for example `data/non-TMH-Bcell-elution.txt`
+#' @param peptide_length length of the peptide in amino acids
 #' @param png_filename name of a PNG file
 #' @param protein_lengths_filename filename to store the
 #'   length of all proteins in proteome,
@@ -80,9 +84,12 @@ default_params_doc <- function(
   kyte_doolittle_scale_as_data_filename,
   max_hydrophobicity,
   mhc_1_haplotype,
+  mhc_2_haplotype,
   min_hydrophobicity,
   n_aas,
+  n_peptides,
   non_tmh_eluted_filename,
+  peptide_length,
   png_filename,
   protein_lengths_filename,
   protein_sequence,

@@ -1,5 +1,6 @@
 #' Get the adjacent sequences
 #' @param aa_sequence amino acid sequence
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_adjacent_sequences <- function(aa_sequence = "VVIILTIAGNILVIMAVSLE")
 {

@@ -1,4 +1,5 @@
 #' Get the MHC-II haplotypes used in this study
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_mhc2_haplotypes <- function() {
   c(

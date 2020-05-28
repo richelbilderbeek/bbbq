@@ -18,3 +18,6 @@ expect_equal(20, length(get_amino_acids()))
 # First one is alanine
 expect_equal("A", get_amino_acids()[1])
 }
+\author{
+Richèl J.C. Bilderbeek
+}

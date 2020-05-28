@@ -2,6 +2,7 @@
 #' @param s the string
 #' @param n the index of the character
 #' @param c the character to be placed at that index
+#' @author Richèl J.C. Bilderbeek
 #' @export
 replace_nth_char <- function(s, n, c) {
   letter <- c

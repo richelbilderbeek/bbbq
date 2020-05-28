@@ -7,3 +7,6 @@
 \description{
 'bbbq' answers The Bilderbeek Bianchi and Bogaart Question
 }
+\author{
+Richèl J.C. Bilderbeek
+}

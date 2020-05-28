@@ -13,11 +13,11 @@ hydrophobicity_distribution_elution_data <- function(
   figure_3_a_filename,
   figure_3_b_filename
 ) {
-  tmh_polypeptides <- bbbq::get_tmh_polypeptides_from_elution()
-  non_tmh_polypeptides <- bbbq::get_non_tmh_polypeptides_from_elution()
+  tmh_peptides <- bbbq::get_tmh_peptides_from_elution()
+  non_tmh_peptides <- bbbq::get_non_tmh_peptides_from_elution()
 
-  tmh_hydrophobicities <- Peptides::hydrophobicity(tmh_polypeptides)
-  non_tmh_hydrophobicities <- Peptides::hydrophobicity(non_tmh_polypeptides)
+  tmh_hydrophobicities <- Peptides::hydrophobicity(tmh_peptides)
+  non_tmh_hydrophobicities <- Peptides::hydrophobicity(non_tmh_peptides)
 
   grDevices::pdf(figure_3_a_filename, width = 4, height = 4, useDingbats = FALSE)
   graphics::par(bty = "n", mar = c(4, 4, .2, .2))

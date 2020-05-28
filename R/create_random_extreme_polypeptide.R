@@ -1,8 +1,9 @@
-#' Create a random polypeptide likelier to have an
+#' Create a random peptide likelier to have an
 #' extreme hydrophobicity
 #' @inheritParams default_params_doc
+#' @author Richèl J.C. Bilderbeek
 #' @export
-create_random_extreme_polypeptide <- function(n_aas)
+create_random_extreme_peptide <- function(n_aas)
 {
   aas <- bbbq::get_amino_acids()
   hs <- Peptides::hydrophobicity(aas)

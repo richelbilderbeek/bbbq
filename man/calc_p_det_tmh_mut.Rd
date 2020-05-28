@@ -17,3 +17,6 @@ Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 Calculate the chance that a TMH one-mutation
 mutant is detected
 }
+\author{
+Richèl J.C. Bilderbeek
+}

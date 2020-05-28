@@ -1,5 +1,6 @@
 #' Determine if each protein sequence has one MHC-II binder
 #' @inheritParams default_params_doc
+#' @author Richèl J.C. Bilderbeek
 #' @export
 are_detected_by_mhc_2 <- function(protein_sequences) {
   are_detected <- rep(NA, length(protein_sequences))

@@ -14,3 +14,6 @@ get_transition_rate(seq_lhs, seq_rhs)
 \description{
 Get the AA transition rate from the FLU transition rate matrix
 }
+\author{
+Richèl J.C. Bilderbeek
+}

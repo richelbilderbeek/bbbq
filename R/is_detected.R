@@ -1,5 +1,6 @@
-#' Determine if MHC-I or MHC-II has at least one binder to the polypeptide
+#' Determine if MHC-I or MHC-II has at least one binder to the peptide
 #' @inheritParams default_params_doc
+#' @author Richèl J.C. Bilderbeek
 #' @export
 is_detected <- function(
   protein_sequence,

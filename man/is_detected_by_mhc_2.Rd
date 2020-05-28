@@ -13,10 +13,16 @@ is_detected_by_mhc_2(
 \arguments{
 \item{protein_sequence}{a protein sequence}
 
+\item{mhc_2_haplotype}{HMC-II haplotope.
+Use \link{get_mhc2_haplotypes} to get a list of all haplotypes}
+
 \item{ic50_threshold}{peptides with a predicted IC50 value (in nM)
 lower than this will be considered binders.
 A threshold of 500 (nM) is common.}
 }
 \description{
 Determine if the  protein sequence has one MHC-II binder
+}
+\author{
+Richèl J.C. Bilderbeek
 }

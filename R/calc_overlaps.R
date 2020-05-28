@@ -6,6 +6,7 @@
 #' @return per haplotype, the fraction of MHC epitopes
 #' that overlap with a TMH. The fractions range from 0 ('none') to (and including)
 #' 1 ('all')
+#' @author Richèl J.C. Bilderbeek
 #' @export
 calc_overlaps <- function(
   proteome_filename,

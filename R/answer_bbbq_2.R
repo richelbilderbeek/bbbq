@@ -1,4 +1,5 @@
 #' Answer the second BBBQ
+#' @author Richèl J.C. Bilderbeek
 #' @export
 answer_bbbq_2 <- function() {
 

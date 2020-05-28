@@ -1,7 +1,8 @@
-#' Create a random hydrophobic polypeptide
+#' Create a random hydrophobic peptide
 #' @param n_aas number of amino acids
+#' @author Richèl J.C. Bilderbeek
 #' @export
-create_random_hydrophobic_polypeptide <- function(n_aas)
+create_random_hydrophobic_peptide <- function(n_aas)
 {
   aas <- bbbq::get_amino_acids()
   hs <- Peptides::hydrophobicity(aas)

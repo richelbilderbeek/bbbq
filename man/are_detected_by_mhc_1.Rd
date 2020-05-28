@@ -4,7 +4,7 @@
 \alias{are_detected_by_mhc_1}
 \title{Determine if the protein sequences are detected by MHC-I}
 \usage{
-are_detected_by_mhc_1(protein_sequences, mhc_1_haplotype = "HLA-A-02-01")
+are_detected_by_mhc_1(protein_sequences, mhc_1_haplotype = "HLA-A*02:01")
 }
 \arguments{
 \item{protein_sequences}{one or more protein sequences}
@@ -14,4 +14,7 @@ Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 }
 \description{
 Determine if the protein sequences are detected by MHC-I
+}
+\author{
+Richèl J.C. Bilderbeek
 }

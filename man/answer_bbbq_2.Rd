@@ -9,3 +9,6 @@ answer_bbbq_2()
 \description{
 Answer the second BBBQ
 }
+\author{
+Richèl J.C. Bilderbeek
+}

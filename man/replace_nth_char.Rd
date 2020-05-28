@@ -16,3 +16,6 @@ replace_nth_char(s, n, c)
 \description{
 Replace the nth char of a string
 }
+\author{
+Richèl J.C. Bilderbeek
+}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_detected.R
 \name{is_detected}
 \alias{is_detected}
-\title{Determine if MHC-I or MHC-II has at least one binder to the polypeptide}
+\title{Determine if MHC-I or MHC-II has at least one binder to the peptide}
 \usage{
 is_detected(protein_sequence, mhc_1_haplotype = "HLA-A-02-01")
 }
@@ -13,5 +13,8 @@ is_detected(protein_sequence, mhc_1_haplotype = "HLA-A-02-01")
 Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 }
 \description{
-Determine if MHC-I or MHC-II has at least one binder to the polypeptide
+Determine if MHC-I or MHC-II has at least one binder to the peptide
+}
+\author{
+Richèl J.C. Bilderbeek
 }

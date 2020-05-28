@@ -1,7 +1,7 @@
 test_that("use", {
   expect_true(
-    is_polypeptide(
-      create_random_polypeptide(n_aas = 20)
+    is_peptide(
+      create_random_peptide(n_aas = 20)
     )
   )
 })

@@ -9,3 +9,6 @@ get_mhc2_haplotypes()
 \description{
 Get the MHC-II haplotypes used in this study
 }
+\author{
+Richèl J.C. Bilderbeek
+}

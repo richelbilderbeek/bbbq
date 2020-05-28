@@ -2,7 +2,7 @@
 % Please edit documentation in R/to_epitope_prediction_name.R
 \name{to_epitope_prediction_name}
 \alias{to_epitope_prediction_name}
-\title{Convert an academic HMC-I haplotype name to one to be used by
+\title{Convert the current HMC-I haplotype name to one to be used by
 the EpitopePrediction package}
 \usage{
 to_epitope_prediction_name(mhc_1_haplotype)
@@ -12,6 +12,16 @@ to_epitope_prediction_name(mhc_1_haplotype)
 Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 }
 \description{
-Convert an academic HMC-I haplotype name to one to be used by
+Convert the current HMC-I haplotype name to one to be used by
 the EpitopePrediction package
+}
+\examples{
+library(testthat)
+
+haplotype <- get_mhc1_haplotypes()[1]
+expect_equal("HLA-A*01:01", haplotype)
+expect_equal("HLA-A-01:01", to_epitope_prediction_name(haplotype))
+}
+\author{
+Richèl J.C. Bilderbeek
 }

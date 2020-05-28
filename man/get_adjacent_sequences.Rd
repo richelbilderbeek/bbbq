@@ -12,3 +12,6 @@ get_adjacent_sequences(aa_sequence = "VVIILTIAGNILVIMAVSLE")
 \description{
 Get the adjacent sequences
 }
+\author{
+Richèl J.C. Bilderbeek
+}

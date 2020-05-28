@@ -15,9 +15,12 @@ default_params_doc(
   kyte_doolittle_scale_as_data_filename,
   max_hydrophobicity,
   mhc_1_haplotype,
+  mhc_2_haplotype,
   min_hydrophobicity,
   n_aas,
+  n_peptides,
   non_tmh_eluted_filename,
+  peptide_length,
   png_filename,
   protein_lengths_filename,
   protein_sequence,
@@ -67,12 +70,19 @@ for example `data/kyte.doolittle.scale.Rdata`}
 \item{mhc_1_haplotype}{HMC-I haplotope.
 Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 
+\item{mhc_2_haplotype}{HMC-II haplotope.
+Use \link{get_mhc2_haplotypes} to get a list of all haplotypes}
+
 \item{min_hydrophobicity}{the minimal hydrophobicity}
 
 \item{n_aas}{number of amino acids}
 
+\item{n_peptides}{number of peptides}
+
 \item{non_tmh_eluted_filename}{Filename for the non-TMHs found on B-cells,
 for example `data/non-TMH-Bcell-elution.txt`}
+
+\item{peptide_length}{length of the peptide in amino acids}
 
 \item{png_filename}{name of a PNG file}
 

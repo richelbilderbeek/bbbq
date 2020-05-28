@@ -8,6 +8,7 @@
 #' expect_equal(convert_triplet_to_amino_acid("GCC"), "A")
 #' expect_equal(convert_triplet_to_amino_acid("GCA"), "A")
 #' expect_equal(convert_triplet_to_amino_acid("GCG"), "A")
+#' @author Richèl J.C. Bilderbeek
 #' @export
 convert_triplet_to_amino_acid <- function(triplet) {
   df <- bbbq::get_genetic_code()

@@ -16,6 +16,7 @@
 #' expect_true("haplotype" %in% names(df))
 #' expect_true("haplotype_perc" %in% names(df))
 #' expect_true("phenotype_freq" %in% names(df))
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_mhc2_haplotype_occurance <- function()
 {

@@ -1,6 +1,7 @@
 #' Get the AA transition rate from the FLU transition rate matrix
 #' @param seq_lhs amino acid to transition from
 #' @param seq_rhs amino acid to transition to
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_transition_rate <- function(seq_lhs, seq_rhs) {
   testthat::expect_equal(nchar(seq_lhs), nchar(seq_rhs))

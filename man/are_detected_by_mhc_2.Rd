@@ -12,3 +12,6 @@ are_detected_by_mhc_2(protein_sequences)
 \description{
 Determine if each protein sequence has one MHC-II binder
 }
+\author{
+Richèl J.C. Bilderbeek
+}

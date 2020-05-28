@@ -1,5 +1,6 @@
 #' Determine if the  protein sequence has one MHC-II binder
 #' @inheritParams default_params_doc
+#' @author Richèl J.C. Bilderbeek
 #' @export
 is_detected_by_mhc_2 <- function(
   protein_sequence = "VVIIRTIAGRILVIMARSLE",

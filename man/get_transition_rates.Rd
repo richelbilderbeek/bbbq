@@ -16,3 +16,6 @@ get_transition_rates(protein_sequence, protein_sequences)
 Get the transition rates from the one focal protein sequence
 to the one or more target protein sequences
 }
+\author{
+Richèl J.C. Bilderbeek
+}

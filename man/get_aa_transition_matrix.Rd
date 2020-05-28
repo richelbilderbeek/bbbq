@@ -13,3 +13,6 @@ influenza proteins." BMC evolutionary biology 10.1 (2010): 99.
 \details{
 File downloaded from \code{ftp://ftp.sanger.ac.uk/pub/1000genomes/lsq/FLU/Flu_All_it2.txt_PAML.txt}
 }
+\author{
+Richèl J.C. Bilderbeek
+}

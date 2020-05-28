@@ -2,11 +2,12 @@
 % Please edit documentation in R/is_detected_by_mhc_1.R
 \name{is_detected_by_mhc_1}
 \alias{is_detected_by_mhc_1}
-\title{Determine if MHC-I has at least one binder to the polypeptide}
+\title{Determine if MHC-I has at least one binder to the peptide}
 \usage{
 is_detected_by_mhc_1(
   protein_sequence,
-  mhc_1_haplotype = "HLA-A-02-01",
+  mhc_1_haplotype = "HLA-A*02:01",
+  peptide_length = 9,
   ic50_threshold = 500
 )
 }
@@ -16,10 +17,15 @@ is_detected_by_mhc_1(
 \item{mhc_1_haplotype}{HMC-I haplotope.
 Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 
+\item{peptide_length}{length of the peptide in amino acids}
+
 \item{ic50_threshold}{peptides with a predicted IC50 value (in nM)
 lower than this will be considered binders.
 A threshold of 500 (nM) is common.}
 }
 \description{
-Determine if MHC-I has at least one binder to the polypeptide
+Determine if MHC-I has at least one binder to the peptide
+}
+\author{
+Richèl J.C. Bilderbeek
 }
