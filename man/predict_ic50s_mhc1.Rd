@@ -18,6 +18,10 @@ predict_ic50s_mhc1(
 Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 
 \item{n_aas}{number of amino acids}
+
+\item{tool}{the software tool used.
+Can be \code{ep} for \code{EpitopePrediction} or
+\code{mhcn} for \link[mhcnuggetsr]{mhcnuggetsr}}
 }
 \description{
 Predict the IC50s from one peptide
