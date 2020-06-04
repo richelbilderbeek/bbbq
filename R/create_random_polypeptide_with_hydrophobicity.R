@@ -19,11 +19,29 @@ create_random_peptide_with_hydrophobicity <- function(
   max_hydrophobicity,
   n_attempts = 1000
 ) {
+  if (min_hydrophobicity >= max_hydrophobicity) {
+    stop("'min_hydrophobicity' must be less than 'max_hydrophobicity'")
+  }
   aas <- bbbq::get_amino_acids()
   hs <- Peptides::hydrophobicity(aas)
+
+  if (min_hydrophobicity < min(hs)) {
+    stop(
+      "Cannot simulate peptide below the lowest hydrophobicity. \n",
+      "Lowest hydrophobicity: ", min(hs), ". \n",
+      "'min_hydrophobicity': ", min_hydrophobicity, ". \n"
+    )
+  }
+  if (max_hydrophobicity > max(hs)) {
+    stop(
+      "Cannot simulate peptide above the heighest hydrophobicity. \n",
+      "Heighest hydrophobicity: ", max(hs), ". \n",
+      "'max_hydrophobicity': ", max_hydrophobicity, ". \n"
+    )
+  }
   # Probabilities decrease the more distant from the desired hydrophobicity
   mid <- (min_hydrophobicity + max_hydrophobicity) / 2.0
-  prob <- exp(-abs(hs - mid))
+  prob <- exp(-2.0 * abs(hs - mid))
 
   for (i in seq_len(n_attempts)) {
     candidate <- paste0(
@@ -36,5 +54,9 @@ create_random_peptide_with_hydrophobicity <- function(
       return(candidate)
     }
   }
-  stop("Too many attempts to generate peptide")
+  stop(
+    "Too many attempts to generate peptide of hydrophobicity between ",
+    min_hydrophobicity, " and ", max_hydrophobicity, " after ",
+    n_attempts, " attempts"
+  )
 }
