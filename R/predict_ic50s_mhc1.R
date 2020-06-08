@@ -33,8 +33,9 @@ predict_ic50s_mhc1 <- function(
     return(df)
   }
   testthat::expect_true(tool == "mhcn")
-  mhcnuggetsr::predict_ic50(
-    peptides = protein_sequence,
+  mhcnuggetsr::predict_ic50s(
+    peptide = protein_sequence,
+    n_aas = n_aas,
     mhcnuggets_options = mhcnuggetsr::create_mhcnuggets_options(
       mhc_class = "I",
       mhc = mhcnuggetsr::to_mhcnuggets_name(mhc_1_haplotype)
