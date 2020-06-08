@@ -8,6 +8,7 @@ is_detected_by_mhc_1 <- function(
   peptide_length = 9,
   ic50_threshold = 500
 ) {
+  bbbq::check_mhc_1_haplotype_name(mhc_1_haplotype = mhc_1_haplotype)
   is_detected <- FALSE
   tryCatch(
     {

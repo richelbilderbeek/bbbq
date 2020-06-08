@@ -8,6 +8,7 @@ calc_p_det_tmh_mut <- function(
   mhc_1_haplotype = "HLA-A-02-01"
 ) {
   testthat::expect_true(pureseqtmr::is_tmh(protein_sequence))
+  bbbq::check_mhc_1_haplotype_name(mhc_1_haplotype)
 
   adj_seqs <- get_adjacent_sequences(protein_sequence)
 
