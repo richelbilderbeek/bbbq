@@ -17,7 +17,7 @@ test_that("use", {
 
   n_aas <- 9
   df <- predict_ic50s_mhc1(
-    protein_sequence = "VVIILTIAGNILVIMAVSLE",
+    protein_sequence = "VVIILTIAGNILVIM",
     mhc_1_haplotype = get_mhc1_haplotypes()[1],
     n_aas = n_aas,
     tool = "mhcn"
