@@ -4,7 +4,7 @@
 #'
 #' mhc2_haplotypes <- get_mhc2_haplotypes()
 #' expect_true("HLA-DRB1*0101" %in% mhc2_haplotypes)
-#' expect_true("HLA-DQA1*0501-DQB1*0201" %in% mhc2_haplotypes)
+#' expect_true("HLA-DQA1*0501/DQB1*0201" %in% mhc2_haplotypes)
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_mhc2_haplotypes <- function() {
@@ -24,11 +24,11 @@ get_mhc2_haplotypes <- function() {
     "HLA-DRB3*0202",
     "HLA-DRB4*0101",
     "HLA-DRB5*0101",
-    "HLA-DQA1*0501-DQB1*0201",
-    "HLA-DQA1*0501-DQB1*0301",
-    "HLA-DQA1*0301-DQB1*0302",
-    "HLA-DQA1*0401-DQB1*0402",
-    "HLA-DQA1*0101-DQB1*0501",
-    "HLA-DQA1*0102-DQB1*0602"
+    "HLA-DQA1*0501/DQB1*0201",
+    "HLA-DQA1*0501/DQB1*0301",
+    "HLA-DQA1*0301/DQB1*0302",
+    "HLA-DQA1*0401/DQB1*0402",
+    "HLA-DQA1*0101/DQB1*0501",
+    "HLA-DQA1*0102/DQB1*0602"
   )
 }

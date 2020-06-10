@@ -14,7 +14,7 @@ library(testthat)
 
 mhc2_haplotypes <- get_mhc2_haplotypes()
 expect_true("HLA-DRB1*0101" \%in\% mhc2_haplotypes)
-expect_true("HLA-DQA1*0501-DQB1*0201" \%in\% mhc2_haplotypes)
+expect_true("HLA-DQA1*0501/DQB1*0201" \%in\% mhc2_haplotypes)
 }
 \author{
 Richèl J.C. Bilderbeek
