@@ -1,5 +1,7 @@
 test_that("use", {
 
+  if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
+
   n_aas <- 9
   df <- predict_ic50s_mhc1(
     protein_sequence = "VVIILTIAGNILVIMAVSLE",
@@ -14,6 +16,8 @@ test_that("use", {
 })
 
 test_that("use", {
+
+  if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
 
   n_aas <- 9
   df <- predict_ic50s_mhc1(
