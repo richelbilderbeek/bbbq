@@ -14,6 +14,7 @@ default_params_doc(
   ic50_threshold,
   kyte_doolittle_scale_as_data_filename,
   max_hydrophobicity,
+  mhc_haplotype,
   mhc_1_haplotype,
   mhc_2_haplotype,
   min_hydrophobicity,
@@ -67,6 +68,10 @@ hydrophobicity,
 for example `data/kyte.doolittle.scale.Rdata`}
 
 \item{max_hydrophobicity}{the maximal hydrophobicity}
+
+\item{mhc_haplotype}{haplotype of either HMC-I or MHC-II.
+Use \link{get_mhc1_haplotypes} to get a list of all MHC-I haplotypes.
+Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
 
 \item{mhc_1_haplotype}{HMC-I haplotope.
 Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
@@ -138,10 +143,6 @@ uhhh, something, for example
 \item{triplet}{a DNA triplet}
 
 \item{verbose}{set to TRUE for more output}
-
-\item{mhc_haplotype}{haplotype of either HMC-I or MHC-II.
-Use \link{get_mhc1_haplotypes} to get a list of all MHC-I haplotypes.
-Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
 }
 \description{
 This function does nothing. It is intended to inherit is parameters'

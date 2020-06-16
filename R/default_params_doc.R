@@ -89,6 +89,7 @@ default_params_doc <- function(
   ic50_threshold,
   kyte_doolittle_scale_as_data_filename,
   max_hydrophobicity,
+  mhc_haplotype,
   mhc_1_haplotype,
   mhc_2_haplotype,
   min_hydrophobicity,
