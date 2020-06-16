@@ -1,7 +1,7 @@
 #' Check if the name is valid
 #' @inheritParams default_params_doc
 #' @export
-check_mhc_1_haplotype_name <- function(
+check_ep_haplotype_name <- function(
   mhc_1_haplotype
 ) {
   df <- NA
