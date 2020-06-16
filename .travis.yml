@@ -15,11 +15,6 @@ r_github_packages:
   - richelbilderbeek/mhcnuggetsr
   - richelbilderbeek/mhcnpreds
   - richelbilderbeek/pureseqtmr
-  - richelbilderbeek/epitope-prediction
-
-before_install:
-  # Boost
-  - sudo apt-get install -qq libboost-all-dev
 
 before_script:
   - sudo apt install python3-pip
@@ -30,6 +25,3 @@ after_success:
   - Rscript -e 'covr::codecov()'
   - Rscript -e 'goodpractice::gp()'
 
-after_failure:
-  - pwd
-  - find . | egrep "fasta"
