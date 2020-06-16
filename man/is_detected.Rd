@@ -2,9 +2,9 @@
 % Please edit documentation in R/is_detected.R
 \name{is_detected}
 \alias{is_detected}
-\title{Determine if MHC-I or MHC-II has at least one binder to the peptide}
+\title{Determine if the haplotype has at least one binder to the peptide}
 \usage{
-is_detected(protein_sequence, mhc_haplotype = "HLA-A-02-01")
+is_detected(protein_sequence, mhc_haplotype, percentile = 0.02)
 }
 \arguments{
 \item{protein_sequence}{a protein sequence}
@@ -12,9 +12,13 @@ is_detected(protein_sequence, mhc_haplotype = "HLA-A-02-01")
 \item{mhc_haplotype}{haplotype of either HMC-I or MHC-II.
 Use \link{get_mhc1_haplotypes} to get a list of all MHC-I haplotypes.
 Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
+
+\item{percentile}{how low the IC50 must be for the protein to
+be considered a binder. For example, 0.02 denotes that the protein
+must have an IC50 in the lowest 2% range}
 }
 \description{
-Determine if MHC-I or MHC-II has at least one binder to the peptide
+Determine if the haplotype has at least one binder to the peptide
 }
 \author{
 Richèl J.C. Bilderbeek
