@@ -5,10 +5,10 @@
 #' @export
 calc_p_det_tmh_mut <- function(
   protein_sequence,
-  mhc_1_haplotype = "HLA-A-02-01"
+  mhc_haplotype = "HLA-A-02-01"
 ) {
   testthat::expect_true(pureseqtmr::is_tmh(protein_sequence))
-  bbbq::check_mhc_1_haplotype_name(mhc_1_haplotype)
+  bbbq::check_mhc_haplotype_name(mhc_haplotype)
 
   adj_seqs <- get_adjacent_sequences(protein_sequence)
 
@@ -16,7 +16,7 @@ calc_p_det_tmh_mut <- function(
 
   are_det <- bbbq::are_detected(
     protein_sequences = adj_tmhs,
-    mhc_1_haplotype = mhc_1_haplotype
+    mhc_haplotype = mhc_haplotype
   )
 
   transition_rates <- bbbq::get_transition_rates(

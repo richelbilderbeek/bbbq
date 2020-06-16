@@ -9,6 +9,7 @@ r_github_packages:
   - jimhester/covr
   - jimhester/lintr
   - richelbilderbeek/mhcnuggetsr
+  - richelbilderbeek/mhcnpreds
   - richelbilderbeek/pureseqtmr
   - richelbilderbeek/epitope-prediction
 

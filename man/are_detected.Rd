@@ -4,13 +4,14 @@
 \alias{are_detected}
 \title{Are the protein sequences detected by either MHC-I or MHC-II?}
 \usage{
-are_detected(protein_sequences, mhc_1_haplotype = "HLA-A*02-01")
+are_detected(protein_sequences, mhc_haplotype = "HLA-A*02-01")
 }
 \arguments{
 \item{protein_sequences}{one or more protein sequences}
 
-\item{mhc_1_haplotype}{HMC-I haplotope.
-Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
+\item{mhc_haplotype}{haplotype of either HMC-I or MHC-II.
+Use \link{get_mhc1_haplotypes} to get a list of all MHC-I haplotypes.
+Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
 }
 \description{
 Are the protein sequences detected by either MHC-I or MHC-II?
