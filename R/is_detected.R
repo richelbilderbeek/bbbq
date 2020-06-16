@@ -2,7 +2,7 @@
 #' @inheritParams default_params_doc
 #' @param percentile how low the IC50 must be for the protein to
 #'   be considered a binder. For example, 0.02 denotes that the protein
-#'   must have an IC50 in the lowest 2% range
+#'   must have an IC50 in the lowest 2 percent range
 #' @author Richèl J.C. Bilderbeek
 #' @export
 is_detected <- function(

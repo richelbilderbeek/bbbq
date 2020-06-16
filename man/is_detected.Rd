@@ -15,7 +15,7 @@ Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
 
 \item{percentile}{how low the IC50 must be for the protein to
 be considered a binder. For example, 0.02 denotes that the protein
-must have an IC50 in the lowest 2% range}
+must have an IC50 in the lowest 2 percent range}
 }
 \description{
 Determine if the haplotype has at least one binder to the peptide
