@@ -6,6 +6,11 @@
 \usage{
 check_mhc_haplotype_name(mhc_haplotype)
 }
+\arguments{
+\item{mhc_haplotype}{haplotype of either HMC-I or MHC-II.
+Use \link{get_mhc1_haplotypes} to get a list of all MHC-I haplotypes.
+Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
+}
 \description{
 Check an MHC haplotype name
 }
