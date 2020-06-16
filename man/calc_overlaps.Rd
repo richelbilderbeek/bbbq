@@ -13,8 +13,8 @@ calc_overlaps(proteome_filename, haplotypes)
 }
 \value{
 per haplotype, the fraction of MHC epitopes
-that overlap with a TMH. The fractions range from 0 ('none') to (and including)
-1 ('all')
+that overlap with a TMH. The fractions range from 0 ('none')
+to (and including) 1 ('all')
 }
 \description{
 Per haplotype, calculate the fraction of MHC epitopes

@@ -13,4 +13,3 @@ replace_nth_char <- function(s, n, c) {
   rhs <- paste0('\\1', letter, '\\3')
   gsub(lhs, rhs, s)
 }
-
