@@ -25,10 +25,6 @@ before_script:
   - sudo apt install python3-pip
   - if [[ "$INSTALL_MHCNUGGETS" == true ]]; then Rscript -e 'mhcnuggetsr::install_mhcnuggets()'; fi
 
-before_script:
-  - sudo apt install python3-pip
-  - Rscript -e 'mhcnuggetsr::install_mhcnuggets()'
-
 after_success:
   - Rscript -e 'lintr::lint_package()'
   - Rscript -e 'covr::codecov()'
