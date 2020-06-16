@@ -4,7 +4,12 @@
 \alias{is_detected}
 \title{Determine if the haplotype has at least one binder to the peptide}
 \usage{
-is_detected(protein_sequence, mhc_haplotype, percentile = 0.02)
+is_detected(
+  protein_sequence,
+  mhc_haplotype,
+  fragment_length = 9,
+  percentile = 0.02
+)
 }
 \arguments{
 \item{protein_sequence}{a protein sequence}
@@ -12,6 +17,9 @@ is_detected(protein_sequence, mhc_haplotype, percentile = 0.02)
 \item{mhc_haplotype}{haplotype of either HMC-I or MHC-II.
 Use \link{get_mhc1_haplotypes} to get a list of all MHC-I haplotypes.
 Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
+
+\item{fragment_length}{the length of the peptide fragments
+the peptide will be cut into}
 
 \item{percentile}{how low the IC50 must be for the protein to
 be considered a binder. For example, 0.02 denotes that the protein

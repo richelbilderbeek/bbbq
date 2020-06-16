@@ -11,7 +11,7 @@ are_detected <- function(
   for (i in seq_along(protein_sequences)) {
     results[i] <- bbbq::is_detected(
       protein_sequence = protein_sequences[i],
-      mhc_1_haplotype = mhc_haplotype
+      mhc_haplotype = mhc_haplotype
     )
   }
   results

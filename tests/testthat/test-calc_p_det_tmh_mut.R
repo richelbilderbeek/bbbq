@@ -1,12 +1,14 @@
 test_that("use", {
   if (!pureseqtmr::is_on_travis()) return()
   if (!pureseqtmr::is_pureseqtm_installed()) return()
+  if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
 
   protein_sequence <- "EKNWSALLTAVVIILTIAGNILV"
   expect_true(pureseqtmr::is_tmh(protein_sequence))
   p <- calc_p_det_tmh_mut(
-    protein_sequence,
-    bbbq::get_mhc2_haplotypes()[1]
+    protein_sequence = protein_sequence,
+    mhc_haplotype = bbbq::get_mhc2_haplotypes()[1],
+    n_adjancent_sequences = 20
   )
   expect_true(p >= 0.0)
   expect_true(p <= 1.0)
@@ -15,13 +17,16 @@ test_that("use", {
 test_that("use", {
   if (!pureseqtmr::is_on_travis()) return()
   if (!pureseqtmr::is_pureseqtm_installed()) return()
+  if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
 
   protein_sequence <- "EKNWSALLTAVVIILTIAGNILV"
   expect_true(pureseqtmr::is_tmh(protein_sequence))
   p <- calc_p_det_tmh_mut(
     protein_sequence,
-    bbbq::get_mhc2_haplotypes()[2]
+    bbbq::get_mhc2_haplotypes()[2],
+    n_adjancent_sequences = 20
   )
+  p
   expect_true(p >= 0.0)
   expect_true(p <= 1.0)
 })

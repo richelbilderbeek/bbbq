@@ -3,8 +3,8 @@ dist: bionic
 cache: packages
 
 env:
-  - INSTALL_MHCNUGGETS=true
-  - INSTALL_MHCNUGGETS=false
+  - INSTALL_TOOLS=true
+  - INSTALL_TOOLS=false
 
 r_packages:
   - devtools
@@ -19,7 +19,8 @@ r_github_packages:
 
 before_script:
   - sudo apt install python3-pip
-  - if [[ "$INSTALL_MHCNUGGETS" == true ]]; then Rscript -e 'mhcnuggetsr::install_mhcnuggets()'; fi
+  - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'mhcnuggetsr::install_mhcnuggets()'; fi
+  - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'pureseqtmr::install_pureseqtm()'; fi
 
 after_success:
   - Rscript -e 'lintr::lint_package()'

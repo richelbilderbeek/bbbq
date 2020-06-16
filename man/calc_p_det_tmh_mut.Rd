@@ -5,7 +5,11 @@
 \title{Calculate the chance that a TMH one-mutation
 mutant is detected}
 \usage{
-calc_p_det_tmh_mut(protein_sequence, mhc_haplotype = "HLA-A-02-01")
+calc_p_det_tmh_mut(
+  protein_sequence,
+  mhc_haplotype,
+  n_adjancent_sequences = Inf
+)
 }
 \arguments{
 \item{protein_sequence}{a protein sequence}
@@ -13,6 +17,13 @@ calc_p_det_tmh_mut(protein_sequence, mhc_haplotype = "HLA-A-02-01")
 \item{mhc_haplotype}{haplotype of either HMC-I or MHC-II.
 Use \link{get_mhc1_haplotypes} to get a list of all MHC-I haplotypes.
 Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
+
+\item{n_adjancent_sequences}{look at the \code{n_adjancent_sequences}
+adjacent sequences, instead of all of them. The (maximum) number
+of adjacent sequences is \code{19 * n_aas}, where \code{n_aas}
+is the peptide length in amino acids, and 19 in the number of
+possible amino acids to change to (as there are 20 different
+amino acids)}
 }
 \description{
 Calculate the chance that a TMH one-mutation
