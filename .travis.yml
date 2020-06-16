@@ -15,6 +15,7 @@ r_github_packages:
   - richelbilderbeek/mhcnuggetsr
   - richelbilderbeek/mhcnpreds
   - richelbilderbeek/pureseqtmr
+  - richelbilderbeek/epitope-prediction
 
 before_script:
   - sudo apt install python3-pip
