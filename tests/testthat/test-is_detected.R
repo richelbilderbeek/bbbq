@@ -5,7 +5,7 @@ test_that("use", {
   expect_true(
     is_detected(
       "VVIILTIAGN",
-      mhc_haplotype = "HLA-A02:16" # mhcnuggetsr::get_mhc_1_haplotypes()[20]
+      mhc_haplotype = "Eqca-101:01" # mhcnuggetsr::get_mhc_1_haplotypes()[4]
     )
   )
   expect_false(
