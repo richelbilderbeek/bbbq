@@ -9,4 +9,5 @@ test_that("use", {
   expect_equal("A", get_amino_acids()[1])
   expect_equal("Y", get_amino_acids()[20])
 
+  expect_equal(Peptides::aaList(), get_amino_acids())
 })

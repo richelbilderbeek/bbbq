@@ -18,8 +18,7 @@
 #' expect_true("phenotype_freq" %in% names(df))
 #' @author Richèl J.C. Bilderbeek
 #' @export
-get_mhc2_haplotype_occurance <- function()
-{
+get_mhc2_haplotype_occurance <- function() {
   # Raw text, copied from PDF
   m <- matrix(
     data = c(
@@ -55,7 +54,7 @@ get_mhc2_haplotype_occurance <- function()
     byrow = TRUE
   )
   data.frame(
-    haplotype = m[,1],
+    haplotype = m[, 1],
     haplotype_perc = as.numeric(m[, 2]),
     phenotype_freq = as.numeric(m[, 3])
   )

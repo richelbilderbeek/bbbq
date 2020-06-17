@@ -11,6 +11,8 @@
 #' @export
 get_amino_acids <- function(
 ) {
-  c("A", "C", "D", "E", "F", "G", "H", "I", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "Y")
+  c(
+    "A", "C", "D", "E", "F", "G", "H", "I", "K", "L", "M", "N", "P", "Q",
+    "R", "S", "T", "V", "W", "Y"
+  )
 }
-
