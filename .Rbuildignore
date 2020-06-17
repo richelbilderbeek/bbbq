@@ -21,4 +21,5 @@
 ^bbbq\.qrc$
 ^install.Rmd$
 ^Makefile$
+^\.lintr
 
