@@ -22,6 +22,7 @@ default_params_doc(
   n_peptides,
   non_tmh_eluted_filename,
   peptide_length,
+  percentile,
   png_filename,
   protein_lengths_filename,
   protein_sequence,
@@ -88,6 +89,10 @@ Use \link{get_mhc2_haplotypes} to get a list of all haplotypes}
 for example `data/non-TMH-Bcell-elution.txt`}
 
 \item{peptide_length}{length of the peptide in amino acids}
+
+\item{percentile}{how low the IC50 must be for the protein to
+be considered a binder. For example, 0.02 denotes that the protein
+must have an IC50 in the lowest 2 percent range}
 
 \item{png_filename}{name of a PNG file}
 

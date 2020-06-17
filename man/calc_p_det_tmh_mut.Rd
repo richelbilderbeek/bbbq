@@ -25,6 +25,10 @@ of adjacent sequences is \code{19 * n_aas}, where \code{n_aas}
 is the peptide length in amino acids, and 19 in the number of
 possible amino acids to change to (as there are 20 different
 amino acids)}
+
+\item{percentile}{how low the IC50 must be for the protein to
+be considered a binder. For example, 0.02 denotes that the protein
+must have an IC50 in the lowest 2 percent range}
 }
 \description{
 Calculate the chance that a TMH one-mutation
