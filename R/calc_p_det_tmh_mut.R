@@ -19,7 +19,7 @@ calc_p_det_tmh_mut <- function(
   bbbq::check_mhc_haplotype_name(mhc_haplotype)
 
   # Taka a subset
-  adj_seqs <- get_adjacent_sequences(protein_sequence)
+  adj_seqs <- bbbq::get_adjacent_sequences(protein_sequence)
   if (!is.infinite(n_adjancent_sequences)) {
     adj_seqs <- sample(
       adj_seqs,

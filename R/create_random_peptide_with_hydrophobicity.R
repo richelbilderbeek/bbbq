@@ -13,7 +13,7 @@
 #' expect_true(Peptides::hydrophobicity(peptide) <= 1.5)
 #' @author Richèl J.C. Bilderbeek
 #' @export
-create_random_peptide_with_hydrophobicity <- function(
+create_random_peptide_with_hydrophobicity <- function( # nolint indeed a long function name
   n_aas,
   min_hydrophobicity,
   max_hydrophobicity,

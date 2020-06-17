@@ -2,8 +2,7 @@
 #' @param n_aas number of amino acids
 #' @author Richèl J.C. Bilderbeek
 #' @export
-create_random_hydrophobic_peptide <- function(n_aas)
-{
+create_random_hydrophobic_peptide <- function(n_aas) { # nolint indeed a long function name
   aas <- Peptides::aaList()
   hs <- Peptides::hydrophobicity(aas)
   prob <- hs - min(hs)
@@ -14,4 +13,3 @@ create_random_hydrophobic_peptide <- function(n_aas)
     collapse = ""
   )
 }
-
