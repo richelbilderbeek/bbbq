@@ -39,5 +39,5 @@ calc_p_det_tmh_mut <- function(
     protein_sequence = protein_sequence,
     protein_sequences = adj_tmhs
   )
-  sum(transition_rates[are_det]) /  sum(transition_rates)
+  sum(transition_rates[are_det]) / sum(transition_rates)
 }
