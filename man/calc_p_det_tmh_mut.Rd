@@ -8,7 +8,8 @@ mutant is detected}
 calc_p_det_tmh_mut(
   protein_sequence,
   mhc_haplotype,
-  n_adjancent_sequences = Inf
+  n_adjancent_sequences = Inf,
+  percentile = 0.02
 )
 }
 \arguments{

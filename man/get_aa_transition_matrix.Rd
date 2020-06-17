@@ -6,6 +6,10 @@
 \usage{
 get_aa_transition_matrix()
 }
+\value{
+a tibble, with column names equal to the uppercase
+  amino acid name
+}
 \description{
 From Dang, Cuong Cao, et al. "FLU, an amino acid substitution model for
 influenza proteins." BMC evolutionary biology 10.1 (2010): 99.

@@ -4,7 +4,11 @@
 \alias{are_detected}
 \title{Are the protein sequences detected by either MHC-I or MHC-II?}
 \usage{
-are_detected(protein_sequences, mhc_haplotype = "HLA-A*02-01")
+are_detected(
+  protein_sequences,
+  mhc_haplotype = "HLA-A*02-01",
+  percentile = 0.02
+)
 }
 \arguments{
 \item{protein_sequences}{one or more protein sequences}

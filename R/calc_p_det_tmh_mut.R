@@ -12,7 +12,8 @@
 calc_p_det_tmh_mut <- function(
   protein_sequence,
   mhc_haplotype,
-  n_adjancent_sequences = Inf
+  n_adjancent_sequences = Inf,
+  percentile = 0.02
 ) {
   testthat::expect_true(pureseqtmr::is_tmh(protein_sequence))
   bbbq::check_mhc_haplotype_name(mhc_haplotype)
@@ -32,7 +33,8 @@ calc_p_det_tmh_mut <- function(
 
   are_det <- bbbq::are_detected(
     protein_sequences = adj_tmhs,
-    mhc_haplotype = mhc_haplotype
+    mhc_haplotype = mhc_haplotype,
+    percentile = percentile
   )
 
   transition_rates <- bbbq::get_transition_rates(
