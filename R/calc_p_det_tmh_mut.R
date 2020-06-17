@@ -27,6 +27,7 @@ calc_p_det_tmh_mut <- function(
     )
   }
 
+  # Only keep those adjacent sequences that are TMH as well
   adj_tmhs <- adj_seqs[pureseqtmr::are_tmhs(adj_seqs)]
 
   are_det <- bbbq::are_detected(

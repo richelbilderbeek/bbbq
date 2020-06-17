@@ -26,5 +26,8 @@ get_transition_rate <- function(seq_lhs, seq_rhs) {
       )
     )
   }
-  mean(rates[!is.na(rates)]) # TODO: this is incorrect
+
+  valid_rates <- rates[!is.na(rates)]
+  inverse_rates <- 1.0 / valid_rates
+  combined_rate = 1.0 / sum(inverse_rates)
 }
