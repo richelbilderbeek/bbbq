@@ -20,8 +20,8 @@ get_transition_rate <- function(seq_lhs, seq_rhs) {
     rates[i] <- as.numeric(
       stats::na.omit(
         c(
-          m[char_lhs,char_rhs],
-          m[char_rhs,char_lhs]
+          m[char_lhs, char_rhs],
+          m[char_rhs, char_lhs]
         )
       )
     )
@@ -29,5 +29,6 @@ get_transition_rate <- function(seq_lhs, seq_rhs) {
 
   valid_rates <- rates[!is.na(rates)]
   inverse_rates <- 1.0 / valid_rates
-  combined_rate = 1.0 / sum(inverse_rates)
+  combined_rate <- 1.0 / sum(inverse_rates)
+  combined_rate
 }

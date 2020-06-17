@@ -7,12 +7,12 @@ hyPref <- function(mhc) {
 
   full_mhc_name <- paste0("HLA-",gsub("-",":",mhc))
 
-  M <- 10^(-EpitopePrediction::smmMatrix(full_mhc_name)$M)
+  m <- 10^(-EpitopePrediction::smmMatrix(full_mhc_name)$M)
 
-  M <- scale(M, center = FALSE, scale = colSums(M))
+  m <- scale(m, center = FALSE, scale = colSums(m))
 
   colEntropies <- apply(
-    M,
+    m,
     2,
     function(x) {
     	x <- x * log(x)
@@ -21,8 +21,7 @@ hyPref <- function(mhc) {
   	}
   )
 
-  M <- scale(M, center = FALSE, scale = 1.0 / colEntropies)
+  m <- scale(m, center = FALSE, scale = 1.0 / colEntropies)
 
-  #sum(sweep( M, 1, kyte.doolittle.scale[rownames(M)], "*" )) / 9
-  sum(sweep( M, 1, Peptides::hydrophobicity(rownames(M)), "*" )) / 9
+  sum(sweep(m, 1, Peptides::hydrophobicity(rownames(m)), "*")) / 9
 }

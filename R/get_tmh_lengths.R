@@ -5,8 +5,7 @@
 #'   the number of proteins
 #' @author Richèl J.C. Bilderbeek
 #' @export
-get_tmh_lengths <- function(topology)
-{
+get_tmh_lengths <- function(topology) {
   pureseqtmr::check_topology(topology)
   tmhs <- stringr::str_match_all(string = topology$topology, pattern = "[1]+")
   stringr::str_length(unlist(tmhs))

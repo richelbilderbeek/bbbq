@@ -56,7 +56,7 @@ get_mhc2_haplotype_occurance <- function()
   )
   data.frame(
     haplotype = m[,1],
-    haplotype_perc = as.numeric(m[,2]),
-    phenotype_freq = as.numeric(m[,3])
+    haplotype_perc = as.numeric(m[, 2]),
+    phenotype_freq = as.numeric(m[, 3])
   )
 }
