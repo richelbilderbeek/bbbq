@@ -5,7 +5,7 @@
 #' @export
 create_random_extreme_peptide <- function(n_aas)
 {
-  aas <- bbbq::get_amino_acids()
+  aas <- Peptides::aaList()
   hs <- Peptides::hydrophobicity(aas)
   prob <- abs(hs ^ 5)
   paste0(

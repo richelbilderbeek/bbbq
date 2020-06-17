@@ -19,7 +19,7 @@ test_that("abuse", {
     "'min_hydrophobicity' must be less than 'max_hydrophobicity'"
   )
 
-  aas <- bbbq::get_amino_acids()
+  aas <- Peptides::aaList()
   hs <- Peptides::hydrophobicity(aas)
 
   expect_error(

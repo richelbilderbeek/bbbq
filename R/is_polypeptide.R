@@ -8,6 +8,6 @@ is_peptide <- function(protein_sequence) {
   if (nchar(protein_sequence) == 0) return(FALSE)
 
   all(strsplit(x = protein_sequence, split = "")[[1]]
-    %in% bbbq::get_amino_acids()
+    %in% Peptides::aaList()
   )
 }

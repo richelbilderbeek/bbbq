@@ -22,7 +22,7 @@ create_random_peptide_with_hydrophobicity <- function(
   if (min_hydrophobicity >= max_hydrophobicity) {
     stop("'min_hydrophobicity' must be less than 'max_hydrophobicity'")
   }
-  aas <- bbbq::get_amino_acids()
+  aas <- Peptides::aaList()
   hs <- Peptides::hydrophobicity(aas)
 
   if (min_hydrophobicity < min(hs)) {

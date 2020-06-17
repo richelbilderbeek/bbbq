@@ -4,7 +4,7 @@
 #' @export
 create_random_hydrophobic_peptide <- function(n_aas)
 {
-  aas <- bbbq::get_amino_acids()
+  aas <- Peptides::aaList()
   hs <- Peptides::hydrophobicity(aas)
   prob <- hs - min(hs)
   prob <- prob * prob

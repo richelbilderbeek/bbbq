@@ -7,7 +7,7 @@ get_adjacent_sequences <- function(aa_sequence = "VVIILTIAGNILVIMAVSLE")
   seqs <- rep(NA, nchar(aa_sequence) * 20)
   i <- 1
   for (locus in seq(1, nchar(aa_sequence))) {
-    for (aa in bbbq::get_amino_acids()) {
+    for (aa in Peptides::aaList()) {
       seqs[i] <- bbbq::replace_nth_char(s = aa_sequence, n = locus, c = aa)
       i <- i + 1
     }

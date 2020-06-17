@@ -5,7 +5,7 @@
 create_random_peptide <- function(n_aas)
 {
   paste0(
-    sample(x = bbbq::get_amino_acids(), size = n_aas, replace = TRUE),
+    sample(x = Peptides::aaList(), size = n_aas, replace = TRUE),
     collapse = ""
   )
 }
