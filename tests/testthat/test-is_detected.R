@@ -5,7 +5,8 @@ test_that("use", {
   expect_true(
     is_detected(
       "VVIILTIAGN",
-      mhc_haplotype = mhcnuggetsr::get_mhc_1_haplotypes()[4]
+      mhc_haplotype = mhcnuggetsr::get_mhc_1_haplotypes()[4],
+      percentile = 0.5
     )
   )
   expect_false(
