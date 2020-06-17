@@ -25,6 +25,7 @@ Imports:
     Peptides,
     png,
     pureseqtmr,
+    readr,
     seqinr,
     stringr,  
     tibble
