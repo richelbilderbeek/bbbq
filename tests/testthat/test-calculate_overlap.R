@@ -6,13 +6,14 @@ test_that("use", {
   expect_true(file.exists(tmh_9mers_as_data_filename))
   expect_true(file.exists(protein_lengths_filename))
 
-  tmh_overlapping_binders_as_data_filename <- tempfile()
+  # tmh_ob: TMH overlapping binders
+  tmh_ob_as_data_filename <- tempfile()
 
   calculate_overlap(
     tmh_9mers_as_data_filename,
     protein_lengths_filename,
-    tmh_overlapping_binders_as_data_filename
+    tmh_ob_as_data_filename
   )
 
-  expect_true(file.exists(tmh_overlapping_binders_as_data_filename))
+  expect_true(file.exists(tmh_ob_as_data_filename))
 })
