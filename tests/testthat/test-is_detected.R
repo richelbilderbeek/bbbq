@@ -8,7 +8,6 @@ test_that("use", {
       mhc_haplotype = mhcnuggetsr::get_mhc_1_haplotypes()[4]
     )
   )
-  mhc_haplotype <-
   expect_false(
     is_detected(
       "AAAARTIAGR",

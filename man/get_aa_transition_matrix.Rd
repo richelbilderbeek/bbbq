@@ -12,6 +12,11 @@ influenza proteins." BMC evolutionary biology 10.1 (2010): 99.
 }
 \details{
 File downloaded from \code{ftp://ftp.sanger.ac.uk/pub/1000genomes/lsq/FLU/Flu_All_it2.txt_PAML.txt}
+
+As can be seen in \url{
+  https://github.com/stephaneguindon/phyml/blob/master/src/io.c#L3188
+}, the column names are \code{Ala Arg Asn Asp Cys Gln Glu Gly His Ile Leu
+Lys Met Phe Pro Ser Thr Trp Tyr Val}
 }
 \author{
 Richèl J.C. Bilderbeek
