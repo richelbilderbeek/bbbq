@@ -4,7 +4,7 @@
 \alias{get_adjacent_sequences}
 \title{Get the adjacent sequences}
 \usage{
-get_adjacent_sequences(aa_sequence = "VVIILTIAGNILVIMAVSLE")
+get_adjacent_sequences(aa_sequence)
 }
 \arguments{
 \item{aa_sequence}{amino acid sequence}

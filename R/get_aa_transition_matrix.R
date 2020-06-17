@@ -3,7 +3,9 @@
 #' From Dang, Cuong Cao, et al. "FLU, an amino acid substitution model for
 #' influenza proteins." BMC evolutionary biology 10.1 (2010): 99.
 #'
-#' File downloaded from \code{ftp://ftp.sanger.ac.uk/pub/1000genomes/lsq/FLU/Flu_All_it2.txt_PAML.txt}
+#' File downloaded from \code{
+#'   ftp://ftp.sanger.ac.uk/pub/1000genomes/lsq/FLU/Flu_All_it2.txt_PAML.txt
+#' }
 #'
 #' As can be seen in \url{
 #'   https://github.com/stephaneguindon/phyml/blob/master/src/io.c#L3188

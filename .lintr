@@ -1,2 +1,2 @@
-exclusions: list("R/hyPref.R", "R/calculate-overlap-controls.R", "R/calculate-overlap.R", "R/correlate-to-hydrophobicity.R", "R/get-protein-lengths.R", "R/hydrophobe-controls.R", "R/hydrophobicity-distribution-elution-data.R", "R/hydrophobicity-distribution.R", "R/predict-binders.R", "R/prepare-data.R")
+exclusions: list("R/default_params_doc.R", "R/hyPref.R", "R/calculate-overlap-controls.R", "R/calculate-overlap.R", "R/correlate-to-hydrophobicity.R", "R/get-protein-lengths.R", "R/hydrophobe-controls.R", "R/hydrophobicity-distribution-elution-data.R", "R/hydrophobicity-distribution.R", "R/predict-binders.R", "R/prepare-data.R")
 

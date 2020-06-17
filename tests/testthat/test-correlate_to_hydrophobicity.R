@@ -5,7 +5,7 @@ test_that("use", {
 
   expect_silent(
     correlate_to_hydrophobicity(
-      tmh_overlapping_binders_as_data_filename = t_filename,
+      tmh_overlapping_binders_as_data_filename = t_filename, # nolint function argument name is indeed long
       figure_1_d_filename = figure_1_d_filename
     )
   )

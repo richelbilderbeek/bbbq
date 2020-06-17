@@ -2,8 +2,9 @@
 #' @param aa_sequence amino acid sequence
 #' @author Richèl J.C. Bilderbeek
 #' @export
-get_adjacent_sequences <- function(aa_sequence = "VVIILTIAGNILVIMAVSLE")
-{
+get_adjacent_sequences <- function(
+  aa_sequence
+) {
   seqs <- rep(NA, nchar(aa_sequence) * 20)
   i <- 1
   for (locus in seq(1, nchar(aa_sequence))) {
@@ -13,6 +14,5 @@ get_adjacent_sequences <- function(aa_sequence = "VVIILTIAGNILVIMAVSLE")
     }
   }
   # Must be different
-  seqs[ seqs != aa_sequence ]
+  seqs[seqs != aa_sequence]
 }
-
