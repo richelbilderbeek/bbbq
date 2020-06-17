@@ -18,4 +18,3 @@ get_mhc_haplotypes <- function() {
     bbbq::get_mhc2_haplotypes()
   )
 }
-
