@@ -20,7 +20,7 @@ Imports:
     EpitopePrediction,
     ggplot2,
     methods,
-    mhcnuggetsr (>= 0.10),
+    mhcnuggetsr (>= 0.11),
     mhcnpreds,
     Peptides,
     png,
