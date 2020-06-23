@@ -19,6 +19,7 @@ Imports:
     data.table,
     EpitopePrediction,
     ggplot2,
+    magrittr,
     methods,
     mhcnuggetsr (>= 0.11),
     mhcnpreds,
