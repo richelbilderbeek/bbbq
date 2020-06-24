@@ -10,6 +10,7 @@ create_random_tmh <- function(
 ) {
   seq <- create_random_peptide_fun(n_aas)
   while (!pureseqtmr::is_tmh(seq)) {
+    stop("X")
     seq <- create_random_peptide_fun(n_aas)
   }
   seq

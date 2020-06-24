@@ -8,6 +8,19 @@ test_that("use", {
   )
 })
 
+test_that("stop after too many attempts", {
+  set.seed(42)
+  expect_error(
+    create_random_peptide_with_hydrophobicity(
+      n_aas = 10,
+      min_hydrophobicity = 4.4,
+      max_hydrophobicity = 4.5,
+      n_attempts = 1
+    ),
+    "Too many attempts to generate peptide of hydrophobicity between"
+  )
+})
+
 test_that("abuse", {
 
   expect_error(
