@@ -1,7 +1,5 @@
-#' Calculate the fractions of MHC epitopes that overlap with a TMH.
-#'
-#' Per haplotype, calculate the fraction of MHC epitopes
-#' that overlap with a TMH.
+#' Calculate the fractions of MHC epitopes that overlap with a TMH
+#' for multiple MHC haplotypes for one type of agent.
 #' @inherit default_params_doc
 #' @return per haplotype, the fraction of MHC epitopes
 #' that overlap with a TMH. The fractions range from 0 ('none')
@@ -9,20 +7,18 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 calc_overlaps <- function(
-  proteome_filename,
+  target_name,
   haplotypes
 ) {
-  # Centered on known value. Centered closely to indicate these
-  # results are simulated
-  if (proteome_filename == "human.fasta") {
-    return(
-      stats::rnorm(n = length(haplotypes), mean = 0.053, sd = 0.0001)
+  testthat::expect_true(
+    target_name %in% c("test", "human", "covid", "myco")
+  )
+  t <- tibble::tibble(haplotype = haplotypes, f_overlap = NA)
+  for (i in seq_along(haplotypes)) {
+    t$f_overlap <- bbbq::calc_overlap(
+      target_name = target_name,
+      haplotype = haplotype
     )
   }
-  # A random line
-  seq(
-    from = stats::runif(n = 1, min = 0.0, max = 0.1),
-    to = stats::runif(n = 1, min = 0.0, max = 0.1),
-    length.out = length(haplotypes)
-  )
+  t
 }
