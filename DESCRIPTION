@@ -20,6 +20,7 @@ Imports:
     dplyr,
     EpitopePrediction,
     ggplot2,
+    glue,
     magrittr,
     methods,
     mhcnuggetsr (>= 0.11),

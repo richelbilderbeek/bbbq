@@ -9,6 +9,7 @@
 #'   and will be put in the \code{/tmp} folder,
 #'   which is cleaned by the operating system
 #' @param fasta_filename name of a FASTA file
+#' @param haplotype one MHC-I or MHC-II haplotype
 #' @param haplotypes a list of MHC-I or MHC-II haplotypes
 #' @param hydrophobe_control_peptides_as_data_filename
 #'   filename that stores hydrophobe control peptides
@@ -35,6 +36,9 @@
 #' @param non_tmh_eluted_filename
 #'   Filename for the non-TMHs found on B-cells,
 #'   for example `data/non-TMH-Bcell-elution.txt`
+#' @param peptide peptide sequence, for example,
+#' \code{ARNDCQEV}
+#' @param peptides one ore more peptide sequences
 #' @param peptide_length length of the peptide in amino acids
 #' @param percentile how low the IC50 must be for the protein to
 #'   be considered a binder. For example, 0.02 denotes that the protein
@@ -53,6 +57,8 @@
 #'   proteome 9-mer hydrophobicities in R data format,
 #'   for example `work/proteome.9mer.hydrophobicity.Rdata`
 #' @param proteome_filename name of the file the proteome will be stored at
+#' @param target_name name of organism or virus or testing
+#'  dataset.
 #' @param tmh_9mers_as_data_filename filename to store
 #'   per TMH protein, the indices at which it is TMH,
 #'   in R data format.
@@ -85,6 +91,7 @@ default_params_doc <- function(
   binding_strength_threshold,
   epitopeome_filename,
   fasta_filename,
+  haplotype,
   haplotypes,
   hydrophobe_control_peptides_as_data_filename,
   ic50_threshold,
@@ -97,6 +104,8 @@ default_params_doc <- function(
   n_aas,
   n_peptides,
   non_tmh_eluted_filename,
+  peptide,
+  peptides,
   peptide_length,
   percentile,
   png_filename,
@@ -106,6 +115,8 @@ default_params_doc <- function(
   proteome_filename,
   proteome_as_data_filename,
   proteome_9mer_hydrophobicity_as_data_filename,
+
+  target_name,
   tmh_9mers_as_data_filename,
   tmh_eluted_filename,
   tmh_overlapping_binders_as_data_filename,

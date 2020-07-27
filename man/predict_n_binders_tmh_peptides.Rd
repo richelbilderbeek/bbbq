@@ -14,6 +14,13 @@ predict_n_binders_tmh_peptides(
 )
 }
 \arguments{
+\item{peptides}{one ore more peptide sequences}
+
+\item{target_name}{name of organism or virus or testing
+dataset.}
+
+\item{haplotype}{one MHC-I or MHC-II haplotype}
+
 \item{n_aas}{number of amino acids}
 
 \item{verbose}{set to TRUE for more output}

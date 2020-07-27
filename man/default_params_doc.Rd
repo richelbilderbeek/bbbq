@@ -9,6 +9,7 @@ default_params_doc(
   binding_strength_threshold,
   epitopeome_filename,
   fasta_filename,
+  haplotype,
   haplotypes,
   hydrophobe_control_peptides_as_data_filename,
   ic50_threshold,
@@ -21,6 +22,8 @@ default_params_doc(
   n_aas,
   n_peptides,
   non_tmh_eluted_filename,
+  peptide,
+  peptides,
   peptide_length,
   percentile,
   png_filename,
@@ -30,6 +33,7 @@ default_params_doc(
   proteome_filename,
   proteome_as_data_filename,
   proteome_9mer_hydrophobicity_as_data_filename,
+  target_name,
   tmh_9mers_as_data_filename,
   tmh_eluted_filename,
   tmh_overlapping_binders_as_data_filename,
@@ -52,6 +56,8 @@ and will be put in the \code{/tmp} folder,
 which is cleaned by the operating system}
 
 \item{fasta_filename}{name of a FASTA file}
+
+\item{haplotype}{one MHC-I or MHC-II haplotype}
 
 \item{haplotypes}{a list of MHC-I or MHC-II haplotypes}
 
@@ -88,6 +94,11 @@ Use \link{get_mhc2_haplotypes} to get a list of all haplotypes}
 \item{non_tmh_eluted_filename}{Filename for the non-TMHs found on B-cells,
 for example `data/non-TMH-Bcell-elution.txt`}
 
+\item{peptide}{peptide sequence, for example,
+\code{ARNDCQEV}}
+
+\item{peptides}{one ore more peptide sequences}
+
 \item{peptide_length}{length of the peptide in amino acids}
 
 \item{percentile}{how low the IC50 must be for the protein to
@@ -113,6 +124,9 @@ for example `work/proteome.Rdata`}
 \item{proteome_9mer_hydrophobicity_as_data_filename}{filename to store the
 proteome 9-mer hydrophobicities in R data format,
 for example `work/proteome.9mer.hydrophobicity.Rdata`}
+
+\item{target_name}{name of organism or virus or testing
+dataset.}
 
 \item{tmh_9mers_as_data_filename}{filename to store
 per TMH protein, the indices at which it is TMH,
