@@ -8,19 +8,15 @@ for one peptide.}
 \usage{
 predict_n_binders_tmh_peptide(
   peptide,
-  target_name,
   haplotype,
   n_aas,
-  percentile = 0.02,
+  percentile,
   verbose = FALSE
 )
 }
 \arguments{
 \item{peptide}{peptide sequence, for example,
 \code{ARNDCQEV}}
-
-\item{target_name}{name of organism or virus or testing
-dataset.}
 
 \item{haplotype}{one MHC-I or MHC-II haplotype}
 
@@ -46,14 +42,19 @@ that overlap with at least one amino acid with a TMH
 for one peptide.
 }
 \examples{
-peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKN"
+library(mhcnuggetsr)
+library(pureseqtmr)
 
-predict_n_binders_tmh_peptide(
-  peptide = peptide,
-  target_name = "test",
-  haplotype = get_mhc1_haplotypes()[1],
-  n_aas = 9,
-)
+if (is_mhcnuggets_installed() && is_pureseqtm_installed()) {
+
+  peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKN"
+
+  predict_n_binders_tmh_peptide(
+    peptide = peptide,
+    haplotype = get_mhc1_haplotypes()[1],
+    n_aas = 9,
+  )
+}
 }
 \author{
 Richèl J.C. Bilderbeek

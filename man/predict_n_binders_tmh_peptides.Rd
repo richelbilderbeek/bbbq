@@ -7,21 +7,22 @@ for multiple MHC haplotypes for one type of agent.}
 \usage{
 predict_n_binders_tmh_peptides(
   peptides,
-  target_name,
   haplotype,
   n_aas,
+  percentile,
   verbose = FALSE
 )
 }
 \arguments{
 \item{peptides}{one ore more peptide sequences}
 
-\item{target_name}{name of organism or virus or testing
-dataset.}
-
 \item{haplotype}{one MHC-I or MHC-II haplotype}
 
 \item{n_aas}{number of amino acids}
+
+\item{percentile}{how low the IC50 must be for the protein to
+be considered a binder. For example, 0.02 denotes that the protein
+must have an IC50 in the lowest 2 percent range}
 
 \item{verbose}{set to TRUE for more output}
 }

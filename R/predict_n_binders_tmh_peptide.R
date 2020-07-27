@@ -10,28 +10,30 @@
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#' peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKN"
+#' library(mhcnuggetsr)
+#' library(pureseqtmr)
 #'
-#' predict_n_binders_tmh_peptide(
-#'   peptide = peptide,
-#'   target_name = "test",
-#'   haplotype = get_mhc1_haplotypes()[1],
-#'   n_aas = 9,
-#' )
+#' if (is_mhcnuggets_installed() && is_pureseqtm_installed()) {
+#'
+#'   peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKN"
+#'
+#'   predict_n_binders_tmh_peptide(
+#'     peptide = peptide,
+#'     haplotype = get_mhc1_haplotypes()[1],
+#'     n_aas = 9,
+#'   )
+#' }
 #' @export
 predict_n_binders_tmh_peptide <- function(
   peptide,
-  target_name,
   haplotype,
   n_aas,
-  percentile = 0.02,
+  percentile,
   verbose = FALSE
 ) {
   testthat::expect_true(length(peptide) == 1)
-  testthat::expect_true(
-    target_name %in% c("test", "human", "covid", "myco")
-  )
-  testthat::expect_true(target_name == "test")
+  mhcnuggetsr::check_mhcnuggets_installation()
+  pureseqtmr::check_pureseqtm_installation()
   ic50s <- mhcnuggetsr::predict_ic50s(
     peptide = peptide,
     n_aas = n_aas,

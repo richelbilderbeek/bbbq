@@ -2,7 +2,8 @@ test_that("minimal use", {
   t <- predict_f_binders_tmh(
     target_name = "test",
     haplotypes = get_mhc1_haplotypes()[1:2],
-    n_aas = 9
+    n_aas = 9,
+    percentile = 0.05
   )
 
   expect_true(tibble::is_tibble(t))
@@ -10,4 +11,5 @@ test_that("minimal use", {
   expect_true("f" %in% names(t))
   expect_true(all(t$f >= 0.0))
   expect_true(all(t$f <= 1.00))
+  t
 })

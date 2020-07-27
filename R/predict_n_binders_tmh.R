@@ -14,13 +14,21 @@
 predict_n_binders_tmh <- function(
   target_name,
   haplotypes,
-  n_aas
+  n_aas,
+  percentile
 ) {
   testthat::expect_true(
     target_name %in% c("test", "human", "covid", "myco")
   )
-  testthat::expect_equal("test", target_name)
-  proteome_filename <- get_test_proteome_filename()
+  proteome_filename <- NA
+  if (target_name == "test") {
+    proteome_filename <- get_test_proteome_filename()
+  } else if (target_name == "covid") {
+     proteome_filename <- get_covid_proteome_filename()
+  } else {
+    stop("Target type '",target_name , "' not implemented yet")
+  }
+  testthat::expect_true(!is.na(proteome_filename))
   proteome <- seqinr::read.fasta(
     proteome_filename,
     seqtype = "AA",
@@ -36,10 +44,10 @@ predict_n_binders_tmh <- function(
 
   for (i in seq_along(haplotypes)) {
     this_t <- bbbq::predict_n_binders_tmh_peptides(
-      target_name = target_name,
       haplotype = haplotypes[i],
       peptides = peptides,
-      n_aas = n_aas
+      n_aas = n_aas,
+      percentile = percentile
     )
     t$n_binders[i] <- sum(this_t$n_binders)
     t$n_binders_tmh[i] <- sum(this_t$n_binders_tmh)

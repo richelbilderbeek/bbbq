@@ -14,23 +14,18 @@
 #' @export
 predict_n_binders_tmh_peptides <- function(
   peptides,
-  target_name,
   haplotype,
   n_aas,
+  percentile,
   verbose = FALSE
 ) {
-  testthat::expect_true(
-    target_name %in% c("test", "human", "covid", "myco")
-  )
-  testthat::expect_true(target_name == "test")
-
   tibbles <- list()
   for (i in seq_along(peptides)) {
     tibbles[[i]] <- bbbq::predict_n_binders_tmh_peptide(
       peptide = peptides[i],
-      target_name = target_name,
       haplotype = haplotype,
       n_aas = n_aas,
+      percentile = percentile,
       verbose = verbose
     )
   }

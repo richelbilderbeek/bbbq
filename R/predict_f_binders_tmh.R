@@ -15,7 +15,8 @@
 predict_f_binders_tmh <- function(
   target_name,
   haplotypes,
-  n_aas
+  n_aas,
+  percentile
 ) {
   testthat::expect_true(
     target_name %in% c("test", "human", "covid", "myco")
@@ -23,10 +24,11 @@ predict_f_binders_tmh <- function(
   t <- predict_n_binders_tmh(
     target_name = target_name,
     haplotypes = haplotypes,
-    n_aas = n_aas
+    n_aas = n_aas,
+    percentile = percentile
   )
   t
   t$f <- t$n_binders_tmh / t$n_binders
-  t %>% dplyr::select(haplotype, f)
+  t
 }
 
