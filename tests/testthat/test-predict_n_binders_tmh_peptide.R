@@ -3,7 +3,7 @@ test_that("use", {
   peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDLLV" # nolint indeed long
   #          "000000000000001111111111111111111111111111111111000000000000000000000000000" # nolint indeed long
   sink("/dev/null") # Remove the cat output, due to verbose is TRUE
-  t <- calc_overlap_peptide(
+  t <- predict_n_binders_tmh_peptide(
     peptide = peptide,
     target_name = "test",
     haplotype = get_mhc1_haplotypes()[1],

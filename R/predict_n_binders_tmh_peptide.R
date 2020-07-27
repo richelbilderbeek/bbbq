@@ -1,6 +1,7 @@
 #' Predict the number of binders and the number of binders
-#' that overlap with at least one amino acid with a TMH.
-#' @inherit default_params_doc
+#' that overlap with at least one amino acid with a TMH
+#' for one peptide.
+#' @inheritParams default_params_doc
 #' @return a tibble with
 #' \enumerate{
 #'   \item n_binders number of epitopes that bind
@@ -11,14 +12,14 @@
 #' @examples
 #' peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKN"
 #'
-#' calc_overlap_peptide(
+#' predict_n_binders_tmh_peptide(
 #'   peptide = peptide,
 #'   target_name = "test",
 #'   haplotype = get_mhc1_haplotypes()[1],
 #'   n_aas = 9,
 #' )
 #' @export
-calc_overlap_peptide <- function(
+predict_n_binders_tmh_peptide <- function(
   peptide,
   target_name,
   haplotype,

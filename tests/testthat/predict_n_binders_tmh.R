@@ -1,5 +1,5 @@
 test_that("minimal use", {
-  f_overlap <- calc_overlap(
+  t <- predict_n_binders_tmh(
     target_name = "test",
     haplotype = get_mhc1_haplotypes()[1],
     n_aas = 9
