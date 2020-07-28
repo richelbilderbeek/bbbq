@@ -22,9 +22,9 @@ predict_n_binders_tmh <- function(
   )
   proteome_filename <- NA
   if (target_name == "test") {
-    proteome_filename <- get_test_proteome_filename()
+    proteome_filename <- bbbq::get_test_proteome_filename()
   } else if (target_name == "covid") {
-     proteome_filename <- get_covid_proteome_filename()
+     proteome_filename <- bbbq::get_covid_proteome_filename()
   } else {
     stop("Target type '", target_name, "' not implemented yet")
   }
