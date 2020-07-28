@@ -15,7 +15,7 @@
 #'
 #' if (is_mhcnuggets_installed() && is_pureseqtm_installed()) {
 #'
-#'   peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKN"
+#'   peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRV"
 #'
 #'   predict_n_binders_tmh_peptide(
 #'     peptide = peptide,
@@ -91,4 +91,3 @@ predict_n_binders_tmh_peptide <- function(
   }
   result
 }
-

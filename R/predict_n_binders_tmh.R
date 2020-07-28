@@ -26,7 +26,7 @@ predict_n_binders_tmh <- function(
   } else if (target_name == "covid") {
      proteome_filename <- get_covid_proteome_filename()
   } else {
-    stop("Target type '",target_name , "' not implemented yet")
+    stop("Target type '", target_name, "' not implemented yet")
   }
   testthat::expect_true(!is.na(proteome_filename))
   proteome <- seqinr::read.fasta(

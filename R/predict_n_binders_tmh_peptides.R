@@ -31,4 +31,3 @@ predict_n_binders_tmh_peptides <- function(
   }
   dplyr::bind_rows(tibbles)
 }
-

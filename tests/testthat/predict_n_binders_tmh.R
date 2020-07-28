@@ -7,4 +7,3 @@ test_that("minimal use", {
   expect_true(f_overlap > 0.1)
   expect_true(f_overlap < 0.9)
 })
-
