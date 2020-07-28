@@ -1,4 +1,7 @@
 test_that("use", {
+  if (!pureseqtmr::is_pureseqtm_installed()) return()
+  if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
+
   # VENV of COVID-19 reference proteome, has one TMH
   peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDLLV" # nolint indeed long
   #          "000000000000001111111111111111111111111111111111000000000000000000000000000" # nolint indeed long

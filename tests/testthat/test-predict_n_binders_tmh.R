@@ -1,4 +1,7 @@
 test_that("minimal use, MHC-I", {
+  if (!pureseqtmr::is_pureseqtm_installed()) return()
+  if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
+
   t <- predict_n_binders_tmh(
     target_name = "test",
     haplotypes = get_mhc1_haplotypes()[1:2],
@@ -16,6 +19,9 @@ test_that("minimal use, MHC-I", {
 })
 
 test_that("minimal use, MHC-II", {
+  if (!pureseqtmr::is_pureseqtm_installed()) return()
+  if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
+
   t <- predict_n_binders_tmh(
     target_name = "test",
     haplotypes = get_mhc2_haplotypes()[1:2],
@@ -33,6 +39,9 @@ test_that("minimal use, MHC-II", {
 })
 
 test_that("COVID, MHC-I", {
+  if (!pureseqtmr::is_pureseqtm_installed()) return()
+  if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
+
   t <- predict_n_binders_tmh(
     target_name = "covid",
     haplotypes = get_mhc1_haplotypes()[1:2],

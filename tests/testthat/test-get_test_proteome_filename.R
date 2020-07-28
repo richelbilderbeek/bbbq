@@ -4,6 +4,8 @@ test_that("use", {
 })
 
 test_that("has 1 TMH", {
+  if (!pureseqtmr::is_pureseqtm_installed()) return()
+
   proteome_filename <- get_test_proteome_filename()
   expect_true(file.exists(proteome_filename))
   topology <- pureseqtmr::predict_topology(proteome_filename)

@@ -1,4 +1,7 @@
 test_that("use", {
+  if (!pureseqtmr::is_pureseqtm_installed()) return()
+  if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
+
   peptides <- c(
     "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDL",
     "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRV"
