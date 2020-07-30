@@ -21,6 +21,7 @@
 #'     peptide = peptide,
 #'     haplotype = get_mhc1_haplotypes()[1],
 #'     n_aas = 9,
+#'     percentile = 0.123
 #'   )
 #' }
 #' @export
