@@ -13,7 +13,7 @@
 #' and one row per peptide
 #' @author Richèl J.C. Bilderbeek
 #' @export
-predict_n_coincidence_tmh_peptides <- function(
+predict_n_coincidence_tmh_peptides <- function(# nolint indeed a long function name
   peptides,
   n_aas,
   verbose = FALSE

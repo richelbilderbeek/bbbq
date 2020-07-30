@@ -22,7 +22,7 @@
 #'   )
 #' }
 #' @export
-predict_n_coincidence_tmh_peptide <- function(
+predict_n_coincidence_tmh_peptide <- function(# nolint indeed a long function name
   peptide,
   n_aas,
   verbose = FALSE
