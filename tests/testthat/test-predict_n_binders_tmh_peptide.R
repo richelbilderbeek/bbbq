@@ -8,9 +8,9 @@ test_that("use", {
   sink("/dev/null") # Remove the cat output, due to verbose is TRUE
   t <- predict_n_binders_tmh_peptide(
     peptide = peptide,
-    target_name = "test",
     haplotype = get_mhc1_haplotypes()[1],
     n_aas = 9,
+    percentile = 0.05,
     verbose = TRUE
   )
   # Results from verbose output:
