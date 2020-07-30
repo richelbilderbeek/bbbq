@@ -22,8 +22,12 @@ before_script:
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'mhcnuggetsr::install_mhcnuggets()'; fi
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'pureseqtmr::install_pureseqtm()'; fi
 
+after_failure:
+  - Rscript -e 'mhcnuggetsr::mhcnuggetsr_report()'
+
 after_success:
   - Rscript -e 'lintr::lint_package()'
   - Rscript -e 'covr::codecov()'
   - Rscript -e 'goodpractice::gp()'
+  - Rscript -e 'mhcnuggetsr::mhcnuggetsr_report()'
 
