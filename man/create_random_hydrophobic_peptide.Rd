@@ -4,10 +4,10 @@
 \alias{create_random_hydrophobic_peptide}
 \title{Create a random hydrophobic peptide}
 \usage{
-create_random_hydrophobic_peptide(n_aas)
+create_random_hydrophobic_peptide(peptide_length)
 }
 \arguments{
-\item{n_aas}{number of amino acids}
+\item{peptide_length}{length of the peptide in amino acids}
 }
 \description{
 Create a random hydrophobic peptide

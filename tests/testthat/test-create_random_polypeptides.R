@@ -3,7 +3,7 @@ test_that("use", {
   n_peptides <- 2
   peptides <- create_random_peptides(
     n_peptides = n_peptides,
-    n_aas = 3
+    peptide_length = 3
   )
   expect_equal(
     n_peptides,

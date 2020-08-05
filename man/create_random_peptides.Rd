@@ -4,15 +4,21 @@
 \alias{create_random_peptides}
 \title{Create a random peptide}
 \usage{
-create_random_peptides(n_peptides, n_aas)
+create_random_peptides(n_peptides, peptide_length)
 }
 \arguments{
 \item{n_peptides}{number of peptides}
 
-\item{n_aas}{number of amino acids}
+\item{peptide_length}{length of the peptide in amino acids}
 }
 \description{
 Create a random peptide
+}
+\examples{
+create_random_peptides(
+  n_peptides = 2,
+  peptide_length = 9
+)
 }
 \author{
 Richèl J.C. Bilderbeek

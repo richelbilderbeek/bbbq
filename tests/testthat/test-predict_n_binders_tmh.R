@@ -5,7 +5,7 @@ test_that("minimal use, MHC-I", {
   t <- predict_n_binders_tmh(
     target_name = "test",
     haplotypes = get_mhc1_haplotypes()[1:2],
-    n_aas = 9,
+    peptide_length = 9,
     percentile = 0.123
   )
   expect_true(tibble::is_tibble(t))
@@ -24,7 +24,7 @@ test_that("minimal use, MHC-II", {
   t <- predict_n_binders_tmh(
     target_name = "test",
     haplotypes = get_mhc2_haplotypes()[1:2],
-    n_aas = 9,
+    peptide_length = 9,
     percentile = 0.234
   )
   expect_true(tibble::is_tibble(t))
@@ -45,7 +45,7 @@ test_that("COVID, MHC-I", {
   t <- predict_n_binders_tmh(
     target_name = "covid",
     haplotypes = get_mhc1_haplotypes()[1:2],
-    n_aas = 9,
+    peptide_length = 9,
     percentile = 0.1
   )
   expect_true(tibble::is_tibble(t))

@@ -8,7 +8,7 @@ for multiple MHC haplotypes for one type of agent.}
 predict_n_binders_tmh_peptides(
   peptides,
   haplotype,
-  n_aas,
+  peptide_length,
   percentile,
   verbose = FALSE
 )
@@ -18,7 +18,7 @@ predict_n_binders_tmh_peptides(
 
 \item{haplotype}{one MHC-I or MHC-II haplotype}
 
-\item{n_aas}{number of amino acids}
+\item{peptide_length}{length of the peptide in amino acids}
 
 \item{percentile}{how low the IC50 must be for the protein to
 be considered a binder. For example, 0.02 denotes that the protein

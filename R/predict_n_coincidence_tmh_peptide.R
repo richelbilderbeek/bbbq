@@ -18,13 +18,13 @@
 #'
 #'   predict_n_coincidence_tmh_peptide(
 #'     peptide = peptide,
-#'     n_aas = 9
+#'     peptide_length = 9
 #'   )
 #' }
 #' @export
 predict_n_coincidence_tmh_peptide <- function(# nolint indeed a long function name
   peptide,
-  n_aas,
+  peptide_length,
   verbose = FALSE
 ) {
   testthat::expect_true(length(peptide) == 1)
@@ -32,8 +32,8 @@ predict_n_coincidence_tmh_peptide <- function(# nolint indeed a long function na
   topology <- pureseqtmr::predict_topology_from_sequence(peptide)
   topologies <- stringr::str_sub(
     topology,
-    seq(1, nchar(topology) - n_aas + 1),
-    seq(n_aas, nchar(topology))
+    seq(1, nchar(topology) - peptide_length + 1),
+    seq(peptide_length, nchar(topology))
   )
   n_spots <- length(topologies)
   which_tmh <- stringr::str_which(topologies, "1")
@@ -52,7 +52,7 @@ predict_n_coincidence_tmh_peptide <- function(# nolint indeed a long function na
       knitr::kable(t,
         caption = glue::glue(
           "protein length: {nchar(peptide)}, ",
-          "epitope length: {n_aas}, ",
+          "'peptide_length': {peptide_length}, ",
           "n spots: {n_spots}, ",
           "n spots TMHs: {n_spots_tmh}, ",
           "f: {n_spots_tmh / n_spots}"

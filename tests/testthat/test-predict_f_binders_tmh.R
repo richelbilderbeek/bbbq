@@ -5,7 +5,7 @@ test_that("minimal use", {
   t <- predict_f_binders_tmh(
     target_name = "test",
     haplotypes = get_mhc1_haplotypes()[1:2],
-    n_aas = 9,
+    peptide_length = 9,
     percentile = 0.05
   )
 

@@ -21,7 +21,8 @@ Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
 
 \item{n_adjancent_sequences}{look at the \code{n_adjancent_sequences}
 adjacent sequences, instead of all of them. The (maximum) number
-of adjacent sequences is \code{19 * n_aas}, where \code{n_aas}
+of adjacent sequences is \code{19 * peptide_length},
+where \code{peptide_length}
 is the peptide length in amino acids, and 19 in the number of
 possible amino acids to change to (as there are 20 different
 amino acids)}

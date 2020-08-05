@@ -14,7 +14,7 @@ is_detected <- function(
 
 
   ic50_threshold <- mhcnpreds::get_ic50_threshold(
-    n_aas = fragment_length,
+    peptide_length = fragment_length,
     mhc_haplotype = mhcnuggetsr::to_mhcnuggets_name(mhc_haplotype),
     percentile = percentile
   )

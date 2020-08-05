@@ -9,7 +9,7 @@ for one peptide.}
 predict_n_binders_tmh_peptide(
   peptide,
   haplotype,
-  n_aas,
+  peptide_length,
   percentile,
   verbose = FALSE
 )
@@ -20,7 +20,7 @@ predict_n_binders_tmh_peptide(
 
 \item{haplotype}{one MHC-I or MHC-II haplotype}
 
-\item{n_aas}{number of amino acids}
+\item{peptide_length}{length of the peptide in amino acids}
 
 \item{percentile}{how low the IC50 must be for the protein to
 be considered a binder. For example, 0.02 denotes that the protein
@@ -52,7 +52,7 @@ if (is_mhcnuggets_installed() && is_pureseqtm_installed()) {
   predict_n_binders_tmh_peptide(
     peptide = peptide,
     haplotype = get_mhc1_haplotypes()[1],
-    n_aas = 9,
+    peptide_length = 9,
     percentile = 0.123
   )
 }

@@ -5,7 +5,7 @@
 #' library(testthat)
 #'
 #' peptide <- create_random_peptide_with_hydrophobicity(
-#'   n_aas = 2,
+#'   peptide_length = 2,
 #'   min_hydrophobicity = 1.0,
 #'   max_hydrophobicity = 1.5
 #' )
@@ -14,7 +14,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_random_peptide_with_hydrophobicity <- function( # nolint indeed a long function name
-  n_aas,
+  peptide_length,
   min_hydrophobicity,
   max_hydrophobicity,
   n_attempts = 1000
@@ -46,7 +46,7 @@ create_random_peptide_with_hydrophobicity <- function( # nolint indeed a long fu
   for (i in seq_len(n_attempts)) {
     candidate <- paste0(
       sample(
-        x = aas, size = n_aas, replace = TRUE, prob = prob),
+        x = aas, size = peptide_length, replace = TRUE, prob = prob),
       collapse = ""
     )
     h <- Peptides::hydrophobicity(candidate)

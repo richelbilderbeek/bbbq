@@ -5,10 +5,10 @@
 \title{Create a random peptide likelier to have an
 extreme hydrophobicity}
 \usage{
-create_random_extreme_peptide(n_aas)
+create_random_extreme_peptide(peptide_length)
 }
 \arguments{
-\item{n_aas}{number of amino acids}
+\item{peptide_length}{length of the peptide in amino acids}
 }
 \description{
 Create a random peptide likelier to have an

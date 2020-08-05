@@ -6,13 +6,13 @@
 that overlap with at least one amino acid with a TMH
 for one peptide.}
 \usage{
-predict_n_coincidence_tmh_peptide(peptide, n_aas, verbose = FALSE)
+predict_n_coincidence_tmh_peptide(peptide, peptide_length, verbose = FALSE)
 }
 \arguments{
 \item{peptide}{peptide sequence, for example,
 \code{ARNDCQEV}}
 
-\item{n_aas}{number of amino acids}
+\item{peptide_length}{length of the peptide in amino acids}
 
 \item{verbose}{set to TRUE for more output}
 }
@@ -38,7 +38,7 @@ if (is_pureseqtm_installed()) {
 
   predict_n_coincidence_tmh_peptide(
     peptide = peptide,
-    n_aas = 9
+    peptide_length = 9
   )
 }
 }

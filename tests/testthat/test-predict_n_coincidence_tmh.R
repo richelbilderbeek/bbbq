@@ -4,7 +4,7 @@ test_that("minimal use", {
 
   t <- predict_n_coincidence_tmh(
     target_name = "test",
-    n_aas = 9
+    peptide_length = 9
   )
   expect_true(tibble::is_tibble(t))
   expect_true("n_spots" %in% names(t))

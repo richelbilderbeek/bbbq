@@ -20,7 +20,7 @@
 #'   predict_n_binders_tmh_peptide(
 #'     peptide = peptide,
 #'     haplotype = get_mhc1_haplotypes()[1],
-#'     n_aas = 9,
+#'     peptide_length = 9,
 #'     percentile = 0.123
 #'   )
 #' }
@@ -28,7 +28,7 @@
 predict_n_binders_tmh_peptide <- function(
   peptide,
   haplotype,
-  n_aas,
+  peptide_length,
   percentile,
   verbose = FALSE
 ) {
@@ -37,14 +37,14 @@ predict_n_binders_tmh_peptide <- function(
   pureseqtmr::check_pureseqtm_installation()
   ic50s <- mhcnuggetsr::predict_ic50s(
     peptide = peptide,
-    n_aas = n_aas,
+    peptide_length = peptide_length,
     mhcnuggets_options = mhcnuggetsr::create_mhcnuggets_options(
       mhc = mhcnuggetsr::to_mhcnuggets_name(haplotype)
     )
   )
-  testthat::expect_equal(nrow(ic50s), nchar(peptide) - n_aas + 1)
+  testthat::expect_equal(nrow(ic50s), nchar(peptide) - peptide_length + 1)
   ic50_threshold <- mhcnpreds::get_ic50_threshold(
-    n_aas = n_aas,
+    peptide_length = peptide_length,
     mhc_haplotype = mhcnuggetsr::to_mhcnuggets_name(haplotype),
     percentile = percentile
   )
@@ -53,8 +53,8 @@ predict_n_binders_tmh_peptide <- function(
   topology <- pureseqtmr::predict_topology_from_sequence(peptide)
   topologies <- stringr::str_sub(
     topology,
-    seq(1, nchar(topology) - n_aas + 1),
-    seq(n_aas, nchar(topology))
+    seq(1, nchar(topology) - peptide_length + 1),
+    seq(peptide_length, nchar(topology))
   )
   testthat::expect_equal(nrow(ic50s), length(topologies))
   has_tmhs_indices <- stringr::str_which(topologies, "1")
@@ -79,7 +79,7 @@ predict_n_binders_tmh_peptide <- function(
       knitr::kable(t,
         caption = glue::glue(
           "peptide length: {nchar(peptide)}, ",
-          "epitope length: {n_aas}, ",
+          "'peptide_length': {peptide_length}, ",
           "n fragments: {nrow(t)}, ",
           "n_binders: {result$n_binders}, ",
           "n with TMHs: {sum(t$has_tmh)}, ",

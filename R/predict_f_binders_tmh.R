@@ -15,7 +15,7 @@
 predict_f_binders_tmh <- function(
   target_name,
   haplotypes,
-  n_aas,
+  peptide_length,
   percentile
 ) {
   testthat::expect_true(
@@ -24,7 +24,7 @@ predict_f_binders_tmh <- function(
   t <- predict_n_binders_tmh(
     target_name = target_name,
     haplotypes = haplotypes,
-    n_aas = n_aas,
+    peptide_length = peptide_length,
     percentile = percentile
   )
   t

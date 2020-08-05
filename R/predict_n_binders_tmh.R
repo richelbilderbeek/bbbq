@@ -14,7 +14,7 @@
 predict_n_binders_tmh <- function(
   target_name,
   haplotypes,
-  n_aas,
+  peptide_length,
   percentile
 ) {
   testthat::expect_true(
@@ -46,7 +46,7 @@ predict_n_binders_tmh <- function(
     this_t <- bbbq::predict_n_binders_tmh_peptides(
       haplotype = haplotypes[i],
       peptides = peptides,
-      n_aas = n_aas,
+      peptide_length = peptide_length,
       percentile = percentile
     )
     t$n_binders[i] <- sum(this_t$n_binders)

@@ -10,7 +10,7 @@ test_that("use", {
   t <- predict_n_binders_tmh_peptides(
     peptides = peptides,
     haplotype = get_mhc1_haplotypes()[1],
-    n_aas = 9,
+    peptide_length = 9,
     percentile = 0.1
   )
   t

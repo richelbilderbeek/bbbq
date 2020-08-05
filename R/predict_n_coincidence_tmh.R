@@ -12,7 +12,7 @@
 #' @export
 predict_n_coincidence_tmh <- function(
   target_name,
-  n_aas
+  peptide_length
 ) {
   testthat::expect_true(
     target_name %in% c("test", "human", "covid", "myco")
@@ -35,7 +35,7 @@ predict_n_coincidence_tmh <- function(
 
   this_t <- bbbq::predict_n_coincidence_tmh_peptides(
     peptides = peptides,
-    n_aas = n_aas
+    peptide_length = peptide_length
   )
   t <- tibble::tibble(
     n_spots = sum(this_t$n_spots),

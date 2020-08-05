@@ -5,7 +5,7 @@
 \title{Calculate the fractions of MHC epitopes that overlap with a TMH
 for multiple MHC haplotypes for one type of agent.}
 \usage{
-predict_n_binders_tmh(target_name, haplotypes, n_aas, percentile)
+predict_n_binders_tmh(target_name, haplotypes, peptide_length, percentile)
 }
 \arguments{
 \item{target_name}{name of organism or virus or testing
@@ -13,7 +13,7 @@ dataset.}
 
 \item{haplotypes}{a list of MHC-I or MHC-II haplotypes}
 
-\item{n_aas}{number of amino acids}
+\item{peptide_length}{length of the peptide in amino acids}
 
 \item{percentile}{how low the IC50 must be for the protein to
 be considered a binder. For example, 0.02 denotes that the protein

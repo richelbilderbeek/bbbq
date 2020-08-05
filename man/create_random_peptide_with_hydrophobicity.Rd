@@ -5,14 +5,14 @@
 \title{Creates a random peptide of a certain hydrophobicity}
 \usage{
 create_random_peptide_with_hydrophobicity(
-  n_aas,
+  peptide_length,
   min_hydrophobicity,
   max_hydrophobicity,
   n_attempts = 1000
 )
 }
 \arguments{
-\item{n_aas}{number of amino acids}
+\item{peptide_length}{length of the peptide in amino acids}
 
 \item{min_hydrophobicity}{the minimal hydrophobicity}
 
@@ -27,7 +27,7 @@ Creates a random peptide of a certain hydrophobicity
 library(testthat)
 
 peptide <- create_random_peptide_with_hydrophobicity(
-  n_aas = 2,
+  peptide_length = 2,
   min_hydrophobicity = 1.0,
   max_hydrophobicity = 1.5
 )

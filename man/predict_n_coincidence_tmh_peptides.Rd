@@ -6,12 +6,12 @@
 that overlap with at least one amino acid with a TMH
 for one peptide.}
 \usage{
-predict_n_coincidence_tmh_peptides(peptides, n_aas, verbose = FALSE)
+predict_n_coincidence_tmh_peptides(peptides, peptide_length, verbose = FALSE)
 }
 \arguments{
 \item{peptides}{one ore more peptide sequences}
 
-\item{n_aas}{number of amino acids}
+\item{peptide_length}{length of the peptide in amino acids}
 
 \item{verbose}{set to TRUE for more output}
 }

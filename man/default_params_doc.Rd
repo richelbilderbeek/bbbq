@@ -19,7 +19,6 @@ default_params_doc(
   mhc_1_haplotype,
   mhc_2_haplotype,
   min_hydrophobicity,
-  n_aas,
   n_peptides,
   non_tmh_eluted_filename,
   peptide,
@@ -86,8 +85,6 @@ Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 Use \link{get_mhc2_haplotypes} to get a list of all haplotypes}
 
 \item{min_hydrophobicity}{the minimal hydrophobicity}
-
-\item{n_aas}{number of amino acids}
 
 \item{n_peptides}{number of peptides}
 

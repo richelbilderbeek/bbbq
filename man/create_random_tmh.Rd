@@ -5,12 +5,12 @@
 \title{Create a random TMH sequences}
 \usage{
 create_random_tmh(
-  n_aas,
+  peptide_length,
   create_random_peptide_fun = bbbq::create_random_hydrophobic_peptide
 )
 }
 \arguments{
-\item{n_aas}{number of amino acids}
+\item{peptide_length}{length of the peptide in amino acids}
 
 \item{create_random_peptide_fun}{function to create a random
 peptide fragment of the desired length}

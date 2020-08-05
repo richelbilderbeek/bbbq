@@ -9,7 +9,7 @@ test_that("use", {
   sink("/dev/null") # Remove the cat output, due to verbose is TRUE
   t <- predict_n_coincidence_tmh_peptides(
     peptides = peptides,
-    n_aas = 9,
+    peptide_length = 9,
     verbose = TRUE
   )
   t

@@ -15,7 +15,7 @@
 predict_n_binders_tmh_peptides <- function(
   peptides,
   haplotype,
-  n_aas,
+  peptide_length,
   percentile,
   verbose = FALSE
 ) {
@@ -24,7 +24,7 @@ predict_n_binders_tmh_peptides <- function(
     tibbles[[i]] <- bbbq::predict_n_binders_tmh_peptide(
       peptide = peptides[i],
       haplotype = haplotype,
-      n_aas = n_aas,
+      peptide_length = peptide_length,
       percentile = percentile,
       verbose = verbose
     )

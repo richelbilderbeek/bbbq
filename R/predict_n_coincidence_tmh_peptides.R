@@ -15,14 +15,14 @@
 #' @export
 predict_n_coincidence_tmh_peptides <- function(# nolint indeed a long function name
   peptides,
-  n_aas,
+  peptide_length,
   verbose = FALSE
 ) {
   tibbles <- list()
   for (i in seq_along(peptides)) {
     tibbles[[i]] <- bbbq::predict_n_coincidence_tmh_peptide(
       peptide = peptides[i],
-      n_aas = n_aas,
+      peptide_length = peptide_length,
       verbose = verbose
     )
   }

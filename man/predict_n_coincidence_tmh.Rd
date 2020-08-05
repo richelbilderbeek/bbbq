@@ -5,13 +5,13 @@
 \title{Calculate the fractions of peptide fragmensts that overlap with a TMH
 for one type of agent.}
 \usage{
-predict_n_coincidence_tmh(target_name, n_aas)
+predict_n_coincidence_tmh(target_name, peptide_length)
 }
 \arguments{
 \item{target_name}{name of organism or virus or testing
 dataset.}
 
-\item{n_aas}{number of amino acids}
+\item{peptide_length}{length of the peptide in amino acids}
 }
 \value{
 a tibble, with columns:
