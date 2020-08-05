@@ -23,6 +23,6 @@ test_that("use", {
   expect_true("n_binders_tmh" %in% names(t))
 
   expect_true(t$n_binders >= t$n_binders_tmh)
-  expect_equal(4, t$n_binders)
+  expect_equal(2, t$n_binders)
   expect_equal(1, t$n_binders_tmh)
 })

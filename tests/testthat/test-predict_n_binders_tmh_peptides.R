@@ -20,6 +20,6 @@ test_that("use", {
   expect_true("n_binders_tmh" %in% names(t))
 
   expect_true(sum(t$n_binders) >= sum(t$n_binders_tmh))
-  expect_equal(c(3, 2), t$n_binders)
-  expect_equal(c(1, 1), t$n_binders_tmh)
+  expect_equal(c(4, 3), t$n_binders)
+  expect_equal(c(2, 2), t$n_binders_tmh)
 })
