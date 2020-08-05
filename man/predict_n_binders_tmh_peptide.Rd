@@ -47,7 +47,7 @@ library(pureseqtmr)
 
 if (is_mhcnuggets_installed() && is_pureseqtm_installed()) {
 
-  peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRV"
+  peptide <- "MYSFVSEETGTLIVNSVLLFLAFV"
 
   predict_n_binders_tmh_peptide(
     peptide = peptide,

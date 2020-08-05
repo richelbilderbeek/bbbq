@@ -15,7 +15,7 @@
 #'
 #' if (is_mhcnuggets_installed() && is_pureseqtm_installed()) {
 #'
-#'   peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRV"
+#'   peptide <- "MYSFVSEETGTLIVNSVLLFLAFV"
 #'
 #'   predict_n_binders_tmh_peptide(
 #'     peptide = peptide,
@@ -37,7 +37,7 @@ predict_n_binders_tmh_peptide <- function(
   pureseqtmr::check_pureseqtm_installation()
   ic50s <- mhcnuggetsr::predict_ic50s(
     peptide = peptide,
-    peptide_length = peptide_length,
+    n_aas = peptide_length,
     mhcnuggets_options = mhcnuggetsr::create_mhcnuggets_options(
       mhc = mhcnuggetsr::to_mhcnuggets_name(haplotype)
     )
