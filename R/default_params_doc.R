@@ -41,7 +41,8 @@
 #' @param peptide_length length of the peptide in amino acids
 #' @param percentile how low the IC50 must be for the protein to
 #'   be considered a binder. For example, 0.02 denotes that the protein
-#'   must have an IC50 in the lowest 2 percent range
+#'   must have an IC50 in the lowest 2 percent range.
+#'   The default value is returned by \link{get_ic50_percentile_binder}.
 #' @param png_filename name of a PNG file
 #' @param protein_lengths_filename filename to store the
 #'   length of all proteins in proteome,

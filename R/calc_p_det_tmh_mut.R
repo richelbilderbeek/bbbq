@@ -14,7 +14,7 @@ calc_p_det_tmh_mut <- function(
   protein_sequence,
   mhc_haplotype,
   n_adjancent_sequences = Inf,
-  percentile = 0.02
+  percentile = get_ic50_percentile_binder()
 ) {
   testthat::expect_true(pureseqtmr::is_tmh(protein_sequence))
   bbbq::check_mhc_haplotype_name(mhc_haplotype)

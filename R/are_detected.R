@@ -5,7 +5,7 @@
 are_detected <- function(
   protein_sequences,
   mhc_haplotype = "HLA-A*02-01",
-  percentile = 0.02
+  percentile = get_ic50_percentile_binder()
 ) {
   bbbq::check_mhc_haplotype_name(mhc_haplotype)
   results <- rep(NA, length(protein_sequences))

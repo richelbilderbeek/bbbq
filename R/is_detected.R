@@ -8,7 +8,7 @@ is_detected <- function(
   protein_sequence,
   mhc_haplotype,
   fragment_length = 9,
-  percentile = 0.02
+  percentile = get_ic50_percentile_binder()
 ) {
   bbbq::check_mhc_haplotype_name(mhc_haplotype)
 

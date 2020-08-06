@@ -8,7 +8,7 @@ is_detected(
   protein_sequence,
   mhc_haplotype,
   fragment_length = 9,
-  percentile = 0.02
+  percentile = get_ic50_percentile_binder()
 )
 }
 \arguments{
@@ -23,7 +23,8 @@ the peptide will be cut into}
 
 \item{percentile}{how low the IC50 must be for the protein to
 be considered a binder. For example, 0.02 denotes that the protein
-must have an IC50 in the lowest 2 percent range}
+must have an IC50 in the lowest 2 percent range.
+The default value is returned by \link{get_ic50_percentile_binder}.}
 }
 \description{
 Determine if the haplotype has at least one binder to the peptide

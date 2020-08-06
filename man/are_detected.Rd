@@ -7,7 +7,7 @@
 are_detected(
   protein_sequences,
   mhc_haplotype = "HLA-A*02-01",
-  percentile = 0.02
+  percentile = get_ic50_percentile_binder()
 )
 }
 \arguments{
@@ -19,7 +19,8 @@ Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
 
 \item{percentile}{how low the IC50 must be for the protein to
 be considered a binder. For example, 0.02 denotes that the protein
-must have an IC50 in the lowest 2 percent range}
+must have an IC50 in the lowest 2 percent range.
+The default value is returned by \link{get_ic50_percentile_binder}.}
 }
 \description{
 Are the protein sequences detected by either MHC-I or MHC-II?

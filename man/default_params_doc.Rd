@@ -100,7 +100,8 @@ for example `data/non-TMH-Bcell-elution.txt`}
 
 \item{percentile}{how low the IC50 must be for the protein to
 be considered a binder. For example, 0.02 denotes that the protein
-must have an IC50 in the lowest 2 percent range}
+must have an IC50 in the lowest 2 percent range.
+The default value is returned by \link{get_ic50_percentile_binder}.}
 
 \item{png_filename}{name of a PNG file}
 
