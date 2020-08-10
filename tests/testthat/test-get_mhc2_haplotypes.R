@@ -5,7 +5,7 @@ test_that("use", {
 
 test_that("matches BBBQ article", {
   expect_equal(
-    length(get_mhc1_haplotypes()),
+    21,
     length(get_mhc2_haplotypes())
   )
 })
