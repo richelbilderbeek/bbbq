@@ -59,8 +59,8 @@ test_that("use, peptide length 10", {
   expect_true("n_spots_tmh" %in% names(t))
 
   expect_true(t$n_binders >= t$n_binders_tmh)
-  expect_equal(2, t$n_binders)
-  expect_equal(1, t$n_binders_tmh)
-  expect_equal(67, t$n_spots)
-  expect_equal(42, t$n_spots_tmh)
+  expect_equal(4, t$n_binders)
+  expect_equal(0, t$n_binders_tmh)
+  expect_equal(66, t$n_spots)
+  expect_equal(43, t$n_spots_tmh)
 })
