@@ -2,6 +2,6 @@
 #' @return the filename of the test Mycobacterium reference proteome
 #' @author Richèl J.C. Bilderbeek
 #' @export
-get_test_myco_proteome_filename <- function() {
+get_test_myco_proteome_filename <- function() { # nolint indeed a long function name
   system.file("extdata", "myco_test.fasta", package = "bbbq")
 }
