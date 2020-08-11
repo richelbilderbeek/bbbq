@@ -1,3 +1,0 @@
-#!/bin/bash
-
-makeblastdb -in mycobacterium.faa -dbtype prot
