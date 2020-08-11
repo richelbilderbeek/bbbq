@@ -9,12 +9,12 @@ create_proteins_lut(proteome_filename)
 \value{
 a tibble with columns:\cr
 \itemize{
+  \item protein_id the protein ID,
+    for example \code{p1}
   \item protein the protein name,
     for example \code{sp|P0DTD8|NS7B}
   \item sequence the protein sequence,
     for example \code{MIELSLIDFYLCFL}
-  \item protein_id the protein ID,
-    for example \code{p1}
 }
 }
 \description{
