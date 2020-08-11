@@ -3,4 +3,5 @@ test_that("use", {
   expect_true("protein" %in% names(t))
   expect_true("sequence" %in% names(t))
   expect_true("protein_id" %in% names(t))
+  expect_equal(names(t)[1], "protein_id")
 })
