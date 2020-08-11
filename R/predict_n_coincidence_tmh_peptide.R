@@ -27,39 +27,11 @@ predict_n_coincidence_tmh_peptide <- function(# nolint indeed a long function na
   peptide_length,
   verbose = FALSE
 ) {
-  testthat::expect_true(length(peptide) == 1)
-  pureseqtmr::check_pureseqtm_installation()
-  topology <- pureseqtmr::predict_topology_from_sequence(peptide)
-  topologies <- stringr::str_sub(
-    topology,
-    seq(1, nchar(topology) - peptide_length + 1),
-    seq(peptide_length, nchar(topology))
+  bbbq::predict_counts(
+    peptide = peptide,
+    peptide_length = peptide_length,
+    haplotype = get_mhc1_haplotypes()[1],
+    percentile = 0.0,
+    verbose = verbose
   )
-  n_spots <- length(topologies)
-  which_tmh <- stringr::str_which(topologies, "1")
-  n_spots_tmh <- length(which_tmh)
-
-  result <- tibble::tibble(
-    n_spots = n_spots,
-    n_spots_tmh = n_spots_tmh
-  )
-
-  if (isTRUE(verbose)) {
-    t <- tibble::tibble(topology = topologies)
-    t$has_tmh <- FALSE
-    t$has_tmh[which_tmh] <- TRUE
-    cat(
-      knitr::kable(t,
-        caption = glue::glue(
-          "protein length: {nchar(peptide)}, ",
-          "'peptide_length': {peptide_length}, ",
-          "n spots: {n_spots}, ",
-          "n spots TMHs: {n_spots_tmh}, ",
-          "f: {n_spots_tmh / n_spots}"
-        )
-      ),
-      sep = "\n"
-    )
-  }
-  result
 }
