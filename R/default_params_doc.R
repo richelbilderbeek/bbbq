@@ -114,7 +114,6 @@ default_params_doc <- function(
   proteome_filename,
   proteome_as_data_filename,
   proteome_9mer_hydrophobicity_as_data_filename,
-
   target_name,
   tmh_9mers_as_data_filename,
   tmh_eluted_filename,

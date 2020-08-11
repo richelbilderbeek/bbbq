@@ -6,6 +6,9 @@
 \usage{
 create_proteins_lut(proteome_filename)
 }
+\arguments{
+\item{proteome_filename}{name of the file the proteome will be stored at}
+}
 \value{
 a tibble with columns:\cr
 \itemize{

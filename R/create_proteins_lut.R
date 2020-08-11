@@ -1,4 +1,5 @@
 #' Create a protein lookup table from a proteome
+#' @inheritParams default_params_doc
 #' @return a tibble with columns:\cr
 #' \itemize{
 #'   \item protein_id the protein ID,
@@ -10,6 +11,8 @@
 #' }
 #' @export
 create_proteins_lut <- function(proteome_filename) {
+
+  protein_id <- NULL; rm(protein_id) # nolint, fixes warning: no visible binding for global variable
 
   testthat::expect_true(file.exists(proteome_filename))
 

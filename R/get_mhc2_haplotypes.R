@@ -9,6 +9,8 @@
 #' @export
 get_mhc2_haplotypes <- function() {
   if (1 == 2) {
+    phenotype_freq <- NULL; rm(phenotype_freq) # nolint, fixes warning: no visible binding for global variable
+    haplotype <- NULL; rm(haplotype) # nolint, fixes warning: no visible binding for global variable
     t <- get_mhc2_haplotype_occurance() %>%
       dplyr::filter(phenotype_freq > 14.0) %>%
       dplyr::select(haplotype)
