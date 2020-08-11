@@ -15,6 +15,7 @@ default_params_doc(
   ic50_threshold,
   kyte_doolittle_scale_as_data_filename,
   max_hydrophobicity,
+  mhc_class,
   mhc_haplotype,
   mhc_1_haplotype,
   mhc_2_haplotype,
@@ -73,6 +74,8 @@ hydrophobicity,
 for example `data/kyte.doolittle.scale.Rdata`}
 
 \item{max_hydrophobicity}{the maximal hydrophobicity}
+
+\item{mhc_class}{the MHC class, for example \code{1}}
 
 \item{mhc_haplotype}{haplotype of either HMC-I or MHC-II.
 Use \link{get_mhc1_haplotypes} to get a list of all MHC-I haplotypes.
