@@ -18,7 +18,6 @@ r_github_packages:
   - richelbilderbeek/epitope-prediction
 
 before_script:
-  - sudo apt install python3-pip
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'mhcnuggetsr::install_mhcnuggets()'; fi
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'pureseqtmr::install_pureseqtm()'; fi
 
