@@ -134,6 +134,7 @@ test_that("use, NetMHC2pan, MHC-II, peptide length 13", {
 test_that("profiling", {
   if (!pureseqtmr::is_pureseqtm_installed()) return()
   if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
+  if (!netmhc2pan::is_netmhc2pan_installed()) return()
   return()
 
   peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDLLV" # nolint indeed long
@@ -143,6 +144,28 @@ test_that("profiling", {
       haplotype = get_mhc1_haplotypes()[1],
       peptide_length = 10,
       percentile = 0.05
+    )
+    predict_counts(
+      peptide = peptide,
+      haplotype = get_mhc1_haplotypes()[1],
+      peptide_length = 10,
+      percentile = 0.05,
+      ic50_prediction_tool = "EpitopePrediction"
+    )
+  })
+  profvis::profvis({
+    predict_counts(
+      peptide = peptide,
+      haplotype = get_mhc1_haplotypes()[2],
+      peptide_length = 13,
+      percentile = 0.05
+    )
+    predict_counts(
+      peptide = peptide,
+      haplotype = get_mhc1_haplotypes()[2],
+      peptide_length = 13,
+      percentile = 0.05,
+      ic50_prediction_tool = "netmhc2pan"
     )
   })
 })
