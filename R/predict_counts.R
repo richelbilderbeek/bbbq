@@ -73,7 +73,7 @@ predict_counts <- function(
     )
     ic50s <- EpitopePrediction::smm(
       x = peptides,
-      mhc = epipredpreds::to_epipred_name(haplotype)
+      mhc = epiprepreds::to_epipred_name(haplotype)
     )
   } else {
     stop("Unknown 'ic50_prediction_tool': ", ic50_prediction_tool)
@@ -97,7 +97,7 @@ predict_counts <- function(
   } else if (ic50_prediction_tool == "EpitopePrediction") {
     ic50_threshold <- epiprepreds::get_ic50_threshold(
       peptide_length = peptide_length,
-      mhc_haplotype = epipredpreds::to_epipred_name(haplotype),
+      mhc_haplotype = epiprepreds::to_epipred_name(haplotype),
       percentile = percentile
     )
   } else {
