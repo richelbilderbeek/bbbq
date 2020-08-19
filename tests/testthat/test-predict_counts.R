@@ -64,3 +64,21 @@ test_that("use, peptide length 10", {
   expect_equal(66, t$n_spots)
   expect_equal(43, t$n_spots_tmh)
 })
+
+
+
+test_that("profiling", {
+  if (!pureseqtmr::is_pureseqtm_installed()) return()
+  if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
+  return()
+
+  peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDLLV" # nolint indeed long
+  profvis::profvis({
+    predict_counts(
+      peptide = peptide,
+      haplotype = get_mhc1_haplotypes()[1],
+      peptide_length = 10,
+      percentile = 0.05
+    )
+  })
+})
