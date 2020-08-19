@@ -104,7 +104,6 @@ test_that("use, NetMHC2pan, MHC-II, peptide length 13", {
   # VENV of COVID-19 reference proteome, has one TMH
   peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDLLV" # nolint indeed long
   #          "000000000000001111111111111111111111111111111111000000000000000000000000000" # nolint indeed long
-  sink("/dev/null") # Remove the cat output, due to verbose is TRUE
   t <- predict_counts(
     peptide = peptide,
     haplotype = get_mhc2_haplotypes()[1],
@@ -114,7 +113,6 @@ test_that("use, NetMHC2pan, MHC-II, peptide length 13", {
     ic50_prediction_tool = "netmhc2pan"
   )
   t
-  sink()
   # Results from verbose output:
   # Table: peptide length: 75, epitope length: 9, n fragments: 67,
   # n is binder: 4, n with TMHs: 42, n with TMH and is binder: 1,
@@ -126,10 +124,10 @@ test_that("use, NetMHC2pan, MHC-II, peptide length 13", {
   expect_true("n_spots_tmh" %in% names(t))
 
   expect_true(t$n_binders >= t$n_binders_tmh)
-  expect_equal(4, t$n_binders)
-  expect_equal(0, t$n_binders_tmh)
-  expect_equal(66, t$n_spots)
-  expect_equal(43, t$n_spots_tmh)
+  expect_equal(6, t$n_binders)
+  expect_equal(5, t$n_binders_tmh)
+  expect_equal(63, t$n_spots)
+  expect_equal(46, t$n_spots_tmh)
 })
 
 
