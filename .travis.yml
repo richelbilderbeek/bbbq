@@ -1,5 +1,5 @@
 language: R
-dist: bionic
+# dist: bionic # Uncomment until fix of https://travis-ci.community/t/r-install-broken-travis-ci-rstudio-org-returns-403/9640
 cache: packages
 
 env:
@@ -16,10 +16,14 @@ r_github_packages:
   - richelbilderbeek/mhcnpreds
   - richelbilderbeek/pureseqtmr
   - richelbilderbeek/epitope-prediction
+  - richelbilderbeek/epiprepreds
+  - richelbilderbeek/netmhc2pan
+  - richelbilderbeek/nmhc2preds
 
 before_script:
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'mhcnuggetsr::install_mhcnuggets()'; fi
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'pureseqtmr::install_pureseqtm()'; fi
+  - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'netmhc2pan::install_netmhc2pan()'; fi
 
 after_failure:
   - Rscript -e 'mhcnuggetsr::mhcnuggetsr_report()'
