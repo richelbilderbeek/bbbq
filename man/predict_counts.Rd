@@ -6,7 +6,14 @@
 that overlap with at least one amino acid with a TMH
 for one peptide.}
 \usage{
-predict_counts(peptide, haplotype, peptide_length, percentile, verbose = FALSE)
+predict_counts(
+  peptide,
+  haplotype,
+  peptide_length,
+  percentile,
+  verbose = FALSE,
+  ic50_prediction_tool = "mhcnuggetsr"
+)
 }
 \arguments{
 \item{peptide}{peptide sequence, for example,
@@ -22,6 +29,16 @@ must have an IC50 in the lowest 2 percent range.
 The default value is returned by \link{get_ic50_percentile_binder}.}
 
 \item{verbose}{set to TRUE for more output}
+
+\item{ic50_prediction_tool}{tool to predict the IC50 from a
+  peptide. Possible values are:\cr
+\itemize{
+  \item mhcnuggetsr \link[mhcnuggetsr]{mhcnuggetsr},
+    which uses MHCnuggets
+  \item mhcnuggetsr \link[netmhc2pan]{netmhc2pan},
+    which uses NetMHC2pam
+  \item EpitopePrediction uses \code{EpitopePrediction}
+}}
 }
 \value{
 a tibble with

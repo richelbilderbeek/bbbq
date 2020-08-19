@@ -18,7 +18,7 @@ r_github_packages:
   - richelbilderbeek/epitope-prediction
   - richelbilderbeek/epiprepreds
   - richelbilderbeek/netmhc2pan
-  - richelbilderbeek/nmhc2preds
+  - richelbilderbeek/nmhc2ppreds
 
 before_script:
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'mhcnuggetsr::install_mhcnuggets()'; fi

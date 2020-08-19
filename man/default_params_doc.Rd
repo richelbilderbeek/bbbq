@@ -159,6 +159,16 @@ uhhh, something, for example
 \item{triplet}{a DNA triplet}
 
 \item{verbose}{set to TRUE for more output}
+
+\item{ic50_prediction_tool}{tool to predict the IC50 from a
+  peptide. Possible values are:\cr
+\itemize{
+  \item mhcnuggetsr \link[mhcnuggetsr]{mhcnuggetsr},
+    which uses MHCnuggets
+  \item mhcnuggetsr \link[netmhc2pan]{netmhc2pan},
+    which uses NetMHC2pam
+  \item EpitopePrediction uses \code{EpitopePrediction}
+}}
 }
 \description{
 This function does nothing. It is intended to inherit is parameters'

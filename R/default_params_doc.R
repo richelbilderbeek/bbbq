@@ -15,6 +15,15 @@
 #'   filename that stores hydrophobe control peptides
 #'   as R data,
 #'   for example `work/hydrophobe-control-peptides.Rdata`
+#' @param ic50_prediction_tool tool to predict the IC50 from a
+#'   peptide. Possible values are:\cr
+#' \itemize{
+#'   \item mhcnuggetsr \link[mhcnuggetsr]{mhcnuggetsr},
+#'     which uses MHCnuggets
+#'   \item mhcnuggetsr \link[netmhc2pan]{netmhc2pan},
+#'     which uses NetMHC2pam
+#'   \item EpitopePrediction uses \code{EpitopePrediction}
+#' }
 #' @param ic50_threshold peptides with a predicted IC50 value (in nM)
 #'   lower than this will be considered binders.
 #'   A threshold of 500 (nM) is common.
