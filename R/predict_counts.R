@@ -69,9 +69,13 @@ predict_counts <- function(
   } else if (ic50_prediction_tool == "EpitopePrediction") {
     peptides <- bbbq::shred_protein(
       protein_sequence = peptide,
-      peptide_length = peptide_length,
+      peptide_length = peptide_length
     )
-    ic50s <- EpitopePrediction::smm(
+    ic50s <- tibble::tibble(
+      peptide = peptides,
+      ic50 = NA
+    )
+    ic50s$ic50 <- EpitopePrediction::smm(
       x = peptides,
       mhc = epiprepreds::to_epipred_name(haplotype)
     )

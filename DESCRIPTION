@@ -38,6 +38,7 @@ Imports:
 Suggests:
     beastier,
     devtools,
+    profvis,
     testit,
     testthat (>= 2.1.0),
     knitr,
