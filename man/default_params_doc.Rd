@@ -12,6 +12,7 @@ default_params_doc(
   haplotype,
   haplotypes,
   hydrophobe_control_peptides_as_data_filename,
+  ic50_prediction_tool,
   ic50_threshold,
   kyte_doolittle_scale_as_data_filename,
   max_hydrophobicity,
@@ -64,6 +65,16 @@ which is cleaned by the operating system}
 \item{hydrophobe_control_peptides_as_data_filename}{filename that stores hydrophobe control peptides
 as R data,
 for example `work/hydrophobe-control-peptides.Rdata`}
+
+\item{ic50_prediction_tool}{tool to predict the IC50 from a
+  peptide. Possible values are:\cr
+\itemize{
+  \item mhcnuggetsr \link[mhcnuggetsr]{mhcnuggetsr},
+    which uses MHCnuggets
+  \item mhcnuggetsr \link[netmhc2pan]{netmhc2pan},
+    which uses NetMHC2pam
+  \item EpitopePrediction uses \code{EpitopePrediction}
+}}
 
 \item{ic50_threshold}{peptides with a predicted IC50 value (in nM)
 lower than this will be considered binders.
@@ -159,16 +170,6 @@ uhhh, something, for example
 \item{triplet}{a DNA triplet}
 
 \item{verbose}{set to TRUE for more output}
-
-\item{ic50_prediction_tool}{tool to predict the IC50 from a
-  peptide. Possible values are:\cr
-\itemize{
-  \item mhcnuggetsr \link[mhcnuggetsr]{mhcnuggetsr},
-    which uses MHCnuggets
-  \item mhcnuggetsr \link[netmhc2pan]{netmhc2pan},
-    which uses NetMHC2pam
-  \item EpitopePrediction uses \code{EpitopePrediction}
-}}
 }
 \description{
 This function does nothing. It is intended to inherit is parameters'

@@ -104,6 +104,7 @@ default_params_doc <- function(
   haplotype,
   haplotypes,
   hydrophobe_control_peptides_as_data_filename,
+  ic50_prediction_tool,
   ic50_threshold,
   kyte_doolittle_scale_as_data_filename,
   max_hydrophobicity,
