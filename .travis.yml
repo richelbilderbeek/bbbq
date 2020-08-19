@@ -21,6 +21,7 @@ r_github_packages:
   - richelbilderbeek/nmhc2ppreds
 
 before_script:
+  - if [[ "$INSTALL_TOOLS" == true ]]; then sudo apt install tcsh; fi
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'mhcnuggetsr::install_mhcnuggets()'; fi
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'pureseqtmr::install_pureseqtm()'; fi
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'netmhc2pan::install_netmhc2pan()'; fi
