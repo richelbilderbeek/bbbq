@@ -12,6 +12,16 @@ r_packages:
 r_github_packages:
   - jimhester/covr
   - jimhester/lintr
+  - MangoTheCat/goodpractice
+  - richelbilderbeek/beautier
+  - richelbilderbeek/beastier
+  - richelbilderbeek/babette
+  - richelbilderbeek/tiebeaur
+  - ropensci/spelling
+  - richelbilderbeek/mcbette
+  - thijsjanzen/nodeSub
+  - richelbilderbeek/pirouette
+  - richelbilderbeek/peregrine
   - richelbilderbeek/mhcnuggetsr
   - richelbilderbeek/mhcnpreds
   - richelbilderbeek/pureseqtmr
