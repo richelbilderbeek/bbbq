@@ -56,7 +56,7 @@ that overlap with at least one amino acid with a TMH
 for one protein.
 }
 \details{
-Use \link{predict_counts_for_proteins} to predict these
+Use \link{predict_counts_per_proteome} to predict these
 counts for multiple proteins.
 }
 \examples{
