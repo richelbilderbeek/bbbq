@@ -23,8 +23,8 @@ is_detected <- function(
     mhcnuggets_options = mhcnuggetsr::create_mhcnuggets_options(
       mhc = mhcnuggetsr::to_mhcnuggets_name(mhc_haplotype)
     ),
-    peptide = protein_sequence,
-    n_aas = fragment_length
+    protein_sequence = protein_sequence,
+    peptide_length = fragment_length
   )
   sum(results$ic50 < ic50_threshold) > 0
 }

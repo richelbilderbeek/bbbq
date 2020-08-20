@@ -54,8 +54,8 @@ predict_counts <- function(
   ic50s <- NA
   if (ic50_prediction_tool == "mhcnuggetsr") {
     ic50s <- mhcnuggetsr::predict_ic50s(
-      peptide = peptide,
-      n_aas = peptide_length,
+      protein_sequence = peptide,
+      peptide_length = peptide_length,
       mhcnuggets_options = mhcnuggetsr::create_mhcnuggets_options(
         mhc = mhcnuggetsr::to_mhcnuggets_name(haplotype)
       )
