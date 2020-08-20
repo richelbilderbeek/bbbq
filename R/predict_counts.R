@@ -1,6 +1,11 @@
+#' Predict counts of one protein and one haplotype
+#'
 #' Predict the number of binders and the number of binders
 #' that overlap with at least one amino acid with a TMH
-#' for one peptide.
+#' for one protein.
+#'
+#' Use \link{predict_counts_for_proteins} to predict these
+#' counts for multiple proteins.
 #' @inheritParams default_params_doc
 #' @return a tibble with
 #' \enumerate{
@@ -11,6 +16,7 @@
 #'   \item n_spots_tmh number of spots that have one
 #'     amino acid overlapping with a TMH
 #' }
+#' The tibble will have one row (which matches the number of proteins).
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #' library(mhcnuggetsr)
