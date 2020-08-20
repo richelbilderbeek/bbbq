@@ -2,7 +2,44 @@
 
 Newest versions at top.
 
-## bbbq 1.4 (2020-08-28)
+## bbbq 1.6 (2020-08-20)
+
+### NEW FEATURES
+
+  * Can predict counts for multiple proteins
+  
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
+## bbbq 1.5 (2020-08-19)
+
+### NEW FEATURES
+
+  * Can use EpitopePrediction to predict IC50s of MHC-I haplotypes
+  * Can use `netmhc2pan` to predict IC50s of MHC-II haplotypes
+  
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
+## bbbq 1.4 (2020-08-18)
 
 ### NEW FEATURES
 
