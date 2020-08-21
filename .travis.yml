@@ -31,7 +31,12 @@ r_github_packages:
   - richelbilderbeek/nmhc2ppreds
 
 before_install:
+  # Rmpfr
   - sudo apt install -qq libmpfr-dev
+  # ImageMagick
+  - sudo add-apt-repository -y ppa:opencpu/imagemagick
+  - sudo apt-get update
+  - sudo apt-get install -y libmagick++-dev
 
 before_script:
   - if [[ "$INSTALL_TOOLS" == true ]]; then sudo apt install tcsh; fi
