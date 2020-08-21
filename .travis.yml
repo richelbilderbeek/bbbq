@@ -31,6 +31,7 @@ r_github_packages:
   - richelbilderbeek/nmhc2ppreds
 
 before_script:
+  - sudo apt install -qq libmpfr-dev
   - if [[ "$INSTALL_TOOLS" == true ]]; then sudo apt install tcsh; fi
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'mhcnuggetsr::install_mhcnuggets()'; fi
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'pureseqtmr::install_pureseqtm()'; fi
