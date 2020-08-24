@@ -2,18 +2,13 @@ test_that("use", {
   if (!pureseqtmr::is_pureseqtm_installed()) return()
 
   # VENV of COVID-19 reference proteome, has one TMH
-  peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDLLV" # nolint indeed long
+  protein_sequence <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDLLV" # nolint indeed long
   #          "000000000000001111111111111111111111111111111111000000000000000000000000000" # nolint indeed long
-  sink("/dev/null") # Remove the cat output, due to verbose is TRUE
   t <- predict_n_coincidence_tmh_peptide(
-    peptide = peptide,
+    protein_sequence = protein_sequence,
     peptide_length = 9,
-    verbose = TRUE
+    ic50_prediction_tool = "EpitopePrediction"
   )
-  # Results from verbose output:
-  # Table: protein length: 75, epitope length: 9, n spots: 67, n spots TMHs: 42,
-  # f: 0.626865671641791
-  sink()
   expect_true(tibble::is_tibble(t))
   expect_true("n_spots" %in% names(t))
   expect_true("n_spots_tmh" %in% names(t))

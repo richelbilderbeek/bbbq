@@ -5,15 +5,12 @@ test_that("MHCNuggets, MHC-I, peptide length 9", {
   # VENV of COVID-19 reference proteome, has one TMH
   protein_sequence <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDLLV" # nolint indeed long
   #          "000000000000001111111111111111111111111111111111000000000000000000000000000" # nolint indeed long
-  sink("/dev/null") # Remove the cat output, due to verbose is TRUE
   t <- predict_counts(
     protein_sequence = protein_sequence,
     haplotype = get_mhc1_haplotypes()[1],
     peptide_length = 9,
-    percentile = 0.05,
-    verbose = TRUE
+    percentile = 0.05
   )
-  sink()
   # Results from verbose output:
   # Table: peptide length: 75, epitope length: 9, n fragments: 67,
   # n is binder: 4, n with TMHs: 42, n with TMH and is binder: 1,
@@ -38,16 +35,12 @@ test_that("MHCNuggets, MHC-I, peptide length 10", {
   # VENV of COVID-19 reference proteome, has one TMH
   protein_sequence <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDLLV" # nolint indeed long
   #          "000000000000001111111111111111111111111111111111000000000000000000000000000" # nolint indeed long
-  sink("/dev/null") # Remove the cat output, due to verbose is TRUE
   t <- predict_counts(
     protein_sequence = protein_sequence,
     haplotype = get_mhc1_haplotypes()[1],
     peptide_length = 10,
-    percentile = 0.05,
-    verbose = TRUE
+    percentile = 0.05
   )
-  t
-  sink()
   # Results from verbose output:
   # Table: peptide length: 75, epitope length: 9, n fragments: 67,
   # n is binder: 4, n with TMHs: 42, n with TMH and is binder: 1,
@@ -72,16 +65,12 @@ test_that("MHCNuggets, MHC-II, peptide length 13", {
   # VENV of COVID-19 reference proteome, has one TMH
   protein_sequence <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDLLV" # nolint indeed long
   #          "000000000000001111111111111111111111111111111111000000000000000000000000000" # nolint indeed long
-  sink("/dev/null") # Remove the cat output, due to verbose is TRUE
   t <- predict_counts(
     protein_sequence = protein_sequence,
     haplotype = get_mhc2_haplotypes()[1],
     peptide_length = 13,
-    percentile = 0.05,
-    verbose = TRUE
+    percentile = 0.05
   )
-  t
-  sink()
   # Results from verbose output:
   # Table: peptide length: 75, epitope length: 9, n fragments: 67,
   # n is binder: 4, n with TMHs: 42, n with TMH and is binder: 1,
@@ -110,10 +99,8 @@ test_that("use, EpitopePrediction, MHC-I, peptide length 9", {
     haplotype = get_mhc1_haplotypes()[1],
     peptide_length = 9,
     percentile = 0.05,
-    verbose = TRUE,
     ic50_prediction_tool = "EpitopePrediction"
   )
-  t
   # Results from verbose output:
   # Table: peptide length: 75, epitope length: 9, n fragments: 67,
   # n is binder: 4, n with TMHs: 42, n with TMH and is binder: 1,
@@ -143,10 +130,8 @@ test_that("use, NetMHC2pan, MHC-II, peptide length 13", {
     haplotype = get_mhc2_haplotypes()[1],
     peptide_length = 13,
     percentile = 0.05,
-    verbose = TRUE,
     ic50_prediction_tool = "netmhc2pan"
   )
-  t
   # Results from verbose output:
   # Table: peptide length: 75, epitope length: 9, n fragments: 67,
   # n is binder: 4, n with TMHs: 42, n with TMH and is binder: 1,

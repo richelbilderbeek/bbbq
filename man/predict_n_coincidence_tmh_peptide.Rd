@@ -9,7 +9,8 @@ for one peptide.}
 predict_n_coincidence_tmh_peptide(
   protein_sequence,
   peptide_length,
-  verbose = FALSE
+  verbose = FALSE,
+  ic50_prediction_tool = "mhcnuggetsr"
 )
 }
 \arguments{
@@ -18,6 +19,16 @@ predict_n_coincidence_tmh_peptide(
 \item{peptide_length}{length of the peptide in amino acids}
 
 \item{verbose}{set to TRUE for more output}
+
+\item{ic50_prediction_tool}{tool to predict the IC50 from a
+  peptide. Possible values are:\cr
+\itemize{
+  \item mhcnuggetsr \link[mhcnuggetsr]{mhcnuggetsr},
+    which uses MHCnuggets
+  \item mhcnuggetsr \link[netmhc2pan]{netmhc2pan},
+    which uses NetMHC2pam
+  \item EpitopePrediction uses \code{EpitopePrediction}
+}}
 }
 \value{
 a tibble with

@@ -15,10 +15,10 @@
 #'
 #' if (is_mhcnuggets_installed() && is_pureseqtm_installed()) {
 #'
-#'   peptide <- "MYSFVSEETGTLIVNSVLLFLAFV"
+#'   protein_sequence <- "MYSFVSEETGTLIVNSVLLFLAFV"
 #'
 #'   predict_n_binders_tmh_peptide(
-#'     peptide = peptide,
+#'     protein_sequence = protein_sequence,
 #'     haplotype = get_mhc1_haplotypes()[1],
 #'     peptide_length = 9,
 #'     percentile = 0.123
@@ -26,17 +26,19 @@
 #' }
 #' @export
 predict_n_binders_tmh_peptide <- function(
-  peptide,
+  protein_sequence,
   haplotype,
   peptide_length,
   percentile,
-  verbose = FALSE
+  verbose = FALSE,
+  ic50_prediction_tool = "mhcnuggetsr"
 ) {
   bbbq::predict_counts(
-    peptide = peptide,
+    protein_sequence = protein_sequence,
     peptide_length = peptide_length,
     haplotype = haplotype,
     percentile = percentile,
-    verbose = verbose
+    verbose = verbose,
+    ic50_prediction_tool = ic50_prediction_tool
   )
 }
