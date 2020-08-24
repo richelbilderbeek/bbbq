@@ -2,6 +2,7 @@
 #'
 #' Check the name of the IC50 prediction tool.
 #' Will \link{stop} if the name is invalid
+#' @inheritParams default_params_doc
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_ic50_prediction_tool <- function(

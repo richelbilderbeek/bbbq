@@ -32,6 +32,9 @@ test_that("EpitopePrediction", {
 })
 
 test_that("netmhc2pan", {
+
+  if (!netmhc2pan::is_netmhc2pan_installed()) return()
+
   for (haplotype in get_mhc2_haplotypes()) {
     expect_silent(
       check_haplotype(
