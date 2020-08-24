@@ -1,5 +1,6 @@
 #' Check if the name is valid
 #' @inheritParams default_params_doc
+#' @author Richèl J.C. Bilderbeek
 #' @export
 check_ep_haplotype_name <- function(
   mhc_1_haplotype

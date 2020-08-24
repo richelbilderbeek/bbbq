@@ -14,21 +14,21 @@
 #'
 #' if (is_pureseqtm_installed()) {
 #'
-#'   peptide <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRV"
+#'   protein_sequence <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRV"
 #'
 #'   predict_n_coincidence_tmh_peptide(
-#'     peptide = peptide,
+#'     protein_sequence = protein_sequence,
 #'     peptide_length = 9
 #'   )
 #' }
 #' @export
 predict_n_coincidence_tmh_peptide <- function(# nolint indeed a long function name
-  peptide,
+  protein_sequence,
   peptide_length,
   verbose = FALSE
 ) {
   bbbq::predict_counts(
-    peptide = peptide,
+    protein_sequence = protein_sequence,
     peptide_length = peptide_length,
     haplotype = get_mhc1_haplotypes()[1],
     percentile = 0.0,

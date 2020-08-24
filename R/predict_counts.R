@@ -19,15 +19,13 @@
 #' The tibble will have one row (which matches the number of proteins).
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#' library(mhcnuggetsr)
-#' library(pureseqtmr)
-#'
-#' if (is_mhcnuggets_installed() && is_pureseqtm_installed()) {
-#'
-#'   peptide <- "MYSFVSEETGTLIVNSVLLFLAFV"
+#' if (mhcnuggetsr::is_mhcnuggets_installed() &&
+#'   pureseqtmr::is_pureseqtm_installed()
+#' ) {
+#'   protein_sequence <- "MYSFVSEETGTLIVNSVLLFLAFV"
 #'
 #'   predict_counts(
-#'     peptide = peptide,
+#'     protein_sequence = protein_sequence,
 #'     haplotype = get_mhc1_haplotypes()[1],
 #'     peptide_length = 9,
 #'     percentile = 0.123
@@ -35,90 +33,39 @@
 #' }
 #' @export
 predict_counts <- function(
-  peptide,
+  protein_sequence,
   haplotype,
   peptide_length,
   percentile,
   verbose = FALSE,
   ic50_prediction_tool = "mhcnuggetsr"
 ) {
-  testthat::expect_true(length(peptide) == 1)
+  testthat::expect_true(length(protein_sequence) == 1)
 
-  # Check installations
-  if (ic50_prediction_tool == "mhcnuggetsr") {
-    mhcnuggetsr::check_mhcnuggets_installation()
-  } else if (ic50_prediction_tool == "netmhc2pan") {
-    netmhc2pan::check_netmhc2pan_installation()
-  } else if (ic50_prediction_tool == "EpitopePrediction") {
-    # No need to check installation of this R package
-  } else {
-    stop("Unknown 'ic50_prediction_tool': ", ic50_prediction_tool)
-  }
   pureseqtmr::check_pureseqtm_installation()
 
-  # Predict IC50
-  ic50s <- NA
-  if (ic50_prediction_tool == "mhcnuggetsr") {
-    ic50s <- mhcnuggetsr::predict_ic50s(
-      protein_sequence = peptide,
-      peptide_length = peptide_length,
-      mhcnuggets_options = mhcnuggetsr::create_mhcnuggets_options(
-        mhc = mhcnuggetsr::to_mhcnuggets_name(haplotype)
-      )
-    )
-  } else if (ic50_prediction_tool == "netmhc2pan") {
-    ic50s <- netmhc2pan::predict_ic50s(
-      protein_sequence = peptide,
-      peptide_length = peptide_length,
-      mhc_haplotype = netmhc2pan::to_netmhc2pan_name(haplotype),
-    )
-  } else if (ic50_prediction_tool == "EpitopePrediction") {
-    peptides <- bbbq::shred_protein(
-      protein_sequence = peptide,
-      peptide_length = peptide_length
-    )
-    ic50s <- tibble::tibble(
-      peptide = peptides,
-      ic50 = NA
-    )
-    ic50s$ic50 <- EpitopePrediction::smm(
-      x = peptides,
-      mhc = epiprepreds::to_epipred_name(haplotype)
-    )
-  } else {
-    stop("Unknown 'ic50_prediction_tool': ", ic50_prediction_tool)
-  }
-  testthat::expect_equal(nrow(ic50s), nchar(peptide) - peptide_length + 1)
-
   # Look up IC50 threshold for a binder
-  ic50_threshold <- NA
-  if (ic50_prediction_tool == "mhcnuggetsr") {
-    ic50_threshold <- mhcnpreds::get_ic50_threshold(
-      peptide_length = peptide_length,
-      mhc_haplotype = mhcnuggetsr::to_mhcnuggets_name(haplotype),
-      percentile = percentile
-    )
-  } else if (ic50_prediction_tool == "netmhc2pan") {
-    ic50_threshold <- nmhc2ppreds::get_ic50_threshold(
-      peptide_length = peptide_length,
-      mhc_haplotype = netmhc2pan::to_netmhc2pan_name(haplotype),
-      percentile = percentile
-    )
-  } else if (ic50_prediction_tool == "EpitopePrediction") {
-    ic50_threshold <- epiprepreds::get_ic50_threshold(
-      peptide_length = peptide_length,
-      mhc_haplotype = epiprepreds::to_epipred_name(haplotype),
-      percentile = percentile
-    )
-  } else {
-    stop("Unknown 'ic50_prediction_tool': ", ic50_prediction_tool)
-  }
+  # Also checks for installation, etc.
+  ic50_threshold <- get_ic50_threshold(
+    peptide_length = peptide_length,
+    haplotype = haplotype,
+    percentile = percentile,
+    ic50_prediction_tool = ic50_prediction_tool
+  )
+
+  # Predict IC50
+  ic50s <- bbbq::predict_ic50s(
+    protein_sequence = protein_sequence,
+    peptide_length = peptide_length,
+    haplotype = haplotype,
+    ic50_prediction_tool = ic50_prediction_tool
+  )
 
   # Determine the binders
   ic50s$is_binder <- ic50s$ic50 < ic50_threshold
 
   # Determine topology
-  topology <- pureseqtmr::predict_topology_from_sequence(peptide)
+  topology <- pureseqtmr::predict_topology_from_sequence(protein_sequence)
   topologies <- stringr::str_sub(
     topology,
     seq(1, nchar(topology) - peptide_length + 1),
@@ -148,7 +95,7 @@ predict_counts <- function(
     cat(
       knitr::kable(t,
         caption = glue::glue(
-          "peptide length: {nchar(peptide)}, ",
+          "protein sequence length: {nchar(protein_sequence)}, ",
           "'peptide_length': {peptide_length}, ",
           "n fragments: {nrow(t)}, ",
           "n_binders: {result$n_binders}, ",

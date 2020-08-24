@@ -24,13 +24,13 @@
 #'
 #' if (is_pureseqtm_installed()) {
 #'
-#'   peptides <- c(
+#'   protein_sequences <- c(
 #'     "SWINGTRANSMITWILLINGFASCINATEARISERISKGRATE",
 #'     "FANTASTICALLYFAMILYVW"
 #'   )
 #'
 #'   predict_counts_per_proteome(
-#'     peptides = peptides,
+#'     protein_sequences = protein_sequences,
 #'     haplotype = get_mhc1_haplotypes()[1],
 #'     peptide_length = 9,
 #'     percentile = 0.123,
@@ -39,7 +39,7 @@
 #' }
 #' @export
 predict_counts_per_proteome <- function(
-  peptides,
+  protein_sequences,
   haplotype,
   peptide_length,
   percentile,
@@ -47,9 +47,9 @@ predict_counts_per_proteome <- function(
   ic50_prediction_tool = "mhcnuggetsr"
 ) {
   tibbles <- list()
-  for (i in seq_along(peptides)) {
+  for (i in seq_along(protein_sequences)) {
     tibbles[[i]] <- bbbq::predict_counts(
-      peptide = peptides[i],
+      protein_sequence = protein_sequences[i],
       haplotype = haplotype,
       peptide_length = peptide_length,
       percentile = percentile,

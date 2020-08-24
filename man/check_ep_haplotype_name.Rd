@@ -13,3 +13,6 @@ Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 \description{
 Check if the name is valid
 }
+\author{
+Richèl J.C. Bilderbeek
+}

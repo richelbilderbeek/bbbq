@@ -5,7 +5,7 @@
 \title{Predict counts of one protein and one haplotype}
 \usage{
 predict_counts(
-  peptide,
+  protein_sequence,
   haplotype,
   peptide_length,
   percentile,
@@ -14,8 +14,7 @@ predict_counts(
 )
 }
 \arguments{
-\item{peptide}{peptide sequence, for example,
-\code{ARNDCQEV}}
+\item{protein_sequence}{a protein sequence}
 
 \item{haplotype}{one MHC-I or MHC-II haplotype}
 
@@ -60,15 +59,13 @@ Use \link{predict_counts_per_proteome} to predict these
 counts for multiple proteins.
 }
 \examples{
-library(mhcnuggetsr)
-library(pureseqtmr)
-
-if (is_mhcnuggets_installed() && is_pureseqtm_installed()) {
-
-  peptide <- "MYSFVSEETGTLIVNSVLLFLAFV"
+if (mhcnuggetsr::is_mhcnuggets_installed() &&
+  pureseqtmr::is_pureseqtm_installed()
+) {
+  protein_sequence <- "MYSFVSEETGTLIVNSVLLFLAFV"
 
   predict_counts(
-    peptide = peptide,
+    protein_sequence = protein_sequence,
     haplotype = get_mhc1_haplotypes()[1],
     peptide_length = 9,
     percentile = 0.123

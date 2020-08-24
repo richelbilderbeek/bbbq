@@ -5,7 +5,7 @@
 \title{Predict counts of one or more proteins and one haplotype}
 \usage{
 predict_counts_per_proteome(
-  peptides,
+  protein_sequences,
   haplotype,
   peptide_length,
   percentile,
@@ -14,7 +14,7 @@ predict_counts_per_proteome(
 )
 }
 \arguments{
-\item{peptides}{one ore more peptide sequences}
+\item{protein_sequences}{one or more protein sequences}
 
 \item{haplotype}{one MHC-I or MHC-II haplotype}
 
@@ -64,13 +64,13 @@ library(pureseqtmr)
 
 if (is_pureseqtm_installed()) {
 
-  peptides <- c(
+  protein_sequences <- c(
     "SWINGTRANSMITWILLINGFASCINATEARISERISKGRATE",
     "FANTASTICALLYFAMILYVW"
   )
 
   predict_counts_per_proteome(
-    peptides = peptides,
+    protein_sequences = protein_sequences,
     haplotype = get_mhc1_haplotypes()[1],
     peptide_length = 9,
     percentile = 0.123,
