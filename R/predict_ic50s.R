@@ -1,3 +1,4 @@
+#' Predict IC50s
 #' @inheritParams default_params_doc
 #' @author Richèl J.C. Bilderbeek
 #' @export
