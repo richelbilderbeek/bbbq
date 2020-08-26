@@ -18,10 +18,23 @@ predict_ic50s <- function(
       )
     )
   } else if (ic50_prediction_tool == "netmhc2pan") {
-    ic50s <- netmhc2pan::predict_ic50s(
-      protein_sequence = protein_sequence,
-      peptide_length = peptide_length,
-      mhc_haplotype = netmhc2pan::to_netmhc2pan_name(haplotype),
+    tryCatch({
+      ic50s <- netmhc2pan::predict_ic50s(
+        protein_sequence = protein_sequence,
+        peptide_length = peptide_length,
+        mhc_haplotype = netmhc2pan::to_netmhc2pan_name(haplotype),
+      )
+    }, error = function(e) {
+      stop(
+        "netmhc2pan::predict_ic50s failed. \n",
+        "protein_sequence: ", protein_sequence, " \n",
+        "peptide_length: ", peptide_length, " \n",
+        "haplotype: ", haplotype, " \n",
+        "netmhc2pan::to_netmhc2pan_name(haplotype): ",
+          netmhc2pan::to_netmhc2pan_name(haplotype), " \n",
+        "Error message: ", e$msg
+      )
+    }
     )
   } else if (ic50_prediction_tool == "EpitopePrediction") {
     peptides <- bbbq::shred_protein(
@@ -32,9 +45,22 @@ predict_ic50s <- function(
       peptide = peptides,
       ic50 = NA
     )
+    tryCatch({
     ic50s$ic50 <- EpitopePrediction::smm(
       x = peptides,
       mhc = epiprepreds::to_epipred_name(haplotype)
+    )
+    }, error = function(e) {
+        stop(
+          "EpitopePrediction::smm failed. \n",
+          "protein_sequence: ", protein_sequence, " \n",
+          "peptide_length: ", peptide_length, " \n",
+          "haplotype: ", haplotype, " \n",
+          "epiprepreds::to_epipred_name(haplotype): ",
+            epiprepreds::to_epipred_name(haplotype), " \n",
+          "Error message: ", e$msg
+        )
+      }
     )
   } else {
     stop("Unknown 'ic50_prediction_tool': ", ic50_prediction_tool)
