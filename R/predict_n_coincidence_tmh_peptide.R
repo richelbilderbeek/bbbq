@@ -14,7 +14,10 @@
 #'
 #' if (is_pureseqtm_installed()) {
 #'
-#'   protein_sequence <- "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRV"
+#'   protein_sequence <- paste0(
+#'     "MYSFVSEETGTLIVNSVLLFLAFVVFLLV",
+#'     "TLAILTALRLCAYCCNIVNVSLVKPSFYVYSRV"
+#'   )
 #'
 #'   predict_n_coincidence_tmh_peptide(
 #'     protein_sequence = protein_sequence,

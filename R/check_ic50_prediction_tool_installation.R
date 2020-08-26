@@ -5,7 +5,7 @@
 #' @inheritParams default_params_doc
 #' @author Richèl J.C. Bilderbeek
 #' @export
-check_ic50_prediction_tool_installation <- function(
+check_ic50_prediction_tool_installation <- function( # nolint indeed a long function name
   ic50_prediction_tool
 ) {
   bbbq::check_ic50_prediction_tool(ic50_prediction_tool)
