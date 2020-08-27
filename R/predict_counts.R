@@ -41,6 +41,10 @@ predict_counts <- function(
   ic50_prediction_tool = "mhcnuggetsr"
 ) {
   testthat::expect_equal(length(protein_sequence), 1)
+  bbbq::check_protein_sequences_length(
+    protein_sequences = protein_sequence,
+    peptide_length = peptide_length
+  )
 
   pureseqtmr::check_pureseqtm_installation()
 
