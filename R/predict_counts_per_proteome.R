@@ -46,6 +46,11 @@ predict_counts_per_proteome <- function(
   verbose = FALSE,
   ic50_prediction_tool = "mhcnuggetsr"
 ) {
+  bbbq::check_protein_sequences_length(
+    protein_sequences = protein_sequences,
+    peptide_length = peptide_length
+  )
+
   tibbles <- list()
   for (i in seq_along(protein_sequences)) {
     tibbles[[i]] <- bbbq::predict_counts(

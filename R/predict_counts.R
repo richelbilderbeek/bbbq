@@ -40,7 +40,7 @@ predict_counts <- function(
   verbose = FALSE,
   ic50_prediction_tool = "mhcnuggetsr"
 ) {
-  testthat::expect_true(length(protein_sequence) == 1)
+  testthat::expect_equal(length(protein_sequence), 1)
 
   pureseqtmr::check_pureseqtm_installation()
 
