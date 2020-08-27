@@ -37,30 +37,10 @@ predict_ic50s <- function(
     }
     )
   } else if (ic50_prediction_tool == "EpitopePrediction") {
-    peptides <- bbbq::shred_protein(
+    ic50s <- epiprepreds::predict_ic50s(
       protein_sequence = protein_sequence,
-      peptide_length = peptide_length
-    )
-    ic50s <- tibble::tibble(
-      peptide = peptides,
-      ic50 = NA
-    )
-    tryCatch({
-    ic50s$ic50 <- EpitopePrediction::smm(
-      x = peptides,
-      mhc = epiprepreds::to_epipred_name(haplotype)
-    )
-    }, error = function(e) {
-        stop(
-          "EpitopePrediction::smm failed. \n",
-          "protein_sequence: ", protein_sequence, " \n",
-          "peptide_length: ", peptide_length, " \n",
-          "haplotype: ", haplotype, " \n",
-          "epiprepreds::to_epipred_name(haplotype): ",
-            epiprepreds::to_epipred_name(haplotype), " \n",
-          "Error message: ", e$msg
-        )
-      }
+      peptide_length = peptide_length,
+      haplotype_name = haplotype
     )
   } else {
     stop("Unknown 'ic50_prediction_tool': ", ic50_prediction_tool)

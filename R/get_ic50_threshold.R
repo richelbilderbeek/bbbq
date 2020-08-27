@@ -32,7 +32,7 @@ get_ic50_threshold <- function(
   } else if (ic50_prediction_tool == "EpitopePrediction") {
     ic50_threshold <- epiprepreds::get_ic50_threshold(
       peptide_length = peptide_length,
-      mhc_haplotype = epiprepreds::to_epipred_name(haplotype),
+      haplotype_name = haplotype,
       percentile = percentile
     )
   } else {

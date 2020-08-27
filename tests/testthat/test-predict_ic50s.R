@@ -64,3 +64,22 @@ test_that("netmhc2pan", {
     )
   )
 })
+
+test_that("EpitopePrediction does not support U", {
+
+  # Error at private GitHub repo:
+  # https://github.com/richelbilderbeek/bbbq_article/issues/56
+  #
+  # This is caused by the 'U' at the end of the sequence:
+  # this amino acid is unsupported by EpitopePrediction
+  expect_error(
+    predict_ic50s(
+      protein_sequence = "MAAMAVALRGLGGRFRWRTQAVAGGVRGAARGAAAGQRDYDLLVVGGGSGGLACAKEAAQLGRKVAVVDYVEPSPQGTRWGLGGTCVNVGCIPKKLMHQAALLGGLIQDAPNYGWEVAQPVPHDWRKMAEAVQNHVKSLNWGHRVQLQDRKVKYFNIKASFVDEHTVCGVAKGGKEILLSADHIIIATGGRPRYPTHIEGALEYGITSDDIFWLKESPGKTLVVGASYVALECAGFLTGIGLDTTIMMRSIPLRGFDQQMSSMVIEHMASHGTRFLRGCAPSRVRRLPDGQLQVTWEDSTTGKEDTGTFDTVLWAIGRVPDTRSLNLEKAGVDTSPDTQKILVDSREATSVPHIYAIGDVVEGRPELTPIAIMAGRLLVQRLFGGSSDLMDYDNVPTTVFTPLEYGCVGLSEEEAVARHGQEHVEVYHAHYKPLEFTVAGRDASQCYVKMVCLREPPQLVLGLHFLGPNAGEVTQGFALGIKCGASYAQVMRTVGIHPTCSEEVVKLRISKRSGLDPTVTGCUG", # nolint indeed long
+      peptide_length = 9,
+      haplotype = "HLA-A*02:01",
+      ic50_prediction_tool = "EpitopePrediction"
+    ),
+    "'protein_sequence' contains invalid amino acids "
+  )
+
+})

@@ -30,15 +30,7 @@ check_haplotype <- function(
       )
     }
   } else if (ic50_prediction_tool == "EpitopePrediction") {
-    epipred_name <- epiprepreds::to_epipred_name(haplotype)
-    if (!epiprepreds::is_epipred_haplotype(epipred_name)) {
-      stop(
-        "Invalid haplotype name: '", haplotype, "'. ",
-        "epiprepreds::to_epipred_name(haplotype): '", epipred_name, "'",
-        "Tip: run 'unique(EpitopePrediction::supportedMHCs()$mhc)' ",
-          "to see the list of supported MHCs"
-      )
-    }
+    epiprepreds::check_haplotype_name(haplotype)
   } else {
     stop("Unknown 'ic50_prediction_tool': ", ic50_prediction_tool)
   }

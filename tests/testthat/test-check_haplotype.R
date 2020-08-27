@@ -20,7 +20,7 @@ test_that("EpitopePrediction", {
     )
   }
 
-  check_ep_haplotype_name(bbbq::to_epitope_prediction_name(haplotype))
+  epiprepreds::check_haplotype_name(haplotype)
   for (haplotype in get_mhc2_haplotypes()) {
     expect_error(
       check_haplotype(
