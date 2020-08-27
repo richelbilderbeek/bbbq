@@ -40,19 +40,22 @@ predict_counts <- function(
   verbose = FALSE,
   ic50_prediction_tool = "mhcnuggetsr"
 ) {
-  if (ic50_prediction_tool == "EpitopePrediction") {
-    if (!epiprepreds::is_protein_sequence(protein_sequence)) {
-      return(
-        tibble::tibble(
-          n_binders = NA,
-          n_binders_tmh = NA,
-          n_spots = NA,
-          n_spots_tmh = NA
-        )
-      )
-    }
-  }
   testthat::expect_equal(length(protein_sequence), 1)
+  empty_tibble <- tibble::tibble(
+    n_binders = NA,
+    n_binders_tmh = NA,
+    n_spots = NA,
+    n_spots_tmh = NA
+  )
+  if (nchar(protein_sequence) < peptide_length) {
+    return(empty_tibble)
+  }
+  if (ic50_prediction_tool == "EpitopePrediction" &&
+      !epiprepreds::is_protein_sequence(protein_sequence)
+  ) {
+    return(empty_tibble)
+  }
+
   bbbq::check_protein_sequences_length(
     protein_sequences = protein_sequence,
     peptide_length = peptide_length

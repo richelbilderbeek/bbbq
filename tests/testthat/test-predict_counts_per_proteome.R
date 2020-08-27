@@ -64,8 +64,6 @@ test_that("MHCnuggetsr, MHC-II, peptide length 13", {
 })
 
 test_that("MHCnuggetsr on short sequence", {
-  skip("WIP, https://github.com/richelbilderbeek/bbbq_article/issues/58")
-
   if (!pureseqtmr::is_pureseqtm_installed()) return()
   if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
 
@@ -85,6 +83,7 @@ test_that("MHCnuggetsr on short sequence", {
   expect_true(is.na(t$n_binders_tmh[2]))
   expect_true(is.na(t$n_spots[2]))
   expect_true(is.na(t$n_spots_tmh[2]))
+  t
 })
 
 test_that("use, EpitopePrediction, MHC-I, peptide length 9", {
@@ -133,7 +132,6 @@ test_that("EpitopePrediction does not support U", {
 })
 
 test_that("EpitopePrediction on short peptide", {
-  skip("WIP, https://github.com/richelbilderbeek/bbbq_article/issues/58")
   if (!pureseqtmr::is_pureseqtm_installed()) return()
 
   # https://github.com/richelbilderbeek/bbbq_article/issues/58
@@ -205,8 +203,6 @@ test_that("NetMHC2pan does handle U", {
 })
 
 test_that("NetMHC2pan on short peptide", {
-  skip("WIP, https://github.com/richelbilderbeek/bbbq_article/issues/58")
-
   if (!pureseqtmr::is_pureseqtm_installed()) return()
   if (!netmhc2pan::is_netmhc2pan_installed()) return()
 
