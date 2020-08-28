@@ -59,8 +59,7 @@ Use \link{predict_counts_per_proteome} to predict these
 counts for multiple proteins.
 }
 \examples{
-if (mhcnuggetsr::is_mhcnuggets_installed() &&
-  pureseqtmr::is_pureseqtm_installed()
+if (pureseqtmr::is_pureseqtm_installed()
 ) {
   protein_sequence <- "MYSFVSEETGTLIVNSVLLFLAFV"
 
@@ -68,7 +67,8 @@ if (mhcnuggetsr::is_mhcnuggets_installed() &&
     protein_sequence = protein_sequence,
     haplotype = get_mhc1_haplotypes()[1],
     peptide_length = 9,
-    percentile = 0.123
+    percentile = 0.123,
+    ic50_prediction_tool = "EpitopePrediction"
   )
 }
 }

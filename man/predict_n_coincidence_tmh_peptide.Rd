@@ -55,7 +55,8 @@ if (is_pureseqtm_installed()) {
 
   predict_n_coincidence_tmh_peptide(
     protein_sequence = protein_sequence,
-    peptide_length = 9
+    peptide_length = 9,
+    ic50_prediction_tool = "EpitopePrediction"
   )
 }
 }

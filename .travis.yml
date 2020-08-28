@@ -30,6 +30,9 @@ r_github_packages:
   - richelbilderbeek/netmhc2pan
   - richelbilderbeek/nmhc2ppreds
 
+bioc_packages:
+  - msa
+
 before_install:
   # Rmpfr
   - sudo apt install -qq libmpfr-dev

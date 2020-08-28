@@ -16,6 +16,7 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 Imports:
+    Biostrings,
     data.table,
     dplyr,
     epiprepreds (>= 0.3),
@@ -26,6 +27,7 @@ Imports:
     methods,
     mhcnuggetsr (>= 0.11),
     mhcnpreds,
+    msa,
     netmhc2pan,
     nmhc2ppreds,
     Peptides,

@@ -16,7 +16,7 @@ create_consensus_topology_conservation <- function( # nolint indeed a long funct
 
   protein_alignment <- msa::msa(protein_sequences_aass)
 
-  data(BLOSUM62)
+  utils::data(BLOSUM62)
   conservation_scores <- msa::msaConservationScore(protein_alignment, BLOSUM62)
   t <- tibble::tibble(
     aa = names(conservation_scores),
@@ -29,7 +29,9 @@ create_consensus_topology_conservation <- function( # nolint indeed a long funct
   topology_index <- 1
   for (row_index in seq(1, nrow(t))) {
     if (t$aa[row_index] != "-") {
-      t$is_tmh[row_index] <- stringr::str_sub(topology, topology_index, topology_index)
+      t$is_tmh[row_index] <- stringr::str_sub(
+        topology, topology_index, topology_index
+      )
       topology_index <- topology_index + 1
     }
   }

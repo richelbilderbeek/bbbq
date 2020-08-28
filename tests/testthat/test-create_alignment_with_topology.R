@@ -1,5 +1,7 @@
 test_that("use, simple data", {
 
+  if (!pureseqtmr::is_pureseqtm_installed()) return()
+
   protein_sequences <- c(
     "IMPRESSIVELYFLIFAWAYFANSWALKSWEETMARKETTRIVIALLYNAILIDENTIFY",
      "MPRESSIVELYFLIAAWAYFANSWALKSWEETMARKETTRIVIALLYNAILIDENTIFY",
@@ -20,10 +22,13 @@ test_that("use, simple data", {
 
 test_that("use, simple data", {
 
+  if (!pureseqtmr::is_pureseqtm_installed()) return()
   skip("WIP")
   proteomes_filename <- "~/GitHubs/bbbq_article/bbbq_2/allprot0621.fasta"
   expect_true(file.exists(proteomes_filename))
-  proteome <- seqinr::read.fasta(proteomes_filename, seqtype = "AA", as.string = TRUE)
+  proteome <- seqinr::read.fasta(
+    proteomes_filename, seqtype = "AA", as.string = TRUE
+  )
 
   # Select the envelope proteins
   evelope_sequences <- proteome[stringr::str_which(names(proteome), "^E\\|")]
@@ -32,7 +37,9 @@ test_that("use, simple data", {
   unique_evelope_sequences <- evelope_sequences[
     !duplicated(seqinr::getSequence(evelope_sequences))
   ]
-  protein_sequences <- unlist(seqinr::getSequence(unique_evelope_sequences, as.string = TRUE))
+  protein_sequences <- unlist(seqinr::getSequence(
+    unique_evelope_sequences, as.string = TRUE)
+  )
 
   t <- create_consensus_topology_conservation(protein_sequences)
   expect_true(tibble::is_tibble(t))
@@ -40,7 +47,9 @@ test_that("use, simple data", {
   if (1 == 2) {
     plot(t$score)
 
-    ggplot2::ggplot(na.omit(t), ggplot2::aes(x = as.factor(is_tmh), y = score)) +
+    ggplot2::ggplot(
+      na.omit(t), ggplot2::aes(x = as.factor(is_tmh), y = score)
+    ) +
       ggplot2::geom_boxplot() +
       ggplot2::scale_y_continuous(limits = c(0, max(t$score)))
   }
