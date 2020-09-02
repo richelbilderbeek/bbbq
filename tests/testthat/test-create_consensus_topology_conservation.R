@@ -10,6 +10,7 @@ test_that("use, simple data", {
     "IMPRESSIVELYFLILAWAYFANSWALKWEETMARKETTRIVIALLYNAILIDENTIFY",
     "IMPRESSIVELYFLIYAWAYFANSWALKSWEETMARKETRIVIALLYNAILIDENTIFY"
   )
+  library(msa)
   t <- create_consensus_topology_conservation(protein_sequences)
   expect_true(tibble::is_tibble(t))
   expect_equal(60, nrow(t))

@@ -1,18 +1,21 @@
 test_that("use", {
 
-  if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
-
   expect_true(
     is_detected(
       "VVIILTIAGN",
-      mhc_haplotype = mhcnuggetsr::get_mhc_1_haplotypes()[4],
-      percentile = 0.5
+      mhc_haplotype = bbbq::get_mhc1_haplotypes()[1],
+      peptide_length = 9,
+      percentile = 0.5,
+      ic50_prediction_tool = "EpitopePrediction"
     )
   )
   expect_false(
     is_detected(
       "AAAARTIAGR",
-      mhc_haplotype = mhcnuggetsr::get_mhc_1_haplotypes()[20]
+      mhc_haplotype = bbbq::get_mhc1_haplotypes()[1],
+      peptide_length = 9,
+      percentile = 0.01,
+      ic50_prediction_tool = "EpitopePrediction"
     )
   )
 })

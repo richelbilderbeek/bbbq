@@ -1,4 +1,8 @@
 test_that("use", {
+  # Follow the BioStrings BLOSUM62 matrix
+  #utils::data(BLOSUM62);
+  #expect_equal(rownames(BLOSUM62), rownames(m))
+
   m <- get_aa_transition_matrix()
   expect_equal(20, nrow(m))
   expect_equal(20, ncol(m))

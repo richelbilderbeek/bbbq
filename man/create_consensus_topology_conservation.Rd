@@ -4,7 +4,10 @@
 \alias{create_consensus_topology_conservation}
 \title{Create a consensus-topology-conservation table}
 \usage{
-create_consensus_topology_conservation(protein_sequences)
+create_consensus_topology_conservation(
+  protein_sequences,
+  transition_matrix = get_aa_transition_matrix("BLOSUM62")
+)
 }
 \arguments{
 \item{protein_sequences}{one or more protein sequences}

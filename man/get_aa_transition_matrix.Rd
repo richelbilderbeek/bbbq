@@ -4,7 +4,7 @@
 \alias{get_aa_transition_matrix}
 \title{Get an amino acid transition matrix}
 \usage{
-get_aa_transition_matrix()
+get_aa_transition_matrix(transition_matrix_name = "FLU")
 }
 \value{
 a tibble, with column names equal to the uppercase

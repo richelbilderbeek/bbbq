@@ -15,7 +15,14 @@
 #'   amino acid name
 #' @author Richèl J.C. Bilderbeek
 #' @export
-get_aa_transition_matrix <- function() {
+get_aa_transition_matrix <- function(
+  transition_matrix_name = "FLU"
+) {
+  if (transition_matrix_name == "BLOSUM62") {
+    library(Biostrings, warn.conflicts = FALSE, quietly = TRUE)
+    utils::data(BLOSUM62)
+    return(BLOSUM62)
+  }
   t <- as.matrix(
     readr::read_csv(
       system.file("extdata", "flu_transitions.csv", package = "bbbq"),

@@ -7,8 +7,9 @@
 is_detected(
   protein_sequence,
   mhc_haplotype,
-  fragment_length = 9,
-  percentile = get_ic50_percentile_binder()
+  peptide_length,
+  percentile = get_ic50_percentile_binder(),
+  ic50_prediction_tool
 )
 }
 \arguments{
@@ -18,13 +19,22 @@ is_detected(
 Use \link{get_mhc1_haplotypes} to get a list of all MHC-I haplotypes.
 Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
 
-\item{fragment_length}{the length of the peptide fragments
-the peptide will be cut into}
+\item{peptide_length}{length of the peptide in amino acids}
 
 \item{percentile}{how low the IC50 must be for the protein to
 be considered a binder. For example, 0.02 denotes that the protein
 must have an IC50 in the lowest 2 percent range.
 The default value is returned by \link{get_ic50_percentile_binder}.}
+
+\item{ic50_prediction_tool}{tool to predict the IC50 from a
+  peptide. Possible values are:\cr
+\itemize{
+  \item mhcnuggetsr \link[mhcnuggetsr]{mhcnuggetsr},
+    which uses MHCnuggets
+  \item mhcnuggetsr \link[netmhc2pan]{netmhc2pan},
+    which uses NetMHC2pam
+  \item EpitopePrediction uses \code{EpitopePrediction}
+}}
 }
 \description{
 Determine if the haplotype has at least one binder to the peptide

@@ -10,7 +10,8 @@
 #' @inheritParams default_params_doc
 #' @export
 create_consensus_topology_conservation <- function( # nolint indeed a long function name
-  protein_sequences
+  protein_sequences,
+  transition_matrix = get_aa_transition_matrix("BLOSUM62")
 ) {
   protein_sequences_aass <- Biostrings::AAStringSet(protein_sequences)
 
@@ -18,9 +19,10 @@ create_consensus_topology_conservation <- function( # nolint indeed a long funct
   protein_alignment <- msa::msa(protein_sequences_aass)
   sink()
 
-  utils::data(BLOSUM62)
   conservation_scores <- msa::msaConservationScore(
-    protein_alignment, BLOSUM62)
+    protein_alignment,
+    transition_matrix
+  )
   t <- tibble::tibble(
     aa = names(conservation_scores),
     score = as.numeric(conservation_scores),
