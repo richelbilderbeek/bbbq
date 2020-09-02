@@ -1,4 +1,5 @@
 test_that("MHCnuggetsr, peptide length 9", {
+  if (!pureseqtmr::is_on_travis()) return()
   if (!pureseqtmr::is_pureseqtm_installed()) return()
   if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
   protein_sequences <- c(
@@ -9,7 +10,8 @@ test_that("MHCnuggetsr, peptide length 9", {
     protein_sequences = protein_sequences,
     haplotype = get_mhc1_haplotypes()[1],
     peptide_length = 9,
-    percentile = 0.05
+    percentile = 0.05,
+   ic50_prediction_tool = "mhcnuggetsr"
   )
   expect_true(tibble::is_tibble(t))
   expect_equal(nrow(t), length(protein_sequences))
@@ -20,6 +22,7 @@ test_that("MHCnuggetsr, peptide length 9", {
 })
 
 test_that("MHCnuggetsr, peptide length 10", {
+  if (!pureseqtmr::is_on_travis()) return()
   if (!pureseqtmr::is_pureseqtm_installed()) return()
   if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
 
@@ -31,7 +34,8 @@ test_that("MHCnuggetsr, peptide length 10", {
     protein_sequences = protein_sequences,
     haplotype = get_mhc1_haplotypes()[1],
     peptide_length = 10,
-    percentile = 0.05
+    percentile = 0.05,
+   ic50_prediction_tool = "mhcnuggetsr"
   )
   expect_true(tibble::is_tibble(t))
   expect_equal(nrow(t), length(protein_sequences))
@@ -42,6 +46,7 @@ test_that("MHCnuggetsr, peptide length 10", {
 })
 
 test_that("MHCnuggetsr, MHC-II, peptide length 13", {
+  if (!pureseqtmr::is_on_travis()) return()
   if (!pureseqtmr::is_pureseqtm_installed()) return()
   if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
 
@@ -53,7 +58,8 @@ test_that("MHCnuggetsr, MHC-II, peptide length 13", {
     protein_sequences = protein_sequences,
     haplotype = get_mhc2_haplotypes()[1],
     peptide_length = 13,
-    percentile = 0.05
+    percentile = 0.05,
+   ic50_prediction_tool = "mhcnuggetsr"
   )
   expect_true(tibble::is_tibble(t))
   expect_equal(nrow(t), length(protein_sequences))
@@ -64,6 +70,7 @@ test_that("MHCnuggetsr, MHC-II, peptide length 13", {
 })
 
 test_that("MHCnuggetsr on short sequence", {
+  if (!pureseqtmr::is_on_travis()) return()
   if (!pureseqtmr::is_pureseqtm_installed()) return()
   if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
 
@@ -75,7 +82,8 @@ test_that("MHCnuggetsr on short sequence", {
     protein_sequences = protein_sequences,
     haplotype = get_mhc2_haplotypes()[1],
     peptide_length = 13,
-    percentile = 0.05
+    percentile = 0.05,
+   ic50_prediction_tool = "mhcnuggetsr"
   )
   expect_true(tibble::is_tibble(t))
   expect_equal(nrow(t), length(protein_sequences))

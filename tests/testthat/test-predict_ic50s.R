@@ -1,5 +1,5 @@
 test_that("mhcnuggets", {
-
+  if (!pureseqtmr::is_on_travis()) return()
   if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
 
   expect_silent(

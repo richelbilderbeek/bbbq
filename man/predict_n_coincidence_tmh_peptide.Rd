@@ -10,7 +10,7 @@ predict_n_coincidence_tmh_peptide(
   protein_sequence,
   peptide_length,
   verbose = FALSE,
-  ic50_prediction_tool = "mhcnuggetsr"
+  ic50_prediction_tool
 )
 }
 \arguments{

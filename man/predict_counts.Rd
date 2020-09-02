@@ -10,7 +10,7 @@ predict_counts(
   peptide_length,
   percentile,
   verbose = FALSE,
-  ic50_prediction_tool = "mhcnuggetsr"
+  ic50_prediction_tool
 )
 }
 \arguments{

@@ -30,7 +30,7 @@ predict_n_coincidence_tmh_peptide <- function(# nolint indeed a long function na
   protein_sequence,
   peptide_length,
   verbose = FALSE,
-  ic50_prediction_tool = "mhcnuggetsr"
+  ic50_prediction_tool
 ) {
   bbbq::predict_counts(
     protein_sequence = protein_sequence,

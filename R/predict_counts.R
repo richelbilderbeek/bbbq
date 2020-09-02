@@ -38,7 +38,7 @@ predict_counts <- function(
   peptide_length,
   percentile,
   verbose = FALSE,
-  ic50_prediction_tool = "mhcnuggetsr"
+  ic50_prediction_tool
 ) {
   testthat::expect_equal(length(protein_sequence), 1)
   empty_tibble <- tibble::tibble(
