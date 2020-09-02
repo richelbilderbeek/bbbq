@@ -14,10 +14,13 @@ create_consensus_topology_conservation <- function( # nolint indeed a long funct
 ) {
   protein_sequences_aass <- Biostrings::AAStringSet(protein_sequences)
 
+  sink("/dev/null")
   protein_alignment <- msa::msa(protein_sequences_aass)
+  sink()
 
   utils::data(BLOSUM62)
-  conservation_scores <- msa::msaConservationScore(protein_alignment, BLOSUM62)
+  conservation_scores <- msa::msaConservationScore(
+    protein_alignment, BLOSUM62)
   t <- tibble::tibble(
     aa = names(conservation_scores),
     score = as.numeric(conservation_scores),
