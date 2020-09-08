@@ -11,19 +11,23 @@
 #' @export
 create_consensus_topology_conservation <- function( # nolint indeed a long function name
   protein_sequences,
-  transition_matrix = get_aa_transition_matrix("BLOSUM62"),
-  topology_prediction_tool = "pureseqtmr"
+  topology_prediction_tool
 ) {
   bbbq::check_topology_prediction_tool(topology_prediction_tool)
   protein_sequences_aass <- Biostrings::AAStringSet(protein_sequences)
 
   sink("/dev/null")
-  protein_alignment <- msa::msa(protein_sequences_aass)
+  protein_alignment <- msa::msa(
+    protein_sequences_aass,
+    substitutionMatrix = "blosum"
+  )
   sink()
 
+  BLOSUM62 <- NULL; rm(BLOSUM62) # nolint, fixes warning: no visible binding for global variable
+  utils::data("BLOSUM62", package = "Biostrings")
   conservation_scores <- msa::msaConservationScore(
     protein_alignment,
-    transition_matrix
+    substitutionMatrix = BLOSUM62
   )
   t <- tibble::tibble(
     aa = names(conservation_scores),
@@ -31,7 +35,15 @@ create_consensus_topology_conservation <- function( # nolint indeed a long funct
     is_tmh = NA
   )
   consensus <- paste0(names(conservation_scores), collapse = "")
-  topology <- pureseqtmr::predict_topology_from_sequence(consensus)
+
+  topology <- NA
+  if (topology_prediction_tool == "pureseqtmr") {
+    topology <- pureseqtmr::predict_topology_from_sequence(consensus)
+  } else {
+    testthat::expect_equal(topology_prediction_tool, "tmhmm")
+    tmhmm::check_tmhmm_installation()
+    topology <- tmhmm::run_tmhmm_on_sequence(consensus)
+  }
 
   topology_index <- 1
   for (row_index in seq(1, nrow(t))) {
