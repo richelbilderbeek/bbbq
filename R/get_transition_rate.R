@@ -3,10 +3,16 @@
 #' @param seq_rhs amino acid to transition to
 #' @author Richèl J.C. Bilderbeek
 #' @export
-get_transition_rate <- function(seq_lhs, seq_rhs) {
+get_transition_rate <- function(
+  seq_lhs,
+  seq_rhs,
+  transition_matrix_name
+) {
   testthat::expect_equal(nchar(seq_lhs), nchar(seq_rhs))
 
-  m <- bbbq::get_aa_transition_matrix()
+  m <- bbbq::get_aa_transition_matrix(
+    transition_matrix_name = transition_matrix_name
+  )
 
   chars_lhs <- strsplit(seq_lhs, split = "")[[1]]
   chars_rhs <- strsplit(seq_rhs, split = "")[[1]]

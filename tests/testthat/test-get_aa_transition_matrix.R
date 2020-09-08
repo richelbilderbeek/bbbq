@@ -3,7 +3,7 @@ test_that("use", {
   #utils::data(BLOSUM62);
   #expect_equal(rownames(BLOSUM62), rownames(m))
 
-  m <- get_aa_transition_matrix()
+  m <- get_aa_transition_matrix(transition_matrix_name = "FLU")
   expect_equal(20, nrow(m))
   expect_equal(20, ncol(m))
   expect_equal("A", colnames(m)[1])

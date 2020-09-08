@@ -17,19 +17,25 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_aa_transition_matrix <- function(
-  transition_matrix_name = "BLOSUM62"
+  transition_matrix_name
 ) {
   if (transition_matrix_name == "BLOSUM62") {
-    library(Biostrings, warn.conflicts = FALSE, quietly = TRUE)
-    utils::data(BLOSUM62)
+    utils::data(BLOSUM62, package = "Biostrings")
     return(BLOSUM62)
-  }
-  t <- as.matrix(
-    readr::read_csv(
-      system.file("extdata", "flu_transitions.csv", package = "bbbq"),
-      col_types = readr::cols(.default = readr::col_double())
+  } else if (transition_matrix_name == "FLU") {
+    t <- as.matrix(
+      readr::read_csv(
+        system.file("extdata", "flu_transitions.csv", package = "bbbq"),
+        col_types = readr::cols(.default = readr::col_double())
+      )
     )
-  )
-  rownames(t) <- colnames(t)
-  t
+    rownames(t) <- colnames(t)
+    return(t)
+  } else {
+    stop(
+      "Unknown 'transition_matrix_name' with value '",
+      transition_matrix_name, "'. \n",
+      "Tip: use BLOSUM62 or FLU"
+    )
+  }
 }

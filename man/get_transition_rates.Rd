@@ -5,12 +5,19 @@
 \title{Get the transition rates from the one focal protein sequence
 to the one or more target protein sequences}
 \usage{
-get_transition_rates(protein_sequence, protein_sequences)
+get_transition_rates(
+  protein_sequence,
+  protein_sequences,
+  transition_matrix_name
+)
 }
 \arguments{
 \item{protein_sequence}{a protein sequence}
 
 \item{protein_sequences}{one or more protein sequences}
+
+\item{transition_matrix_name}{the name of an amino acid transition matrix,
+for example, \code{BLOSUM62}}
 }
 \description{
 Get the transition rates from the one focal protein sequence
