@@ -13,6 +13,10 @@ create_consensus_topology_conservation(
 \arguments{
 \item{protein_sequences}{one or more protein sequences}
 
+\item{transition_matrix}{the amino acid transition matrix,
+for example, the BLOSUM62 transition matrix
+as returned by \link{get_aa_transition_matrix}}
+
 \item{topology_prediction_tool}{tool to predict the topology
   of a membrane protein. Possible values are:\cr
 \itemize{

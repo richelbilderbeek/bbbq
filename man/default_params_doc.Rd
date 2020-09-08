@@ -40,6 +40,8 @@ default_params_doc(
   tmh_overlapping_binders_as_data_filename,
   pureseqtmr_filename,
   topology,
+  topology_prediction_tool,
+  transition_matrix,
   trans_membrane_analysis_filename,
   triplet,
   verbose
@@ -163,14 +165,6 @@ for example `work/tmh-overlapping-binders.Rdata`}
 \item{topology}{a topology,
 as created by \link[pureseqtmr]{predict_topology}}
 
-\item{trans_membrane_analysis_filename}{Filename for
-uhhh, something, for example
-`tmh-predictions/trans-membrane-analysis-shortened.txt`}
-
-\item{triplet}{a DNA triplet}
-
-\item{verbose}{set to TRUE for more output}
-
 \item{topology_prediction_tool}{tool to predict the topology
   of a membrane protein. Possible values are:\cr
 \itemize{
@@ -179,6 +173,18 @@ uhhh, something, for example
   \item mhcnuggetsr \link[tmhmm]{tmhmm},
     which uses TMHMM
 }}
+
+\item{transition_matrix}{the amino acid transition matrix,
+for example, the BLOSUM62 transition matrix
+as returned by \link{get_aa_transition_matrix}}
+
+\item{trans_membrane_analysis_filename}{Filename for
+uhhh, something, for example
+`tmh-predictions/trans-membrane-analysis-shortened.txt`}
+
+\item{triplet}{a DNA triplet}
+
+\item{verbose}{set to TRUE for more output}
 }
 \description{
 This function does nothing. It is intended to inherit is parameters'
