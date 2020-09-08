@@ -1,4 +1,5 @@
 #' Get the AA transition rate from the FLU transition rate matrix
+#' @inheritParams default_params_doc
 #' @param seq_lhs amino acid to transition from
 #' @param seq_rhs amino acid to transition to
 #' @author Richèl J.C. Bilderbeek

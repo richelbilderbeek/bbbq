@@ -10,6 +10,9 @@ get_transition_rate(seq_lhs, seq_rhs, transition_matrix_name)
 \item{seq_lhs}{amino acid to transition from}
 
 \item{seq_rhs}{amino acid to transition to}
+
+\item{transition_matrix_name}{the name of an amino acid transition matrix,
+for example, \code{BLOSUM62}}
 }
 \description{
 Get the AA transition rate from the FLU transition rate matrix
