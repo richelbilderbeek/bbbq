@@ -11,8 +11,10 @@
 #' @export
 create_consensus_topology_conservation <- function( # nolint indeed a long function name
   protein_sequences,
-  transition_matrix = get_aa_transition_matrix("BLOSUM62")
+  transition_matrix = get_aa_transition_matrix("BLOSUM62"),
+  topology_prediction_tool = "pureseqtmr"
 ) {
+  bbbq::check_topology_prediction_tool(topology_prediction_tool)
   protein_sequences_aass <- Biostrings::AAStringSet(protein_sequences)
 
   sink("/dev/null")

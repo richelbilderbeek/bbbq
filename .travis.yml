@@ -24,6 +24,7 @@ r_github_packages:
   - richelbilderbeek/peregrine
   - richelbilderbeek/mhcnuggetsr
   - richelbilderbeek/mhcnpreds
+  - richelbilderbeek/tmhmm
   - richelbilderbeek/pureseqtmr
   - richelbilderbeek/epitope-prediction
   - richelbilderbeek/epiprepreds

@@ -6,7 +6,8 @@
 \usage{
 create_consensus_topology_conservation(
   protein_sequences,
-  transition_matrix = get_aa_transition_matrix("BLOSUM62")
+  transition_matrix = get_aa_transition_matrix("BLOSUM62"),
+  topology_prediction_tool = "pureseqtmr"
 )
 }
 \arguments{

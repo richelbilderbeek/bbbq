@@ -36,7 +36,8 @@ Imports:
     readr,
     seqinr,
     stringr,  
-    tibble
+    tibble,
+    tmhmm
 Suggests:
     beastier,
     devtools,
