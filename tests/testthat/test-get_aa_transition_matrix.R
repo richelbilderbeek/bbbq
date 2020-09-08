@@ -11,3 +11,9 @@ test_that("use", {
   expect_equal(m["R", "A"], 0.139, tol = 0.001)
   expect_equal(m["V", "A"], 3.532, tol = 0.001)
 })
+
+test_that("use", {
+  m <- get_aa_transition_matrix(transition_matrix_name = "BLOSUM62")
+  expect_equal(nrow(m), ncol(m))
+  expect_equal(25, nrow(m))
+})

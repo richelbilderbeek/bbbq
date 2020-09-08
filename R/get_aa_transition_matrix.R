@@ -20,7 +20,8 @@ get_aa_transition_matrix <- function(
   transition_matrix_name
 ) {
   if (transition_matrix_name == "BLOSUM62") {
-    utils::data(BLOSUM62, package = "Biostrings")
+    BLOSUM62 <- NULL; rm(BLOSUM62) # nolint, fixes warning: no visible binding for global variable
+    utils::data("BLOSUM62", package = "Biostrings")
     return(BLOSUM62)
   } else if (transition_matrix_name == "FLU") {
     t <- as.matrix(
