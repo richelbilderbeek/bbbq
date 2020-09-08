@@ -6,6 +6,16 @@
 \usage{
 check_topology_prediction_tool(topology_prediction_tool)
 }
+\arguments{
+\item{topology_prediction_tool}{tool to predict the topology
+  of a membrane protein. Possible values are:\cr
+\itemize{
+  \item mhcnuggetsr \link[pureseqtmr]{pureseqtmr},
+    which uses PureseqTM
+  \item mhcnuggetsr \link[tmhmm]{tmhmm},
+    which uses TMHMM
+}}
+}
 \description{
 Check the name of the topology prediction tool.
 Will \link{stop} if the name is invalid

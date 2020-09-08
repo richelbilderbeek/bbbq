@@ -12,6 +12,15 @@ create_consensus_topology_conservation(
 }
 \arguments{
 \item{protein_sequences}{one or more protein sequences}
+
+\item{topology_prediction_tool}{tool to predict the topology
+  of a membrane protein. Possible values are:\cr
+\itemize{
+  \item mhcnuggetsr \link[pureseqtmr]{pureseqtmr},
+    which uses PureseqTM
+  \item mhcnuggetsr \link[tmhmm]{tmhmm},
+    which uses TMHMM
+}}
 }
 \value{
 a \link{tibble} with columns:\cr

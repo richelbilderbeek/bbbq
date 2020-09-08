@@ -88,6 +88,14 @@
 #' \code{mhcn} for \link[mhcnuggetsr]{mhcnuggetsr}
 #' @param topology a topology,
 #'   as created by \link[pureseqtmr]{predict_topology}
+#' @param topology_prediction_tool tool to predict the topology
+#'   of a membrane protein. Possible values are:\cr
+#' \itemize{
+#'   \item mhcnuggetsr \link[pureseqtmr]{pureseqtmr},
+#'     which uses PureseqTM
+#'   \item mhcnuggetsr \link[tmhmm]{tmhmm},
+#'     which uses TMHMM
+#' }
 #' @param trans_membrane_analysis_filename Filename for
 #'   uhhh, something, for example
 #'   `tmh-predictions/trans-membrane-analysis-shortened.txt`

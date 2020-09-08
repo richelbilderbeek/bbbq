@@ -170,6 +170,15 @@ uhhh, something, for example
 \item{triplet}{a DNA triplet}
 
 \item{verbose}{set to TRUE for more output}
+
+\item{topology_prediction_tool}{tool to predict the topology
+  of a membrane protein. Possible values are:\cr
+\itemize{
+  \item mhcnuggetsr \link[pureseqtmr]{pureseqtmr},
+    which uses PureseqTM
+  \item mhcnuggetsr \link[tmhmm]{tmhmm},
+    which uses TMHMM
+}}
 }
 \description{
 This function does nothing. It is intended to inherit is parameters'
