@@ -4,7 +4,11 @@
 \alias{get_aa_transition_matrix}
 \title{Get an amino acid transition matrix}
 \usage{
-get_aa_transition_matrix(transition_matrix_name = "FLU")
+get_aa_transition_matrix(transition_matrix_name = "BLOSUM62")
+}
+\arguments{
+\item{transition_matrix_name}{the name of an amino acid transition matrix,
+for example, \code{BLOSUM62}}
 }
 \value{
 a tibble, with column names equal to the uppercase

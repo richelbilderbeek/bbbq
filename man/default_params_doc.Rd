@@ -42,6 +42,7 @@ default_params_doc(
   topology,
   topology_prediction_tool,
   transition_matrix,
+  transition_matrix_name,
   trans_membrane_analysis_filename,
   triplet,
   verbose
@@ -177,6 +178,9 @@ as created by \link[pureseqtmr]{predict_topology}}
 \item{transition_matrix}{the amino acid transition matrix,
 for example, the BLOSUM62 transition matrix
 as returned by \link{get_aa_transition_matrix}}
+
+\item{transition_matrix_name}{the name of an amino acid transition matrix,
+for example, \code{BLOSUM62}}
 
 \item{trans_membrane_analysis_filename}{Filename for
 uhhh, something, for example

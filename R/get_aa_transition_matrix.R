@@ -11,12 +11,13 @@
 #'   https://github.com/stephaneguindon/phyml/blob/master/src/io.c#L3188
 #' }, the column names are \code{Ala Arg Asn Asp Cys Gln Glu Gly His Ile Leu
 #' Lys Met Phe Pro Ser Thr Trp Tyr Val}
+#' @inheritParams default_params_doc
 #' @return a tibble, with column names equal to the uppercase
 #'   amino acid name
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_aa_transition_matrix <- function(
-  transition_matrix_name = "FLU"
+  transition_matrix_name = "BLOSUM62"
 ) {
   if (transition_matrix_name == "BLOSUM62") {
     library(Biostrings, warn.conflicts = FALSE, quietly = TRUE)
