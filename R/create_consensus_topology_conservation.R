@@ -14,20 +14,14 @@ create_consensus_topology_conservation <- function( # nolint indeed a long funct
   topology_prediction_tool
 ) {
   bbbq::check_topology_prediction_tool(topology_prediction_tool)
-  protein_sequences_aass <- Biostrings::AAStringSet(protein_sequences)
+  protein_alignment <- bbbq::create_msa(protein_sequences)
 
-  sink("/dev/null")
-  protein_alignment <- msa::msa(
-    protein_sequences_aass,
-    method = "ClustalOmega"
-  )
-  sink()
-
-  BLOSUM62 <- NULL; rm(BLOSUM62) # nolint, fixes warning: no visible binding for global variable
-  utils::data("BLOSUM62", package = "Biostrings")
+  # Use BLOSUM80, as the proteins are closely related
+  BLOSUM80 <- NULL; rm(BLOSUM80) # nolint, fixes warning: no visible binding for global variable
+  utils::data("BLOSUM80", package = "Biostrings")
   conservation_scores <- msa::msaConservationScore(
     protein_alignment,
-    substitutionMatrix = BLOSUM62
+    substitutionMatrix = BLOSUM80
   )
   t <- tibble::tibble(
     aa = names(conservation_scores),
