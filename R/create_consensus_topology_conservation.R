@@ -19,7 +19,7 @@ create_consensus_topology_conservation <- function( # nolint indeed a long funct
   sink("/dev/null")
   protein_alignment <- msa::msa(
     protein_sequences_aass,
-    substitutionMatrix = "blosum"
+    method = "ClustalOmega"
   )
   sink()
 
