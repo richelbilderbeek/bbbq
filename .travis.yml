@@ -41,10 +41,10 @@ before_install:
   - sudo add-apt-repository -y ppa:opencpu/imagemagick
   - sudo apt-get update
   - sudo apt-get install -y libmagick++-dev
-  # From https://travis-ci.community/t/cannot-connect-to-java-from-r/9754/4
-  - sudo R CMD javareconf
 
 before_script:
+  # From https://travis-ci.community/t/cannot-connect-to-java-from-r/9754/4
+  - sudo R CMD javareconf
   - if [[ "$INSTALL_TOOLS" == true ]]; then sudo apt install tcsh; fi
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'mhcnuggetsr::install_mhcnuggets()'; fi
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'pureseqtmr::install_pureseqtm()'; fi
