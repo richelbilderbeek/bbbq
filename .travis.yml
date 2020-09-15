@@ -42,7 +42,7 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install -y libmagick++-dev
   # From https://travis-ci.community/t/cannot-connect-to-java-from-r/9754/4
-  - R CMD javareconf
+  - sudo R CMD javareconf
 
 before_script:
   - if [[ "$INSTALL_TOOLS" == true ]]; then sudo apt install tcsh; fi
