@@ -43,7 +43,9 @@ before_install:
   - sudo apt-get install -y libmagick++-dev
 
 before_script:
-  # From https://travis-ci.community/t/cannot-connect-to-java-from-r/9754/4
+  # Install rJava, then ...
+  - sudo apt install -qq r-cran-rjava
+  # from https://travis-ci.community/t/cannot-connect-to-java-from-r/9754/4
   - sudo R CMD javareconf
   - if [[ "$INSTALL_TOOLS" == true ]]; then sudo apt install tcsh; fi
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'mhcnuggetsr::install_mhcnuggets()'; fi
