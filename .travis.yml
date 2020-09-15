@@ -51,6 +51,7 @@ before_script:
 after_failure:
   - Rscript -e 'mhcnuggetsr::mhcnuggetsr_report()'
   - Rscript -e 'pureseqtmr::pureseqtmr_report()'
+  - Rscript -e 'download.file("https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf", tempfile())'
 
 after_success:
   - Rscript -e 'lintr::lint_package()'
@@ -58,4 +59,5 @@ after_success:
   - Rscript -e 'goodpractice::gp()'
   - Rscript -e 'mhcnuggetsr::mhcnuggetsr_report()'
   - Rscript -e 'pureseqtmr::pureseqtmr_report()'
+  - Rscript -e 'download.file("https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf", tempfile())'
 
