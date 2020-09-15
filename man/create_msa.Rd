@@ -4,10 +4,19 @@
 \alias{create_msa}
 \title{Creata a multiple-sequence alignment}
 \usage{
-create_msa(protein_sequences)
+create_msa(protein_sequences, msa_method, msa_subst_matrix)
 }
 \arguments{
 \item{protein_sequences}{one or more protein sequences}
+
+\item{msa_method}{the \code{method} argument of \link[msa]{msa}.
+Valid methods are \code{ClustalW}, \code{ClustalOmega} (preferred for proteins)
+and \code{Muscle}}
+
+\item{msa_subst_matrix}{multiple sequence alignment substitution matrix,
+the \code{substitutionMatrix} argument of \link[msa]{msa}.
+For a protein alignment, relevant values are \code{blosum},
+\code{pam} and \code{gonnet}}
 }
 \value{
 a \code{MsaAAMultipleAlignment}

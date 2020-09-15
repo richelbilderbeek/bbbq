@@ -41,6 +41,13 @@
 #' @param mhc_2_haplotype HMC-II haplotope.
 #'   Use \link{get_mhc2_haplotypes} to get a list of all haplotypes
 #' @param min_hydrophobicity the minimal hydrophobicity
+#' @param msa_method the \code{method} argument of \link[msa]{msa}.
+#' Valid methods are \code{ClustalW}, \code{ClustalOmega} (preferred for proteins)
+#' and \code{Muscle}
+#' @param msa_subst_matrix multiple sequence alignment substitution matrix,
+#' the \code{substitutionMatrix} argument of \link[msa]{msa}.
+#' For a protein alignment, relevant values are \code{blosum},
+#' \code{pam} and \code{gonnet}
 #' @param n_peptides number of peptides
 #' @param non_tmh_eluted_filename
 #'   Filename for the non-TMHs found on B-cells,
@@ -126,6 +133,8 @@ default_params_doc <- function(
   mhc_1_haplotype,
   mhc_2_haplotype,
   min_hydrophobicity,
+  msa_method,
+  msa_subst_matrix,
   n_peptides,
   non_tmh_eluted_filename,
   peptide,

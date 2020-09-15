@@ -4,5 +4,11 @@ test_that("use", {
      "MPRESSIVELYFLIAAWAYFANSWALKSWEETMARKETTRIVIALLYNAILIDENTIFY",
      "IMPRESSIVELYFLMTAWAYFANSWALKSWEETMARKETTRIVIALLYNAILIDENTIF"
   )
-  expect_silent(create_msa(protein_sequences))
+  library(msa)
+  msa <- create_msa(
+    protein_sequences,
+    msa_method = "ClustalOmega",
+    msa_subst_matrix = "BLOSUM80"
+  )
+  expect_true(is.character(msa@version))
 })

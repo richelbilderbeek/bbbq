@@ -21,6 +21,8 @@ default_params_doc(
   mhc_1_haplotype,
   mhc_2_haplotype,
   min_hydrophobicity,
+  msa_method,
+  msa_subst_matrix,
   n_peptides,
   non_tmh_eluted_filename,
   peptide,
@@ -102,6 +104,15 @@ Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 Use \link{get_mhc2_haplotypes} to get a list of all haplotypes}
 
 \item{min_hydrophobicity}{the minimal hydrophobicity}
+
+\item{msa_method}{the \code{method} argument of \link[msa]{msa}.
+Valid methods are \code{ClustalW}, \code{ClustalOmega} (preferred for proteins)
+and \code{Muscle}}
+
+\item{msa_subst_matrix}{multiple sequence alignment substitution matrix,
+the \code{substitutionMatrix} argument of \link[msa]{msa}.
+For a protein alignment, relevant values are \code{blosum},
+\code{pam} and \code{gonnet}}
 
 \item{n_peptides}{number of peptides}
 

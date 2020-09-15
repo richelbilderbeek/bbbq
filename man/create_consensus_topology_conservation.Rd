@@ -6,7 +6,9 @@
 \usage{
 create_consensus_topology_conservation(
   protein_sequences,
-  topology_prediction_tool
+  topology_prediction_tool,
+  msa_method,
+  msa_subst_matrix
 )
 }
 \arguments{
@@ -20,6 +22,15 @@ create_consensus_topology_conservation(
   \item mhcnuggetsr \link[tmhmm]{tmhmm},
     which uses TMHMM
 }}
+
+\item{msa_method}{the \code{method} argument of \link[msa]{msa}.
+Valid methods are \code{ClustalW}, \code{ClustalOmega} (preferred for proteins)
+and \code{Muscle}}
+
+\item{msa_subst_matrix}{multiple sequence alignment substitution matrix,
+the \code{substitutionMatrix} argument of \link[msa]{msa}.
+For a protein alignment, relevant values are \code{blosum},
+\code{pam} and \code{gonnet}}
 }
 \value{
 a \link{tibble} with columns:\cr

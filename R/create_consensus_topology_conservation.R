@@ -11,14 +11,21 @@
 #' @export
 create_consensus_topology_conservation <- function( # nolint indeed a long function name
   protein_sequences,
-  topology_prediction_tool
+  topology_prediction_tool,
+  msa_method,
+  msa_subst_matrix
 ) {
   bbbq::check_topology_prediction_tool(topology_prediction_tool)
-  protein_alignment <- bbbq::create_msa(protein_sequences)
+  protein_alignment <- bbbq::create_msa(
+    protein_sequences,
+    msa_method = msa_method,
+    msa_subst_matrix = msa_subst_matrix
+  )
 
   # Use BLOSUM80, as the proteins are closely related
   BLOSUM80 <- NULL; rm(BLOSUM80) # nolint, fixes warning: no visible binding for global variable
   utils::data("BLOSUM80", package = "Biostrings")
+  testthat::expect_equal("BLOSUM80", msa_subst_matrix)
   conservation_scores <- msa::msaConservationScore(
     protein_alignment,
     substitutionMatrix = BLOSUM80

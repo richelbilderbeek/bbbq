@@ -13,7 +13,9 @@ test_that("use, simple data, pureseqtmr", {
   library(msa)
   t <- create_consensus_topology_conservation(
     protein_sequences,
-    topology_prediction_tool = "pureseqtmr"
+    topology_prediction_tool = "pureseqtmr",
+    msa_method = "ClustalOmega",
+    msa_subst_matrix = "BLOSUM80"
   )
   expect_true(tibble::is_tibble(t))
   expect_equal(60, nrow(t))
@@ -45,7 +47,9 @@ test_that("use, simple data, tmhmm", {
   )
   t <- create_consensus_topology_conservation(
     protein_sequences,
-    topology_prediction_tool = "tmhmm"
+    topology_prediction_tool = "tmhmm",
+    msa_method = "ClustalOmega",
+    msa_subst_matrix = "BLOSUM80"
   )
   expect_true(tibble::is_tibble(t))
   expect_equal(60, nrow(t))
@@ -74,7 +78,9 @@ test_that("use, simple data", {
 
   t <- create_consensus_topology_conservation(
     protein_sequences,
-    topology_prediction_tool = "pureseqtmr"
+    topology_prediction_tool = "pureseqtmr",
+    msa_method = "ClustalOmega",
+    msa_subst_matrix = "BLOSUM80"
   )
   expect_true(tibble::is_tibble(t))
   expect_equal(123, nrow(t))

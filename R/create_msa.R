@@ -2,13 +2,17 @@
 #' @inheritParams default_params_doc
 #' @return a \code{MsaAAMultipleAlignment}
 #' @export
-create_msa <- function(protein_sequences) {
+create_msa <- function(
+  protein_sequences,
+  msa_method,
+  msa_subst_matrix
+) {
   protein_sequences_aass <- Biostrings::AAStringSet(protein_sequences)
   sink("/dev/null")
   protein_alignment <- msa::msa(
     protein_sequences_aass,
-    method = "ClustalOmega",
-    substitutionMatrix = "BLOSUM80"
+    method = msa_method,
+    substitutionMatrix = msa_subst_matrix
   )
   sink()
   protein_alignment
