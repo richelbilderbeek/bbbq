@@ -9,8 +9,10 @@ is_detected <- function(
   percentile = get_ic50_percentile_binder(),
   ic50_prediction_tool
 ) {
-  bbbq::check_mhc_haplotype_name(mhc_haplotype)
-
+  bbbq::check_mhc_haplotype_name(
+    mhc_haplotype = mhc_haplotype,
+    ic50_prediction_tool = ic50_prediction_tool
+  )
 
   ic50_threshold <- bbbq::get_ic50_threshold(
     peptide_length = peptide_length,

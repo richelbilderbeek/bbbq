@@ -13,11 +13,16 @@
 calc_p_det_tmh_mut <- function(
   protein_sequence,
   mhc_haplotype,
+  peptide_length,
+  ic50_prediction_tool,
   n_adjancent_sequences = Inf,
   percentile = get_ic50_percentile_binder()
 ) {
   testthat::expect_true(pureseqtmr::is_tmh(protein_sequence))
-  bbbq::check_mhc_haplotype_name(mhc_haplotype)
+  bbbq::check_mhc_haplotype_name(
+    mhc_haplotype = mhc_haplotype,
+    ic50_prediction_tool = ic50_prediction_tool
+  )
 
   # Taka a subset
   adj_seqs <- bbbq::get_adjacent_sequences(protein_sequence)
@@ -35,12 +40,15 @@ calc_p_det_tmh_mut <- function(
   are_det <- bbbq::are_detected(
     protein_sequences = adj_tmhs,
     mhc_haplotype = mhc_haplotype,
-    percentile = percentile
+    peptide_length = peptide_length,
+    percentile = percentile,
+    ic50_prediction_tool = ic50_prediction_tool
   )
 
   transition_rates <- bbbq::get_transition_rates(
     protein_sequence = protein_sequence,
-    protein_sequences = adj_tmhs
+    protein_sequences = adj_tmhs,
+    transition_matrix_name = "BLOSUM80"
   )
   sum(transition_rates[are_det]) / sum(transition_rates)
 }

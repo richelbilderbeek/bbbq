@@ -23,6 +23,10 @@ get_aa_transition_matrix <- function(
     BLOSUM62 <- NULL; rm(BLOSUM62) # nolint, fixes warning: no visible binding for global variable
     utils::data("BLOSUM62", package = "Biostrings")
     return(BLOSUM62)
+  } else if (transition_matrix_name == "BLOSUM80") {
+    BLOSUM80 <- NULL; rm(BLOSUM80) # nolint, fixes warning: no visible binding for global variable
+    utils::data("BLOSUM80", package = "Biostrings")
+    return(BLOSUM80)
   } else if (transition_matrix_name == "FLU") {
     t <- as.matrix(
       readr::read_csv(
@@ -36,7 +40,7 @@ get_aa_transition_matrix <- function(
     stop(
       "Unknown 'transition_matrix_name' with value '",
       transition_matrix_name, "'. \n",
-      "Tip: use BLOSUM62 or FLU"
+      "Tip: use BLOSUM62, BLOSUM80 or FLU"
     )
   }
 }

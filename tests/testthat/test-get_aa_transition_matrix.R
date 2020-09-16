@@ -17,3 +17,9 @@ test_that("use", {
   expect_equal(nrow(m), ncol(m))
   expect_equal(25, nrow(m))
 })
+
+test_that("use", {
+  m <- get_aa_transition_matrix(transition_matrix_name = "BLOSUM80")
+  expect_equal(nrow(m), ncol(m))
+  expect_equal(25, nrow(m))
+})

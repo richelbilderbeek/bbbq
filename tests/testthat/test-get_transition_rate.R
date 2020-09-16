@@ -37,3 +37,17 @@ test_that("use", {
   n <- "MVVITAMLSFLIAFAYGFSI"
   expect_true(get_transition_rate(f, n, transition_matrix_name = "FLU") > 0.0)
 })
+
+test_that("use", {
+  skip("No transition matrices troubles")
+  f <- "MVVITAMLSFLIAFAYMFSI"
+  n <- "MVVITAMLSFLIAFAYGFSI"
+  expect_true(get_transition_rate(f, n, transition_matrix_name = "BLOSUM62") > 0.0)
+})
+
+test_that("use", {
+  skip("No transition matrices troubles")
+  f <- "MVVITAMLSFLIAFAYMFSI"
+  n <- "MVVITAMLSFLIAFAYGFSI"
+  expect_true(get_transition_rate(f, n, transition_matrix_name = "BLOSUM80") > 0.0)
+})

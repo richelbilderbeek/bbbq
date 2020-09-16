@@ -8,6 +8,8 @@ mutant is detected}
 calc_p_det_tmh_mut(
   protein_sequence,
   mhc_haplotype,
+  peptide_length,
+  ic50_prediction_tool,
   n_adjancent_sequences = Inf,
   percentile = get_ic50_percentile_binder()
 )
@@ -18,6 +20,18 @@ calc_p_det_tmh_mut(
 \item{mhc_haplotype}{haplotype of either HMC-I or MHC-II.
 Use \link{get_mhc1_haplotypes} to get a list of all MHC-I haplotypes.
 Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
+
+\item{peptide_length}{length of the peptide in amino acids}
+
+\item{ic50_prediction_tool}{tool to predict the IC50 from a
+  peptide. Possible values are:\cr
+\itemize{
+  \item mhcnuggetsr \link[mhcnuggetsr]{mhcnuggetsr},
+    which uses MHCnuggets
+  \item mhcnuggetsr \link[netmhc2pan]{netmhc2pan},
+    which uses NetMHC2pam
+  \item EpitopePrediction uses \code{EpitopePrediction}
+}}
 
 \item{n_adjancent_sequences}{look at the \code{n_adjancent_sequences}
 adjacent sequences, instead of all of them. The (maximum) number

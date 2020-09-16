@@ -4,12 +4,22 @@
 \alias{check_mhc_haplotype_name}
 \title{Check an MHC haplotype name}
 \usage{
-check_mhc_haplotype_name(mhc_haplotype)
+check_mhc_haplotype_name(mhc_haplotype, ic50_prediction_tool)
 }
 \arguments{
 \item{mhc_haplotype}{haplotype of either HMC-I or MHC-II.
 Use \link{get_mhc1_haplotypes} to get a list of all MHC-I haplotypes.
 Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
+
+\item{ic50_prediction_tool}{tool to predict the IC50 from a
+  peptide. Possible values are:\cr
+\itemize{
+  \item mhcnuggetsr \link[mhcnuggetsr]{mhcnuggetsr},
+    which uses MHCnuggets
+  \item mhcnuggetsr \link[netmhc2pan]{netmhc2pan},
+    which uses NetMHC2pam
+  \item EpitopePrediction uses \code{EpitopePrediction}
+}}
 }
 \description{
 Check an MHC haplotype name
