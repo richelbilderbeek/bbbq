@@ -33,19 +33,24 @@ check_mhc_haplotype_name(
   ic50_prediction_tool = "EpitopePrediction"
 )
 
-# NetMHCIIpan can only do MHC-II
-check_mhc_haplotype_name(
-  mhc_haplotype = get_mhc2_haplotypes()[1],
-  ic50_prediction_tool = "netmhc2pan"
-)
+if (netmhc2pan::is_netmhc2pan_installed()) {
+  # NetMHCIIpan can only do MHC-II
+  check_mhc_haplotype_name(
+    mhc_haplotype = get_mhc2_haplotypes()[1],
+    ic50_prediction_tool = "netmhc2pan"
+  )
+}
 
-# MHCnuggets can do both MHC-I and MHC-II
-check_mhc_haplotype_name(
-  mhc_haplotype = get_mhc1_haplotypes()[1],
-  ic50_prediction_tool = "mhcnuggetsr"
-)
-check_mhc_haplotype_name(
-  mhc_haplotype = get_mhc2_haplotypes()[1],
-  ic50_prediction_tool = "mhcnuggetsr"
-)
+if (mhcnuggetsr::is_mhcnuggets_installed()) {
+
+  #' # MHCnuggets can do both MHC-I and MHC-II
+  check_mhc_haplotype_name(
+    mhc_haplotype = get_mhc1_haplotypes()[1],
+    ic50_prediction_tool = "mhcnuggetsr"
+  )
+  check_mhc_haplotype_name(
+    mhc_haplotype = get_mhc2_haplotypes()[1],
+    ic50_prediction_tool = "mhcnuggetsr"
+  )
+}
 }
