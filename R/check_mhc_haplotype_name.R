@@ -1,5 +1,27 @@
 #' Check an MHC haplotype name
 #' @inheritParams default_params_doc
+#' @examples
+#' # EpitopePrediction can only do MHC-I
+#' check_mhc_haplotype_name(
+#'   mhc_haplotype = get_mhc1_haplotypes()[1],
+#'   ic50_prediction_tool = "EpitopePrediction"
+#' )
+#'
+#' # NetMHCIIpan can only do MHC-II
+#' check_mhc_haplotype_name(
+#'   mhc_haplotype = get_mhc2_haplotypes()[1],
+#'   ic50_prediction_tool = "netmhc2pan"
+#' )
+#'
+#' # MHCnuggets can do both MHC-I and MHC-II
+#' check_mhc_haplotype_name(
+#'   mhc_haplotype = get_mhc1_haplotypes()[1],
+#'   ic50_prediction_tool = "mhcnuggetsr"
+#' )
+#' check_mhc_haplotype_name(
+#'   mhc_haplotype = get_mhc2_haplotypes()[1],
+#'   ic50_prediction_tool = "mhcnuggetsr"
+#' )
 #' @export
 check_mhc_haplotype_name <- function(
   mhc_haplotype,
