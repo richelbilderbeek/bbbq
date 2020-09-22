@@ -25,6 +25,8 @@ Use \link{get_mhc2_haplotypes} to get a list of all MHC-II haplotypes.}
 Check an MHC haplotype name
 }
 \examples{
+library(bbbq)
+
 # EpitopePrediction can only do MHC-I
 check_mhc_haplotype_name(
   mhc_haplotype = get_mhc1_haplotypes()[1],

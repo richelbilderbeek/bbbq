@@ -1,6 +1,8 @@
 #' Check an MHC haplotype name
 #' @inheritParams default_params_doc
 #' @examples
+#' library(bbbq)
+#'
 #' # EpitopePrediction can only do MHC-I
 #' check_mhc_haplotype_name(
 #'   mhc_haplotype = get_mhc1_haplotypes()[1],
