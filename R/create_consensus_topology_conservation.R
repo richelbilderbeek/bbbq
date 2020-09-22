@@ -16,6 +16,9 @@ create_consensus_topology_conservation <- function( # nolint indeed a long funct
   msa_subst_matrix
 ) {
   bbbq::check_topology_prediction_tool(topology_prediction_tool)
+  if (sum(stringr::str_detect(protein_sequences, "^X+$")) > 0) {
+    stop("Cannot align sequence with only unknown amino acids")
+  }
   protein_alignment <- bbbq::create_msa(
     protein_sequences,
     msa_method = msa_method,
@@ -35,6 +38,7 @@ create_consensus_topology_conservation <- function( # nolint indeed a long funct
     score = as.numeric(conservation_scores),
     is_tmh = NA
   )
+
   consensus <- paste0(names(conservation_scores), collapse = "")
 
   topology <- NA
