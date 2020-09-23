@@ -1,0 +1,11 @@
+test_that("use", {
+  expect_true("covid" %in% get_target_names())
+  expect_true("flua" %in% get_target_names())
+  expect_true("hepa" %in% get_target_names())
+  expect_true("hiv" %in% get_target_names())
+  expect_true("human" %in% get_target_names())
+  expect_true("myco" %in% get_target_names())
+  expect_true("polio" %in% get_target_names())
+  expect_true("rhino" %in% get_target_names())
+  expect_false("nonsense" %in% get_target_names())
+})
