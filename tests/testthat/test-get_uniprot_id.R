@@ -1,5 +1,4 @@
 test_that("use", {
-  skip("Progress https://github.com/richelbilderbeek/bbbq_article/issues/116")
   expect_equal(get_uniprot_id("covid"), "UP000464024")
   expect_equal(get_uniprot_id("flua"), "UP000009255")
   expect_equal(get_uniprot_id("hepa"), "UP000006724")
