@@ -24,7 +24,6 @@ create_random_peptide_with_hydrophobicity(
 Creates a random peptide of a certain hydrophobicity
 }
 \examples{
-library(testthat)
 
 peptide <- create_random_peptide_with_hydrophobicity(
   peptide_length = 2,

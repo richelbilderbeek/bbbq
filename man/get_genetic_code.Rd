@@ -10,7 +10,6 @@ get_genetic_code()
 Get the genetic code
 }
 \examples{
-library(testthat)
 
 df <- get_genetic_code()
 expect_true("triplet" \%in\% names(df))

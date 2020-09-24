@@ -13,7 +13,6 @@ explode(s)
 Explodes a string into a character vector
 }
 \examples{
-library(testthat)
 x <- explode("ABC")
 expect_equal(x, c("A", "B", "C"))
 }

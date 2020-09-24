@@ -20,7 +20,6 @@ supertypes and a surprising degree of repertoire sharing across
 supertypes." Immunogenetics 63.6 (2011): 325-335.
 }
 \examples{
-library(testthat)
 
 df <- get_mhc2_haplotype_occurance()
 

@@ -16,7 +16,6 @@ Convert a (DNA) triplet to the corresponding amino acid
 need to convert T to U for RNA triplets
 }
 \examples{
-library(testthat)
 
 expect_equal(convert_triplet_to_amino_acid("GCT"), "A")
 expect_equal(convert_triplet_to_amino_acid("GCC"), "A")
