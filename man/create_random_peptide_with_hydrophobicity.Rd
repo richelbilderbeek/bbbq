@@ -24,14 +24,11 @@ create_random_peptide_with_hydrophobicity(
 Creates a random peptide of a certain hydrophobicity
 }
 \examples{
-
-peptide <- create_random_peptide_with_hydrophobicity(
+create_random_peptide_with_hydrophobicity(
   peptide_length = 2,
   min_hydrophobicity = 1.0,
   max_hydrophobicity = 1.5
 )
-expect_true(Peptides::hydrophobicity(peptide) >= 1.0)
-expect_true(Peptides::hydrophobicity(peptide) <= 1.5)
 }
 \author{
 Richèl J.C. Bilderbeek

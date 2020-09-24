@@ -23,9 +23,9 @@ supertypes." Immunogenetics 63.6 (2011): 325-335.
 
 df <- get_mhc2_haplotype_occurance()
 
-expect_true("haplotype" \%in\% names(df))
-expect_true("haplotype_perc" \%in\% names(df))
-expect_true("phenotype_freq" \%in\% names(df))
+"haplotype" \%in\% names(df))
+"haplotype_perc" \%in\% names(df))
+"phenotype_freq" \%in\% names(df))
 }
 \author{
 Richèl J.C. Bilderbeek

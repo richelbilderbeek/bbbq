@@ -2,14 +2,11 @@
 #' @inheritParams default_params_doc
 #' @param n_attempts number of attempts before the algorithm will \link{stop}
 #' @examples
-#'
-#' peptide <- create_random_peptide_with_hydrophobicity(
+#' create_random_peptide_with_hydrophobicity(
 #'   peptide_length = 2,
 #'   min_hydrophobicity = 1.0,
 #'   max_hydrophobicity = 1.5
 #' )
-#' Peptides::hydrophobicity(peptide) >= 1.0)
-#' Peptides::hydrophobicity(peptide) <= 1.5)
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_random_peptide_with_hydrophobicity <- function( # nolint indeed a long function name

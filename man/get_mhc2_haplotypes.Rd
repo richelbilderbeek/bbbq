@@ -12,8 +12,8 @@ Get the MHC-II haplotypes used in this study
 \examples{
 
 mhc2_haplotypes <- get_mhc2_haplotypes()
-expect_true("HLA-DRB3*0101" \%in\% mhc2_haplotypes)
-expect_true("HLA-DQA1*0501/DQB1*0301" \%in\% mhc2_haplotypes)
+"HLA-DRB3*0101" \%in\% mhc2_haplotypes)
+"HLA-DQA1*0501/DQB1*0301" \%in\% mhc2_haplotypes)
 }
 \author{
 Richèl J.C. Bilderbeek
