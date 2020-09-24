@@ -12,7 +12,10 @@ test_that("use", {
 })
 
 test_that("use, double transitions", {
-  single_transition_rate <- get_transition_rate("A", "W", transition_matrix_name = "FLU")
+  single_transition_rate <- get_transition_rate(
+    "A", "W",
+    transition_matrix_name = "FLU"
+  )
   double_transition_rate <- single_transition_rate / 2.0
   expect_equal(
     get_transition_rate("AA", "WW", transition_matrix_name = "FLU"),
@@ -42,12 +45,16 @@ test_that("use", {
   skip("No transition matrices troubles")
   f <- "MVVITAMLSFLIAFAYMFSI"
   n <- "MVVITAMLSFLIAFAYGFSI"
-  expect_true(get_transition_rate(f, n, transition_matrix_name = "BLOSUM62") > 0.0)
+  expect_true(
+    get_transition_rate(f, n, transition_matrix_name = "BLOSUM62") > 0.0
+  )
 })
 
 test_that("use", {
   skip("No transition matrices troubles")
   f <- "MVVITAMLSFLIAFAYMFSI"
   n <- "MVVITAMLSFLIAFAYGFSI"
-  expect_true(get_transition_rate(f, n, transition_matrix_name = "BLOSUM80") > 0.0)
+  expect_true(
+    get_transition_rate(f, n, transition_matrix_name = "BLOSUM80") > 0.0
+  )
 })

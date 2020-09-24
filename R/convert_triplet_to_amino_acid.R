@@ -2,7 +2,6 @@
 #' @note need to convert T to U for RNA triplets
 #' @inheritParams default_params_doc
 #' @examples
-#' library(testthat)
 #'
 #' expect_equal(convert_triplet_to_amino_acid("GCT"), "A")
 #' expect_equal(convert_triplet_to_amino_acid("GCC"), "A")

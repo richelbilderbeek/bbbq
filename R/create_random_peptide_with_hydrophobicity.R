@@ -2,7 +2,6 @@
 #' @inheritParams default_params_doc
 #' @param n_attempts number of attempts before the algorithm will \link{stop}
 #' @examples
-#' library(testthat)
 #'
 #' peptide <- create_random_peptide_with_hydrophobicity(
 #'   peptide_length = 2,

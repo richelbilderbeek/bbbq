@@ -1,6 +1,5 @@
 #' Get the MHC-II haplotypes used in this study
 #' @examples
-#' library(testthat)
 #'
 #' mhc2_haplotypes <- get_mhc2_haplotypes()
 #' expect_true("HLA-DRB3*0101" %in% mhc2_haplotypes)

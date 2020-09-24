@@ -2,7 +2,6 @@
 #' @param s one string
 #' @author Johannes Textor, Richèl J.C. Bilderbeek
 #' @examples
-#' library(testthat)
 #' x <- explode("ABC")
 #' expect_equal(x, c("A", "B", "C"))
 #' @export

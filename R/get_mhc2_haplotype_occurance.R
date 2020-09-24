@@ -9,7 +9,6 @@
 #' supertypes." Immunogenetics 63.6 (2011): 325-335.
 #' @return a \link{data.frame}
 #' @examples
-#' library(testthat)
 #'
 #' df <- get_mhc2_haplotype_occurance()
 #'
