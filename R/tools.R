@@ -2,8 +2,8 @@
 #' @param s one string
 #' @author Johannes Textor, Richèl J.C. Bilderbeek
 #' @examples
-#' x <- explode("ABC")
-#' expect_equal(x, c("A", "B", "C"))
+#' # c("A", "B", "C")
+#' explode("ABC")
 #' @export
 explode <- function(s) {
   strsplit(s, "")[[1]]

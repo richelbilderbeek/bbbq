@@ -2,11 +2,7 @@
 #' @note need to convert T to U for RNA triplets
 #' @inheritParams default_params_doc
 #' @examples
-#'
-#' expect_equal(convert_triplet_to_amino_acid("GCT"), "A")
-#' expect_equal(convert_triplet_to_amino_acid("GCC"), "A")
-#' expect_equal(convert_triplet_to_amino_acid("GCA"), "A")
-#' expect_equal(convert_triplet_to_amino_acid("GCG"), "A")
+#' convert_triplet_to_amino_acid("GCT")
 #' @author Richèl J.C. Bilderbeek
 #' @export
 convert_triplet_to_amino_acid <- function(triplet) {
