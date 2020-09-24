@@ -8,8 +8,8 @@
 #'   min_hydrophobicity = 1.0,
 #'   max_hydrophobicity = 1.5
 #' )
-#' expect_true(Peptides::hydrophobicity(peptide) >= 1.0)
-#' expect_true(Peptides::hydrophobicity(peptide) <= 1.5)
+#' Peptides::hydrophobicity(peptide) >= 1.0)
+#' Peptides::hydrophobicity(peptide) <= 1.5)
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_random_peptide_with_hydrophobicity <- function( # nolint indeed a long function name
