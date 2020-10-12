@@ -1,7 +1,7 @@
 #' Get the English description of a target
 #' @inheritParams default_params_doc
 #' @export
-get_target_english_name <- function(target_name) {
+get_target_english_name <- function(target_name) { # nolint will not simplify, as I will not sacrifice clarity
   if (target_name == "covid") return("SARS-CoV-2")
   else if (target_name == "flua") return("Influenza A")
   else if (target_name == "hepa") return("Hepatitus A")
