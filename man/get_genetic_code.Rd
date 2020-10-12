@@ -10,10 +10,7 @@ get_genetic_code()
 Get the genetic code
 }
 \examples{
-
-df <- get_genetic_code()
-"triplet" \%in\% names(df))
-"amino_acid" \%in\% names(df))
+get_genetic_code()
 }
 \author{
 Richèl J.C. Bilderbeek

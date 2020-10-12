@@ -9,12 +9,7 @@
 #' supertypes." Immunogenetics 63.6 (2011): 325-335.
 #' @return a \link{data.frame}
 #' @examples
-#'
-#' df <- get_mhc2_haplotype_occurance()
-#'
-#' "haplotype" %in% names(df))
-#' "haplotype_perc" %in% names(df))
-#' "phenotype_freq" %in% names(df))
+#' get_mhc2_haplotype_occurance()
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_mhc2_haplotype_occurance <- function() {
