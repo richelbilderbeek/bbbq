@@ -8,7 +8,8 @@ create_consensus_topology_conservation(
   protein_sequences,
   topology_prediction_tool,
   msa_method,
-  msa_subst_matrix
+  msa_subst_matrix,
+  msa_filename = NULL
 )
 }
 \arguments{
@@ -31,6 +32,10 @@ and \code{Muscle}}
 the \code{substitutionMatrix} argument of \link[msa]{msa}.
 For a protein alignment, relevant values are \code{blosum},
 \code{pam} and \code{gonnet}}
+
+\item{msa_filename}{filename to save the multiple sequence
+alignment to. Use \link{NULL} if there is no desire
+to store it}
 }
 \value{
 a \link{tibble} with columns:\cr

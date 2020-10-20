@@ -8,12 +8,16 @@
 #'     transmembrane helix
 #' }
 #' @inheritParams default_params_doc
+#' @param msa_filename filename to save the multiple sequence
+#'   alignment to. Use \link{NULL} if there is no desire
+#'   to store it
 #' @export
 create_consensus_topology_conservation <- function( # nolint indeed a long function name
   protein_sequences,
   topology_prediction_tool,
   msa_method,
-  msa_subst_matrix
+  msa_subst_matrix,
+  msa_filename = NULL
 ) {
   bbbq::check_topology_prediction_tool(topology_prediction_tool)
   if (sum(stringr::str_detect(protein_sequences, "^X+$")) > 0) {
@@ -24,6 +28,12 @@ create_consensus_topology_conservation <- function( # nolint indeed a long funct
     msa_method = msa_method,
     msa_subst_matrix = msa_subst_matrix
   )
+  if (!is.null(msa_filename)) {
+    bios2mds::export.fasta(
+      x = msa::msaConvert(protein_alignment, "bios2mds::align"),
+      outfile = msa_filename
+    )
+  }
 
   # Use BLOSUM80, as the proteins are closely related
   BLOSUM80 <- NULL; rm(BLOSUM80) # nolint, fixes warning: no visible binding for global variable

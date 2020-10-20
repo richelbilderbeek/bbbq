@@ -77,12 +77,11 @@ test_that("use, ClustalOmega, simple data", {
   expect_equal(60, nrow(t))
 })
 
-test_that("use, ClustalOmega, bug", {
+test_that("Cannot align sequence with only unknown amino acids", {
 
   if (!pureseqtmr::is_pureseqtm_installed()) return()
-  # BEugreport at
+  # Bugreport at
   # https://github.com/richelbilderbeek/bbbq_article/issues/104
-
 
   protein_sequences <- c(
     "MYSFVSEETGTLIVNSVLL",
@@ -98,4 +97,27 @@ test_that("use, ClustalOmega, bug", {
     ),
     "Cannot align sequence with only unknown amino acids"
   )
+})
+
+test_that("Can save MSA", {
+
+  if (!pureseqtmr::is_pureseqtm_installed()) return()
+  # https://github.com/richelbilderbeek/bbbq_article/issues/128
+
+  protein_sequences <- c(
+    "MYSFVSEETGTLIVNSVLL",
+    "MYSFVSEETGTLIVNSVL"
+  )
+  msa_filename <- tempfile()
+
+  expect_silent(
+    create_consensus_topology_conservation(
+      protein_sequences,
+      topology_prediction_tool = "pureseqtmr",
+      msa_method = "ClustalOmega",
+      msa_subst_matrix = "BLOSUM80",
+      msa_filename = msa_filename
+    )
+  )
+  expect_true(file.exists(msa_filename))
 })
