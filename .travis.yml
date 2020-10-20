@@ -34,6 +34,7 @@ r_github_packages:
 
 bioc_packages:
   - msa
+  - bios2mds
 
 before_install:
   # Rmpfr
