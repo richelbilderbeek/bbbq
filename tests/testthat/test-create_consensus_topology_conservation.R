@@ -111,14 +111,13 @@ test_that("Can save MSA", {
   msa_filename <- tempfile()
 
   library(msa)
-  expect_silent(
-    create_consensus_topology_conservation(
-      protein_sequences,
-      topology_prediction_tool = "pureseqtmr",
-      msa_method = "ClustalOmega",
-      msa_subst_matrix = "BLOSUM80",
-      msa_filename = msa_filename
-    )
+  # Cannot expect this to be silent, probably due to libs being loaded
+  create_consensus_topology_conservation(
+    protein_sequences,
+    topology_prediction_tool = "pureseqtmr",
+    msa_method = "ClustalOmega",
+    msa_subst_matrix = "BLOSUM80",
+    msa_filename = msa_filename
   )
   expect_true(file.exists(msa_filename))
 })
