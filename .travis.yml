@@ -44,6 +44,8 @@ before_install:
   - sudo apt-get install -y libmagick++-dev
   # Fix rJava error, from https://travis-ci.community/t/cannot-connect-to-java-from-r/9754/8
   - sudo $(which R) CMD javareconf
+  # bios2mds
+  - sudo apt-get install mesa-common-dev
 
 before_script:
   # Install rJava, then ...
