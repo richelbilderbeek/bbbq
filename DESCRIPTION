@@ -1,6 +1,6 @@
 Package: bbbq
 Title: The Bilderbeek Bianchi and Bogaart Question
-Version: 1.6
+Version: 1.7
 Authors@R: 
     person(given = "Richel",
            family = "Bilderbeek",

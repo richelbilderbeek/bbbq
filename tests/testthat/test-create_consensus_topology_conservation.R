@@ -110,6 +110,7 @@ test_that("Can save MSA", {
   )
   msa_filename <- tempfile()
 
+  library(msa)
   expect_silent(
     create_consensus_topology_conservation(
       protein_sequences,

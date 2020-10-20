@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## bbbq 1.7 (unreleased)
+
+### NEW FEATURES
+
+  * `create_consensus_topology_conservation` can save multiple sequence alignment
+  
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## bbbq 1.6 (2020-08-20)
 
 ### NEW FEATURES
