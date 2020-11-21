@@ -21,11 +21,8 @@ r_github_packages:
   - richelbilderbeek/pirouette
   - richelbilderbeek/peregrine
   - richelbilderbeek/mhcnpreds
-  - richelbilderbeek/tmhmm
-  - richelbilderbeek/pureseqtmr
   - richelbilderbeek/epitope-prediction
   - richelbilderbeek/epiprepreds
-  - richelbilderbeek/netmhc2pan
   - richelbilderbeek/nmhc2ppreds
 
 bioc_packages:
