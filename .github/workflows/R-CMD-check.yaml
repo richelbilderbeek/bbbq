@@ -39,6 +39,13 @@ jobs:
           remotes::install_cran("covr")
           remotes::install_cran("lintr")
           remotes::install_github("MangoTheCat/goodpractice")
+          remotes::install_github("richelbilderbeek/mhcnpreds")
+          remotes::install_github("richelbilderbeek/nmhc2ppreds")
+          remotes::install_github("jtextor/EpitopePrediction")
+          remotes::install_github("richelbilderbeek/epiprepreds")
+          remotes::install_github("richelbilderbeek/cobaltr")
+          remotes::install_bioc("msa")
+          remotes::install_bioc("Biostrings")
         shell: Rscript {0}
 
       - name: Show BEAST2
