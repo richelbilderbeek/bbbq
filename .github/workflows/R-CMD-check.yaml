@@ -34,11 +34,6 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck"))
-          remotes::install_deps(dependencies = TRUE)
-          remotes::install_cran("rcmdcheck")
-          remotes::install_cran("covr")
-          remotes::install_cran("lintr")
-          remotes::install_github("MangoTheCat/goodpractice")
           remotes::install_github("richelbilderbeek/mhcnpreds")
           remotes::install_github("richelbilderbeek/nmhc2ppreds")
           remotes::install_github("jtextor/EpitopePrediction")
@@ -46,6 +41,11 @@ jobs:
           remotes::install_github("richelbilderbeek/cobaltr")
           remotes::install_bioc("msa")
           remotes::install_bioc("Biostrings")
+          remotes::install_deps(dependencies = TRUE)
+          remotes::install_cran("rcmdcheck")
+          remotes::install_cran("covr")
+          remotes::install_cran("lintr")
+          remotes::install_github("MangoTheCat/goodpractice")
         shell: Rscript {0}
 
       - name: Show BEAST2
