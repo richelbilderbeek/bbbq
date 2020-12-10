@@ -39,7 +39,7 @@ jobs:
           install.packages(c("remotes", "rcmdcheck"))
           remotes::install_github("richelbilderbeek/mhcnpreds")
           remotes::install_github("richelbilderbeek/nmhc2ppreds")
-          remotes::install_github("jtextor/EpitopePrediction")
+          remotes::install_github("jtextor/epitope-prediction")
           remotes::install_github("richelbilderbeek/epiprepreds")
           remotes::install_github("richelbilderbeek/cobaltr")
           remotes::install_bioc("msa")
