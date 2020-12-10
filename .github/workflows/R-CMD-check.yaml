@@ -104,6 +104,6 @@ jobs:
         shell: Rscript {0}
 
       - name: Report mchnuggetsr
-        run: pureseqtmr::pureseqtmr_report()()
+        run: pureseqtmr::pureseqtmr_report()
         shell: Rscript {0}
 
