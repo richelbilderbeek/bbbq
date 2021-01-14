@@ -24,4 +24,17 @@ Package             |Build status
 `nmhc2ppreds`       |[![Build Status](https://travis-ci.org/richelbilderbeek/nmhc2ppreds.svg?branch=master)](https://travis-ci.org/richelbilderbeek/nmhc2ppreds)
 `prodigalr`         |[![Build Status](https://travis-ci.org/richelbilderbeek/prodigalr.svg?branch=master)](https://travis-ci.org/richelbilderbeek/prodigalr)
 
+## Downloads
+
+Human proteome: 
+ * ID: `UP000005640`
+ * Download via web browser: [https://www.uniprot.org/uniprot/?query=proteome:UP000005640&format=fasta](https://www.uniprot.org/uniprot/?query=proteome:UP000005640&format=fasta)
+ * Direct download URL: [http://richelbilderbeek.nl/UP000005640.fasta](http://richelbilderbeek.nl/UP000005640.fasta)
+Topology of human proteome: 
+ * TMHMM topology: [http://richelbilderbeek.nl/UP000005640.tmhmm](http://richelbilderbeek.nl/UP000005640.tmhmm)
+ * PureseqTM topology: [https://www.richelbilderbeek.nl/UP000005640.pureseqtm](https://www.richelbilderbeek.nl/UP000005640.pureseqtm)
+
+
+
+
 
