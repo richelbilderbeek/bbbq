@@ -7,6 +7,7 @@ documentation.}
 \usage{
 default_params_doc(
   binding_strength_threshold,
+  data_folder,
   epitopeome_filename,
   fasta_filename,
   haplotype,
@@ -14,6 +15,7 @@ default_params_doc(
   hydrophobe_control_peptides_as_data_filename,
   ic50_prediction_tool,
   ic50_threshold,
+  keep_selenoproteins,
   kyte_doolittle_scale_as_data_filename,
   max_hydrophobicity,
   mhc_class,
@@ -36,6 +38,7 @@ default_params_doc(
   proteome_filename,
   proteome_as_data_filename,
   proteome_9mer_hydrophobicity_as_data_filename,
+  proteome_type,
   pureseqtmr_filename,
   target_name,
   tmh_9mers_as_data_filename,
@@ -54,6 +57,9 @@ default_params_doc(
 \item{binding_strength_threshold}{threshold of the MHC2 allele's
 binding strength. A low threshold, e.g. \code{5.0}, selects for the top
 5 percent best binders}
+
+\item{data_folder}{folder where BBBQ stores its data, such as proteomes
+and prediced topologies.}
 
 \item{epitopeome_filename}{name of the file to store the epitopeome
 output.
@@ -84,6 +90,10 @@ for example `work/hydrophobe-control-peptides.Rdata`}
 \item{ic50_threshold}{peptides with a predicted IC50 value (in nM)
 lower than this will be considered binders.
 A threshold of 500 (nM) is common.}
+
+\item{keep_selenoproteins}{keep the selenoproteins.
+The reason to discard these, is that TMHMM cannot deal
+with selenoproteins.}
 
 \item{kyte_doolittle_scale_as_data_filename}{filename that stores the Kyte-Doolittle scale of
 hydrophobicity,
@@ -150,6 +160,9 @@ for example `work/proteome.Rdata`}
 \item{proteome_9mer_hydrophobicity_as_data_filename}{filename to store the
 proteome 9-mer hydrophobicities in R data format,
 for example `work/proteome.9mer.hydrophobicity.Rdata`}
+
+\item{proteome_type}{type of proteome, must be
+either \code{full} or \code{representative}}
 
 \item{pureseqtmr_filename}{name of the file to store the
   PureseqTM output.

@@ -36,7 +36,7 @@ Human proteome without selenocysteines:
 
 Topology of human proteome: 
 
- * TMHMM topology (from human proteome without selenocysteines): [http://richelbilderbeek.nl/UP000005640.tmhmm](http://richelbilderbeek.nl/UP000005640.tmhmm)
+ * TMHMM topology (from human proteome without selenocysteines): [http://richelbilderbeek.nl/UP000005640_no_u.tmhmm](http://richelbilderbeek.nl/UP000005640_no_u.tmhmm)
 
  * PureseqTM topology: [https://www.richelbilderbeek.nl/UP000005640.pureseqtm](https://www.richelbilderbeek.nl/UP000005640.pureseqtm)
 
