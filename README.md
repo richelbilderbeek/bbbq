@@ -30,8 +30,14 @@ Human proteome:
  * ID: `UP000005640`
  * Download via web browser: [https://www.uniprot.org/uniprot/?query=proteome:UP000005640&format=fasta](https://www.uniprot.org/uniprot/?query=proteome:UP000005640&format=fasta)
  * Direct download URL: [http://richelbilderbeek.nl/UP000005640.fasta](http://richelbilderbeek.nl/UP000005640.fasta)
+
+Human proteome without selenocysteines: 
+ * Direct download URL: [http://richelbilderbeek.nl/UP000005640_no_u.fasta](http://richelbilderbeek.nl/UP000005640_no_u.fasta)
+
 Topology of human proteome: 
- * TMHMM topology: [http://richelbilderbeek.nl/UP000005640.tmhmm](http://richelbilderbeek.nl/UP000005640.tmhmm)
+
+ * TMHMM topology (from human proteome without selenocysteines): [http://richelbilderbeek.nl/UP000005640.tmhmm](http://richelbilderbeek.nl/UP000005640.tmhmm)
+
  * PureseqTM topology: [https://www.richelbilderbeek.nl/UP000005640.pureseqtm](https://www.richelbilderbeek.nl/UP000005640.pureseqtm)
 
 
