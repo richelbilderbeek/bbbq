@@ -65,6 +65,57 @@ test_that("use", {
 })
 
 
+test_that("number of sequences must match", {
+
+  t <- tidyr::expand_grid(
+    proteome_type = c("full", "representative"),
+    keep_selenoproteins = c(TRUE, FALSE),
+    topology_prediction_tool = c("tmhmm", "pureseqtmr")
+  )
+  for (i in seq_len(nrow(t))) {
+    if (t$topology_prediction_tool[i] == "tmhmm" && t$keep_selenoproteins[i]) next
+    if (t$topology_prediction_tool[i] == "pureseqtmr" && t$proteome_type[i] == "full") next
+    if (t$topology_prediction_tool[i] == "pureseqtmr" && !t$keep_selenoproteins[i]) next
+    t_proteome <- get_proteome(
+      proteome_type = t$proteome_type[i],
+      keep_selenoproteins = t$keep_selenoproteins[i]
+    )
+    t_topo <- get_topology(
+      proteome_type = t$proteome_type[i],
+      keep_selenoproteins = t$keep_selenoproteins[i],
+      topology_prediction_tool = t$topology_prediction_tool[i]
+    )
+    testthat::expect_equal(nrow(t_proteome), nrow(t_topo))
+  }
+})
+
+test_that("number of characters must match", {
+
+  t <- tidyr::expand_grid(
+    proteome_type = c("full", "representative"),
+    keep_selenoproteins = c(TRUE, FALSE),
+    topology_prediction_tool = c("tmhmm", "pureseqtmr")
+  )
+  for (i in seq_len(nrow(t))) {
+    if (t$topology_prediction_tool[i] == "tmhmm" && t$keep_selenoproteins[i]) next
+    if (t$topology_prediction_tool[i] == "pureseqtmr" && t$proteome_type[i] == "full") next
+    if (t$topology_prediction_tool[i] == "pureseqtmr" && !t$keep_selenoproteins[i]) next
+    print(i)
+    print(t[i, ])
+    t_proteome <- get_proteome(
+      proteome_type = t$proteome_type[i],
+      keep_selenoproteins = t$keep_selenoproteins[i]
+    )
+    t_topo <- get_topology(
+      proteome_type = t$proteome_type[i],
+      keep_selenoproteins = t$keep_selenoproteins[i],
+      topology_prediction_tool = t$topology_prediction_tool[i]
+    )
+    testthat::expect_equal(nchar(t_proteome$sequence), nchar(t_topo$sequence))
+  }
+})
+
+
 test_that("abuse", {
   expect_error(
     get_topology(
