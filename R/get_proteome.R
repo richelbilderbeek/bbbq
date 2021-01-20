@@ -21,7 +21,7 @@ get_proteome <- function(
       recursive = TRUE
     )
     url <- paste0("http://richelbilderbeek.nl/", proteome_filename)
-    download.file(url = url, destfile = local_filename, quiet = TRUE)
+    utils::download.file(url = url, destfile = local_filename, quiet = TRUE)
   }
   testthat::expect_true(file.exists(local_filename))
   pureseqtmr::load_fasta_file_as_tibble(local_filename)
