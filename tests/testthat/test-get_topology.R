@@ -73,7 +73,6 @@ test_that("number of sequences must match", {
   )
   for (i in seq_len(nrow(t))) {
     if (t$topology_prediction_tool[i] == "tmhmm" && t$keep_selenoproteins[i]) next
-    if (t$topology_prediction_tool[i] == "pureseqtmr" && t$proteome_type[i] == "full") next
     if (t$topology_prediction_tool[i] == "pureseqtmr" && !t$keep_selenoproteins[i]) next
     t_proteome <- get_proteome(
       proteome_type = t$proteome_type[i],
@@ -97,7 +96,7 @@ test_that("number of characters must match", {
   )
   for (i in seq_len(nrow(t))) {
     if (t$topology_prediction_tool[i] == "tmhmm" && t$keep_selenoproteins[i]) next
-    if (t$topology_prediction_tool[i] == "pureseqtmr" && t$proteome_type[i] == "full") next
+    # if (t$topology_prediction_tool[i] == "pureseqtmr" && t$proteome_type[i] == "full") next
     if (t$topology_prediction_tool[i] == "pureseqtmr" && !t$keep_selenoproteins[i]) next
     print(i)
     print(t[i, ])
@@ -111,10 +110,13 @@ test_that("number of characters must match", {
       topology_prediction_tool = t$topology_prediction_tool[i]
     )
     testthat::expect_equal(t_proteome$name, t_topo$name)
-    readr::write_lines(x = c(t_proteome$name[4312], t_proteome$sequence[4312]), "~/short.fasta")
+    # readr::write_lines(x = c(t_proteome$name[4312], t_proteome$sequence[4312]), "~/short.fasta")
 
 
-    t_topo$sequence[4312]
+    t_proteome$name[which(nchar(t_proteome$sequence) != nchar(t_topo$sequence))]
+    t_proteome$sequence[which(nchar(t_proteome$sequence) != nchar(t_topo$sequence))]
+    t_topo$name[which(nchar(t_proteome$sequence) != nchar(t_topo$sequence))]
+    t_topo$sequence[which(nchar(t_proteome$sequence) != nchar(t_topo$sequence))]
     testthat::expect_equal(nchar(t_proteome$sequence), nchar(t_topo$sequence))
   }
 })
