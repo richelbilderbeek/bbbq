@@ -37,6 +37,7 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck"))
+          remotes::install_github("richelbilderbeek/pureseqtmr")
           remotes::install_github("richelbilderbeek/mhcnpreds")
           remotes::install_github("richelbilderbeek/nmhc2ppreds")
           remotes::install_github("jtextor/epitope-prediction")
@@ -45,6 +46,7 @@ jobs:
           remotes::install_bioc("msa")
           remotes::install_bioc("Biostrings")
           remotes::install_deps(dependencies = TRUE)
+          remotes::install_cran("tidyr")
           remotes::install_cran("rcmdcheck")
           remotes::install_cran("covr")
           remotes::install_cran("lintr")
