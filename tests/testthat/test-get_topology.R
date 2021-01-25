@@ -37,8 +37,6 @@ test_that("use", {
       topology_prediction_tool = "pureseqtmr"
     )
   )
-  skip("Predict more")
-  # TODO
   expect_silent(
     get_topology(
       proteome_type = "full",
@@ -46,6 +44,7 @@ test_that("use", {
       topology_prediction_tool = "pureseqtmr"
     )
   )
+  skip("Predict more")
   # TODO
   expect_silent(
     get_topology(
@@ -111,6 +110,11 @@ test_that("number of characters must match", {
       keep_selenoproteins = t$keep_selenoproteins[i],
       topology_prediction_tool = t$topology_prediction_tool[i]
     )
+    testthat::expect_equal(t_proteome$name, t_topo$name)
+    readr::write_lines(x = c(t_proteome$name[4312], t_proteome$sequence[4312]), "~/short.fasta")
+
+
+    t_topo$sequence[4312]
     testthat::expect_equal(nchar(t_proteome$sequence), nchar(t_topo$sequence))
   }
 })
