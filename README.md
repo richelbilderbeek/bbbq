@@ -3,7 +3,7 @@
 Branch   |[GitHub Actions](https://github.com/richelbilderbeek/bbbq/actions)                                     |[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.com)                                                                  | [![Codecov logo](pics/Codecov.png)](https://www.codecov.io)
 ---------|-------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------
 `master` |![R-CMD-check](https://github.com/richelbilderbeek/bbbq/workflows/R-CMD-check/badge.svg?branch=master) |[![Build Status](https://travis-ci.com/richelbilderbeek/bbbq.svg?branch=master)](https://travis-ci.com/richelbilderbeek/bbbq)  | [![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/bbbq?branch=master)
-`master` |![R-CMD-check](https://github.com/richelbilderbeek/bbbq/workflows/R-CMD-check/badge.svg?branch=master) |[![Build Status](https://travis-ci.com/richelbilderbeek/bbbq.svg?branch=develop)](https://travis-ci.com/richelbilderbeek/bbbq) | [![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/bbbq?branch=develop)
+`master` |![R-CMD-check](https://github.com/richelbilderbeek/bbbq/workflows/R-CMD-check/badge.svg?branch=develop)|[![Build Status](https://travis-ci.com/richelbilderbeek/bbbq.svg?branch=develop)](https://travis-ci.com/richelbilderbeek/bbbq) | [![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/bbbq?branch=develop)
 
 The Bilderbeek Bianchi and Bogaart Question.
 
@@ -38,9 +38,8 @@ Topology of human proteome:
 
  * TMHMM topology (from human proteome without selenocysteines): [http://richelbilderbeek.nl/UP000005640_no_u.tmhmm](http://richelbilderbeek.nl/UP000005640_no_u.tmhmm)
 
- * PureseqTM topology: [https://www.richelbilderbeek.nl/UP000005640.pureseqtm](https://www.richelbilderbeek.nl/UP000005640.pureseqtm)
+ * PureseqTM topology: [https://www.richelbilderbeek.nl/UP000005640.pureseqtm](https://www.richelbilderbeek.nl/UP000005640.pureseqtm) [1]
 
+## References
 
-
-
-
+ * [1] Changed the predicted topology of `TRDD1_HUMAN` from `[nothing]` to `00` (i.e. cytosolic)
