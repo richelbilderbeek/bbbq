@@ -9,6 +9,6 @@ test_that("use", {
   expect_equal(get_target_english_name("rhino"), "Rhinovirus")
   expect_error(
     get_target_english_name("nonsense"),
-    "Unknown 'target_name': nonsense"
+    "'target_name' must be a valid target"
   )
 })

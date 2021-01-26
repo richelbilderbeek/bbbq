@@ -38,6 +38,7 @@ Imports:
     seqinr,
     stringr,  
     tibble,
+    tidyr,
     tmhmm
 Suggests:
     beastier,

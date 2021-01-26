@@ -81,8 +81,9 @@
 #' @param proteome_filename name of the file the proteome will be stored at
 #' @param proteome_type type of proteome, must be
 #' either \code{full} or \code{representative}
-#' @param target_name name of organism or virus or testing
-#'  dataset.
+#' @param target_name abbreviated name of organism or virus.
+#' Use \link{get_target_names} to get the valid values.
+#' Use \link{get_target_english_name} to get the English name of a target.
 #' @param tmh_9mers_as_data_filename filename to store
 #'   per TMH protein, the indices at which it is TMH,
 #'   in R data format.

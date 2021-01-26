@@ -6,6 +6,9 @@
 \usage{
 get_target_names()
 }
+\value{
+all target names
+}
 \description{
 Get all the target names
 }

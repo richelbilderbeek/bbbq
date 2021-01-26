@@ -7,8 +7,9 @@
 get_uniprot_id(target_name)
 }
 \arguments{
-\item{target_name}{name of organism or virus or testing
-dataset.}
+\item{target_name}{abbreviated name of organism or virus.
+Use \link{get_target_names} to get the valid values.
+Use \link{get_target_english_name} to get the English name of a target.}
 }
 \description{
 Get the Uniprot ID from a target

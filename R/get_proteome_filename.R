@@ -7,7 +7,9 @@ get_proteome_filename <- function(
 ) {
   bbbq::check_proteome_type(proteome_type)
   proteome_name <- "UP000005640"
-  if (proteome_type == "representative") proteome_name <- paste0(proteome_name, "_9606")
+  if (proteome_type == "representative") {
+    proteome_name <- paste0(proteome_name, "_9606")
+  }
   if (!keep_selenoproteins) proteome_name <- paste0(proteome_name, "_no_u")
   paste0(proteome_name, ".fasta")
 }
