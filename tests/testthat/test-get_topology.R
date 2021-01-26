@@ -64,15 +64,24 @@ test_that("use, human", {
 
 test_that("use, other targets", {
 
-  skip("To add")
-  expect_silent(
-    get_topology(
-      target_name = "covid",
-      proteome_type = "full",
-      keep_selenoproteins = FALSE,
-      topology_prediction_tool = "tmhmm"
+  for (target_name in bbbq::get_target_names()) {
+    expect_silent(
+      get_topology(
+        target_name = target_name,
+        keep_selenoproteins = FALSE,
+        topology_prediction_tool = "tmhmm"
+      )
     )
-  )
+  }
+  for (target_name in bbbq::get_target_names()) {
+    expect_silent(
+      get_topology(
+        target_name = target_name,
+        keep_selenoproteins = FALSE,
+        topology_prediction_tool = "pureseqtmr"
+      )
+    )
+  }
 })
 
 test_that("number of sequences must match", {
