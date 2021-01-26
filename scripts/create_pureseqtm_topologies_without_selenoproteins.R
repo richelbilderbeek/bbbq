@@ -1,27 +1,38 @@
 # Goal: extract the PureseqTM topology done on non-seleno proteins
 
-# Get the human non-seleno proteome
-t_proteome <- bbbq::get_proteome(keep_selenoproteins = FALSE)
+for (proteome_type in c("full", "representative")) {
 
-# Get the full (and incorrect) PureseqTM topology
-t_topology_with <- bbbq::get_topology(
-  keep_selenoproteins = TRUE,
-  topology_prediction_tool = "pureseqtmr"
-)
+  # Get the human non-seleno proteome
+  t_proteome <- bbbq::get_proteome(
+    target_name = "human",
+    proteome_type = proteome_type,
+    keep_selenoproteins = FALSE
+  )
 
-# There is a difference
-testthat::expect_false(nrow(t_proteome) == nrow(t_topology_with))
+  # Get the full (and incorrect) PureseqTM topology
+  t_topology_with <- bbbq::get_topology(
+    target_name = "human",
+    proteome_type = proteome_type,
+    keep_selenoproteins = TRUE,
+    topology_prediction_tool = "pureseqtmr"
+  )
 
-# Only keep the topology for the non-seleno protein
-library(dplyr)
-t_topology_without <- t_topology_with %>% filter(name %in% t_proteome$name)
+  # There is a difference
+  testthat::expect_false(nrow(t_proteome) == nrow(t_topology_with))
 
-# Works!
-testthat::expect_equal(nrow(t_proteome), nrow(t_topology_without))
+  # Only keep the topology for the non-seleno protein
+  library(dplyr)
+  t_topology_without <- t_topology_with %>% filter(name %in% t_proteome$name)
 
-filename <- bbbq::get_topology_filename(
-  keep_selenoproteins = FALSE,
-  topology_prediction_tool = "pureseqtmr"
-)
+  # Works!
+  testthat::expect_equal(nrow(t_proteome), nrow(t_topology_without))
 
-readr::write_csv(x = t_topology_without, file = filename)
+  filename <- bbbq::get_topology_filename(
+    target_name = "human",
+    proteome_type = "full",
+    keep_selenoproteins = FALSE,
+    topology_prediction_tool = "pureseqtmr"
+  )
+
+  readr::write_csv(x = t_topology_without, file = filename)
+}
