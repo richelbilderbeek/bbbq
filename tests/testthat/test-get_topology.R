@@ -1,4 +1,4 @@
-test_that("use", {
+test_that("use, human", {
 
   expect_error(
     get_topology(
@@ -30,22 +30,22 @@ test_that("use", {
       topology_prediction_tool = "tmhmm"
     )
   )
-  expect_silent(
+  expect_error(
     get_topology(
       proteome_type = "representative",
       keep_selenoproteins = TRUE,
       topology_prediction_tool = "pureseqtmr"
-    )
+    ),
+    "PureseqTM cannot predict selenoproteins"
   )
-  expect_silent(
+  expect_error(
     get_topology(
       proteome_type = "full",
       keep_selenoproteins = TRUE,
       topology_prediction_tool = "pureseqtmr"
-    )
+    ),
+    "PureseqTM cannot predict selenoproteins"
   )
-  skip("Predict more")
-  # TODO
   expect_silent(
     get_topology(
       proteome_type = "full",
@@ -53,7 +53,6 @@ test_that("use", {
       topology_prediction_tool = "pureseqtmr"
     )
   )
-  # TODO
   expect_silent(
     get_topology(
       proteome_type = "representative",
@@ -63,6 +62,18 @@ test_that("use", {
   )
 })
 
+test_that("use, other targets", {
+
+  skip("To add")
+  expect_silent(
+    get_topology(
+      target_name = "covid",
+      proteome_type = "full",
+      keep_selenoproteins = FALSE,
+      topology_prediction_tool = "tmhmm"
+    )
+  )
+})
 
 test_that("number of sequences must match", {
 

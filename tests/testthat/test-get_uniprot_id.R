@@ -7,5 +7,8 @@ test_that("use", {
   expect_equal(get_uniprot_id("polio"), "UP000000356")
   expect_equal(get_uniprot_id("myco"), "UP000001584")
   expect_equal(get_uniprot_id("rhino"), "UP000007070")
-  expect_error(get_uniprot_id("nonsense"), "Unknown target 'nonsense'")
+  expect_error(
+    get_uniprot_id("nonsense"),
+    "'target_name' must be a valid target"
+  )
 })

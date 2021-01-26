@@ -2,6 +2,7 @@
 #' @inheritParams default_params_doc
 #' @export
 get_uniprot_id <- function(target_name) {
+  bbbq::check_target_name(target_name)
   uniprot_id <- NA
   if (target_name == "covid") {
     uniprot_id <- "UP000464024"
@@ -17,10 +18,9 @@ get_uniprot_id <- function(target_name) {
     uniprot_id <- "UP000000356"
   } else if (target_name == "myco") {
     uniprot_id <- "UP000001584"
-  } else if (target_name == "rhino") {
-    uniprot_id <- "UP000007070"
   } else {
-    stop("Unknown target '", target_name, "'")
+    testthat::expect_equal(target_name, "rhino")
+    uniprot_id <- "UP000007070"
   }
   uniprot_id
 }

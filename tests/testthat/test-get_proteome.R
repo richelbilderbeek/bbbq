@@ -1,4 +1,4 @@
-test_that("use", {
+test_that("use, human", {
 
   expect_silent(
     get_proteome(
@@ -26,7 +26,42 @@ test_that("use", {
   )
 })
 
-test_that("sizes", {
+test_that("only humans have a representative proteome", {
+  expect_error(
+    get_proteome(
+      target_name = "covid",
+      proteome_type = "representative"
+    ),
+    "Only for target_name 'human' the proteome_type can be 'representative'"
+  )
+})
+
+test_that("use, other targets", {
+  expect_silent(get_proteome(target_name = "covid"))
+  expect_silent(get_proteome(target_name = "flua"))
+  expect_silent(get_proteome(target_name = "hepa"))
+  expect_silent(get_proteome(target_name = "hiv"))
+  expect_silent(get_proteome(target_name = "myco"))
+  expect_silent(get_proteome(target_name = "polio"))
+  expect_silent(get_proteome(target_name = "rhino"))
+})
+
+test_that("use, all targets", {
+  # Just to check I missed a target
+  for (target_name in get_target_names()) {
+    expect_silent(get_proteome(target_name = target_name))
+  }
+})
+
+test_that("all targets have no selenoproteins", {
+  for (target_name in get_target_names()) {
+    t <- get_proteome(target_name = target_name, keep_selenoproteins = FALSE)
+    indices <- stringr::str_which(t$sequence, pattern = "U")
+    expect_equal(indices, integer(0))
+  }
+})
+
+test_that("sizes, human", {
 
   expect_equal(
     nrow(
@@ -63,6 +98,14 @@ test_that("sizes", {
       )
     ),
     20575
+  )
+})
+
+test_that("show URL when verbose", {
+
+  expect_message(
+    get_proteome(verbose = TRUE),
+    "Proteome already downloaded at|Downloading proteome from URL"
   )
 })
 

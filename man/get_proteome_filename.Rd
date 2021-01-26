@@ -4,9 +4,17 @@
 \alias{get_proteome_filename}
 \title{Get the name of a proteome file}
 \usage{
-get_proteome_filename(proteome_type = "full", keep_selenoproteins = TRUE)
+get_proteome_filename(
+  target_name = "human",
+  proteome_type = "full",
+  keep_selenoproteins = TRUE
+)
 }
 \arguments{
+\item{target_name}{abbreviated name of organism or virus.
+Use \link{get_target_names} to get the valid values.
+Use \link{get_target_english_name} to get the English name of a target.}
+
 \item{proteome_type}{type of proteome, must be
 either \code{full} or \code{representative}}
 
@@ -15,5 +23,16 @@ The reason to discard these, is that TMHMM cannot deal
 with selenoproteins.}
 }
 \description{
-Get the name of a proteome file
+Get the name of a proteome file.
+}
+\details{
+These filename match the UniProt names, and one can use
+\code{UniprotR:::GetProteomeFasta} to download these.
+Because \code{UniprotR} does not work on a continous integration
+service, the proteomes are downloaded
+from \code{www.richelbilderbeek.nl/[proteom_filename]}
+}
+\examples{
+get_proteome_filename()
+get_proteome_filename(target = "hiv")
 }

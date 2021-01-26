@@ -5,12 +5,17 @@
 \title{Get the name of a topology file}
 \usage{
 get_topology_filename(
-  proteome_type,
-  keep_selenoproteins,
+  target_name = "human",
+  proteome_type = "full",
+  keep_selenoproteins = TRUE,
   topology_prediction_tool
 )
 }
 \arguments{
+\item{target_name}{abbreviated name of organism or virus.
+Use \link{get_target_names} to get the valid values.
+Use \link{get_target_english_name} to get the English name of a target.}
+
 \item{proteome_type}{type of proteome, must be
 either \code{full} or \code{representative}}
 

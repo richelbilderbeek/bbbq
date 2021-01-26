@@ -29,10 +29,13 @@ for (proteome_type in c("full", "representative")) {
 
   filename <- bbbq::get_topology_filename(
     target_name = "human",
-    proteome_type = "full",
+    proteome_type = proteome_type,
     keep_selenoproteins = FALSE,
     topology_prediction_tool = "pureseqtmr"
   )
 
-  readr::write_csv(x = t_topology_without, file = filename)
+  pureseqtmr::save_tibble_as_fasta_file(
+    t = t_topology_without,
+    fasta_filename = filename
+  )
 }

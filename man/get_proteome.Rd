@@ -5,12 +5,18 @@
 \title{Get a proteome as a tibble.}
 \usage{
 get_proteome(
+  target_name = "human",
   proteome_type = "full",
   keep_selenoproteins = TRUE,
-  data_folder = rappdirs::user_data_dir(appname = "bbbq")
+  data_folder = rappdirs::user_data_dir(appname = "bbbq"),
+  verbose = FALSE
 )
 }
 \arguments{
+\item{target_name}{abbreviated name of organism or virus.
+Use \link{get_target_names} to get the valid values.
+Use \link{get_target_english_name} to get the English name of a target.}
+
 \item{proteome_type}{type of proteome, must be
 either \code{full} or \code{representative}}
 
@@ -20,7 +26,14 @@ with selenoproteins.}
 
 \item{data_folder}{folder where BBBQ stores its data, such as proteomes
 and prediced topologies.}
+
+\item{verbose}{set to TRUE for more output}
 }
 \description{
-Proteomes are downloaded and stored at the user's data folder
+Proteomes are downloaded and stored at the user's data folder.
+}
+\details{
+The option \code{keep_selenoproteins} only has an effect for the
+human proteome, as it is the only proteome that contains
+selenocysteines.
 }
