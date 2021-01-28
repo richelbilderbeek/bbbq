@@ -95,7 +95,7 @@ test_that("number of sequences must match", {
     if (t$topology_prediction_tool[i] == "tmhmm" &&
       t$keep_selenoproteins[i]) next
     if (t$topology_prediction_tool[i] == "pureseqtmr" &&
-      !t$keep_selenoproteins[i]) next
+      t$keep_selenoproteins[i]) next
     t_proteome <- get_proteome(
       proteome_type = t$proteome_type[i],
       keep_selenoproteins = t$keep_selenoproteins[i]
