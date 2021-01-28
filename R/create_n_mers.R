@@ -1,4 +1,10 @@
 #' Create the n-mers from a character string
+#' @param string a character vector with one element
+#' @param n the length of the n-mers
+#' @return a character vector with all n-mers
+#' @examples
+#' # Creates ABCD, BCDE, CDEF
+#' create_n_mers(string = "ABCDEF", n = 4)
 #' @export
 create_n_mers <- function(string, n) {
   if (length(string) != 1 || !is.character(string)) {

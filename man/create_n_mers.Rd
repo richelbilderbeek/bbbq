@@ -6,6 +6,18 @@
 \usage{
 create_n_mers(string, n)
 }
+\arguments{
+\item{string}{a character vector with one element}
+
+\item{n}{the length of the n-mers}
+}
+\value{
+a character vector with all n-mers
+}
 \description{
 Create the n-mers from a character string
+}
+\examples{
+# Creates ABCD, BCDE, CDEF
+create_n_mers(string = "ABCDEF", n = 4)
 }
