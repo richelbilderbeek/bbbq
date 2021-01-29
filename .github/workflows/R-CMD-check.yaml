@@ -8,12 +8,6 @@ name: R-CMD-check
 
 jobs:
   R-CMD-check:
-    strategy:
-      matrix:
-        include:
-          - install_tools: "true" 
-          - install_tools: "false"
-
     runs-on: ubuntu-18.04
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -53,44 +47,6 @@ jobs:
           remotes::install_github("MangoTheCat/goodpractice")
         shell: Rscript {0}
 
-      - name: Show BEAST2
-        env:
-          INSTALL_TOOLS: ${{ matrix.install_tools }}
-        run: echo "$INSTALL_TOOLS"
-
-      - name: If statement on BEAST2 is true
-        env:
-          INSTALL_TOOLS: ${{ matrix.install_tools }}
-        run: if [[ "$INSTALL_TOOLS" == true ]]; then echo "Yay!"; fi
-
-      - name: Show location
-        run: pwd
-
-      - name: If statement on BEAST2 is false
-        env:
-          INSTALL_TOOLS: ${{ matrix.install_tools }}
-        run: if [[ "$INSTALL_TOOLS" == false ]]; then echo "Nay!"; fi
-
-      - name: Install tool 'tcsh'
-        env:
-          INSTALL_TOOLS: ${{ matrix.install_tools }}
-        run: if [[ "$INSTALL_TOOLS" == true ]]; then sudo apt install tcsh; fi
-
-      - name: Install tool 'MHCnuggets'
-        env:
-          INSTALL_TOOLS: ${{ matrix.install_tools }}
-        run: if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'mhcnuggetsr::install_mhcnuggets()'; fi
-
-      - name: Install tool 'PureseqTM'
-        env:
-          INSTALL_TOOLS: ${{ matrix.install_tools }}
-        run: if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'pureseqtmr::install_pureseqtm()'; fi
-
-      - name: Install tool 'NetMHCIIpan' if URL is valid
-        env:
-          INSTALL_TOOLS: ${{ matrix.install_tools }}
-        run: if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'if (netmhc2pan::is_url_valid()) netmhc2pan::install_netmhc2pan()'; fi
-
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
@@ -100,12 +56,4 @@ jobs:
 
       - name: Lint
         run: if [[ "$INSTALL_TOOLS" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
-
-      - name: Report mchnuggetsr
-        run: mhcnuggetsr::mhcnuggetsr_report()
-        shell: Rscript {0}
-
-      - name: Report mchnuggetsr
-        run: pureseqtmr::pureseqtmr_report()
-        shell: Rscript {0}
 
