@@ -21,3 +21,7 @@ Create the n-mers from a character string
 # Creates ABCD, BCDE, CDEF
 create_n_mers(string = "ABCDEF", n = 4)
 }
+\seealso{
+use \link{create_n_mers_tibble} to create
+the n-mers for multiple strings
+}

@@ -2,6 +2,8 @@
 #' @param string a character vector with one element
 #' @param n the length of the n-mers
 #' @return a character vector with all n-mers
+#' @seealso use \link{create_n_mers_tibble} to create
+#' the n-mers for multiple strings
 #' @examples
 #' # Creates ABCD, BCDE, CDEF
 #' create_n_mers(string = "ABCDEF", n = 4)
