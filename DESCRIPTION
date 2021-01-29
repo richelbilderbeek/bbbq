@@ -22,23 +22,19 @@ Imports:
     dplyr,
     epiprepreds (>= 0.3),
     EpitopePrediction,
-    ggplot2,
     glue,
     magrittr,
-    methods,
     mhcnuggetsr (>= 0.11),
     mhcnpreds,
     msa,
     netmhc2pan,
     nmhc2ppreds,
     Peptides,
-    png,
     pureseqtmr,
     readr,
     seqinr,
     stringr,  
     tibble,
-    tidyr,
     tmhmm
 Suggests:
     beastier,
@@ -46,6 +42,7 @@ Suggests:
     profvis,
     testit,
     testthat (>= 2.1.0),
+    tidyr,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
