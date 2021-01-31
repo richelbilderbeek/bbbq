@@ -1,5 +1,7 @@
 test_that("use, human", {
 
+  skip("Local only")
+
   expect_silent(
     get_proteome(
       proteome_type = "full",
@@ -37,6 +39,7 @@ test_that("only humans have a representative proteome", {
 })
 
 test_that("use, other targets", {
+  skip("Local only")
   expect_silent(get_proteome(target_name = "covid"))
   expect_silent(get_proteome(target_name = "flua"))
   expect_silent(get_proteome(target_name = "hepa"))
@@ -47,6 +50,7 @@ test_that("use, other targets", {
 })
 
 test_that("use, all targets", {
+  skip("Local only")
   # Just to check I missed a target
   for (target_name in get_target_names()) {
     expect_silent(get_proteome(target_name = target_name))
@@ -54,6 +58,7 @@ test_that("use, all targets", {
 })
 
 test_that("all targets have no selenoproteins", {
+  skip("Local only")
   for (target_name in get_target_names()) {
     t <- get_proteome(target_name = target_name, keep_selenoproteins = FALSE)
     indices <- stringr::str_which(t$sequence, pattern = "U")
@@ -62,6 +67,8 @@ test_that("all targets have no selenoproteins", {
 })
 
 test_that("sizes, human", {
+
+  skip("Local only")
 
   expect_equal(
     nrow(
@@ -102,6 +109,8 @@ test_that("sizes, human", {
 })
 
 test_that("show URL when verbose", {
+
+  skip("Local only")
 
   expect_message(
     get_proteome(verbose = TRUE),
