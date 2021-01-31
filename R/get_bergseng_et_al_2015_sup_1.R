@@ -1,7 +1,10 @@
 #' Get the table of Supplementary Material 1 from
 #' Bergseng et al., 2015.
 #' Will download the file if needed.
+#' @inheritParams default_params_doc
 #' @param xlsx_filename the XLSX filename
+#' @param URL the download URL,
+#' as returned by \link{get_bergseng_et_al_2015_sup_1_url}
 #' @return a \link{tibble}[tibble], with columns named
 #' \code{cell_line},
 #' \code{infected},
@@ -16,7 +19,7 @@
 #' \code{normalized_copyno}
 #' @export
 get_bergseng_et_al_2015_sup_1 <- function(
-  url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4297300/bin/251_2014_819_MOESM3_ESM.xlsx",
+  url = bbbq::get_bergseng_et_al_2015_sup_1_url(),
   xlsx_filename = file.path(
     rappdirs::user_data_dir(appname = "bbbq"),
     "251_2014_819_MOESM3_ESM.xlsx"

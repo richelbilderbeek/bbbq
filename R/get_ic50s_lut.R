@@ -4,6 +4,7 @@
 #' This lookup table is read from file.
 #' If a needed file is absent, it will be downloaded.
 #' Each table is approx 300 megabytes
+#' @inheritParams default_params_doc
 #' @export
 get_ic50s_lut <- function(
   haplotype,

@@ -5,8 +5,7 @@
 \title{Downloads the XLSX file by Bergseng et al., 2015}
 \usage{
 download_bergseng_et_al_2015_sup_1(
- 
-    url = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4297300/bin/251_2014_819_MOESM3_ESM.xlsx",
+  url = bbbq::get_bergseng_et_al_2015_sup_1_url(),
   xlsx_filename = file.path(rappdirs::user_data_dir(appname = "bbbq"),
     "251_2014_819_MOESM3_ESM.xlsx"),
   verbose = FALSE

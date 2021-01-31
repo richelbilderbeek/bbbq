@@ -6,6 +6,23 @@
 \usage{
 get_ic50s_lut(haplotype, peptide_length, ic50_prediction_tool, verbose = TRUE)
 }
+\arguments{
+\item{haplotype}{one MHC-I or MHC-II haplotype}
+
+\item{peptide_length}{length of the peptide in amino acids}
+
+\item{ic50_prediction_tool}{tool to predict the IC50 from a
+  peptide. Possible values are:\cr
+\itemize{
+  \item mhcnuggetsr \link[mhcnuggetsr]{mhcnuggetsr},
+    which uses MHCnuggets
+  \item mhcnuggetsr \link[netmhc2pan]{netmhc2pan},
+    which uses NetMHC2pam
+  \item EpitopePrediction uses \code{EpitopePrediction}
+}}
+
+\item{verbose}{set to TRUE for more output}
+}
 \description{
 Get a lookup table for IC50 predictions of epitopes.
 This lookup table is read from file.
