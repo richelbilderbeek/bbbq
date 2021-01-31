@@ -14,12 +14,12 @@ get_bergseng_et_al_2015_sup_1(
 )
 }
 \arguments{
+\item{url}{the download URL,
+as returned by \link{get_bergseng_et_al_2015_sup_1_url}}
+
 \item{xlsx_filename}{the XLSX filename}
 
 \item{verbose}{set to TRUE for more output}
-
-\item{URL}{the download URL,
-as returned by \link{get_bergseng_et_al_2015_sup_1_url}}
 }
 \value{
 a \link{tibble}[tibble], with columns named

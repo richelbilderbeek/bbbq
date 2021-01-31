@@ -3,7 +3,7 @@
 #' Will download the file if needed.
 #' @inheritParams default_params_doc
 #' @param xlsx_filename the XLSX filename
-#' @param URL the download URL,
+#' @param url the download URL,
 #' as returned by \link{get_bergseng_et_al_2015_sup_1_url}
 #' @return a \link{tibble}[tibble], with columns named
 #' \code{cell_line},
