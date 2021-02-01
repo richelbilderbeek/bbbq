@@ -1,9 +1,9 @@
 # bbbq
 
-Branch   |[GitHub Actions](https://github.com/richelbilderbeek/bbbq/actions)                                     |[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.com)                                                                  | [![Codecov logo](pics/Codecov.png)](https://www.codecov.io)
----------|-------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------
-`master` |![R-CMD-check](https://github.com/richelbilderbeek/bbbq/workflows/R-CMD-check/badge.svg?branch=master) |[![Build Status](https://travis-ci.com/richelbilderbeek/bbbq.svg?branch=master)](https://travis-ci.com/richelbilderbeek/bbbq)  | [![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/bbbq?branch=master)
-`develop`|![R-CMD-check](https://github.com/richelbilderbeek/bbbq/workflows/R-CMD-check/badge.svg?branch=develop)|[![Build Status](https://travis-ci.com/richelbilderbeek/bbbq.svg?branch=develop)](https://travis-ci.com/richelbilderbeek/bbbq) | [![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/bbbq?branch=develop)
+Branch   |[GitHub Actions](https://github.com/richelbilderbeek/bbbq/actions)                                     | [![Codecov logo](pics/Codecov.png)](https://www.codecov.io)
+---------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------
+`master` |![R-CMD-check](https://github.com/richelbilderbeek/bbbq/workflows/R-CMD-check/badge.svg?branch=master) |[![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/bbbq?branch=master)
+`develop`|![R-CMD-check](https://github.com/richelbilderbeek/bbbq/workflows/R-CMD-check/badge.svg?branch=develop)|[![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/bbbq?branch=develop)
 
 The Bilderbeek Bianchi and Bogaart Question.
 
