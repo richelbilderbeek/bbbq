@@ -5,6 +5,7 @@
 \title{Download a lookup table for IC50 predictions of epitopes}
 \usage{
 download_ic50s_lut(
+  target_name,
   haplotype,
   peptide_length,
   ic50_prediction_tool,
@@ -12,6 +13,10 @@ download_ic50s_lut(
 )
 }
 \arguments{
+\item{target_name}{abbreviated name of organism or virus.
+Use \link{get_target_names} to get the valid values.
+Use \link{get_target_english_name} to get the English name of a target.}
+
 \item{haplotype}{one MHC-I or MHC-II haplotype}
 
 \item{peptide_length}{length of the peptide in amino acids}
@@ -33,5 +38,9 @@ the local filename
 }
 \description{
 Download a lookup table for IC50 predictions of epitopes.
-Each table is approx 300 megabytes
+For the human reference proteome, each table is approx 300 megabytes.
+}
+\details{
+The scripts that created these look-up tables are at
+by \url{https://github.com/richelbilderbeek/bbbq_article_issue_167}
 }

@@ -1,21 +1,27 @@
 #' Download a lookup table for IC50 predictions of epitopes
 #'
 #' Download a lookup table for IC50 predictions of epitopes.
-#' Each table is approx 300 megabytes
+#' For the human reference proteome, each table is approx 300 megabytes.
+#'
+#' The scripts that created these look-up tables are at
+#' by \url{https://github.com/richelbilderbeek/bbbq_article_issue_167}
 #' @inheritParams default_params_doc
 #' @return the local filename
 download_ic50s_lut <- function(
+  target_name,
   haplotype,
   peptide_length,
   ic50_prediction_tool,
   verbose = TRUE
 ) {
+  bbbq::check_target_name(target_name)
   bbbq::check_ic50_prediction_tool(ic50_prediction_tool)
   bbbq::check_haplotype(
     haplotype = haplotype,
     ic50_prediction_tool = ic50_prediction_tool
   )
   csv_filename <- paste0(
+    target_name, "_",
     peptide_length, "_",
     stringr::str_replace_all(haplotype, "[:|\\*]", "_"),
     "_ic50_ep.csv"

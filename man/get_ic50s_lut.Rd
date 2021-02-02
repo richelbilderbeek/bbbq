@@ -4,9 +4,19 @@
 \alias{get_ic50s_lut}
 \title{Get a lookup table for IC50 predictions of epitopes}
 \usage{
-get_ic50s_lut(haplotype, peptide_length, ic50_prediction_tool, verbose = TRUE)
+get_ic50s_lut(
+  target_name,
+  haplotype,
+  peptide_length,
+  ic50_prediction_tool,
+  verbose = TRUE
+)
 }
 \arguments{
+\item{target_name}{abbreviated name of organism or virus.
+Use \link{get_target_names} to get the valid values.
+Use \link{get_target_english_name} to get the English name of a target.}
+
 \item{haplotype}{one MHC-I or MHC-II haplotype}
 
 \item{peptide_length}{length of the peptide in amino acids}
@@ -27,5 +37,9 @@ get_ic50s_lut(haplotype, peptide_length, ic50_prediction_tool, verbose = TRUE)
 Get a lookup table for IC50 predictions of epitopes.
 This lookup table is read from file.
 If a needed file is absent, it will be downloaded.
-Each table is approx 300 megabytes
+For the human reference proteome, each table is approx 300 megabytes.
+}
+\details{
+The scripts that created these look-up tables are at
+by \url{https://github.com/richelbilderbeek/bbbq_article_issue_167}
 }
