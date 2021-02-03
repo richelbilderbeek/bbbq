@@ -26,7 +26,7 @@ get_ic50s_lut <- function(
     target_name, "_",
     peptide_length, "_",
     stringr::str_replace_all(haplotype, "[:|\\*]", "_"),
-    "_ic50_ep.csv"
+    "_ic50_", ic50_prediction_tool, ".csv"
   )
   local_filename <- file.path(
     rappdirs::user_data_dir(appname = "bbbq"),
