@@ -7,6 +7,7 @@
 #' by \url{https://github.com/richelbilderbeek/bbbq_article_issue_167}
 #' @inheritParams default_params_doc
 #' @return the local filename
+#' @export
 download_ic50s_lut <- function(
   target_name,
   haplotype,
