@@ -25,7 +25,7 @@ download_ic50s_lut <- function(
     target_name, "_",
     peptide_length, "_",
     stringr::str_replace_all(haplotype, "[:|\\*]", "_"),
-    "_ic50_ep.csv"
+    "_ic50_", ic50_prediction_tool, ".csv"
   )
   local_filename <- file.path(
     rappdirs::user_data_dir(appname = "bbbq"),
@@ -33,10 +33,15 @@ download_ic50s_lut <- function(
   )
   url <- paste0("http://richelbilderbeek.nl/", csv_filename)
   if (verbose) {
-    message("Starting big 300 Mb download.")
-    message("csv_filename: ", csv_filename)
-    message("local_filename: ", local_filename)
-    message("URL: ", url)
+    message(
+      "Starting big 300 Mb download (if target is human). \n",
+      "If the URL cannot be found, it may be that the file is absent. \n",
+      "See https://github.com/richelbilderbeek/bbbq_article_issue_167 \n",
+      "to create and upload a LUT \n",
+      "csv_filename: ", csv_filename, " \n",
+      "local_filename: ", local_filename, " \n",
+      "URL: ", url
+    )
   }
   dir.create(
     path = dirname(local_filename),

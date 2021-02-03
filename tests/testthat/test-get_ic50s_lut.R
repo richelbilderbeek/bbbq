@@ -11,6 +11,19 @@ test_that("use", {
 })
 
 test_that("use", {
+  skip("WIP")
+  t <- get_ic50s_lut(
+    target_name = "covid",
+    haplotype = "HLA-DRB1*0101",
+    peptide_length = 15,
+    ic50_prediction_tool = "netmhc2pan"
+  )
+  expect_true(tibble::is_tibble(t))
+  expect_true("peptide" %in% names(t))
+  expect_true("ic50" %in% names(t))
+})
+
+test_that("use", {
   skip("Local only")
   t <- get_ic50s_lut(
     target_name = "human",
