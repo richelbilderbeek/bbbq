@@ -56,8 +56,8 @@ jobs:
         shell: Rscript {0}
 
       - name: Test coverage
-        run: Rscript -e 'covr::codecov()
+        run: Rscript -e 'covr::codecov()'
 
       - name: Lint
-        run: Rscript -e 'lintr::lint_package()
+        run: Rscript -e 'lintr::lint_package()'
 
