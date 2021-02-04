@@ -24,7 +24,7 @@ download_ic50s_lut <- function(
   csv_filename <- paste0(
     target_name, "_",
     peptide_length, "_",
-    stringr::str_replace_all(haplotype, "[:|\\*]", "_"),
+    stringr::str_replace_all(haplotype, "[:|/\\*]", "_"),
     "_ic50_", ic50_prediction_tool, ".csv"
   )
   local_filename <- file.path(
