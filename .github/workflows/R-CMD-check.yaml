@@ -37,6 +37,7 @@ jobs:
           remotes::install_github("jtextor/epitope-prediction")
           remotes::install_github("richelbilderbeek/epiprepreds")
           remotes::install_github("richelbilderbeek/cobaltr")
+          remotes::install_github("richelbilderbeek/mhcnuggetsr")
           remotes::install_bioc("msa")
           remotes::install_bioc("Biostrings")
           remotes::install_deps(dependencies = TRUE)
@@ -47,13 +48,16 @@ jobs:
           remotes::install_github("MangoTheCat/goodpractice")
         shell: Rscript {0}
 
+      - name: Install MHCnuggetsr
+        run: Rscript -e 'mhcnuggetsr::install_mhcnuggets()
+
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
 
       - name: Test coverage
-        run: if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'covr::codecov()'; fi
+        run: Rscript -e 'covr::codecov()
 
       - name: Lint
-        run: if [[ "$INSTALL_TOOLS" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
+        run: Rscript -e 'lintr::lint_package()
 
