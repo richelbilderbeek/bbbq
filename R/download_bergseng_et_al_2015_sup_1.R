@@ -6,7 +6,7 @@
 #' @seealso use \link{get_bergseng_et_al_2015_sup_1} to
 #'   read the table as a \link{tibble}[tibble]
 #' @export
-download_bergseng_et_al_2015_sup_1 <- function(
+download_bergseng_et_al_2015_sup_1 <- function( # nolint long function name indeed
   url = bbbq::get_bergseng_et_al_2015_sup_1_url(),
   xlsx_filename = file.path(
     rappdirs::user_data_dir(appname = "bbbq"),
