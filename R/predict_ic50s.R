@@ -7,7 +7,8 @@ predict_ic50s <- function(
   peptide_length,
   haplotype,
   ic50_prediction_tool,
-  mhcnuggetsr_peptides_path = mhcnuggetsr::create_temp_peptides_path()
+  mhcnuggetsr_peptides_path = mhcnuggetsr::create_temp_peptides_path(),
+  sink_filename = "/dev/null"
 ) {
   ic50s <- NA
   if (ic50_prediction_tool == "mhcnuggetsr") {
@@ -42,7 +43,8 @@ predict_ic50s <- function(
     ic50s <- epiprepreds::predict_ic50s(
       protein_sequence = protein_sequence,
       peptide_length = peptide_length,
-      haplotype_name = haplotype
+      haplotype_name = haplotype,
+      sink_filename = sink_filename
     )
   } else {
     stop("Unknown 'ic50_prediction_tool': ", ic50_prediction_tool)
