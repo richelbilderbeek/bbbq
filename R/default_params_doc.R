@@ -45,6 +45,9 @@
 #'   Use \link{get_mhc1_haplotypes} to get a list of all haplotypes
 #' @param mhc_2_haplotype HMC-II haplotope.
 #'   Use \link{get_mhc2_haplotypes} to get a list of all haplotypes
+#' @param mhcnuggetsr_peptides_path path to a temporary file to create
+#'   peptides, as needed by \link{mhcnuggetsr},
+#'   which is \link[mhcnuggetsr]{create_temp_peptides_path} by default
 #' @param min_hydrophobicity the minimal hydrophobicity
 #' @param msa_method the \code{method} argument of \link[msa]{msa}.
 #' Valid methods are \code{ClustalW}, \code{ClustalOmega} (preferred for proteins)
@@ -142,6 +145,7 @@ default_params_doc <- function(
   mhc_haplotype,
   mhc_1_haplotype,
   mhc_2_haplotype,
+  mhcnuggetsr_peptides_path,
   min_hydrophobicity,
   msa_method,
   msa_subst_matrix,

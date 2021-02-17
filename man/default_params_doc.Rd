@@ -22,6 +22,7 @@ default_params_doc(
   mhc_haplotype,
   mhc_1_haplotype,
   mhc_2_haplotype,
+  mhcnuggetsr_peptides_path,
   min_hydrophobicity,
   msa_method,
   msa_subst_matrix,
@@ -112,6 +113,10 @@ Use \link{get_mhc1_haplotypes} to get a list of all haplotypes}
 
 \item{mhc_2_haplotype}{HMC-II haplotope.
 Use \link{get_mhc2_haplotypes} to get a list of all haplotypes}
+
+\item{mhcnuggetsr_peptides_path}{path to a temporary file to create
+peptides, as needed by \link{mhcnuggetsr},
+which is \link[mhcnuggetsr]{create_temp_peptides_path} by default}
 
 \item{min_hydrophobicity}{the minimal hydrophobicity}
 

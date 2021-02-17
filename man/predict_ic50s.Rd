@@ -8,7 +8,8 @@ predict_ic50s(
   protein_sequence,
   peptide_length,
   haplotype,
-  ic50_prediction_tool
+  ic50_prediction_tool,
+  mhcnuggetsr_peptides_path = mhcnuggetsr::create_temp_peptides_path()
 )
 }
 \arguments{
@@ -27,6 +28,10 @@ predict_ic50s(
     which uses NetMHC2pam
   \item EpitopePrediction uses \code{EpitopePrediction}
 }}
+
+\item{mhcnuggetsr_peptides_path}{path to a temporary file to create
+peptides, as needed by \link{mhcnuggetsr},
+which is \link[mhcnuggetsr]{create_temp_peptides_path} by default}
 }
 \description{
 Predict IC50s

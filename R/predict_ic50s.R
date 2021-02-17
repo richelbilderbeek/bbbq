@@ -6,7 +6,8 @@ predict_ic50s <- function(
   protein_sequence,
   peptide_length,
   haplotype,
-  ic50_prediction_tool
+  ic50_prediction_tool,
+  mhcnuggetsr_peptides_path = mhcnuggetsr::create_temp_peptides_path()
 ) {
   ic50s <- NA
   if (ic50_prediction_tool == "mhcnuggetsr") {
@@ -15,7 +16,8 @@ predict_ic50s <- function(
       peptide_length = peptide_length,
       mhcnuggets_options = mhcnuggetsr::create_mhcnuggets_options(
         mhc = mhcnuggetsr::to_mhcnuggets_name(haplotype)
-      )
+      ),
+      peptides_path = mhcnuggetsr_peptides_path
     )
   } else if (ic50_prediction_tool == "netmhc2pan") {
     tryCatch({
