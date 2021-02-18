@@ -219,9 +219,6 @@ uhhh, something, for example
 \item{triplet}{a DNA triplet}
 
 \item{verbose}{set to TRUE for more output}
-
-\item{sink_filename}{temporary filename for \link{sink} to write to.
-This is \code{/dev/null} by default, which works on Linux perfectly}
 }
 \description{
 This function does nothing. It is intended to inherit is parameters'

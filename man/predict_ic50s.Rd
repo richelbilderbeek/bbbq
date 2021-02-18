@@ -9,8 +9,7 @@ predict_ic50s(
   peptide_length,
   haplotype,
   ic50_prediction_tool,
-  mhcnuggetsr_peptides_path = mhcnuggetsr::create_temp_peptides_path(),
-  sink_filename = "/dev/null"
+  mhcnuggetsr_peptides_path = mhcnuggetsr::create_temp_peptides_path()
 )
 }
 \arguments{
@@ -33,9 +32,6 @@ predict_ic50s(
 \item{mhcnuggetsr_peptides_path}{path to a temporary file to create
 peptides, as needed by \link{mhcnuggetsr},
 which is \link[mhcnuggetsr]{create_temp_peptides_path} by default}
-
-\item{sink_filename}{temporary filename for \link{sink} to write to.
-This is \code{/dev/null} by default, which works on Linux perfectly}
 }
 \description{
 Predict IC50s

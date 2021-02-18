@@ -109,8 +109,6 @@
 #'   and will be put in the \code{/tmp} folder,
 #'   which is cleaned by the operating system
 #' \code{mhcn} for \link[mhcnuggetsr]{mhcnuggetsr}
-#' @param sink_filename temporary filename for \link{sink} to write to.
-#'   This is \code{/dev/null} by default, which works on Linux perfectly
 #' @param topology a topology,
 #'   as created by \link[pureseqtmr]{predict_topology}
 #' @param topology_prediction_tool tool to predict the topology
