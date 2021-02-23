@@ -56,7 +56,7 @@ before_script:
 after_failure:
   - Rscript -e 'mhcnuggetsr::mhcnuggetsr_report()'
   - Rscript -e 'pureseqtmr::pureseqtmr_report()'
-  - Rscript -e 'download.file("https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf", tempfile())'
+  - Rscript -e 'download.file("https://pure.rug.nl/ws/files/132028374/Complete_thesis.pdf", tempfile())'
 
 after_success:
   - Rscript -e 'lintr::lint_package()'
@@ -65,9 +65,9 @@ after_success:
   - Rscript -e 'mhcnuggetsr::mhcnuggetsr_report()'
   - Rscript -e 'pureseqtmr::pureseqtmr_report()'
   # Download thesis
-  - wget https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf
+  - wget https://pure.rug.nl/ws/files/132028374/Complete_thesis.pdf
 
 after_failure:
   # Download thesis
-  - wget https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf
+  - wget https://pure.rug.nl/ws/files/132028374/Complete_thesis.pdf
 
