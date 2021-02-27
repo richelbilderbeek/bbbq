@@ -30,7 +30,7 @@ Imports:
     netmhc2pan,
     nmhc2ppreds,
     Peptides,
-    pureseqtmr,
+    pureseqtmr (>= 1.3),
     rappdirs,
     readr,
     readxl,
