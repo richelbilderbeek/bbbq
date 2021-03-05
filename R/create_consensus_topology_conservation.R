@@ -29,10 +29,11 @@ create_consensus_topology_conservation <- function( # nolint indeed a long funct
     msa_subst_matrix = msa_subst_matrix
   )
   if (!is.null(msa_filename)) {
-    bios2mds::export.fasta(
-      x = msa::msaConvert(protein_alignment, "bios2mds::align"),
-      outfile = msa_filename
-    )
+    stop("Do not use bios2mds")
+    # bios2mds::export.fasta( # nolint remove dependency for now
+    #   x = msa::msaConvert(protein_alignment, "bios2mds::align"), # nolint remove dependency for now
+    #   outfile = msa_filename # nolint remove dependency for now
+    # ) # nolint remove dependency for now
   }
 
   # Use BLOSUM80, as the proteins are closely related
