@@ -7,13 +7,14 @@ create_msa <- function(
   msa_method,
   msa_subst_matrix
 ) {
-  protein_sequences_aass <- Biostrings::AAStringSet(protein_sequences)
-  sink("/dev/null")
-  protein_alignment <- msa::msa(
-    protein_sequences_aass,
-    method = msa_method,
-    substitutionMatrix = msa_subst_matrix
-  )
-  sink()
-  protein_alignment
+  stop("No msa please")
+  # protein_sequences_aass <- Biostrings::AAStringSet(protein_sequences)
+  # sink("/dev/null")
+  # protein_alignment <- msa::msa(
+  #   protein_sequences_aass,
+  #   method = msa_method,
+  #   substitutionMatrix = msa_subst_matrix
+  # )
+  # sink()
+  # protein_alignment
 }

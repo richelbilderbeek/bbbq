@@ -25,7 +25,6 @@ Imports:
     magrittr,
     mhcnuggetsr (>= 0.11),
     mhcnpreds,
-    msa,
     netmhc2pan,
     nmhc2ppreds,
     Peptides,

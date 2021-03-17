@@ -40,35 +40,36 @@ create_consensus_topology_conservation <- function( # nolint indeed a long funct
   BLOSUM80 <- NULL; rm(BLOSUM80) # nolint, fixes warning: no visible binding for global variable
   utils::data("BLOSUM80", package = "Biostrings")
   testthat::expect_equal("BLOSUM80", msa_subst_matrix)
-  conservation_scores <- msa::msaConservationScore(
-    protein_alignment,
-    substitutionMatrix = BLOSUM80
-  )
-  t <- tibble::tibble(
-    aa = names(conservation_scores),
-    score = as.numeric(conservation_scores),
-    is_tmh = NA
-  )
-
-  consensus <- paste0(names(conservation_scores), collapse = "")
-
-  topology <- NA
-  if (topology_prediction_tool == "pureseqtmr") {
-    topology <- pureseqtmr::predict_topology_from_sequence(consensus)
-  } else {
-    testthat::expect_equal(topology_prediction_tool, "tmhmm")
-    tmhmm::check_tmhmm_installation()
-    topology <- tmhmm::run_tmhmm_on_sequence(consensus)
-  }
-
-  topology_index <- 1
-  for (row_index in seq(1, nrow(t))) {
-    if (t$aa[row_index] != "-") {
-      t$is_tmh[row_index] <- stringr::str_sub(
-        topology, topology_index, topology_index
-      )
-      topology_index <- topology_index + 1
-    }
-  }
-  t
+  stop("No msa please")
+  # conservation_scores <- msa::msaConservationScore(
+  #   protein_alignment,
+  #   substitutionMatrix = BLOSUM80
+  # )
+  # t <- tibble::tibble(
+  #   aa = names(conservation_scores),
+  #   score = as.numeric(conservation_scores),
+  #   is_tmh = NA
+  # )
+  #
+  # consensus <- paste0(names(conservation_scores), collapse = "")
+  #
+  # topology <- NA
+  # if (topology_prediction_tool == "pureseqtmr") {
+  #   topology <- pureseqtmr::predict_topology_from_sequence(consensus)
+  # } else {
+  #   testthat::expect_equal(topology_prediction_tool, "tmhmm")
+  #   tmhmm::check_tmhmm_installation()
+  #   topology <- tmhmm::run_tmhmm_on_sequence(consensus)
+  # }
+  #
+  # topology_index <- 1
+  # for (row_index in seq(1, nrow(t))) {
+  #   if (t$aa[row_index] != "-") {
+  #     t$is_tmh[row_index] <- stringr::str_sub(
+  #       topology, topology_index, topology_index
+  #     )
+  #     topology_index <- topology_index + 1
+  #   }
+  # }
+  # t
 }
