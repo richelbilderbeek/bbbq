@@ -49,7 +49,7 @@ correlate_to_hydrophobicity <- function(
 
   # In a test run, all x values are zeroes
   if (!all(x == 0.0) ) {
-    graphics::legend( "topleft", legend=bquote( r == .(signif(cor(x,y),2)) ), bty='n' )
+    graphics::legend( "topleft", legend=bquote( r == .(signif(stats::cor(x,y),2)) ), bty='n' )
   }
 
   grDevices::dev.off()

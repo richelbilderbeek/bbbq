@@ -26,7 +26,6 @@ r_github_packages:
   - richelbilderbeek/nmhc2ppreds
 
 bioc_packages:
-  - msa
   - bios2mds
 
 before_install:
@@ -41,7 +40,7 @@ before_install:
   - sudo apt-get install libglu1-mesa-dev
   # libgit2-dev
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt install libgit2-dev; fi
- 
+
 
 before_script:
   # Install rJava, then ...

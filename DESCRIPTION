@@ -22,6 +22,7 @@ Imports:
     epiprepreds (>= 0.3),
     EpitopePrediction,
     glue,
+    ggplot2,
     magrittr,
     mhcnuggetsr (>= 0.11),
     mhcnpreds,

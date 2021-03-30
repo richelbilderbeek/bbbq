@@ -11,6 +11,7 @@ test_that("use", {
 })
 
 test_that("use", {
+  if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
   t <- get_ic50s_lut(
     target_name = "covid",
     haplotype = "HLA-DRB1*0101",
