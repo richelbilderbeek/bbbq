@@ -27,7 +27,7 @@ test_that("use", {
   skip("Local only")
   t <- get_ic50s_lut(
     target_name = "human",
-    haplotype = "HLA-A*01:01",
+    haplotype = "HLA-A*02:01",
     peptide_length = 9,
     ic50_prediction_tool = "EpitopePrediction"
   )

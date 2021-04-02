@@ -14,7 +14,7 @@ get_ic50s_lut <- function(
   haplotype,
   peptide_length,
   ic50_prediction_tool,
-  verbose = TRUE
+  verbose = FALSE
 ) {
   bbbq::check_target_name(target_name)
   bbbq::check_ic50_prediction_tool(ic50_prediction_tool)
@@ -42,6 +42,7 @@ get_ic50s_lut <- function(
     )
   }
   testthat::expect_true(file.exists(local_filename))
+
   readr::read_csv(
     file = local_filename,
     col_types = readr::cols(

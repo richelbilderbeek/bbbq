@@ -45,13 +45,14 @@ download_ic50s_lut <- function(
   }
   dir.create(
     path = dirname(local_filename),
-    showWarnings = verbose,
+    showWarnings = FALSE,
     recursive = TRUE
   )
   utils::download.file(
     url = url,
     destfile = local_filename,
-    quiet = !verbose
+    timeout = 3000,
+    quiet = TRUE
   )
   local_filename
 }
