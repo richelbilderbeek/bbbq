@@ -48,11 +48,13 @@ download_ic50s_lut <- function(
     showWarnings = FALSE,
     recursive = TRUE
   )
+  old_timeout <- getOption("timeout")
+  options(timeout = 6000)
   utils::download.file(
     url = url,
     destfile = local_filename,
-    timeout = 3000,
     quiet = TRUE
   )
+  options(timeout = old_timeout)
   local_filename
 }
