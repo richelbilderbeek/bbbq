@@ -9,7 +9,7 @@ get_ic50s_lut(
   haplotype,
   peptide_length,
   ic50_prediction_tool,
-  verbose = TRUE
+  verbose = FALSE
 )
 }
 \arguments{
