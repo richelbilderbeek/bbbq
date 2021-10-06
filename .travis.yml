@@ -24,6 +24,7 @@ r_github_packages:
   - richelbilderbeek/epitope-prediction
   - richelbilderbeek/epiprepreds
   - richelbilderbeek/nmhc2ppreds
+  - richelbilderbeek/mchnuggetsrinstall
 
 bioc_packages:
   - bios2mds
@@ -48,7 +49,7 @@ before_script:
   # from https://travis-ci.community/t/cannot-connect-to-java-from-r/9754/4
   - sudo R CMD javareconf
   - if [[ "$INSTALL_TOOLS" == true ]]; then sudo apt install tcsh; fi
-  - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'mhcnuggetsr::install_mhcnuggets()'; fi
+  - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'mhcnuggetsrinstall::install_mhcnuggets()'; fi
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'pureseqtmr::install_pureseqtm()'; fi
   - if [[ "$INSTALL_TOOLS" == true ]]; then Rscript -e 'if (netmhc2pan::is_url_valid()) netmhc2pan::install_netmhc2pan()'; fi
 

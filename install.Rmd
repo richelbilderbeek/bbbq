@@ -12,7 +12,7 @@ The `pureseqtmr` package relies on PureseqTM,
 which needs to be installed like this:
 
 ```
-pureseqtmr::install_pureseqtm()
+pureseqtmrinstall::install_pureseqtm()
 ```
 
 ### MHC-I epitope prediction: `EpitopePrediction`
@@ -36,7 +36,8 @@ The `mhcnuggetsr` package relies on 'MHCnuggets',
 which needs to be installed like this:
 
 ```
-mhcnuggetsr::install_mhcnuggets()
+remotes::install_github("richelbilderbeek/mhcnuggetsrinstall")
+mhcnuggetsrinstall::install_mhcnuggets()
 ```
 
 
