@@ -44,5 +44,6 @@ Suggests:
     testthat (>= 2.1.0),
     tidyr,
     knitr,
-    rmarkdown
+    rmarkdown,
+    xtable
 VignetteBuilder: knitr
