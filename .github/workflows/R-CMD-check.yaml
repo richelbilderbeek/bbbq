@@ -33,6 +33,7 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck"))
+          remotes::install_github("richelbilderbeek/tmhmm")
           remotes::install_github("richelbilderbeek/pureseqtmr")
           remotes::install_github("richelbilderbeek/mhcnpreds")
           remotes::install_github("richelbilderbeek/nmhc2ppreds")
