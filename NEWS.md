@@ -2,7 +2,25 @@
 
 Newest versions at top.
 
-## bbbq 1.7 (2021-1008)
+## bbbq 1.7.1 (unreleased)
+
+### NEW FEATURES
+
+  * None
+  
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
+## bbbq 1.7 (2021-10-08)
 
 ### NEW FEATURES
 
