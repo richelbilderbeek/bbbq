@@ -2,7 +2,7 @@
 
 Newest versions at top.
 
-## bbbq 1.7 (unreleased)
+## bbbq 1.7 (2021-1008)
 
 ### NEW FEATURES
 
