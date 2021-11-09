@@ -1,9 +1,9 @@
-#' Get the MHC-II haplotypes used in this study
+#' Get the MHC-II allele names used in this study
 #' @examples
-#' get_mhc2_haplotypes()
+#' get_mhc2_allele_names()
 #' @author Richèl J.C. Bilderbeek
 #' @export
-get_mhc2_haplotypes <- function() {
+get_mhc2_allele_names <- function() {
   if (1 == 2) {
     phenotype_freq <- NULL; rm(phenotype_freq) # nolint, fixes warning: no visible binding for global variable
     haplotype <- NULL; rm(haplotype) # nolint, fixes warning: no visible binding for global variable
@@ -35,4 +35,16 @@ get_mhc2_haplotypes <- function() {
     "HLA-DQA1*01:01/DQB1*05:01",
     "HLA-DQA1*01:02/DQB1*06:02"
   )
+}
+
+#' Deprecated function to get the MHC-II allele names used in this study.
+#'
+#' Deprecated function to get the MHC-II allele names used in this study.
+#' Use \link{get_mhc2_allele_names} instead.
+#' @examples
+#' get_mhc2_allele_names()
+#' @author Richèl J.C. Bilderbeek
+#' @export
+get_mhc2_haplotypes <- function() {
+  bbbq::get_mhc2_allele_names()
 }
