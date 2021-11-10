@@ -2,10 +2,12 @@
 % Please edit documentation in R/simplify_haplotype_names.R
 \name{simplify_haplotype_names}
 \alias{simplify_haplotype_names}
-\title{Simplify haplotype names to numbers}
+\title{Simplify haplotype names to numbers
+Will be NA for unknown haplotypes}
 \usage{
 simplify_haplotype_names(haplotype_names)
 }
 \description{
 Simplify haplotype names to numbers
+Will be NA for unknown haplotypes
 }

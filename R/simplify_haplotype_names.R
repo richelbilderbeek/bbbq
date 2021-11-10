@@ -1,4 +1,5 @@
 #' Simplify haplotype names to numbers
+#' Will be NA for unknown haplotypes
 #' @export
 simplify_haplotype_names <- function(haplotype_names) {
   simple_haplotype_names <- rep(NA, length = length(haplotype_names))
@@ -11,7 +12,6 @@ simplify_haplotype_names <- function(haplotype_names) {
     if (haplotype_name %in% bbbq::get_mhc2_haplotypes()) {
       simple_haplotype_name <- which(haplotype_name == bbbq::get_mhc2_haplotypes())
     }
-    testthat::expect_false(is.na(simple_haplotype_name))
     simple_haplotype_names[i] <- simple_haplotype_name
   }
   simple_haplotype_names
