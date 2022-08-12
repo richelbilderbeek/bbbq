@@ -15,14 +15,14 @@ See [install.Rmd](install.Rmd).
 
 Package             |Build status
 --------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------
-`pureseqtmr`        |[![Build Status](https://travis-ci.com/richelbilderbeek/pureseqtmr.svg?branch=master)](https://travis-ci.com/richelbilderbeek/pureseqtmr)
-`epitope-prediction`|[![Build Status](https://travis-ci.com/jtextor/epitope-prediction.svg?branch=master)](https://travis-ci.com/jtextor/epitope-prediction)
-`epiprepreds`       |[![Build Status](https://travis-ci.com/richelbilderbeek/epiprepreds.svg?branch=master)](https://travis-ci.com/richelbilderbeek/epiprepreds)
-`mhcnuggetsr`       |[![Build Status](https://travis-ci.com/richelbilderbeek/mhcnuggetsr.svg?branch=master)](https://travis-ci.com/richelbilderbeek/mhcnuggetsr)
-`mhcnpreds`         |[![Build Status](https://travis-ci.com/richelbilderbeek/mhcnpreds.svg?branch=master)](https://travis-ci.com/richelbilderbeek/mhcnpreds)
-`netmhc2pan`        |[![Build Status](https://travis-ci.com/richelbilderbeek/netmhc2pan.svg?branch=master)](https://travis-ci.com/richelbilderbeek/netmhc2pan)
-`nmhc2ppreds`       |[![Build Status](https://travis-ci.com/richelbilderbeek/nmhc2ppreds.svg?branch=master)](https://travis-ci.com/richelbilderbeek/nmhc2ppreds)
-`prodigalr`         |[![Build Status](https://travis-ci.com/richelbilderbeek/prodigalr.svg?branch=master)](https://travis-ci.com/richelbilderbeek/prodigalr)
+`pureseqtmr`        |.
+`epitope-prediction`|No CI
+`epiprepreds`       |.
+`mhcnuggetsr`       |![R-CMD-check](https://github.com/richelbilderbeek/mhcnuggetsr/workflows/R-CMD-check/badge.svg?branch=master)
+`mhcnpreds`         |.
+`netmhc2pan`        |![R-CMD-check](https://github.com/richelbilderbeek/netmhc2pan/workflows/R-CMD-check/badge.svg?branch=master)
+`nmhc2ppreds`       |.
+`prodigalr`         |.
 
 ## Downloads
 
