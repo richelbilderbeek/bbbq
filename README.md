@@ -5,7 +5,7 @@ Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github
 `master` |![R-CMD-check](https://github.com/richelbilderbeek/bbbq/workflows/R-CMD-check/badge.svg?branch=master)   |[![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/bbbq?branch=master)
 `develop`|![R-CMD-check](https://github.com/richelbilderbeek/bbbq/workflows/R-CMD-check/badge.svg?branch=develop)  |[![codecov.io](https://codecov.io/github/richelbilderbeek/bbbq/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/bbbq?branch=develop)
 
-The Bilderbeek Bianchi and Bogaart Question.
+Part of the code of [Bilderbeek, Richèl JC, et al. "Transmembrane Helices Are an Over-Presented and Evolutionarily Conserved Source of Major Histocompatibility Complex Class I and II Epitopes." Frontiers in immunology 12 (2021)](https://github.com/richelbilderbeek/bbbq_article):
 
 ## [Install](install.Rmd)
 
