@@ -13,16 +13,13 @@ See [install.Rmd](install.Rmd).
 
 ## Dependencies
 
-Package             |Build status
---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------
-`pureseqtmr`        |.
-`epitope-prediction`|No CI
-`epiprepreds`       |.
-`mhcnuggetsr`       |![R-CMD-check](https://github.com/richelbilderbeek/mhcnuggetsr/workflows/R-CMD-check/badge.svg?branch=master)
-`mhcnpreds`         |.
-`netmhc2pan`        |![R-CMD-check](https://github.com/richelbilderbeek/netmhc2pan/workflows/R-CMD-check/badge.svg?branch=master)
-`nmhc2ppreds`       |.
-`prodigalr`         |.
+Package                                                              |Build status
+---------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------
+[`epitope-prediction`](https://github.com/jtextor/epitope-prediction)|No CI
+[`mhcnuggetsr`](https://github.com/richelbilderbeek/mhcnuggetsr)     |![R-CMD-check](https://github.com/richelbilderbeek/mhcnuggetsr/workflows/R-CMD-check/badge.svg?branch=master)
+[`netmhc2pan`](https://github.com/richelbilderbeek/netmhc2pan)       |![R-CMD-check](https://github.com/richelbilderbeek/netmhc2pan/workflows/R-CMD-check/badge.svg?branch=master)
+[`pureseqtmr`](https://github.com/richelbilderbeek/pureseqtmr)       |![R-CMD-check](https://github.com/richelbilderbeek/pureseqtmr/workflows/R-CMD-check/badge.svg?branch=master)
+[`tmhmm`](https://github.com/richelbilderbeek/tmhmm)                 |![R-CMD-check](https://github.com/richelbilderbeek/tmhmm/workflows/R-CMD-check/badge.svg?branch=master)
 
 ## Downloads
 
