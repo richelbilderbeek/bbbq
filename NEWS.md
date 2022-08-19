@@ -6,7 +6,7 @@ Newest versions at top.
 
 ### NEW FEATURES
 
-  * None
+  * Use 'mhc_allele_name' instead of the misnomer 'mhc_haplotype'
   
 ### MINOR IMPROVEMENTS
 
@@ -18,7 +18,8 @@ Newest versions at top.
 
 ### DEPRECATED AND DEFUNCT
 
-  * None
+  * Function that use the misnomer 'mhc_haplotype' are redirected to
+    the functions that use 'mhc_allele_name'
 
 ## bbbq 1.7 (2021-10-08)
 
