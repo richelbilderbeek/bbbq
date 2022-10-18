@@ -15,7 +15,6 @@ License: GPL-3
 Encoding: UTF-8
 RoxygenNote: 7.1.2
 Imports:
-    Biostrings,
     data.table,
     dplyr,
     epiprepreds (>= 0.3),
@@ -34,8 +33,7 @@ Imports:
     readxl,
     seqinr,
     stringr,  
-    tibble,
-    tmhmm
+    tibble
 Suggests:
     beastier,
     devtools,
@@ -43,6 +41,7 @@ Suggests:
     testit,
     testthat (>= 2.1.0),
     tidyr,
+    tmhmm,
     knitr,
     rmarkdown,
     xtable
