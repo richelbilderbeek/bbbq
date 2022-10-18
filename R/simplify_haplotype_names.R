@@ -1,5 +1,6 @@
 #' Simplify haplotype names to numbers
 #' Will be NA for unknown haplotypes
+#' @inheritParams default_params_doc
 #' @export
 simplify_haplotype_names <- function(haplotype_names) {
   simple_haplotype_names <- rep(NA, length = length(haplotype_names))

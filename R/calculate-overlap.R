@@ -15,6 +15,9 @@ calculate_overlap <- function(
   protein_lengths_filename,
   tmh_overlapping_binders_as_data_filename
 ) {
+  tmh.9mers <- NULL; rm(tmh.9mers) # nolint, fixes warning: no visible binding for global variable
+
+
   load(tmh_9mers_as_data_filename) # Used to be load("work/tmh.9mers.Rdata")
   pldf <- utils::read.table(protein_lengths_filename, row.names=1 )
   pl <- pldf[,1]

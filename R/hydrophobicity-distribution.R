@@ -18,6 +18,8 @@ hydrophobicity_distribution <- function(
   kyte_doolittle_scale_as_data_filename,
   proteome_9mer_hydrophobicity_as_data_filename
 ) {
+  proteome <- NULL; rm(proteome) # nolint, fixes warning: no visible binding for global variable
+
   load(proteome_as_data_filename) # Used to be 'load("work/proteome.Rdata")'
   load(kyte_doolittle_scale_as_data_filename) # Used to be 'load("data/kyte.doolittle.scale.Rdata")'
 

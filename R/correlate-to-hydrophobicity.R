@@ -14,6 +14,8 @@ correlate_to_hydrophobicity <- function(
   tmh_overlapping_binders_as_data_filename,
   figure_1_d_filename
 ) {
+  r <- NULL; rm(r) # nolint, fixes warning: no visible binding for global variable
+
   testthat::expect_true(file.exists(tmh_overlapping_binders_as_data_filename))
 
   # loads 'r'

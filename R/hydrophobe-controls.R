@@ -13,6 +13,8 @@ hydrophobe_controls <- function(
   proteome_9mer_hydrophobicity_as_data_filename,
   tmh_9mers_as_data_filename
 ) {
+  tmh.9mers <- NULL; rm(tmh.9mers) # nolint, fixes warning: no visible binding for global variable
+
   load(proteome_9mer_hydrophobicity_as_data_filename) # Used to be 'load("work/proteome.9mer.hydrophobicity.Rdata")'
   load(tmh_9mers_as_data_filename) # Used to be load("work/tmh.9mers.Rdata")
 
