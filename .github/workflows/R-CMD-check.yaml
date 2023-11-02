@@ -36,6 +36,9 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck"))
+          remotes::install_github("richelbilderbeek/beautier")
+          remotes::install_github("richelbilderbeek/beastier", ref = "develop")
+          remotes::install_github("richelbilderbeek/netmhc2pan")
           remotes::install_github("richelbilderbeek/tmhmm")
           remotes::install_github("richelbilderbeek/pureseqtmr")
           remotes::install_github("richelbilderbeek/mhcnpreds")
