@@ -5,7 +5,7 @@ Authors@R:
     person(given = "Richel",
            family = "Bilderbeek",
            role = c("aut", "cre"),
-           email = "richel@richelbilderbeek.nl")
+           email = "rjcbilderbeek@gmail.com")
 Description:
     The Bilderbeek Bianchi and Bogaart Question
     is a very important question.
